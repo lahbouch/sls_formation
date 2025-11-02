@@ -14918,638 +14918,7 @@
         </div>
         <div id="site-root" class="site-root">
           <div id="masterPage" class="mesh-layout masterPage css-editing-scope">
-            <header
-              id="SITE_HEADER"
-              class="AT7o0U SITE_HEADER wixui-header"
-              tabindex="-1"
-            >
-              <div class="lvxhkV"></div>
-              <div class="cKxVkc">
-                <div class="vlM3HR"></div>
-                <div class="VrZrC0">
-                  <div
-                    data-mesh-id="SITE_HEADERinlineContent"
-                    data-testid="inline-content"
-                    class=""
-                  >
-                    <div
-                      data-mesh-id="SITE_HEADERinlineContent-gridContainer"
-                      data-testid="mesh-container-content"
-                    >
-                      <!--$-->
-                      <section
-                        id="comp-ilukhsef"
-                        class="comp-ilukhsef CohWsy wixui-column-strip"
-                      >
-                        <div
-                          id="bgLayers_comp-ilukhsef"
-                          data-hook="bgLayers"
-                          data-motion-part="BG_LAYER comp-ilukhsef"
-                          class="if7Vw2"
-                        >
-                          <div
-                            data-testid="colorUnderlay"
-                            class="tcElKx i1tH8h"
-                          ></div>
-                          <div
-                            id="bgMedia_comp-ilukhsef"
-                            data-motion-part="BG_MEDIA comp-ilukhsef"
-                            class="wG8dni"
-                          ></div>
-                        </div>
-                        <div data-testid="columns" class="V5AUxf">
-                          <!--$-->
-                          <div
-                            id="mediaiu40shmu1"
-                            class="mediaiu40shmu1 YzqVVZ wixui-column-strip__column"
-                          >
-                            <div
-                              id="bgLayers_mediaiu40shmu1"
-                              data-hook="bgLayers"
-                              data-motion-part="BG_LAYER mediaiu40shmu1"
-                              class="MW5IWV"
-                            >
-                              <div
-                                data-testid="colorUnderlay"
-                                class="LWbAav Kv1aVt"
-                              ></div>
-                              <div
-                                id="bgMedia_mediaiu40shmu1"
-                                data-motion-part="BG_MEDIA mediaiu40shmu1"
-                                class="VgO9Yg"
-                              ></div>
-                            </div>
-                            <div
-                              data-mesh-id="mediaiu40shmu1inlineContent"
-                              data-testid="inline-content"
-                              class=""
-                            >
-                              <div
-                                data-mesh-id="mediaiu40shmu1inlineContent-gridContainer"
-                                data-testid="mesh-container-content"
-                              >
-                                <!--$-->
-                                <div
-                                  id="comp-ilt53v9b"
-                                  class="KaEeLN comp-ilt53v9b"
-                                >
-                                  <div
-                                    class="uYj0Sg wixui-box"
-                                    data-testid="container-bg"
-                                  ></div>
-                                  <div
-                                    data-mesh-id="comp-ilt53v9binlineContent"
-                                    data-testid="inline-content"
-                                    class=""
-                                  >
-                                    <div
-                                      data-mesh-id="comp-ilt53v9binlineContent-gridContainer"
-                                      data-testid="mesh-container-content"
-                                    >
-                                      <!--$-->
-                                      <div
-                                        id="comp-lalf0k92"
-                                        class="MazNVa comp-lalf0k92 wixui-image rYiAuL"
-                                        data-motion-enter="done"
-                                      >
-                                        <a
-                                          data-testid="linkElement"
-                                          href="/sls-formation"
-                                          target="_self"
-                                          class="j7pOnl"
-                                          ><img
-                                            fetchpriority="high"
-                                            sizes="72px"
-                                            id="img_comp-lalf0k92"
-                                            src="{{ asset('/images/SLS-_Logo_png_small.webp') }}"
-                                            alt="SLS- Logo png small"
-                                            style="object-fit: cover"
-                                            class="BI8PVQ Tj01hh"
-                                            width="72"
-                                            height="40"
-                                        /></a>
-                                      </div>
-                                      <!--/$--><!--$-->
-                                      <div
-                                        id="comp-lamfodrm"
-                                        class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-lamfodrm wixui-rich-text"
-                                        data-testid="richTextElement"
-                                        data-motion-enter="done"
-                                      >
-                                        <h4
-                                          class="font_4 wixui-rich-text__text"
-                                          style="font-size: 18px"
-                                        >
-                                          <span
-                                            style="font-size: 18px"
-                                            class="wixui-rich-text__text"
-                                            ><span
-                                              style="color: #113c66"
-                                              class="wixui-rich-text__text"
-                                              ><span
-                                                style="font-weight: normal"
-                                                class="wixui-rich-text__text"
-                                                ><span
-                                                  style="
-                                                    font-family: avenir-lt-w01_35-light1475496,
-                                                      avenir-lt-w05_35-light,
-                                                      sans-serif;
-                                                  "
-                                                  class="wixui-rich-text__text"
-                                                  ><span
-                                                    style="
-                                                      text-shadow: rgba(
-                                                          0,
-                                                          0,
-                                                          0,
-                                                          0.4
-                                                        )
-                                                        0px 4px 5px;
-                                                    "
-                                                    class="wixui-rich-text__text"
-                                                    ><a
-                                                      href="/sls-formation"
-                                                      target="_self"
-                                                      class="wixui-rich-text__text"
-                                                      >Formation &amp;&nbsp;</a
-                                                    ></span
-                                                  ></span
-                                                ></span
-                                              ></span
-                                            ><a
-                                              href="/sls-formation"
-                                              target="_self"
-                                              class="wixui-rich-text__text"
-                                              ><span
-                                                style="color: #113c66"
-                                                class="wixui-rich-text__text"
-                                                ><span
-                                                  style="font-weight: normal"
-                                                  class="wixui-rich-text__text"
-                                                  ><span
-                                                    style="
-                                                      font-family: avenir-lt-w01_35-light1475496,
-                                                        avenir-lt-w05_35-light,
-                                                        sans-serif;
-                                                    "
-                                                    class="wixui-rich-text__text"
-                                                    ><span
-                                                      style="
-                                                        text-shadow: rgba(
-                                                            0,
-                                                            0,
-                                                            0,
-                                                            0.4
-                                                          )
-                                                          0px 4px 5px;
-                                                      "
-                                                      class="wixui-rich-text__text"
-                                                      >Conseils</span
-                                                    ></span
-                                                  ></span
-                                                ></span
-                                              ></a
-                                            ></span
-                                          >
-                                        </h4>
-                                      </div>
-                                      <!--/$-->
-                                    </div>
-                                  </div>
-                                </div>
-                                <!--/$--><!--$--><wix-dropdown-menu
-                                  id="comp-ils2cgqy"
-                                  class="XwCBRN NHM1d1 comp-ils2cgqy wixui-dropdown-menu hidden-during-prewarmup"
-                                  tabindex="-1"
-                                  dir="ltr"
-                                  data-stretch-buttons-to-menu-width="true"
-                                  data-same-width-buttons="false"
-                                  data-num-items="7"
-                                  data-menuborder-y="0"
-                                  data-menubtn-border="0"
-                                  data-ribbon-els="0"
-                                  data-label-pad="0"
-                                  data-ribbon-extra="0"
-                                  data-dropalign="right"
-                                  style="
-                                    visibility: inherit;
-                                    overflow-x: visible;
-                                  "
-                                  data-dropmode="dropDown"
-                                  ><nav
-                                    class="R_TAzU"
-                                    id="comp-ils2cgqynavContainer"
-                                    aria-label="Site"
-                                  >
-                                    <ul
-                                      class="y7qwii"
-                                      id="comp-ils2cgqyitemsContainer"
-                                      style="text-align: right"
-                                      data-marginallchildren="true"
-                                    >
-                                      <li
-                                        id="comp-ils2cgqy0"
-                                        data-direction="ltr"
-                                        data-listposition="left"
-                                        data-data-id="dataItem-imkaysuw"
-                                        data-state="menu selected  link"
-                                        data-index="0"
-                                        class="Tg1gOB wixui-dropdown-menu__item xTjc1A"
-                                        data-original-gap-between-text-and-btn="10"
-                                        aria-hidden="false"
-                                        style="
-                                          width: 85px;
-                                          height: 40px;
-                                          position: relative;
-                                          box-sizing: border-box;
-                                          overflow: visible;
-                                          visibility: inherit;
-                                        "
-                                      >
-                                        <a
-                                          data-testid="linkElement"
-                                          href="/sls-formation"
-                                          target="_self"
-                                          class="UiHgGh"
-                                          aria-current="page"
-                                          ><div class="yRj2ms">
-                                            <div class="">
-                                              <p
-                                                class="JS76Uv"
-                                                id="comp-ils2cgqy0label"
-                                                style="line-height: 40px"
-                                              >
-                                                Acceuil
-                                              </p>
-                                            </div>
-                                          </div></a
-                                        >
-                                      </li>
-                                      <li
-                                        id="comp-ils2cgqy1"
-                                        data-direction="ltr"
-                                        data-listposition="center"
-                                        data-data-id="dataItem-ils2ei87"
-                                        data-state="menu false  link"
-                                        data-index="1"
-                                        class="Tg1gOB wixui-dropdown-menu__item xTjc1A"
-                                        data-original-gap-between-text-and-btn="10"
-                                        aria-hidden="false"
-                                        style="
-                                          width: 96px;
-                                          height: 40px;
-                                          position: relative;
-                                          box-sizing: border-box;
-                                          overflow: visible;
-                                          visibility: inherit;
-                                        "
-                                      >
-                                        <a
-                                          data-testid="linkElement"
-                                          href="/sls-formation/à-propos"
-                                          target="_self"
-                                          class="UiHgGh"
-                                          ><div class="yRj2ms">
-                                            <div class="">
-                                              <p
-                                                class="JS76Uv"
-                                                id="comp-ils2cgqy1label"
-                                                style="line-height: 40px"
-                                              >
-                                                À propos
-                                              </p>
-                                            </div>
-                                          </div></a
-                                        >
-                                      </li>
-                                      <li
-                                        id="comp-ils2cgqy2"
-                                        data-direction="ltr"
-                                        data-listposition="center"
-                                        data-data-id="dataItem-ils2dguu"
-                                        data-state="menu false  link"
-                                        data-index="2"
-                                        class="Tg1gOB wixui-dropdown-menu__item xTjc1A"
-                                        data-original-gap-between-text-and-btn="10"
-                                        aria-hidden="false"
-                                        style="
-                                          width: 92px;
-                                          height: 40px;
-                                          position: relative;
-                                          box-sizing: border-box;
-                                          overflow: visible;
-                                          visibility: inherit;
-                                        "
-                                      >
-                                        <a
-                                          data-testid="linkElement"
-                                          href="/sls-formation/services"
-                                          target="_self"
-                                          class="UiHgGh"
-                                          aria-expanded="false"
-                                          aria-haspopup="true"
-                                          ><div class="yRj2ms">
-                                            <div class="">
-                                              <p
-                                                class="JS76Uv"
-                                                id="comp-ils2cgqy2label"
-                                                style="line-height: 40px"
-                                              >
-                                                Services
-                                              </p>
-                                            </div>
-                                          </div></a
-                                        ><button
-                                          class="_pfxlW"
-                                          aria-label="Plus de pages Services"
-                                        >
-                                          <svg
-                                            width="10"
-                                            height="10"
-                                            viewBox="0 0 16 11"
-                                            fill="black"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                          >
-                                            <path
-                                              d="M8 10.5L16 1.86193L14.7387 0.5L8 7.77613L1.26133 0.499999L-5.95321e-08 1.86193L8 10.5Z"
-                                            ></path>
-                                          </svg>
-                                        </button>
-                                        <ul
-                                          aria-hidden="true"
-                                          style="display: none"
-                                        >
-                                          <li>
-                                            <a
-                                              data-testid="linkElement"
-                                              href="/sls-formation/formations"
-                                              target="_self"
-                                              class=""
-                                              tabindex="-1"
-                                              >Formations</a
-                                            >
-                                          </li>
-                                        </ul>
-                                      </li>
-                                      <li
-                                        id="comp-ils2cgqy3"
-                                        data-direction="ltr"
-                                        data-listposition="center"
-                                        data-data-id="dataItem-lb3jrt2s"
-                                        data-state="menu false  link"
-                                        data-index="3"
-                                        class="Tg1gOB wixui-dropdown-menu__item xTjc1A"
-                                        data-original-gap-between-text-and-btn="10"
-                                        aria-hidden="false"
-                                        style="
-                                          width: 116px;
-                                          height: 40px;
-                                          position: relative;
-                                          box-sizing: border-box;
-                                          overflow: visible;
-                                          visibility: inherit;
-                                        "
-                                      >
-                                        <a
-                                          data-testid="linkElement"
-                                          href="/sls-formation/evenements"
-                                          target="_self"
-                                          class="UiHgGh"
-                                          ><div class="yRj2ms">
-                                            <div class="">
-                                              <p
-                                                class="JS76Uv"
-                                                id="comp-ils2cgqy3label"
-                                                style="line-height: 40px"
-                                              >
-                                                Évènements
-                                              </p>
-                                            </div>
-                                          </div></a
-                                        >
-                                      </li>
-                                      <li
-                                        id="comp-ils2cgqy4"
-                                        data-direction="ltr"
-                                        data-listposition="center"
-                                        data-data-id="dataItem-lamylusx"
-                                        data-state="menu false  link"
-                                        data-index="4"
-                                        class="Tg1gOB wixui-dropdown-menu__item xTjc1A"
-                                        data-original-gap-between-text-and-btn="10"
-                                        aria-hidden="false"
-                                        style="
-                                          width: 93px;
-                                          height: 40px;
-                                          position: relative;
-                                          box-sizing: border-box;
-                                          overflow: visible;
-                                          visibility: inherit;
-                                        "
-                                      >
-                                        <a
-                                          data-testid="linkElement"
-                                          href="/sls-formation/galleries"
-                                          target="_self"
-                                          class="UiHgGh"
-                                          ><div class="yRj2ms">
-                                            <div class="">
-                                              <p
-                                                class="JS76Uv"
-                                                id="comp-ils2cgqy4label"
-                                                style="line-height: 40px"
-                                              >
-                                                Galleries
-                                              </p>
-                                            </div>
-                                          </div></a
-                                        >
-                                      </li>
-                                      <li
-                                        id="comp-ils2cgqy5"
-                                        data-direction="ltr"
-                                        data-listposition="center"
-                                        data-data-id="dataItem-j8bcd043"
-                                        data-state="menu false  link"
-                                        data-index="5"
-                                        class="Tg1gOB wixui-dropdown-menu__item xTjc1A"
-                                        data-original-gap-between-text-and-btn="10"
-                                        aria-hidden="false"
-                                        style="
-                                          width: 101px;
-                                          height: 40px;
-                                          position: relative;
-                                          box-sizing: border-box;
-                                          overflow: visible;
-                                          visibility: inherit;
-                                        "
-                                      >
-                                        <a
-                                          data-testid="linkElement"
-                                          href="/sls-formation/actualités"
-                                          target="_self"
-                                          class="UiHgGh"
-                                          ><div class="yRj2ms">
-                                            <div class="">
-                                              <p
-                                                class="JS76Uv"
-                                                id="comp-ils2cgqy5label"
-                                                style="line-height: 40px"
-                                              >
-                                                Actualités
-                                              </p>
-                                            </div>
-                                          </div></a
-                                        >
-                                      </li>
-                                      <li
-                                        id="comp-ils2cgqy6"
-                                        data-direction="ltr"
-                                        data-listposition="right"
-                                        data-data-id="dataItem-lapv5jcj"
-                                        data-state="menu false  link"
-                                        data-index="6"
-                                        class="Tg1gOB wixui-dropdown-menu__item xTjc1A"
-                                        data-original-gap-between-text-and-btn="10"
-                                        aria-hidden="false"
-                                        style="
-                                          width: 86px;
-                                          height: 40px;
-                                          position: relative;
-                                          box-sizing: border-box;
-                                          overflow: visible;
-                                          visibility: inherit;
-                                        "
-                                      >
-                                        <a
-                                          data-testid="linkElement"
-                                          href="/sls-formation/contact"
-                                          target="_self"
-                                          class="UiHgGh"
-                                          ><div class="yRj2ms">
-                                            <div class="">
-                                              <p
-                                                class="JS76Uv"
-                                                id="comp-ils2cgqy6label"
-                                                style="line-height: 40px"
-                                              >
-                                                Contact
-                                              </p>
-                                            </div>
-                                          </div></a
-                                        >
-                                      </li>
-                                      <li
-                                        id="comp-ils2cgqy__more__"
-                                        data-direction="ltr"
-                                        data-listposition="right"
-                                        data-state="menu false  header"
-                                        data-index="__more__"
-                                        data-dropdown="false"
-                                        class="p90CkU xTjc1A"
-                                        data-original-gap-between-text-and-btn="10"
-                                        aria-hidden="true"
-                                        style="
-                                          height: 0px;
-                                          overflow: hidden;
-                                          position: absolute;
-                                          visibility: hidden;
-                                        "
-                                      >
-                                        <div
-                                          data-testid="linkElement"
-                                          class="UiHgGh"
-                                          tabindex="0"
-                                          aria-haspopup="true"
-                                        >
-                                          <div class="yRj2ms">
-                                            <div class="">
-                                              <p
-                                                class="JS76Uv"
-                                                id="comp-ils2cgqy__more__label"
-                                                tabindex="-1"
-                                              >
-                                                More
-                                              </p>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </li>
-                                    </ul>
-                                    <div
-                                      class="h3jCPd"
-                                      id="comp-ils2cgqydropWrapper"
-                                      data-dropalign="right"
-                                      data-dropdown-shown="false"
-                                    >
-                                      <ul
-                                        class="wkJ2fp wixui-dropdown-menu__submenu"
-                                        id="comp-ils2cgqymoreContainer"
-                                      ></ul>
-                                    </div>
-                                    <div
-                                      style="display: none"
-                                      id="comp-ils2cgqynavContainer-hiddenA11ySubMenuIndication"
-                                    >
-                                      Use tab to navigate through the menu
-                                      items.
-                                    </div>
-                                  </nav></wix-dropdown-menu
-                                ><!--/$--><!--$-->
-                                <div
-                                  id="comp-kjgrk1fo"
-                                  class="wixui-login-social-bar login-social-bar pGZMn2 comp-kjgrk1fo"
-                                  dir="ltr"
-                                  tabindex="-1"
-                                >
-                                  <button
-                                    class="eUGVn8"
-                                    data-testid="handle-button"
-                                  >
-                                    <div
-                                      class="wixui-login-social-bar__avatar-icon login-social-bar__avatar-icon V8gwZj b2cSkJ"
-                                    >
-                                      <div
-                                        id="defaultAvatar-comp-kjgrk1fo"
-                                        class="aBATL4 wixui-vector-image"
-                                      >
-                                        <div
-                                          data-testid="svgRoot-defaultAvatar-comp-kjgrk1fo"
-                                          class="VDJedC l4CAhn aBATL4"
-                                        >
-                                          <svg
-                                            data-bbox="0 0 50 50"
-                                            data-type="shape"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            width="50"
-                                            height="50"
-                                            viewBox="0 0 50 50"
-                                          >
-                                            <g>
-                                              <path
-                                                d="M25 48.077c-5.924 0-11.31-2.252-15.396-5.921 2.254-5.362 7.492-8.267 15.373-8.267 7.889 0 13.139 3.044 15.408 8.418-4.084 3.659-9.471 5.77-15.385 5.77m.278-35.3c4.927 0 8.611 3.812 8.611 8.878 0 5.21-3.875 9.456-8.611 9.456s-8.611-4.246-8.611-9.456c0-5.066 3.684-8.878 8.611-8.878M25 0C11.193 0 0 11.193 0 25c0 .915.056 1.816.152 2.705.032.295.091.581.133.873.085.589.173 1.176.298 1.751.073.338.169.665.256.997.135.515.273 1.027.439 1.529.114.342.243.675.37 1.01.18.476.369.945.577 1.406.149.331.308.657.472.98.225.446.463.883.714 1.313.182.312.365.619.56.922.272.423.56.832.856 1.237.207.284.41.568.629.841.325.408.671.796 1.02 1.182.22.244.432.494.662.728.405.415.833.801 1.265 1.186.173.154.329.325.507.475l.004-.011A24.886 24.886 0 0 0 25 50a24.881 24.881 0 0 0 16.069-5.861.126.126 0 0 1 .003.01c.172-.144.324-.309.49-.458.442-.392.88-.787 1.293-1.209.228-.232.437-.479.655-.72.352-.389.701-.78 1.028-1.191.218-.272.421-.556.627-.838.297-.405.587-.816.859-1.24a26.104 26.104 0 0 0 1.748-3.216c.208-.461.398-.93.579-1.406.127-.336.256-.669.369-1.012.167-.502.305-1.014.44-1.53.087-.332.183-.659.256-.996.126-.576.214-1.164.299-1.754.042-.292.101-.577.133-.872.095-.89.152-1.791.152-2.707C50 11.193 38.807 0 25 0"
-                                              ></path>
-                                            </g>
-                                          </svg>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <span class="LcZX5c">Se connecter</span>
-                                  </button>
-                                </div>
-                                <!--/$-->
-                              </div>
-                            </div>
-                          </div>
-                          <!--/$-->
-                        </div>
-                      </section>
-                      <!--/$-->
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </header>
+          <x-navbar></x-navbar>
             <main
               id="PAGES_CONTAINER"
               class="PAGES_CONTAINER"
@@ -15791,7 +15160,7 @@
                                                               height="246"
                                                               data-ssr-src-done="true"
                                                               fetchpriority="high"
-                                                              src="{{ asset('/images/8ad880_87096ffca61348ac891165532aae3c70_mv2.webp') }}"
+                                                              src="{{ asset('/images/8ad880_87096ffca61348ac891165532aae3c70~mv2.webp') }}"
                                                           /></wow-image>
                                                         </div>
                                                       </div>
@@ -15915,7 +15284,7 @@
                                                               height="246"
                                                               data-ssr-src-done="true"
                                                               fetchpriority="high"
-                                                              src="{{ asset('/images/8ad880_9c955e6809dd454391700975d68f91d5_mv2.webp') }}"
+                                                              src="{{ asset('/images/8ad880_9c955e6809dd454391700975d68f91d5~mv2.webp') }}"
                                                           /></wow-image>
                                                         </div>
                                                       </div>
@@ -16034,7 +15403,7 @@
                                                               height="246"
                                                               data-ssr-src-done="true"
                                                               fetchpriority="high"
-                                                              src="{{ asset('/images/8ad880_09bfb4846808431499294111c9cb699f_mv2.webp') }}"
+                                                              src="{{ asset('/images/8ad880_09bfb4846808431499294111c9cb699f~mv2.webp') }}"
                                                           /></wow-image>
                                                         </div>
                                                       </div>
@@ -16158,7 +15527,7 @@
                                                               height="246"
                                                               data-ssr-src-done="true"
                                                               fetchpriority="high"
-                                                              src="{{ asset('/images/8ad880_e6a9ae7ed4f54e1d9ca6e3b21fa4fbad_mv2.webp') }}"
+                                                              src="{{ asset('/images/8ad880_e6a9ae7ed4f54e1d9ca6e3b21fa4fbad~mv2.webp') }}"
                                                           /></wow-image>
                                                         </div>
                                                       </div>
@@ -16277,7 +15646,7 @@
                                                               height="246"
                                                               data-ssr-src-done="true"
                                                               fetchpriority="high"
-                                                              src="{{ asset('/images/8ad880_4649047f26e349708582a447abe41463_mv2.webp') }}"
+                                                              src="{{ asset('/images/8ad880_4649047f26e349708582a447abe41463~mv2.webp') }}"
                                                           /></wow-image>
                                                         </div>
                                                       </div>
@@ -16401,7 +15770,7 @@
                                                               height="246"
                                                               data-ssr-src-done="true"
                                                               fetchpriority="high"
-                                                              src="{{ asset('/images/8ad880_1597f7cd06964048af2ca3b45c4c04aa_mv2.webp') }}"
+                                                              src="{{ asset('/images/8ad880_1597f7cd06964048af2ca3b45c4c04aa~mv2.webp') }}"
                                                           /></wow-image>
                                                         </div>
                                                       </div>
@@ -16613,107 +15982,62 @@
                                               class="TWFxr5"
                                               style="min-width: 0px"
                                             >
-                                              <div class="comp-lamrzn46">
-                                                <div
-                                                  style="
-                                                    --wix-color-29: var(
-                                                      --wix-color-3
-                                                    );
-                                                    --wix-color-37: var(
-                                                      --wix-color-5
-                                                    );
-                                                    --wix-color-38: var(
-                                                      --wix-color-8
-                                                    );
-                                                    --wix-color-39: var(
-                                                      --wix-color-8
-                                                    );
-                                                    --wix-color-40: var(
-                                                      --wix-color-1
-                                                    );
-                                                    --wix-color-41: var(
-                                                      --wix-color-8
-                                                    );
-                                                    --wix-color-42: var(
-                                                      --wix-color-8
-                                                    );
-                                                    --wix-color-43: var(
-                                                      --wix-color-1
-                                                    );
-                                                    --wix-color-44: var(
-                                                      --wix-color-3
-                                                    );
-                                                    --wix-color-45: var(
-                                                      --wix-color-3
-                                                    );
-                                                    --wix-color-46: var(
-                                                      --wix-color-1
-                                                    );
-                                                    --wix-color-47: var(
-                                                      --wix-color-1
-                                                    );
-                                                    --wix-color-48: var(
-                                                      --wix-color-8
-                                                    );
-                                                    --wix-color-49: var(
-                                                      --wix-color-8
-                                                    );
-                                                    --wix-color-50: var(
-                                                      --wix-color-1
-                                                    );
-                                                    --wix-color-51: var(
-                                                      --wix-color-8
-                                                    );
-                                                    --wix-color-52: var(
-                                                      --wix-color-8
-                                                    );
-                                                    --wix-color-53: var(
-                                                      --wix-color-1
-                                                    );
-                                                    --wix-color-54: var(
-                                                      --wix-color-3
-                                                    );
-                                                    --wix-color-55: var(
-                                                      --wix-color-3
-                                                    );
-                                                  "
-                                                  data-hook="tpa-components-provider"
-                                                >
-                                                  <div>
-                                                    <div
-                                                      style="
-                                                        --root-width: 980px;
-                                                      "
-                                                      class="md lt-lg lt-xl gt-xs gt-s gt-sm gt-740 gt-830 gt-886 gt-940 w686-980 lte-w980 lte-banner-w1564 lte-banner-w1425 lte-banner-w1181 lte-banner-w980 lte-category-header-w1364"
-                                                      data-hook="post-list-root"
-                                                    >
-                                                      <div
-                                                        style="padding: 20px"
-                                                        class="c3VDPV sXdULV"
-                                                      >
-                                                        <div class="">
-                                                          <div>
-                                                            <div
-                                                              class="slick-carousel"
-                                                            >
-                                                              <img
-                                                                src="{{ asset('/images/11062b_2a2076836abe4624a8d0cf69c0c18a0f_mv2.webp') }}"
-                                                                alt="Gallery Image"
-                                                              /><img
-                                                                src="{{ asset('/images/11062b_3f8051ebb4304a58b2aeba4012390c4e_mv2.webp') }}"
-                                                                alt="Gallery Image"
-                                                              /><img
-                                                                src="{{ asset('/images/11062b_b0ef0b74578f466ca4f12014956da9d0_mv2.webp') }}"
-                                                                alt="Gallery Image"
-                                                              />
-                                                            </div>
-                                                          </div>
-                                                        </div>
-                                                      </div>
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                              </div>
+                                              <div style="
+    position: relative;
+    width: 292px !important;
+    height: 292px !important;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+">
+    <!-- Background Image -->
+    <div style="
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 292px;
+        height: 292px;
+        background-image: url({{ asset('/images/11062b_2a2076836abe4624a8d0cf69c0c18a0fmv2.webp') }});
+        background-size: cover;
+        background-position: center;
+    "></div>
+    
+    <!-- Overlay -->
+    <div style="
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 292px;
+        height: 292px;
+        background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+    "></div>
+    
+    <!-- Content -->
+    <div style="
+        position: absolute;
+        bottom: 30px;
+        left: 30px;
+        color: white;
+        font-family: 'Inter', Arial, sans-serif;
+    ">
+        <!-- Category -->
+        <div style="
+            font-size: 13px;
+            font-weight: 400;
+            margin-bottom: 8px;
+            opacity: 0.95;
+            letter-spacing: 0.3px;
+        ">Textile</div>
+        
+        <!-- Title -->
+        <h2 style="
+            margin: 0;
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 1.2;
+            letter-spacing: -0.5px;
+        ">Comment chercher</h2>
+    </div>
+</div>
                                             </div>
                                             <!--/$--><!--$-->
                                             <div
@@ -16811,383 +16135,7 @@
               </div>
               <!--/$-->
             </div>
-            <footer
-              id="SITE_FOOTER"
-              class="xU8fqS SITE_FOOTER wixui-footer"
-              tabindex="-1"
-            >
-              <div class="_C0cVf">
-                <div class="_4XcTfy" data-testid="screenWidthContainerBg"></div>
-              </div>
-              <div class="U4Bvut">
-                <div class="G5K6X8">
-                  <div
-                    class="gUbusX"
-                    data-testid="screenWidthContainerBgCenter"
-                  ></div>
-                </div>
-                <div class="CJF7A2">
-                  <div
-                    data-mesh-id="SITE_FOOTERinlineContent"
-                    data-testid="inline-content"
-                    class=""
-                  >
-                    <div
-                      data-mesh-id="SITE_FOOTERinlineContent-gridContainer"
-                      data-testid="mesh-container-content"
-                    >
-                      <!--$-->
-                      <div id="comp-imomo2yb" class="comp-imomo2yb WzbAF8">
-                        <ul
-                          class="mpGTIt"
-                          aria-label="Barre de réseaux sociaux"
-                        >
-                          <li
-                            id="dataItem-imomo2yl1-comp-imomo2yb"
-                            class="O6KwRn"
-                          >
-                            <a
-                              data-testid="linkElement"
-                              href="http://www.facebook.com/wix"
-                              target="_blank"
-                              class="oRtuWN"
-                              ><img
-                                sizes="undefinedpx"
-                                id="img_0_comp-imomo2yb"
-                                src="{{ asset('/images/23fd2a2be53141ed810f4d3dcdcd01fa.webp') }}"
-                                alt=""
-                                style="object-fit: cover"
-                                class="YaS0jR Tj01hh"
-                            /></a>
-                          </li>
-                          <li
-                            id="dataItem-imomo2yn-comp-imomo2yb"
-                            class="O6KwRn"
-                          >
-                            <a
-                              data-testid="linkElement"
-                              href="http://www.twitter.com/wix"
-                              target="_blank"
-                              class="oRtuWN"
-                              ><img
-                                sizes="undefinedpx"
-                                id="img_1_comp-imomo2yb"
-                                src="{{ asset('/images/01ab6619093f45388d66736ec22e5885.webp') }}"
-                                alt=""
-                                style="object-fit: cover"
-                                class="YaS0jR Tj01hh"
-                            /></a>
-                          </li>
-                          <li
-                            id="dataItem-imomo2yo5-comp-imomo2yb"
-                            class="O6KwRn"
-                          >
-                            <a
-                              data-testid="linkElement"
-                              href="https://instagram.com/wix/"
-                              target="_blank"
-                              class="oRtuWN"
-                              aria-label="White Instagram Icon"
-                              ><img
-                                sizes="undefinedpx"
-                                id="img_2_comp-imomo2yb"
-                                src="{{ asset('/images/81af6121f84c41a5b4391d7d37fce12a.webp') }}"
-                                alt="White Instagram Icon"
-                                style="object-fit: cover"
-                                class="YaS0jR Tj01hh"
-                            /></a>
-                          </li>
-                        </ul>
-                      </div>
-                      <!--/$--><!--$-->
-                      <div
-                        id="comp-ilt416ak"
-                        class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-ilt416ak wixui-rich-text"
-                        data-testid="richTextElement"
-                      >
-                        <p
-                          class="font_8 wixui-rich-text__text"
-                          style="
-                            line-height: 1.6em;
-                            text-align: center;
-                            font-size: 14px;
-                          "
-                        >
-                          <span
-                            style="
-                              font-family: avenir-lt-w01_35-light1475496,
-                                avenir-lt-w05_35-light, sans-serif;
-                            "
-                            class="wixui-rich-text__text"
-                            ><span class="color_32 wixui-rich-text__text"
-                              ><span
-                                style="letter-spacing: normal"
-                                class="wixui-rich-text__text"
-                                >© 2022 by
-                              </span></span
-                            ><span class="color_11 wixui-rich-text__text"
-                              ><span
-                                style="letter-spacing: normal"
-                                class="wixui-rich-text__text"
-                                ><span
-                                  style="font-weight: bold"
-                                  class="wixui-rich-text__text"
-                                  >Medali</span
-                                ></span
-                              ></span
-                            ></span
-                          >
-                        </p>
-
-                        <p
-                          class="font_8 wixui-rich-text__text"
-                          style="
-                            line-height: 1.6em;
-                            text-align: center;
-                            font-size: 14px;
-                          "
-                        >
-                          <span
-                            style="
-                              font-family: avenir-lt-w01_35-light1475496,
-                                avenir-lt-w05_35-light, sans-serif;
-                            "
-                            class="wixui-rich-text__text"
-                            ><span class="color_32 wixui-rich-text__text"
-                              ><span
-                                style="letter-spacing: normal"
-                                class="wixui-rich-text__text"
-                                >Proudly created with
-                                <span
-                                  style="text-decoration: underline"
-                                  class="wixui-rich-text__text"
-                                  ><a
-                                    href="http://wix.com?utm_campaign=vir_created_with"
-                                    target="_blank"
-                                    rel="noreferrer noopener"
-                                    class="wixui-rich-text__text"
-                                    >Wix.com</a
-                                  ></span
-                                ></span
-                              ></span
-                            ></span
-                          >
-                        </p>
-                      </div>
-                      <!--/$--><!--$-->
-                      <div
-                        id="comp-imk75o5m"
-                        class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-imk75o5m wixui-rich-text"
-                        data-testid="richTextElement"
-                      >
-                        <p
-                          class="font_7 wixui-rich-text__text"
-                          style="
-                            font-size: 19px;
-                            line-height: normal;
-                            text-align: center;
-                          "
-                        >
-                          <span
-                            style="font-weight: bold"
-                            class="wixui-rich-text__text"
-                            ><span
-                              style="
-                                font-family: avenir-lt-w01_35-light1475496,
-                                  avenir-lt-w05_35-light, sans-serif;
-                              "
-                              class="wixui-rich-text__text"
-                              ><span
-                                style="font-size: 19px"
-                                class="wixui-rich-text__text"
-                                ><span class="color_11 wixui-rich-text__text"
-                                  ><span
-                                    style="letter-spacing: normal"
-                                    class="wixui-rich-text__text"
-                                    >Contact</span
-                                  ></span
-                                ></span
-                              ></span
-                            ></span
-                          >
-                        </p>
-                      </div>
-                      <!--/$-->
-                      <div data-mesh-id="comp-imuzwbnd-rotated-wrapper">
-                        <!--$-->
-                        <div
-                          id="comp-imuzwbnd"
-                          class="comp-imuzwbnd aVng1S wixui-horizontal-line"
-                        ></div>
-                        <!--/$-->
-                      </div>
-                      <!--$-->
-                      <div
-                        id="comp-imk772sx"
-                        class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-imk772sx wixui-rich-text"
-                        data-testid="richTextElement"
-                      >
-                        <p
-                          class="font_8 wixui-rich-text__text"
-                          style="
-                            line-height: 1.6em;
-                            text-align: center;
-                            font-size: 14px;
-                          "
-                        >
-                          <span
-                            style="
-                              font-family: avenir-lt-w01_35-light1475496,
-                                avenir-lt-w05_35-light, sans-serif;
-                            "
-                            class="wixui-rich-text__text"
-                            ><span class="color_32 wixui-rich-text__text"
-                              ><span
-                                style="letter-spacing: normal"
-                                class="wixui-rich-text__text"
-                                >Tel: 123-456-7890</span
-                              ></span
-                            ></span
-                          >
-                        </p>
-
-                        <p
-                          class="font_8 wixui-rich-text__text"
-                          style="
-                            line-height: 1.6em;
-                            text-align: center;
-                            font-size: 14px;
-                          "
-                        >
-                          <span
-                            style="
-                              font-family: avenir-lt-w01_35-light1475496,
-                                avenir-lt-w05_35-light, sans-serif;
-                            "
-                            class="wixui-rich-text__text"
-                            ><span class="color_32 wixui-rich-text__text"
-                              ><span
-                                style="letter-spacing: normal"
-                                class="wixui-rich-text__text"
-                                >Email:
-                                <a
-                                  data-auto-recognition="true"
-                                  href="mailto:info@mysite.com"
-                                  class="wixui-rich-text__text"
-                                  >info@mysite.com</a
-                                ></span
-                              ></span
-                            ></span
-                          >
-                        </p>
-                      </div>
-                      <!--/$--><!--$-->
-                      <div
-                        id="comp-iltg1qd3"
-                        class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-iltg1qd3 wixui-rich-text"
-                        data-testid="richTextElement"
-                      >
-                        <p
-                          class="font_7 wixui-rich-text__text"
-                          style="
-                            font-size: 19px;
-                            line-height: 1.2em;
-                            text-align: center;
-                          "
-                        >
-                          <span
-                            style="
-                              font-family: avenir-lt-w01_35-light1475496,
-                                avenir-lt-w05_35-light, sans-serif;
-                            "
-                            class="wixui-rich-text__text"
-                            ><span
-                              style="font-weight: bold"
-                              class="wixui-rich-text__text"
-                              ><span
-                                style="font-size: 19px"
-                                class="wixui-rich-text__text"
-                                ><span class="color_11 wixui-rich-text__text"
-                                  ><span
-                                    style="letter-spacing: 0.05em"
-                                    class="wixui-rich-text__text"
-                                    >Addresse</span
-                                  ></span
-                                ></span
-                              ></span
-                            ></span
-                          >
-                        </p>
-                      </div>
-                      <!--/$-->
-                      <div data-mesh-id="comp-imuzsyc4-rotated-wrapper">
-                        <!--$-->
-                        <div
-                          id="comp-imuzsyc4"
-                          class="comp-imuzsyc4 aVng1S wixui-horizontal-line"
-                        ></div>
-                        <!--/$-->
-                      </div>
-                      <!--$-->
-                      <div
-                        id="comp-iltg4r5c"
-                        class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-iltg4r5c wixui-rich-text"
-                        data-testid="richTextElement"
-                      >
-                        <p
-                          class="font_8 wixui-rich-text__text"
-                          style="
-                            line-height: 1.6em;
-                            text-align: center;
-                            font-size: 14px;
-                          "
-                        >
-                          <span
-                            style="
-                              font-family: avenir-lt-w01_35-light1475496,
-                                avenir-lt-w05_35-light, sans-serif;
-                            "
-                            class="wixui-rich-text__text"
-                            ><span class="color_32 wixui-rich-text__text"
-                              ><span
-                                style="letter-spacing: normal"
-                                class="wixui-rich-text__text"
-                                >500 Terry Francois Street</span
-                              ></span
-                            ></span
-                          >
-                        </p>
-
-                        <p
-                          class="font_8 wixui-rich-text__text"
-                          style="
-                            line-height: 1.6em;
-                            text-align: center;
-                            font-size: 14px;
-                          "
-                        >
-                          <span
-                            style="
-                              font-family: avenir-lt-w01_35-light1475496,
-                                avenir-lt-w05_35-light, sans-serif;
-                            "
-                            class="wixui-rich-text__text"
-                            ><span class="color_32 wixui-rich-text__text"
-                              ><span
-                                style="letter-spacing: normal"
-                                class="wixui-rich-text__text"
-                                >San Francisco, CA 94158</span
-                              ></span
-                            ></span
-                          >
-                        </p>
-                      </div>
-                      <!--/$-->
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </footer>
+          <x-footer>  </x-footer>
           </div>
         </div>
         <div
