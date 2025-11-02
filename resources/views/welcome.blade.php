@@ -12643,18 +12643,8 @@
         padding-bottom: 0px;
         box-sizing: border-box;
       }
-      [data-mesh-id="ContaineriijbrinlineContent-gridContainer"]
-        > [id="comp-lc96quda"],
-      [data-mesh-id="ContaineriijbrinlineContent-gridContainer"]
-        > wix-interact-element
-        > [id="comp-lc96quda"] {
-        position: relative;
-        margin: 0px 0px 0 calc((100% - 980px) * 0.5);
-        left: 0px;
-        grid-area: 1 / 1 / 2 / 2;
-        justify-self: start;
-        align-self: start;
-      }
+      ,
+   
       [data-mesh-id="ContaineriijbrinlineContent-gridContainer"]
         > [id="comp-lc96qudb"],
       [data-mesh-id="ContaineriijbrinlineContent-gridContainer"]
@@ -12685,11 +12675,7 @@
         width: 100%;
         min-width: 0;
       }
-      [data-mesh-id="comp-lc96qudainlineContent"] {
-        height: auto;
-        width: 100%;
-        display: flex;
-      }
+      
       [data-mesh-id="comp-lc96qudainlineContent-gridContainer"] {
         position: static;
         display: grid;
@@ -14942,6 +14928,13 @@
                             data-testid="mesh-container-content"
                           >
                             <!--$-->
+
+
+
+
+
+
+                            
                             <section
                               id="comp-lc96quda"
                               tabindex="-1"
@@ -14982,6 +14975,29 @@
                                 </div>
                               </div>
                             </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                             <!--/$--><!--$-->
                             <section
                               id="comp-lc96qudb"
@@ -16020,7 +16036,7 @@
         font-family: 'Inter', Arial, sans-serif;
     ">
         <!-- Category -->
-        <div style="
+        <div class="wixui-rich-text__text" style="
             font-size: 13px;
             font-weight: 400;
             margin-bottom: 8px;
@@ -16029,13 +16045,54 @@
         ">Textile</div>
         
         <!-- Title -->
-        <h2 style="
-            margin: 0;
-            font-size: 28px;
-            font-weight: 700;
-            line-height: 1.2;
-            letter-spacing: -0.5px;
-        ">Comment chercher</h2>
+        <p
+                                                              class="font_7 wixui-rich-text__text"
+                                                              style="
+                                                                font-size: 22px;
+                                                                line-height: normal;
+                                                                text-align: center;
+                                                              "
+                                                            >
+                                                              <span
+                                                                style="
+                                                                  font-size: 22px;
+                                                                "
+                                                                class="wixui-rich-text__text"
+                                                                ><span
+                                                                  style="
+                                                                    color: #ffffff;
+                                                                  "
+                                                                  class="wixui-rich-text__text"
+                                                                  ><span
+                                                                    style="
+                                                                      font-weight: bold;
+                                                                    "
+                                                                    class="wixui-rich-text__text"
+                                                                    ><span
+                                                                      style="
+                                                                        font-family: avenir-lt-w01_35-light1475496,
+                                                                          avenir-lt-w05_35-light,
+                                                                          sans-serif;
+                                                                      "
+                                                                      class="wixui-rich-text__text"
+                                                                      ><span
+                                                                        style="
+                                                                          letter-spacing: normal;
+                                                                        "
+                                                                        class="wixui-rich-text__text"
+                                                                        ><span
+                                                                         
+                                                                          class="wixui-rich-text__text"
+                                                                          >
+                                                                          Accompagnement
+                                                                          &nbsp;</span
+                                                                        ></span
+                                                                      ></span
+                                                                    ></span
+                                                                  ></span
+                                                                ></span
+                                                              >
+                                                            </p>
     </div>
 </div>
                                             </div>
