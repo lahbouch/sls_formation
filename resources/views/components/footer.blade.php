@@ -45,29 +45,14 @@
                               font-family: avenir-lt-w01_35-light1475496,
                                 avenir-lt-w05_35-light, sans-serif;
                             " class="wixui-rich-text__text"><span class="color_32 wixui-rich-text__text"><span
-                                        style="letter-spacing: normal" class="wixui-rich-text__text">© 2022 by
+                                        style="letter-spacing: normal" class="wixui-rich-text__text">© 2025 by
                                     </span></span><span class="color_11 wixui-rich-text__text"><span
                                         style="letter-spacing: normal" class="wixui-rich-text__text"><span
                                             style="font-weight: bold"
-                                            class="wixui-rich-text__text">Medali</span></span></span></span>
+                                            class="wixui-rich-text__text">SLS</span></span></span></span>
                         </p>
 
-                        <p class="font_8 wixui-rich-text__text" style="
-                            line-height: 1.6em;
-                            text-align: center;
-                            font-size: 14px;
-                          ">
-                            <span style="
-                              font-family: avenir-lt-w01_35-light1475496,
-                                avenir-lt-w05_35-light, sans-serif;
-                            " class="wixui-rich-text__text"><span class="color_32 wixui-rich-text__text"><span
-                                        style="letter-spacing: normal" class="wixui-rich-text__text">Proudly created
-                                        with
-                                        <span style="text-decoration: underline" class="wixui-rich-text__text"><a
-                                                href="http://wix.com?utm_campaign=vir_created_with" target="_blank"
-                                                rel="noreferrer noopener"
-                                                class="wixui-rich-text__text">Wix.com</a></span></span></span></span>
-                        </p>
+
                     </div>
                     <!--/$--><!--$-->
                     <div id="comp-imk75o5m" class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-imk75o5m wixui-rich-text"
