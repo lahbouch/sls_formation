@@ -108,7 +108,7 @@
                                                     style="text-align: right" data-marginallchildren="true">
                                                     <li id="comp-ils2cgqy0" data-direction="ltr"
                                                         data-listposition="left" data-data-id="dataItem-imkaysuw"
-                                                        data-state="menu selected  link" data-index="0"
+                                                        data-state="menu   link" data-index="0"
                                                         class="Tg1gOB wixui-dropdown-menu__item xTjc1A"
                                                         data-original-gap-between-text-and-btn="10" aria-hidden="false"
                                                         style="
@@ -133,7 +133,7 @@
                                                     </li>
                                                     <li id="comp-ils2cgqy1" data-direction="ltr"
                                                         data-listposition="center" data-data-id="dataItem-ils2ei87"
-                                                        data-state="menu false  link" data-index="1"
+                                                        data-state="menu selected false  link" data-index="1"
                                                         class="Tg1gOB wixui-dropdown-menu__item xTjc1A"
                                                         data-original-gap-between-text-and-btn="10" aria-hidden="false"
                                                         style="
@@ -144,7 +144,7 @@
                                           overflow: visible;
                                           visibility: inherit;
                                         ">
-                                                        <a data-testid="linkElement" href="/sls-formation/à-propos"
+                                                        <a data-testid="linkElement" href="{{ route('a-propos') }}"
                                                             target="_self" class="UiHgGh">
                                                             <div class="yRj2ms">
                                                                 <div class="">
@@ -169,7 +169,7 @@
                                           overflow: visible;
                                           visibility: inherit;
                                         ">
-                                                        <a data-testid="linkElement" href="/sls-formation/services"
+                                                        <a data-testid="linkElement" href="{{ route('services') }}"
                                                             target="_self" class="UiHgGh" aria-expanded="false"
                                                             aria-haspopup="true">
                                                             <div class="yRj2ms">
@@ -209,7 +209,7 @@
                                           overflow: visible;
                                           visibility: inherit;
                                         ">
-                                                        <a data-testid="linkElement" href="/sls-formation/evenements"
+                                                        <a data-testid="linkElement" href="{{ route('evenements') }}"
                                                             target="_self" class="UiHgGh">
                                                             <div class="yRj2ms">
                                                                 <div class="">
@@ -234,7 +234,7 @@
                                           overflow: visible;
                                           visibility: inherit;
                                         ">
-                                                        <a data-testid="linkElement" href="/sls-formation/galleries"
+                                                        <a data-testid="linkElement" href="{{ route('galleries') }}"
                                                             target="_self" class="UiHgGh">
                                                             <div class="yRj2ms">
                                                                 <div class="">
@@ -259,7 +259,7 @@
                                           overflow: visible;
                                           visibility: inherit;
                                         ">
-                                                        <a data-testid="linkElement" href="/sls-formation/actualités"
+                                                        <a data-testid="linkElement" href="{{ route('actualites') }}"
                                                             target="_self" class="UiHgGh">
                                                             <div class="yRj2ms">
                                                                 <div class="">
@@ -284,7 +284,7 @@
                                           overflow: visible;
                                           visibility: inherit;
                                         ">
-                                                        <a data-testid="linkElement" href="/sls-formation/contact"
+                                                        <a data-testid="linkElement" href="{{ route('contact') }}"
                                                             target="_self" class="UiHgGh">
                                                             <div class="yRj2ms">
                                                                 <div class="">

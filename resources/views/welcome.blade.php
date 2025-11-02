@@ -14935,48 +14935,12 @@
 
 
                             
-                            <section
-                              id="comp-lc96quda"
-                              tabindex="-1"
-                              class="Oqnisf comp-lc96quda wixui-section"
-                              data-block-level-container="ClassicSection"
-                            >
-                              <div
-                                id="bgLayers_comp-lc96quda"
-                                data-hook="bgLayers"
-                                data-motion-part="BG_LAYER comp-lc96quda"
-                                class="MW5IWV"
-                              >
-                                <div
-                                  data-testid="colorUnderlay"
-                                  class="LWbAav Kv1aVt"
-                                ></div>
-                                <div
-                                  id="bgMedia_comp-lc96quda"
-                                  data-motion-part="BG_MEDIA comp-lc96quda"
-                                  class="VgO9Yg"
-                                ></div>
-                              </div>
-                              <div
-                                data-mesh-id="comp-lc96qudainlineContent"
-                                data-testid="inline-content"
-                                class=""
-                              >
-                                <div
-                                  data-mesh-id="comp-lc96qudainlineContent-gridContainer"
-                                  data-testid="mesh-container-content"
-                                >
-                                  <!--$-->
-                                  <div
-                                    class="comp-laryd934 mDzRgi QodGTM ignore-focus wixui-slideshow slick-carousel-slides"
-                                    id="comp-laryd934"
-                                  ></div>
-                                  <!--/$-->
-                                </div>
-                              </div>
-                            </section>
-
-
+                           <section id="comp-lc96quda" tabindex="-1" class="Oqnisf comp-lc96quda wixui-section" data-block-level-container="ClassicSection" aria-label="main content"><div id="bgLayers_comp-lc96quda" data-hook="bgLayers" data-motion-part="BG_LAYER comp-lc96quda" class="MW5IWV"><div data-testid="colorUnderlay" class="LWbAav Kv1aVt"></div><div id="bgMedia_comp-lc96quda" data-motion-part="BG_MEDIA comp-lc96quda" class="VgO9Yg"></div></div><div data-mesh-id="comp-lc96qudainlineContent" data-testid="inline-content" class=""><div data-mesh-id="comp-lc96qudainlineContent-gridContainer" data-testid="mesh-container-content"><div id="comp-laryd934" class="comp-laryd934 mDzRgi QodGTM ignore-focus wixui-slideshow" role="region" tabindex="-1" aria-label="Diaporama"><div data-testid="slidesWrapper" aria-live="off" class="hDJzl4"><div id="comp-laryd985" class="comp-laryd985 imK94d"><div id="bgLayers_comp-laryd985" data-hook="bgLayers" data-motion-part="BG_LAYER comp-laryd985" class="MW5IWV eF_jBL"><div data-testid="colorUnderlay" class="LWbAav Kv1aVt"></div><div id="bgMedia_comp-laryd985" data-motion-part="BG_MEDIA comp-laryd985" class="VgO9Yg"><wow-image id="img_comp-laryd985" class="jhxvbR Kv1aVt dLPlxY mNGsUM bgImage" data-image-info="{&quot;containerId&quot;:&quot;comp-laryd985&quot;,&quot;alignType&quot;:&quot;center&quot;,&quot;displayMode&quot;:&quot;fill&quot;,&quot;targetWidth&quot;:1419,&quot;targetHeight&quot;:609,&quot;isLQIP&quot;:true,&quot;encoding&quot;:&quot;AVIF&quot;,&quot;imageData&quot;:{&quot;width&quot;:6000,&quot;height&quot;:1972,&quot;uri&quot;:&quot;0ba5583727e04a07a2b0920b3359f2c0.jpg&quot;,&quot;name&quot;:&quot;&quot;,&quot;displayMode&quot;:&quot;fill&quot;}}" data-motion-part="BG_IMG comp-laryd985" data-bg-effect-name="" data-has-ssr-src="true"><img src="https://static.wixstatic.com/media/0ba5583727e04a07a2b0920b3359f2c0.jpg/v1/fill/w_1897,h_609,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/0ba5583727e04a07a2b0920b3359f2c0.jpg" alt="Consultation Web" width="1419" height="609" style="width: 1897px; height: 609px; object-fit: cover; object-position: 50% 50%;" data-ssr-src-done="true" fetchpriority="high"></wow-image></div></div><div class="wfm0FO"></div><div data-mesh-id="comp-laryd985inlineContent" data-testid="inline-content" class=""><div data-mesh-id="comp-laryd985inlineContent-gridContainer" data-testid="mesh-container-content"><div id="comp-lb3ibpd5" class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-lb3ibpd5 wixui-rich-text" data-testid="richTextElement"><p class="font_0 wixui-rich-text__text" style="font-size:120px; line-height:0.8em;"><span class="color_11 wixui-rich-text__text"><span style="font-family:avenir-lt-w01_85-heavy1475544,avenir-lt-w05_85-heavy,sans-serif;" class="wixui-rich-text__text"><span style="font-size:120px;" class="wixui-rich-text__text"><span style="font-weight:bold;" class="wixui-rich-text__text"><span style="letter-spacing:-0.02em;" class="wixui-rich-text__text">SLS</span></span></span></span></span></p></div><div id="comp-laryd988" class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-laryd988 wixui-rich-text" data-testid="richTextElement" data-motion-enter="done"><p class="font_0 wixui-rich-text__text" style="font-size:39px; line-height:normal;"><span style="font-size:39px;" class="wixui-rich-text__text"><span class="color_11 wixui-rich-text__text"><span style="font-family:avenir-lt-w01_85-heavy1475544,avenir-lt-w05_85-heavy,sans-serif;" class="wixui-rich-text__text"><span style="font-weight:700; letter-spacing:-0.02em;" class="wixui-rich-text__text">Un acteur reconnue en conseil et formation</span></span></span></span></p></div><div id="comp-larzfavx" class="comp-larzfavx" data-semantic-classname="button" data-motion-enter="done"><a data-testid="linkElement" href="https://medalibarnousi.wixsite.com/sls-formation/à-propos" target="_self" class="StylableButton2545352419__root style-las8o0wn__root wixui-button StylableButton2545352419__link" aria-label="Nous connaitre"><span class="StylableButton2545352419__container"><Button style="z-index: 999 ;" class="StylableButton2545352419__label wixui-button__label" data-testid="stylablebutton-label">Nous connaitre</Button><span class="StylableButton2545352419__icon wixui-button__icon" aria-hidden="true" data-testid="stylablebutton-icon"><span><svg data-bbox="16.5 53.141 167 93.72" viewBox="0 0 200 200" height="200" width="200" xmlns="http://www.w3.org/2000/svg" data-type="shape">
+    <g>
+        <path d="M166.471 56.5l-66.674 66.218-66.219-66.674c-3.826-3.852-10.323-3.874-14.175-.048s-3.874 10.322-.049 14.175l73.281 73.786c3.826 3.852 10.323 3.874 14.175.049l73.786-73.281c3.852-3.826 3.874-10.323.049-14.175s-10.027-3.876-14.174-.05z"></path>
+    </g>
+</svg>
+</span></span></span></a></div></div></div></div></div></div></div></div></section>
 
 
 
