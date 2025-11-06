@@ -12407,6 +12407,95 @@
         width: 239px;
         height: 49px;
       }
+      /* Slide 3 Styles */
+      #comp-laryd985-slide3 {
+        width: 1419px;
+      }
+      [data-mesh-id="comp-laryd985-slide3-inlineContent"] {
+        height: auto;
+        width: 100%;
+      }
+      [data-mesh-id="comp-laryd985-slide3-inlineContent-gridContainer"] {
+        position: static;
+        display: grid;
+        height: auto;
+        width: 100%;
+        min-height: 609px;
+        grid-template-rows: repeat(2, min-content) 1fr;
+        grid-template-columns: 100%;
+      }
+      [data-mesh-id="comp-laryd985-slide3-inlineContent-gridContainer"]
+        > [id="comp-lb3ibpd5-slide3"],
+      [data-mesh-id="comp-laryd985-slide3-inlineContent-gridContainer"]
+        > wix-interact-element
+        > [id="comp-lb3ibpd5-slide3"] {
+        position: relative;
+        margin: 154px 0px 31px calc((100% - 980px) * 0.5);
+        left: 0px;
+        grid-area: 1 / 1 / 2 / 2;
+        justify-self: start;
+        align-self: start;
+      }
+      [data-mesh-id="comp-laryd985-slide3-inlineContent-gridContainer"]
+        > [id="comp-laryd988-slide3"],
+      [data-mesh-id="comp-laryd985-slide3-inlineContent-gridContainer"]
+        > wix-interact-element
+        > [id="comp-laryd988-slide3"] {
+        position: relative;
+        margin: 0px 0px 11px calc((100% - 980px) * 0.5);
+        left: 65px;
+        grid-area: 2 / 1 / 3 / 2;
+        justify-self: start;
+        align-self: start;
+      }
+      [data-mesh-id="comp-laryd985-slide3-inlineContent-gridContainer"]
+        > [id="comp-larzfavx-slide3"],
+      [data-mesh-id="comp-laryd985-slide3-inlineContent-gridContainer"]
+        > wix-interact-element
+        > [id="comp-larzfavx-slide3"] {
+        position: relative;
+        margin: 0px 0px 10px calc((100% - 980px) * 0.5);
+        left: 370px;
+        grid-area: 3 / 1 / 4 / 2;
+        justify-self: start;
+        align-self: start;
+      }
+      #comp-lb3ibpd5-slide3 {
+        --backgroundColor: 0, 0, 0;
+        --alpha-backgroundColor: 0;
+        --blendMode: normal;
+        --textShadow: 0px 0px transparent;
+        --textOutline: 0px 0px transparent;
+      }
+      #comp-lb3ibpd5-slide3 {
+        width: 209px;
+        height: auto;
+      }
+      #comp-laryd988-slide3 {
+        --backgroundColor: 0, 0, 0;
+        --alpha-backgroundColor: 0;
+        --blendMode: normal;
+        --textShadow: 0px 0px transparent;
+        --textOutline: 0px 0px transparent;
+      }
+      @media (prefers-reduced-motion: no-preference) {
+        #comp-laryd988-slide3:not([data-motion-enter="done"]) {
+          opacity: 0;
+        }
+      }
+      #comp-laryd988-slide3 {
+        width: 849px;
+        height: auto;
+      }
+      @media (prefers-reduced-motion: no-preference) {
+        #comp-larzfavx-slide3:not([data-motion-enter="done"]) {
+          opacity: 0;
+        }
+      }
+      #comp-larzfavx-slide3 {
+        width: 239px;
+        height: 49px;
+      }
       #comp-lb3ibpd5 {
         --backgroundColor: 0, 0, 0;
         --alpha-backgroundColor: 0;
@@ -13088,6 +13177,76 @@
 
       @media screen and (min-width: 1px) and (max-width: 0px) {
         #comp-larzfavx-slide2 .style-las8o0wn__root .StylableButton2545352419__label {
+          font-size: 16px;
+        }
+      } /* END STYLABLE DIRECTIVE RULES */
+
+      /* Slide 3 Button Styles - Same as Slide 1 and 2 */
+      #comp-larzfavx-slide3 .style-las8o0wn__root {
+        -st-extends: StylableButton;
+        transition: all 0.2s ease, visibility 0s;
+        box-shadow: 0 1px 0 rgba(14, 24, 33, 0);
+        border-radius: 80px;
+        background: #113c66;
+      }
+
+      /* START STYLABLE DIRECTIVE RULES */
+
+      #comp-larzfavx-slide3 .style-las8o0wn__root:hover {
+        box-shadow: 0 1px 0 rgba(14, 24, 33, 0);
+        background: #e8cca7;
+      }
+
+      #comp-larzfavx-slide3
+        .style-las8o0wn__root:hover
+        .StylableButton2545352419__label {
+        letter-spacing: 0em;
+        color: #343f64;
+      }
+
+      #comp-larzfavx-slide3 .style-las8o0wn__root:disabled {
+        background: #e2e2e2;
+      }
+
+      #comp-larzfavx-slide3
+        .style-las8o0wn__root:disabled
+        .StylableButton2545352419__label {
+        color: #8f8f8f;
+      }
+
+      #comp-larzfavx-slide3
+        .style-las8o0wn__root:disabled
+        .StylableButton2545352419__icon {
+        fill: #8f8f8f;
+      }
+
+      #comp-larzfavx-slide3
+        .style-las8o0wn__root
+        .StylableButton2545352419__container {
+        transition: inherit;
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      #comp-larzfavx-slide3 .style-las8o0wn__root .StylableButton2545352419__label {
+        transition: inherit;
+        font-family: poppins-semibold, poppins, sans-serif;
+        font-weight: 700;
+        letter-spacing: 0em;
+        color: #ffffff;
+        font-size: 20px;
+      }
+
+      #comp-larzfavx-slide3 .style-las8o0wn__root .StylableButton2545352419__icon {
+        transition: inherit;
+        fill: #000000;
+        width: 11px;
+        height: 11px;
+        display: none;
+      }
+
+      @media screen and (min-width: 1px) and (max-width: 0px) {
+        #comp-larzfavx-slide3 .style-las8o0wn__root .StylableButton2545352419__label {
           font-size: 16px;
         }
       } /* END STYLABLE DIRECTIVE RULES */
@@ -14702,10 +14861,10 @@
                                              </p>
                                            </div>
                                            <!-- Slide 1 Button -->
-                                           <div id="comp-larzfavx" class="comp-larzfavx" data-semantic-classname="button" data-motion-enter="done">
-                                             <a data-testid="linkElement" href="{{ route('a-propos') }}" target="_self" class="StylableButton2545352419__root style-las8o0wn__root wixui-button StylableButton2545352419__link" aria-label="Nous connaitre">
+                                           <div id="comp-larzfavx" class="comp-larzfavx" data-semantic-classname="button" data-motion-enter="done" style="pointer-events: auto !important; z-index: 2000 !important; position: relative;">
+                                             <a data-testid="linkElement" href="https://google.com" target="_self" class="StylableButton2545352419__root style-las8o0wn__root wixui-button StylableButton2545352419__link" aria-label="Nous connaitre" style="pointer-events: auto !important; z-index: 2000 !important; position: relative;">
                                                <span class="StylableButton2545352419__container">
-                                                 <Button style="z-index: 999 ;" class="StylableButton2545352419__label wixui-button__label" data-testid="stylablebutton-label">Nous connaitre</Button>
+                                                 <Button style="z-index: 2000 !important; position: relative;" class="StylableButton2545352419__label wixui-button__label" data-testid="stylablebutton-label">Nous connaitre</Button>
                                                  <span class="StylableButton2545352419__icon wixui-button__icon" aria-hidden="true" data-testid="stylablebutton-icon">
                                                    <span>
                                                      <svg data-bbox="16.5 53.141 167 93.72" viewBox="0 0 200 200" height="200" width="200" xmlns="http://www.w3.org/2000/svg" data-type="shape">
@@ -14763,10 +14922,71 @@
                                              </p>
                                            </div>
                                            <!-- Slide 2 Button -->
-                                           <div id="comp-larzfavx-slide2" class="comp-larzfavx" data-semantic-classname="button" data-motion-enter="done">
-                                             <a data-testid="linkElement" href="{{ route('a-propos') }}" target="_self" class="StylableButton2545352419__root style-las8o0wn__root wixui-button StylableButton2545352419__link" aria-label="Nous connaitre">
+                                           <div id="comp-larzfavx-slide2" class="comp-larzfavx" data-semantic-classname="button" data-motion-enter="done" style="pointer-events: auto !important; z-index: 2000 !important; position: relative;">
+                                             <a data-testid="linkElement" href="https://google.com" target="_self" class="StylableButton2545352419__root style-las8o0wn__root wixui-button StylableButton2545352419__link" aria-label="Nous connaitre" style="pointer-events: auto !important; z-index: 2000 !important; position: relative;">
                                                <span class="StylableButton2545352419__container">
-                                                 <Button style="z-index: 999 ;" class="StylableButton2545352419__label wixui-button__label" data-testid="stylablebutton-label">Nous connaitre</Button>
+                                                 <Button style="z-index: 2000 !important; position: relative;" class="StylableButton2545352419__label wixui-button__label" data-testid="stylablebutton-label">Nous connaitre</Button>
+                                                 <span class="StylableButton2545352419__icon wixui-button__icon" aria-hidden="true" data-testid="stylablebutton-icon">
+                                                   <span>
+                                                     <svg data-bbox="16.5 53.141 167 93.72" viewBox="0 0 200 200" height="200" width="200" xmlns="http://www.w3.org/2000/svg" data-type="shape">
+                                                       <g>
+                                                         <path d="M166.471 56.5l-66.674 66.218-66.219-66.674c-3.826-3.852-10.323-3.874-14.175-.048s-3.874 10.322-.049 14.175l73.281 73.786c3.826 3.852 10.323 3.874 14.175.049l73.786-73.281c3.852-3.826 3.874-10.323.049-14.175s-10.027-3.876-14.174-.05z"></path>
+                                                       </g>
+                                                     </svg>
+                                                   </span>
+                                                 </span>
+                                               </span>
+                                             </a>
+                                           </div>
+                                         </div>
+                                       </div>
+                                     </div>
+
+                                     <!-- Slide 3 -->
+                                     <div class="custom-slide" data-slide="2" id="comp-laryd985-slide3" style="position: absolute; width: 100%; height: 100%; transform: translateX(100%); transition: transform 0.6s ease-in-out;">
+                                       <div id="bgLayers_comp-laryd985-slide3" data-hook="bgLayers" data-motion-part="BG_LAYER comp-laryd985-slide3" class="MW5IWV eF_jBL">
+                                         <div data-testid="colorUnderlay" class="LWbAav Kv1aVt"></div>
+                                         <div id="bgMedia_comp-laryd985-slide3" data-motion-part="BG_MEDIA comp-laryd985-slide3" class="VgO9Yg">
+                                           <wow-image id="img_comp-laryd985-slide3" class="jhxvbR Kv1aVt dLPlxY mNGsUM bgImage" data-image-info="{&quot;containerId&quot;:&quot;comp-laryd985-slide3&quot;,&quot;alignType&quot;:&quot;center&quot;,&quot;displayMode&quot;:&quot;fill&quot;,&quot;targetWidth&quot;:1419,&quot;targetHeight&quot;:609,&quot;isLQIP&quot;:true,&quot;encoding&quot;:&quot;AVIF&quot;,&quot;imageData&quot;:{&quot;width&quot;:6000,&quot;height&quot;:1972,&quot;uri&quot;:&quot;0ba5583727e04a07a2b0920b3359f2c0.jpg&quot;,&quot;name&quot;:&quot;&quot;,&quot;displayMode&quot;:&quot;fill&quot;}}" data-motion-part="BG_IMG comp-laryd985-slide3" data-bg-effect-name="" data-has-ssr-src="true">
+                                           <!-- TODO: Replace with your third slide image URL -->
+                                           <img src="https://static.wixstatic.com/media/0ba5583727e04a07a2b0920b3359f2c0.jpg/v1/fill/w_1897,h_609,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/0ba5583727e04a07a2b0920b3359f2c0.jpg" alt="Slide 3" width="1419" height="609" style="width: 1897px; height: 609px; object-fit: cover; object-position: 50% 50%;" data-ssr-src-done="true" fetchpriority="high">
+                                           </wow-image>
+                                         </div>
+                                       </div>
+                                       <div class="wfm0FO"></div>
+                                       <div data-mesh-id="comp-laryd985-slide3-inlineContent" data-testid="inline-content" class="">
+                                         <div data-mesh-id="comp-laryd985-slide3-inlineContent-gridContainer" data-testid="mesh-container-content">
+                                           <!-- Slide 3 Title -->
+                                           <div id="comp-lb3ibpd5-slide3" class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-lb3ibpd5 wixui-rich-text" data-testid="richTextElement">
+                                             <p class="font_0 wixui-rich-text__text" style="font-size:120px; line-height:0.8em;">
+                                               <span class="color_11 wixui-rich-text__text">
+                                                 <span style="font-family:avenir-lt-w01_85-heavy1475544,avenir-lt-w05_85-heavy,sans-serif;" class="wixui-rich-text__text">
+                                                   <span style="font-size:120px;" class="wixui-rich-text__text">
+                                                     <span style="font-weight:bold;" class="wixui-rich-text__text">
+                                                       <span style="letter-spacing:-0.02em;" class="wixui-rich-text__text">SLS</span>
+                                                     </span>
+                                                   </span>
+                                                 </span>
+                                               </span>
+                                             </p>
+                                           </div>
+                                           <!-- Slide 3 Subtitle -->
+                                           <div id="comp-laryd988-slide3" class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-laryd988 wixui-rich-text" data-testid="richTextElement" data-motion-enter="done">
+                                             <p class="font_0 wixui-rich-text__text" style="font-size:39px; line-height:normal;">
+                                               <span style="font-size:39px;" class="wixui-rich-text__text">
+                                                 <span class="color_11 wixui-rich-text__text">
+                                                   <span style="font-family:avenir-lt-w01_85-heavy1475544,avenir-lt-w05_85-heavy,sans-serif;" class="wixui-rich-text__text">
+                                                     <span style="font-weight:700; letter-spacing:-0.02em;" class="wixui-rich-text__text">Un acteur reconnue en conseil et formation</span>
+                                                   </span>
+                                                 </span>
+                                               </span>
+                                             </p>
+                                           </div>
+                                           <!-- Slide 3 Button -->
+                                           <div id="comp-larzfavx-slide3" class="comp-larzfavx" data-semantic-classname="button" data-motion-enter="done" style="pointer-events: auto !important; z-index: 2000 !important; position: relative;">
+                                             <a data-testid="linkElement" href="https://google.com" target="_self" class="StylableButton2545352419__root style-las8o0wn__root wixui-button StylableButton2545352419__link" aria-label="Nous connaitre" style="pointer-events: auto !important; z-index: 2000 !important; position: relative;">
+                                               <span class="StylableButton2545352419__container">
+                                                 <Button style="z-index: 2000 !important; position: relative;" class="StylableButton2545352419__label wixui-button__label" data-testid="stylablebutton-label">Nous connaitre</Button>
                                                  <span class="StylableButton2545352419__icon wixui-button__icon" aria-hidden="true" data-testid="stylablebutton-icon">
                                                    <span>
                                                      <svg data-bbox="16.5 53.141 167 93.72" viewBox="0 0 200 200" height="200" width="200" xmlns="http://www.w3.org/2000/svg" data-type="shape">
@@ -14786,21 +15006,22 @@
                                    </div>
                                    
                                    <!-- Navigation Buttons -->
-                                   <button class="slider-nav-btn slider-prev" aria-label="Previous slide" style="position: absolute; left: 20px; top: 50%; transform: translateY(-50%); z-index: 10; background: rgba(255, 255, 255, 0.7); border: none; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.3s;">
+                                   <button class="slider-nav-btn slider-prev" aria-label="Previous slide" style="position: absolute; left: 20px; top: 50%; transform: translateY(-50%); z-index: 1000; background: rgba(255, 255, 255, 0.7); border: none; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.3s; pointer-events: auto;">
                                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                      </svg>
                                    </button>
-                                   <button class="slider-nav-btn slider-next" aria-label="Next slide" style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%); z-index: 10; background: rgba(255, 255, 255, 0.7); border: none; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.3s;">
+                                   <button class="slider-nav-btn slider-next" aria-label="Next slide" style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%); z-index: 1000; background: rgba(255, 255, 255, 0.7); border: none; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.3s; pointer-events: auto;">
                                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                        <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                                      </svg>
                                    </button>
                                    
                                    <!-- Slide Indicators -->
-                                   <div class="slider-indicators" style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 10; display: flex; gap: 10px;">
-                                     <button class="slider-indicator active" data-slide="0" aria-label="Go to slide 1" style="width: 12px; height: 12px; border-radius: 50%; border: none; background: rgba(255, 255, 255, 0.7); cursor: pointer; transition: background 0.3s;"></button>
-                                     <button class="slider-indicator" data-slide="1" aria-label="Go to slide 2" style="width: 12px; height: 12px; border-radius: 50%; border: none; background: rgba(255, 255, 255, 0.4); cursor: pointer; transition: background 0.3s;"></button>
+                                   <div class="slider-indicators" style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 1000; display: flex; gap: 10px; pointer-events: auto;">
+                                     <button class="slider-indicator active" data-slide="0" aria-label="Go to slide 1" style="width: 12px; height: 12px; border-radius: 50%; border: none; background: rgba(255, 255, 255, 0.7); cursor: pointer; transition: background 0.3s; pointer-events: auto;"></button>
+                                     <button class="slider-indicator" data-slide="1" aria-label="Go to slide 2" style="width: 12px; height: 12px; border-radius: 50%; border: none; background: rgba(255, 255, 255, 0.4); cursor: pointer; transition: background 0.3s; pointer-events: auto;"></button>
+                                     <button class="slider-indicator" data-slide="2" aria-label="Go to slide 3" style="width: 12px; height: 12px; border-radius: 50%; border: none; background: rgba(255, 255, 255, 0.4); cursor: pointer; transition: background 0.3s; pointer-events: auto;"></button>
                                    </div>
                                  </div>
                                </div>
@@ -16239,12 +16460,27 @@
     
     <!-- Custom Slider CSS -->
     <style>
+      .slider-nav-btn {
+        pointer-events: auto !important;
+        z-index: 1000 !important;
+      }
+      
       .slider-nav-btn:hover {
         background: rgba(255, 255, 255, 0.9) !important;
       }
       
+      .slider-indicator {
+        pointer-events: auto !important;
+        z-index: 1000 !important;
+      }
+      
       .slider-indicator:hover {
         background: rgba(255, 255, 255, 0.8) !important;
+      }
+      
+      .slider-indicators {
+        pointer-events: auto !important;
+        z-index: 1000 !important;
       }
       
       .custom-slide {
@@ -16256,8 +16492,63 @@
         pointer-events: auto;
       }
       
+      /* Force all interactive elements in active slides to be clickable */
+      .custom-slide.active * {
+        pointer-events: auto;
+      }
+      
+      /* But allow specific button elements to always be clickable */
+      .custom-slide #comp-larzfavx,
+      .custom-slide #comp-larzfavx-slide2,
+      .custom-slide #comp-larzfavx-slide3 {
+        pointer-events: auto !important;
+      }
+      
+      /* Ensure buttons inside slides are always clickable - HIGHEST PRIORITY */
+      #comp-larzfavx,
+      #comp-larzfavx *,
+      #comp-larzfavx-slide2,
+      #comp-larzfavx-slide2 *,
+      #comp-larzfavx-slide3,
+      #comp-larzfavx-slide3 *,
+      .comp-larzfavx,
+      .comp-larzfavx * {
+        pointer-events: auto !important;
+        position: relative !important;
+        z-index: 9999 !important;
+        cursor: pointer !important;
+      }
+      
+      /* Ensure button containers are also clickable */
+      .StylableButton2545352419__root,
+      .StylableButton2545352419__link,
+      .StylableButton2545352419__container,
+      .StylableButton2545352419__label {
+        pointer-events: auto !important;
+        z-index: 9999 !important;
+        position: relative !important;
+        cursor: pointer !important;
+      }
+      
+      /* Override any background layers that might block clicks */
+      .custom-slide .MW5IWV,
+      .custom-slide .eF_jBL,
+      .custom-slide .wfm0FO {
+        pointer-events: none !important;
+      }
+      
+      /* Ensure button wrapper divs don't block clicks */
+      .custom-slide [data-mesh-id*="inlineContent"],
+      .custom-slide [data-mesh-id*="gridContainer"] {
+        pointer-events: auto !important;
+      }
+      
       .custom-slider-wrapper {
         overflow: hidden;
+      }
+      
+      .custom-slider-container {
+        position: relative;
       }
     </style>
   </body>
