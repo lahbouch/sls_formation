@@ -469,11 +469,6 @@
         -ms-grid-column-align: start;
         -ms-grid-column: 1;
       }
-      #masterPage.mesh-layout #SITE_HEADER-placeholder,
-      #masterPage.mesh-layout #SITE_HEADER_WRAPPER {
-        grid-area: 1/1/2/2;
-        -ms-grid-row: 1;
-      }
       #masterPage.mesh-layout #PAGES_CONTAINER,
       #masterPage.mesh-layout #soapAfterPagesContainer,
       #masterPage.mesh-layout #soapBeforePagesContainer {
@@ -1550,14 +1545,6 @@
       .mHZSwn {
         display: none;
       }
-      .lvxhkV {
-        bottom: 0;
-        left: 0;
-        position: absolute;
-        right: 0;
-        top: 0;
-        width: 100%;
-      }
       .QJjwEo {
         transform: translateY(-100%);
         transition: 0.2s ease-in;
@@ -1575,33 +1562,6 @@
       .LVP8Wf {
         opacity: 1;
         transition: 0.2s;
-      }
-      .VrZrC0 {
-        height: auto;
-      }
-      .VrZrC0,
-      .cKxVkc {
-        position: relative;
-        width: 100%;
-      }
-      :host(:not(.device-mobile-optimized)) .vlM3HR,
-      body:not(.device-mobile-optimized) .vlM3HR {
-        margin-left: calc((100% - var(--site-width)) / 2);
-        width: var(--site-width);
-      }
-      .AT7o0U[data-focuscycled="active"] {
-        outline: 1px solid transparent;
-      }
-      .AT7o0U[data-focuscycled="active"]:not(:focus-within) {
-        outline: 2px solid transparent;
-        transition: outline 0.01s ease;
-      }
-      .AT7o0U .vlM3HR {
-        bottom: 0;
-        left: 0;
-        position: absolute;
-        right: 0;
-        top: 0;
       }
       .Tj01hh,
       .jhxvbR {
@@ -1676,170 +1636,6 @@
           rgba(var(--brd, var(--color_15, color_15)), var(--alpha-brd, 1));
         box-sizing: border-box;
         height: 0;
-      }
-    </style>
-    <style>
-      ._pfxlW {
-        clip-path: inset(50%);
-        height: 24px;
-        position: absolute;
-        width: 24px;
-      }
-      ._pfxlW:active,
-      ._pfxlW:focus {
-        clip-path: unset;
-        right: 0;
-        top: 50%;
-        transform: translateY(-50%);
-      }
-      ._pfxlW.RG3k61 {
-        transform: translateY(-50%) rotate(180deg);
-      }
-      .r4OX7l,
-      .xTjc1A {
-        box-sizing: border-box;
-        height: 100%;
-        overflow: visible;
-        position: relative;
-        width: auto;
-      }
-      .r4OX7l[data-state~="header"] a,
-      .r4OX7l[data-state~="header"] div,
-      [data-state~="header"].xTjc1A a,
-      [data-state~="header"].xTjc1A div {
-        cursor: default !important;
-      }
-      .r4OX7l .UiHgGh,
-      .xTjc1A .UiHgGh {
-        display: inline-block;
-        height: 100%;
-        width: 100%;
-      }
-      .xTjc1A {
-        --display: inline-block;
-        cursor: pointer;
-        display: var(--display);
-        font: var(--fnt, var(--font_1));
-      }
-      .xTjc1A .yRj2ms {
-        padding: 0 var(--pad, 5px);
-      }
-      .xTjc1A .JS76Uv {
-        color: rgb(var(--txt, var(--color_15, color_15)));
-        display: inline-block;
-        padding: 0 10px;
-        transition: var(--trans, color 0.4s ease 0s);
-      }
-      .xTjc1A[data-state~="drop"] {
-        display: block;
-        width: 100%;
-      }
-      .xTjc1A[data-state~="drop"] .JS76Uv {
-        padding: 0 0.5em;
-      }
-      .xTjc1A[data-state~="link"]:hover .JS76Uv,
-      .xTjc1A[data-state~="over"] .JS76Uv {
-        color: rgb(var(--txth, var(--color_14, color_14)));
-        transition: var(--trans, color 0.4s ease 0s);
-      }
-      .xTjc1A[data-state~="selected"] .JS76Uv {
-        color: rgb(var(--txts, var(--color_14, color_14)));
-        transition: var(--trans, color 0.4s ease 0s);
-      }
-      .NHM1d1 {
-        overflow-x: hidden;
-      }
-      .NHM1d1 .R_TAzU {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-        width: 100%;
-      }
-      .NHM1d1 .R_TAzU .aOF1ks {
-        flex: 1;
-      }
-      .NHM1d1 .R_TAzU .y7qwii {
-        height: calc(100% - (var(--menuTotalBordersY, 0px)));
-        overflow: visible;
-        white-space: nowrap;
-        width: calc(100% - (var(--menuTotalBordersX, 0px)));
-      }
-      .NHM1d1 .R_TAzU .y7qwii .Tg1gOB,
-      .NHM1d1 .R_TAzU .y7qwii .p90CkU {
-        direction: var(--menu-direction);
-        display: inline-block;
-        text-align: var(--menu-align, var(--align));
-      }
-      .NHM1d1 .R_TAzU .y7qwii .mvZ3NH {
-        display: block;
-        width: 100%;
-      }
-      .NHM1d1 .h3jCPd {
-        direction: var(--submenus-direction);
-        display: block;
-        opacity: 1;
-        text-align: var(--submenus-align, var(--align));
-        z-index: 99999;
-      }
-      .NHM1d1 .h3jCPd .wkJ2fp {
-        display: inherit;
-        overflow: visible;
-        visibility: inherit;
-        white-space: nowrap;
-        width: auto;
-      }
-      .NHM1d1 .h3jCPd.DlGBN0 {
-        transition: visibility;
-        transition-delay: 0.2s;
-        visibility: visible;
-      }
-      .NHM1d1 .h3jCPd .p90CkU {
-        display: inline-block;
-      }
-      .NHM1d1 .vh74Xw {
-        display: none;
-      }
-      .XwCBRN > nav {
-        bottom: 0;
-        left: 0;
-        right: 0;
-        top: 0;
-      }
-      .XwCBRN .h3jCPd,
-      .XwCBRN .y7qwii,
-      .XwCBRN > nav {
-        position: absolute;
-      }
-      .XwCBRN .h3jCPd {
-        margin-top: 7px;
-        visibility: hidden;
-      }
-      .XwCBRN .h3jCPd[data-dropMode="dropUp"] {
-        margin-bottom: 7px;
-        margin-top: 0;
-      }
-      .XwCBRN .wkJ2fp {
-        background-color: rgba(
-          var(--bgDrop, var(--color_11, color_11)),
-          var(--alpha-bgDrop, 1)
-        );
-        border-radius: var(--rd, 0);
-        box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, 0.6));
-      }
-      .P0dCOY .PJ4KCX {
-        background-color: rgba(
-          var(--bg, var(--color_11, color_11)),
-          var(--alpha-bg, 1)
-        );
-        bottom: 0;
-        left: 0;
-        overflow: hidden;
-        position: absolute;
-        right: 0;
-        top: 0;
-      }
-      .xpmKd_ {
-        border-radius: var(--overflow-wrapper-border-radius);
       }
     </style>
     <style>
@@ -10495,9 +10291,6 @@
         margin-top: 0px;
         margin-bottom: 0px;
       }
-      #masterPage.landingPage #SITE_HEADER {
-        display: none;
-      }
       #masterPage.landingPage #comp-jn4hmzm6 {
         display: none;
       }
@@ -10508,9 +10301,6 @@
         display: none;
       }
       #masterPage.landingPage #SITE_FOOTER {
-        display: none;
-      }
-      #masterPage.landingPage #SITE_HEADER-placeholder {
         display: none;
       }
       #masterPage.landingPage #SITE_FOOTER-placeholder {
@@ -11231,246 +11021,6 @@
       }
       #masterPage.landingPage {
         --top-offset: 0px;
-      }
-      #SITE_HEADER {
-        left: 0;
-        margin-left: 0;
-        width: 100%;
-        min-width: 0;
-      }
-      [data-mesh-id="SITE_HEADERinlineContent"] {
-        height: auto;
-        width: 100%;
-      }
-      [data-mesh-id="SITE_HEADERinlineContent-gridContainer"] {
-        position: static;
-        display: grid;
-        height: auto;
-        width: 100%;
-        min-height: auto;
-        grid-template-rows: 1fr;
-        grid-template-columns: 100%;
-      }
-      [data-mesh-id="SITE_HEADERinlineContent-gridContainer"]
-        > [id="comp-ilukhsef"],
-      [data-mesh-id="SITE_HEADERinlineContent-gridContainer"]
-        > wix-interact-element
-        > [id="comp-ilukhsef"] {
-        position: relative;
-        margin: 0px 0px 2px calc((100% - 980px) * 0.5);
-        left: 0px;
-        grid-area: 1 / 1 / 2 / 2;
-        justify-self: start;
-        align-self: start;
-      }
-      #SITE_HEADER {
-        --bg-overlay-color: transparent;
-        --bg-gradient: none;
-      }
-      #comp-ilukhsef {
-        left: 0;
-        margin-left: 0;
-        width: 100%;
-        min-width: 980px;
-      }
-      [data-mesh-id="mediaiu40shmu1inlineContent"] {
-        height: auto;
-        width: 100%;
-      }
-      [data-mesh-id="mediaiu40shmu1inlineContent-gridContainer"] {
-        position: static;
-        display: grid;
-        height: auto;
-        width: 100%;
-        min-height: auto;
-        grid-template-rows: 1fr;
-        grid-template-columns: 100%;
-      }
-      [data-mesh-id="mediaiu40shmu1inlineContent-gridContainer"]
-        > [id="comp-ilt53v9b"],
-      [data-mesh-id="mediaiu40shmu1inlineContent-gridContainer"]
-        > wix-interact-element
-        > [id="comp-ilt53v9b"] {
-        position: relative;
-        margin: 0px 0px 1px calc((100% - 980px) * 0.5);
-        left: -290px;
-        grid-area: 1 / 1 / 2 / 2;
-        justify-self: start;
-        align-self: start;
-      }
-      [data-mesh-id="mediaiu40shmu1inlineContent-gridContainer"]
-        > [id="comp-ils2cgqy"],
-      [data-mesh-id="mediaiu40shmu1inlineContent-gridContainer"]
-        > wix-interact-element
-        > [id="comp-ils2cgqy"] {
-        position: relative;
-        margin: 5px 0px 7px calc((100% - 980px) * 0.5);
-        left: 260px;
-        grid-area: 1 / 1 / 2 / 2;
-        justify-self: start;
-        align-self: start;
-      }
-      [data-mesh-id="mediaiu40shmu1inlineContent-gridContainer"]
-        > [id="comp-kjgrk1fo"],
-      [data-mesh-id="mediaiu40shmu1inlineContent-gridContainer"]
-        > wix-interact-element
-        > [id="comp-kjgrk1fo"] {
-        position: relative;
-        margin: 13px 0px 9px calc((100% - 980px) * 0.5);
-        left: 979px;
-        grid-area: 1 / 1 / 2 / 2;
-        justify-self: start;
-        align-self: start;
-      }
-      #comp-ilukhsef {
-        --bg-overlay-color: transparent;
-        --bg-gradient: none;
-        --padding: 0px;
-        --margin: 0px;
-        min-width: 980px;
-        --firstChildMarginTop: -1px;
-        --lastChildMarginBottom: -1px;
-        --direction: ltr;
-      }
-      #mediaiu40shmu1 {
-        width: 980px;
-      }
-      #mediaiu40shmu1 {
-        --bg-overlay-color: rgb(17, 60, 102);
-        --bg-gradient: none;
-        width: 100%;
-        --column-width: 980px;
-        --column-flex: 980;
-      }
-      #comp-ilt53v9b {
-        --brw: 0px;
-        --brd: 162, 163, 233;
-        --bg: var(--color_11);
-        --rd: 0px 0px 30px 0px;
-        --shd: none;
-        --gradient: none;
-        --alpha-bg: 1;
-        --alpha-brd: 1;
-        --boxShadowToggleOn-shd: none;
-        --bg-gradient: none;
-      }
-      #comp-ilt53v9b {
-        width: 478px;
-      }
-      [data-mesh-id="comp-ilt53v9binlineContent"] {
-        height: auto;
-        width: 478px;
-      }
-      [data-mesh-id="comp-ilt53v9binlineContent-gridContainer"] {
-        position: static;
-        display: grid;
-        height: auto;
-        width: 100%;
-        min-height: auto;
-        grid-template-rows: 1fr;
-        grid-template-columns: 100%;
-      }
-      [data-mesh-id="comp-ilt53v9binlineContent-gridContainer"]
-        > [id="comp-lalf0k92"],
-      [data-mesh-id="comp-ilt53v9binlineContent-gridContainer"]
-        > wix-interact-element
-        > [id="comp-lalf0k92"] {
-        position: relative;
-        margin: 6px 0px 5px 0;
-        left: 174px;
-        grid-area: 1 / 1 / 2 / 2;
-        justify-self: start;
-        align-self: start;
-      }
-      [data-mesh-id="comp-ilt53v9binlineContent-gridContainer"]
-        > [id="comp-lamfodrm"],
-      [data-mesh-id="comp-ilt53v9binlineContent-gridContainer"]
-        > wix-interact-element
-        > [id="comp-lamfodrm"] {
-        position: relative;
-        margin: 13px 0px 13px 0;
-        left: 260px;
-        grid-area: 1 / 1 / 2 / 2;
-        justify-self: start;
-        align-self: start;
-      }
-      #comp-ilt53v9b {
-        --shc-mutated-brightness: 128, 128, 128;
-      }
-      #comp-lalf0k92 {
-        --contentPaddingLeft: 0px;
-        --contentPaddingRight: 0px;
-        --contentPaddingTop: 0px;
-        --contentPaddingBottom: 0px;
-      }
-      @media (prefers-reduced-motion: no-preference) {
-        #comp-lalf0k92:not([data-motion-enter="done"]) {
-          opacity: 0;
-        }
-      }
-      #comp-lalf0k92 {
-        width: 72px;
-        height: 40px;
-      }
-      #comp-lalf0k92 {
-        --height: 40px;
-        --width: 72px;
-        --mask-image: url("data:image/svg+xml,%3Csvg preserveAspectRatio='none' data-bbox='20 20 160 160' viewBox='20 20 160 160' height='200' width='200' xmlns='http://www.w3.org/2000/svg' data-type='shape'%3E%3Cg%3E%3Cpath d='M180 20v160H20V20h160z'/%3E%3C/g%3E%3C/svg%3E%0A");
-        --mask-position: 0% 0%;
-        --mask-size: 100% 100%;
-        --mask-repeat: no-repeat;
-      }
-      #comp-lamfodrm {
-        --backgroundColor: 0, 0, 0;
-        --alpha-backgroundColor: 0;
-        --blendMode: normal;
-        --textShadow: 0px 0px transparent;
-        --textOutline: 0px 0px transparent;
-      }
-      @media (prefers-reduced-motion: no-preference) {
-        #comp-lamfodrm:not([data-motion-enter="done"]) {
-          opacity: 0;
-        }
-      }
-      #comp-lamfodrm {
-        width: 217px;
-        height: auto;
-      }
-      #comp-lamfodrm {
-        --min-height: 24px;
-        --text-direction: var(--wix-opt-in-direction);
-      }
-      #comp-ils2cgqy {
-        --menuTotalBordersX: 0px;
-        --menuTotalBordersY: 0px;
-        --bgDrop: var(--color_19);
-        --rd: 0px;
-        --shd: none;
-        --fnt: normal normal 700 14px/1.4em avenir-lt-w01_35-light1475496,
-          sans-serif;
-        --pad: 5px;
-        --txt: var(--color_11);
-        --alpha-txt: 1;
-        --trans: color 0.4s ease 0s;
-        --txth: var(--color_18);
-        --alpha-txth: 1;
-        --txts: var(--color_32);
-        --alpha-txts: 1;
-        --alpha-bgDrop: 1;
-        --boxShadowToggleOn-shd: none;
-      }
-      #comp-ils2cgqy {
-        width: 669px;
-        height: 40px;
-      }
-      #comp-ils2cgqy {
-        --menuTotalBordersY: 0px;
-        --menuTotalBordersX: 0px;
-        --submenus-direction: inherit;
-        --menu-direction: inherit;
-        --align: start;
-        --menu-align: inherit;
-        --submenus-align: inherit;
       }
       #comp-kjgrk1fo {
         --bg: 0, 0, 0;
@@ -12768,6 +12318,95 @@
         justify-self: start;
         align-self: start;
       }
+      /* Slide 2 Styles */
+      #comp-laryd985-slide2 {
+        width: 1419px;
+      }
+      [data-mesh-id="comp-laryd985-slide2-inlineContent"] {
+        height: auto;
+        width: 100%;
+      }
+      [data-mesh-id="comp-laryd985-slide2-inlineContent-gridContainer"] {
+        position: static;
+        display: grid;
+        height: auto;
+        width: 100%;
+        min-height: 609px;
+        grid-template-rows: repeat(2, min-content) 1fr;
+        grid-template-columns: 100%;
+      }
+      [data-mesh-id="comp-laryd985-slide2-inlineContent-gridContainer"]
+        > [id="comp-lb3ibpd5-slide2"],
+      [data-mesh-id="comp-laryd985-slide2-inlineContent-gridContainer"]
+        > wix-interact-element
+        > [id="comp-lb3ibpd5-slide2"] {
+        position: relative;
+        margin: 154px 0px 31px calc((100% - 980px) * 0.5);
+        left: 0px;
+        grid-area: 1 / 1 / 2 / 2;
+        justify-self: start;
+        align-self: start;
+      }
+      [data-mesh-id="comp-laryd985-slide2-inlineContent-gridContainer"]
+        > [id="comp-laryd988-slide2"],
+      [data-mesh-id="comp-laryd985-slide2-inlineContent-gridContainer"]
+        > wix-interact-element
+        > [id="comp-laryd988-slide2"] {
+        position: relative;
+        margin: 0px 0px 11px calc((100% - 980px) * 0.5);
+        left: 65px;
+        grid-area: 2 / 1 / 3 / 2;
+        justify-self: start;
+        align-self: start;
+      }
+      [data-mesh-id="comp-laryd985-slide2-inlineContent-gridContainer"]
+        > [id="comp-larzfavx-slide2"],
+      [data-mesh-id="comp-laryd985-slide2-inlineContent-gridContainer"]
+        > wix-interact-element
+        > [id="comp-larzfavx-slide2"] {
+        position: relative;
+        margin: 0px 0px 10px calc((100% - 980px) * 0.5);
+        left: 370px;
+        grid-area: 3 / 1 / 4 / 2;
+        justify-self: start;
+        align-self: start;
+      }
+      #comp-lb3ibpd5-slide2 {
+        --backgroundColor: 0, 0, 0;
+        --alpha-backgroundColor: 0;
+        --blendMode: normal;
+        --textShadow: 0px 0px transparent;
+        --textOutline: 0px 0px transparent;
+      }
+      #comp-lb3ibpd5-slide2 {
+        width: 209px;
+        height: auto;
+      }
+      #comp-laryd988-slide2 {
+        --backgroundColor: 0, 0, 0;
+        --alpha-backgroundColor: 0;
+        --blendMode: normal;
+        --textShadow: 0px 0px transparent;
+        --textOutline: 0px 0px transparent;
+      }
+      @media (prefers-reduced-motion: no-preference) {
+        #comp-laryd988-slide2:not([data-motion-enter="done"]) {
+          opacity: 0;
+        }
+      }
+      #comp-laryd988-slide2 {
+        width: 849px;
+        height: auto;
+      }
+      @media (prefers-reduced-motion: no-preference) {
+        #comp-larzfavx-slide2:not([data-motion-enter="done"]) {
+          opacity: 0;
+        }
+      }
+      #comp-larzfavx-slide2 {
+        width: 239px;
+        height: 49px;
+      }
       #comp-lb3ibpd5 {
         --backgroundColor: 0, 0, 0;
         --alpha-backgroundColor: 0;
@@ -13383,6 +13022,76 @@
         }
       } /* END STYLABLE DIRECTIVE RULES */
 
+      /* Slide 2 Button Styles - Same as Slide 1 */
+      #comp-larzfavx-slide2 .style-las8o0wn__root {
+        -st-extends: StylableButton;
+        transition: all 0.2s ease, visibility 0s;
+        box-shadow: 0 1px 0 rgba(14, 24, 33, 0);
+        border-radius: 80px;
+        background: #113c66;
+      }
+
+      /* START STYLABLE DIRECTIVE RULES */
+
+      #comp-larzfavx-slide2 .style-las8o0wn__root:hover {
+        box-shadow: 0 1px 0 rgba(14, 24, 33, 0);
+        background: #e8cca7;
+      }
+
+      #comp-larzfavx-slide2
+        .style-las8o0wn__root:hover
+        .StylableButton2545352419__label {
+        letter-spacing: 0em;
+        color: #343f64;
+      }
+
+      #comp-larzfavx-slide2 .style-las8o0wn__root:disabled {
+        background: #e2e2e2;
+      }
+
+      #comp-larzfavx-slide2
+        .style-las8o0wn__root:disabled
+        .StylableButton2545352419__label {
+        color: #8f8f8f;
+      }
+
+      #comp-larzfavx-slide2
+        .style-las8o0wn__root:disabled
+        .StylableButton2545352419__icon {
+        fill: #8f8f8f;
+      }
+
+      #comp-larzfavx-slide2
+        .style-las8o0wn__root
+        .StylableButton2545352419__container {
+        transition: inherit;
+        flex-direction: row;
+        justify-content: center;
+      }
+
+      #comp-larzfavx-slide2 .style-las8o0wn__root .StylableButton2545352419__label {
+        transition: inherit;
+        font-family: poppins-semibold, poppins, sans-serif;
+        font-weight: 700;
+        letter-spacing: 0em;
+        color: #ffffff;
+        font-size: 20px;
+      }
+
+      #comp-larzfavx-slide2 .style-las8o0wn__root .StylableButton2545352419__icon {
+        transition: inherit;
+        fill: #000000;
+        width: 11px;
+        height: 11px;
+        display: none;
+      }
+
+      @media screen and (min-width: 1px) and (max-width: 0px) {
+        #comp-larzfavx-slide2 .style-las8o0wn__root .StylableButton2545352419__label {
+          font-size: 16px;
+        }
+      } /* END STYLABLE DIRECTIVE RULES */
+
       #comp-larzim54 .style-las8uxpk__root {
         -st-extends: StylableButton;
         transition: all 0.2s ease, visibility 0s;
@@ -13560,6 +13269,14 @@
         height: 100%;
         --fill-layer-image-opacity: 1;
         --bg-overlay-color: rgb(248, 179, 137);
+        --bg-gradient: none;
+      }
+      #comp-laryd985-slide2 {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        --fill-layer-image-opacity: 1;
+        --bg-overlay-color: rgb(204, 200, 241);
         --bg-gradient: none;
       }
       #comp-lb3ibpd5 {
@@ -14935,12 +14652,160 @@
 
 
                             
-                           <section id="comp-lc96quda" tabindex="-1" class="Oqnisf comp-lc96quda wixui-section" data-block-level-container="ClassicSection" aria-label="main content"><div id="bgLayers_comp-lc96quda" data-hook="bgLayers" data-motion-part="BG_LAYER comp-lc96quda" class="MW5IWV"><div data-testid="colorUnderlay" class="LWbAav Kv1aVt"></div><div id="bgMedia_comp-lc96quda" data-motion-part="BG_MEDIA comp-lc96quda" class="VgO9Yg"></div></div><div data-mesh-id="comp-lc96qudainlineContent" data-testid="inline-content" class=""><div data-mesh-id="comp-lc96qudainlineContent-gridContainer" data-testid="mesh-container-content"><div id="comp-laryd934" class="comp-laryd934 mDzRgi QodGTM ignore-focus wixui-slideshow" role="region" tabindex="-1" aria-label="Diaporama"><div data-testid="slidesWrapper" aria-live="off" class="hDJzl4"><div id="comp-laryd985" class="comp-laryd985 imK94d"><div id="bgLayers_comp-laryd985" data-hook="bgLayers" data-motion-part="BG_LAYER comp-laryd985" class="MW5IWV eF_jBL"><div data-testid="colorUnderlay" class="LWbAav Kv1aVt"></div><div id="bgMedia_comp-laryd985" data-motion-part="BG_MEDIA comp-laryd985" class="VgO9Yg"><wow-image id="img_comp-laryd985" class="jhxvbR Kv1aVt dLPlxY mNGsUM bgImage" data-image-info="{&quot;containerId&quot;:&quot;comp-laryd985&quot;,&quot;alignType&quot;:&quot;center&quot;,&quot;displayMode&quot;:&quot;fill&quot;,&quot;targetWidth&quot;:1419,&quot;targetHeight&quot;:609,&quot;isLQIP&quot;:true,&quot;encoding&quot;:&quot;AVIF&quot;,&quot;imageData&quot;:{&quot;width&quot;:6000,&quot;height&quot;:1972,&quot;uri&quot;:&quot;0ba5583727e04a07a2b0920b3359f2c0.jpg&quot;,&quot;name&quot;:&quot;&quot;,&quot;displayMode&quot;:&quot;fill&quot;}}" data-motion-part="BG_IMG comp-laryd985" data-bg-effect-name="" data-has-ssr-src="true"><img src="https://static.wixstatic.com/media/0ba5583727e04a07a2b0920b3359f2c0.jpg/v1/fill/w_1897,h_609,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/0ba5583727e04a07a2b0920b3359f2c0.jpg" alt="Consultation Web" width="1419" height="609" style="width: 1897px; height: 609px; object-fit: cover; object-position: 50% 50%;" data-ssr-src-done="true" fetchpriority="high"></wow-image></div></div><div class="wfm0FO"></div><div data-mesh-id="comp-laryd985inlineContent" data-testid="inline-content" class=""><div data-mesh-id="comp-laryd985inlineContent-gridContainer" data-testid="mesh-container-content"><div id="comp-lb3ibpd5" class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-lb3ibpd5 wixui-rich-text" data-testid="richTextElement"><p class="font_0 wixui-rich-text__text" style="font-size:120px; line-height:0.8em;"><span class="color_11 wixui-rich-text__text"><span style="font-family:avenir-lt-w01_85-heavy1475544,avenir-lt-w05_85-heavy,sans-serif;" class="wixui-rich-text__text"><span style="font-size:120px;" class="wixui-rich-text__text"><span style="font-weight:bold;" class="wixui-rich-text__text"><span style="letter-spacing:-0.02em;" class="wixui-rich-text__text">SLS</span></span></span></span></span></p></div><div id="comp-laryd988" class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-laryd988 wixui-rich-text" data-testid="richTextElement" data-motion-enter="done"><p class="font_0 wixui-rich-text__text" style="font-size:39px; line-height:normal;"><span style="font-size:39px;" class="wixui-rich-text__text"><span class="color_11 wixui-rich-text__text"><span style="font-family:avenir-lt-w01_85-heavy1475544,avenir-lt-w05_85-heavy,sans-serif;" class="wixui-rich-text__text"><span style="font-weight:700; letter-spacing:-0.02em;" class="wixui-rich-text__text">Un acteur reconnue en conseil et formation</span></span></span></span></p></div><div id="comp-larzfavx" class="comp-larzfavx" data-semantic-classname="button" data-motion-enter="done"><a data-testid="linkElement" href="https://medalibarnousi.wixsite.com/sls-formation/à-propos" target="_self" class="StylableButton2545352419__root style-las8o0wn__root wixui-button StylableButton2545352419__link" aria-label="Nous connaitre"><span class="StylableButton2545352419__container"><Button style="z-index: 999 ;" class="StylableButton2545352419__label wixui-button__label" data-testid="stylablebutton-label">Nous connaitre</Button><span class="StylableButton2545352419__icon wixui-button__icon" aria-hidden="true" data-testid="stylablebutton-icon"><span><svg data-bbox="16.5 53.141 167 93.72" viewBox="0 0 200 200" height="200" width="200" xmlns="http://www.w3.org/2000/svg" data-type="shape">
-    <g>
-        <path d="M166.471 56.5l-66.674 66.218-66.219-66.674c-3.826-3.852-10.323-3.874-14.175-.048s-3.874 10.322-.049 14.175l73.281 73.786c3.826 3.852 10.323 3.874 14.175.049l73.786-73.281c3.852-3.826 3.874-10.323.049-14.175s-10.027-3.876-14.174-.05z"></path>
-    </g>
-</svg>
-</span></span></span></a></div></div></div></div></div></div></div></div></section>
+                           <section id="comp-lc96quda" tabindex="-1" class="Oqnisf comp-lc96quda wixui-section" data-block-level-container="ClassicSection" aria-label="main content">
+                             <div id="bgLayers_comp-lc96quda" data-hook="bgLayers" data-motion-part="BG_LAYER comp-lc96quda" class="MW5IWV">
+                               <div data-testid="colorUnderlay" class="LWbAav Kv1aVt"></div>
+                               <div id="bgMedia_comp-lc96quda" data-motion-part="BG_MEDIA comp-lc96quda" class="VgO9Yg"></div>
+                             </div>
+                             <div data-mesh-id="comp-lc96qudainlineContent" data-testid="inline-content" class="">
+                               <div data-mesh-id="comp-lc96qudainlineContent-gridContainer" data-testid="mesh-container-content">
+                                 <div id="comp-laryd934" class="custom-slider-container" style="position: relative; width: 100%; height: 609px; overflow: hidden;">
+                                   <div class="custom-slider-wrapper" style="position: relative; width: 100%; height: 100%;">
+                                     
+                                     <!-- Slide 1 -->
+                                     <div class="custom-slide active" data-slide="0" id="comp-laryd985" style="position: absolute; width: 100%; height: 100%; transform: translateX(0%); transition: transform 0.6s ease-in-out;">
+                                       <div id="bgLayers_comp-laryd985" data-hook="bgLayers" data-motion-part="BG_LAYER comp-laryd985" class="MW5IWV eF_jBL">
+                                         <div data-testid="colorUnderlay" class="LWbAav Kv1aVt"></div>
+                                         <div id="bgMedia_comp-laryd985" data-motion-part="BG_MEDIA comp-laryd985" class="VgO9Yg">
+                                           <wow-image id="img_comp-laryd985" class="jhxvbR Kv1aVt dLPlxY mNGsUM bgImage" data-image-info="{&quot;containerId&quot;:&quot;comp-laryd985&quot;,&quot;alignType&quot;:&quot;center&quot;,&quot;displayMode&quot;:&quot;fill&quot;,&quot;targetWidth&quot;:1419,&quot;targetHeight&quot;:609,&quot;isLQIP&quot;:true,&quot;encoding&quot;:&quot;AVIF&quot;,&quot;imageData&quot;:{&quot;width&quot;:6000,&quot;height&quot;:1972,&quot;uri&quot;:&quot;0ba5583727e04a07a2b0920b3359f2c0.jpg&quot;,&quot;name&quot;:&quot;&quot;,&quot;displayMode&quot;:&quot;fill&quot;}}" data-motion-part="BG_IMG comp-laryd985" data-bg-effect-name="" data-has-ssr-src="true">
+                                             <img src="https://static.wixstatic.com/media/0ba5583727e04a07a2b0920b3359f2c0.jpg/v1/fill/w_1897,h_609,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/0ba5583727e04a07a2b0920b3359f2c0.jpg" alt="Consultation Web" width="1419" height="609" style="width: 1897px; height: 609px; object-fit: cover; object-position: 50% 50%;" data-ssr-src-done="true" fetchpriority="high">
+                                           </wow-image>
+                                         </div>
+                                       </div>
+                                       <div class="wfm0FO"></div>
+                                       <div data-mesh-id="comp-laryd985inlineContent" data-testid="inline-content" class="">
+                                         <div data-mesh-id="comp-laryd985inlineContent-gridContainer" data-testid="mesh-container-content">
+                                           <!-- Slide 1 Title -->
+                                           <div id="comp-lb3ibpd5" class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-lb3ibpd5 wixui-rich-text" data-testid="richTextElement">
+                                             <p class="font_0 wixui-rich-text__text" style="font-size:120px; line-height:0.8em;">
+                                               <span class="color_11 wixui-rich-text__text">
+                                                 <span style="font-family:avenir-lt-w01_85-heavy1475544,avenir-lt-w05_85-heavy,sans-serif;" class="wixui-rich-text__text">
+                                                   <span style="font-size:120px;" class="wixui-rich-text__text">
+                                                     <span style="font-weight:bold;" class="wixui-rich-text__text">
+                                                       <span style="letter-spacing:-0.02em;" class="wixui-rich-text__text">SLS</span>
+                                                     </span>
+                                                   </span>
+                                                 </span>
+                                               </span>
+                                             </p>
+                                           </div>
+                                           <!-- Slide 1 Subtitle -->
+                                           <div id="comp-laryd988" class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-laryd988 wixui-rich-text" data-testid="richTextElement" data-motion-enter="done">
+                                             <p class="font_0 wixui-rich-text__text" style="font-size:39px; line-height:normal;">
+                                               <span style="font-size:39px;" class="wixui-rich-text__text">
+                                                 <span class="color_11 wixui-rich-text__text">
+                                                   <span style="font-family:avenir-lt-w01_85-heavy1475544,avenir-lt-w05_85-heavy,sans-serif;" class="wixui-rich-text__text">
+                                                     <span style="font-weight:700; letter-spacing:-0.02em;" class="wixui-rich-text__text">Un acteur reconnue en conseil et formation</span>
+                                                   </span>
+                                                 </span>
+                                               </span>
+                                             </p>
+                                           </div>
+                                           <!-- Slide 1 Button -->
+                                           <div id="comp-larzfavx" class="comp-larzfavx" data-semantic-classname="button" data-motion-enter="done">
+                                             <a data-testid="linkElement" href="{{ route('a-propos') }}" target="_self" class="StylableButton2545352419__root style-las8o0wn__root wixui-button StylableButton2545352419__link" aria-label="Nous connaitre">
+                                               <span class="StylableButton2545352419__container">
+                                                 <Button style="z-index: 999 ;" class="StylableButton2545352419__label wixui-button__label" data-testid="stylablebutton-label">Nous connaitre</Button>
+                                                 <span class="StylableButton2545352419__icon wixui-button__icon" aria-hidden="true" data-testid="stylablebutton-icon">
+                                                   <span>
+                                                     <svg data-bbox="16.5 53.141 167 93.72" viewBox="0 0 200 200" height="200" width="200" xmlns="http://www.w3.org/2000/svg" data-type="shape">
+                                                       <g>
+                                                         <path d="M166.471 56.5l-66.674 66.218-66.219-66.674c-3.826-3.852-10.323-3.874-14.175-.048s-3.874 10.322-.049 14.175l73.281 73.786c3.826 3.852 10.323 3.874 14.175.049l73.786-73.281c3.852-3.826 3.874-10.323.049-14.175s-10.027-3.876-14.174-.05z"></path>
+                                                       </g>
+                                                     </svg>
+                                                   </span>
+                                                 </span>
+                                               </span>
+                                             </a>
+                                           </div>
+                                         </div>
+                                       </div>
+                                     </div>
+
+                                     <!-- Slide 2 -->
+                                     <div class="custom-slide" data-slide="1" id="comp-laryd985-slide2" style="position: absolute; width: 100%; height: 100%; transform: translateX(100%); transition: transform 0.6s ease-in-out;">
+                                       <div id="bgLayers_comp-laryd985-slide2" data-hook="bgLayers" data-motion-part="BG_LAYER comp-laryd985-slide2" class="MW5IWV eF_jBL">
+                                         <div data-testid="colorUnderlay" class="LWbAav Kv1aVt"></div>
+                                         <div id="bgMedia_comp-laryd985-slide2" data-motion-part="BG_MEDIA comp-laryd985-slide2" class="VgO9Yg">
+                                           <wow-image id="img_comp-laryd985-slide2" class="jhxvbR Kv1aVt dLPlxY mNGsUM bgImage" data-image-info="{&quot;containerId&quot;:&quot;comp-laryd985-slide2&quot;,&quot;alignType&quot;:&quot;center&quot;,&quot;displayMode&quot;:&quot;fill&quot;,&quot;targetWidth&quot;:1419,&quot;targetHeight&quot;:609,&quot;isLQIP&quot;:true,&quot;encoding&quot;:&quot;AVIF&quot;,&quot;imageData&quot;:{&quot;width&quot;:6000,&quot;height&quot;:1972,&quot;uri&quot;:&quot;0ba5583727e04a07a2b0920b3359f2c0.jpg&quot;,&quot;name&quot;:&quot;&quot;,&quot;displayMode&quot;:&quot;fill&quot;}}" data-motion-part="BG_IMG comp-laryd985-slide2" data-bg-effect-name="" data-has-ssr-src="true">
+                                           <!-- TODO: Replace with your second slide image URL -->
+                                           <img src="https://static.wixstatic.com/media/0ba5583727e04a07a2b0920b3359f2c0.jpg/v1/fill/w_1897,h_609,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/0ba5583727e04a07a2b0920b3359f2c0.jpg" alt="Slide 2" width="1419" height="609" style="width: 1897px; height: 609px; object-fit: cover; object-position: 50% 50%;" data-ssr-src-done="true" fetchpriority="high">
+                                           </wow-image>
+                                         </div>
+                                       </div>
+                                       <div class="wfm0FO"></div>
+                                       <div data-mesh-id="comp-laryd985-slide2-inlineContent" data-testid="inline-content" class="">
+                                         <div data-mesh-id="comp-laryd985-slide2-inlineContent-gridContainer" data-testid="mesh-container-content">
+                                           <!-- Slide 2 Title -->
+                                           <div id="comp-lb3ibpd5-slide2" class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-lb3ibpd5 wixui-rich-text" data-testid="richTextElement">
+                                             <p class="font_0 wixui-rich-text__text" style="font-size:120px; line-height:0.8em;">
+                                               <span class="color_11 wixui-rich-text__text">
+                                                 <span style="font-family:avenir-lt-w01_85-heavy1475544,avenir-lt-w05_85-heavy,sans-serif;" class="wixui-rich-text__text">
+                                                   <span style="font-size:120px;" class="wixui-rich-text__text">
+                                                     <span style="font-weight:bold;" class="wixui-rich-text__text">
+                                                       <span style="letter-spacing:-0.02em;" class="wixui-rich-text__text">SLS</span>
+                                                     </span>
+                                                   </span>
+                                                 </span>
+                                               </span>
+                                             </p>
+                                           </div>
+                                           <!-- Slide 2 Subtitle -->
+                                           <div id="comp-laryd988-slide2" class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-laryd988 wixui-rich-text" data-testid="richTextElement" data-motion-enter="done">
+                                             <p class="font_0 wixui-rich-text__text" style="font-size:39px; line-height:normal;">
+                                               <span style="font-size:39px;" class="wixui-rich-text__text">
+                                                 <span class="color_11 wixui-rich-text__text">
+                                                   <span style="font-family:avenir-lt-w01_85-heavy1475544,avenir-lt-w05_85-heavy,sans-serif;" class="wixui-rich-text__text">
+                                                     <span style="font-weight:700; letter-spacing:-0.02em;" class="wixui-rich-text__text">Un acteur reconnue en conseil et formation</span>
+                                                   </span>
+                                                 </span>
+                                               </span>
+                                             </p>
+                                           </div>
+                                           <!-- Slide 2 Button -->
+                                           <div id="comp-larzfavx-slide2" class="comp-larzfavx" data-semantic-classname="button" data-motion-enter="done">
+                                             <a data-testid="linkElement" href="{{ route('a-propos') }}" target="_self" class="StylableButton2545352419__root style-las8o0wn__root wixui-button StylableButton2545352419__link" aria-label="Nous connaitre">
+                                               <span class="StylableButton2545352419__container">
+                                                 <Button style="z-index: 999 ;" class="StylableButton2545352419__label wixui-button__label" data-testid="stylablebutton-label">Nous connaitre</Button>
+                                                 <span class="StylableButton2545352419__icon wixui-button__icon" aria-hidden="true" data-testid="stylablebutton-icon">
+                                                   <span>
+                                                     <svg data-bbox="16.5 53.141 167 93.72" viewBox="0 0 200 200" height="200" width="200" xmlns="http://www.w3.org/2000/svg" data-type="shape">
+                                                       <g>
+                                                         <path d="M166.471 56.5l-66.674 66.218-66.219-66.674c-3.826-3.852-10.323-3.874-14.175-.048s-3.874 10.322-.049 14.175l73.281 73.786c3.826 3.852 10.323 3.874 14.175.049l73.786-73.281c3.852-3.826 3.874-10.323.049-14.175s-10.027-3.876-14.174-.05z"></path>
+                                                       </g>
+                                                     </svg>
+                                                   </span>
+                                                 </span>
+                                               </span>
+                                             </a>
+                                           </div>
+                                         </div>
+                                       </div>
+                                     </div>
+
+                                   </div>
+                                   
+                                   <!-- Navigation Buttons -->
+                                   <button class="slider-nav-btn slider-prev" aria-label="Previous slide" style="position: absolute; left: 20px; top: 50%; transform: translateY(-50%); z-index: 10; background: rgba(255, 255, 255, 0.7); border: none; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.3s;">
+                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                       <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                     </svg>
+                                   </button>
+                                   <button class="slider-nav-btn slider-next" aria-label="Next slide" style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%); z-index: 10; background: rgba(255, 255, 255, 0.7); border: none; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.3s;">
+                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                       <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                     </svg>
+                                   </button>
+                                   
+                                   <!-- Slide Indicators -->
+                                   <div class="slider-indicators" style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 10; display: flex; gap: 10px;">
+                                     <button class="slider-indicator active" data-slide="0" aria-label="Go to slide 1" style="width: 12px; height: 12px; border-radius: 50%; border: none; background: rgba(255, 255, 255, 0.7); cursor: pointer; transition: background 0.3s;"></button>
+                                     <button class="slider-indicator" data-slide="1" aria-label="Go to slide 2" style="width: 12px; height: 12px; border-radius: 50%; border: none; background: rgba(255, 255, 255, 0.4); cursor: pointer; transition: background 0.3s;"></button>
+                                   </div>
+                                 </div>
+                               </div>
+                             </div>
+                           </section>
 
 
 
@@ -16254,5 +16119,147 @@
         });
       });
     </script>
+    
+    <!-- Custom Slider JavaScript -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const slides = document.querySelectorAll('.custom-slide');
+        const prevBtn = document.querySelector('.slider-prev');
+        const nextBtn = document.querySelector('.slider-next');
+        const indicators = document.querySelectorAll('.slider-indicator');
+        let currentSlide = 0;
+        const totalSlides = slides.length;
+        
+        // Function to show a specific slide
+        function showSlide(index) {
+          const direction = index > currentSlide ? 1 : -1;
+          
+          // Remove active class from all slides and indicators
+          slides.forEach((slide, i) => {
+            slide.classList.remove('active');
+            if (i === currentSlide) {
+              // Current slide slides out to the left
+              slide.style.transform = 'translateX(-100%)';
+            } else if (i === index) {
+              // New slide starts from the right
+              slide.style.transform = 'translateX(100%)';
+            } else {
+              // Other slides stay hidden
+              slide.style.transform = index > i ? 'translateX(-100%)' : 'translateX(100%)';
+            }
+          });
+          
+          indicators.forEach(indicator => {
+            indicator.classList.remove('active');
+            indicator.style.background = 'rgba(255, 255, 255, 0.4)';
+          });
+          
+          // Trigger reflow to ensure transition works
+          setTimeout(() => {
+            // Add active class to current slide and indicator
+            slides[index].classList.add('active');
+            slides[index].style.transform = 'translateX(0%)';
+            indicators[index].classList.add('active');
+            indicators[index].style.background = 'rgba(255, 255, 255, 0.7)';
+          }, 10);
+          
+          currentSlide = index;
+        }
+        
+        // Auto-play functionality - switches every 3 seconds
+        let autoPlayInterval;
+        
+        function startAutoPlay() {
+          autoPlayInterval = setInterval(() => {
+            const next = (currentSlide + 1) % totalSlides;
+            showSlide(next);
+          }, 3000);
+        }
+        
+        function stopAutoPlay() {
+          if (autoPlayInterval) {
+            clearInterval(autoPlayInterval);
+          }
+        }
+        
+        // Next slide function
+        function nextSlide() {
+          const next = (currentSlide + 1) % totalSlides;
+          showSlide(next);
+          stopAutoPlay();
+          // Resume auto-play after 10 seconds
+          setTimeout(startAutoPlay, 10000);
+        }
+        
+        // Previous slide function
+        function prevSlide() {
+          const prev = (currentSlide - 1 + totalSlides) % totalSlides;
+          showSlide(prev);
+          stopAutoPlay();
+          // Resume auto-play after 10 seconds
+          setTimeout(startAutoPlay, 10000);
+        }
+        
+        // Event listeners for navigation buttons
+        if (nextBtn) {
+          nextBtn.addEventListener('click', nextSlide);
+        }
+        if (prevBtn) {
+          prevBtn.addEventListener('click', prevSlide);
+        }
+        
+        // Event listeners for indicators
+        indicators.forEach((indicator, index) => {
+          indicator.addEventListener('click', () => {
+            showSlide(index);
+            stopAutoPlay();
+            // Resume auto-play after 10 seconds
+            setTimeout(startAutoPlay, 10000);
+          });
+        });
+        
+        // Pause on hover
+        const sliderContainer = document.querySelector('.custom-slider-container');
+        if (sliderContainer) {
+          sliderContainer.addEventListener('mouseenter', () => {
+            stopAutoPlay();
+          });
+          sliderContainer.addEventListener('mouseleave', () => {
+            startAutoPlay();
+          });
+        }
+        
+        // Start auto-play
+        startAutoPlay();
+        
+        // Initialize first slide
+        showSlide(0);
+      });
+    </script>
+    
+    <!-- Custom Slider CSS -->
+    <style>
+      .slider-nav-btn:hover {
+        background: rgba(255, 255, 255, 0.9) !important;
+      }
+      
+      .slider-indicator:hover {
+        background: rgba(255, 255, 255, 0.8) !important;
+      }
+      
+      .custom-slide {
+        pointer-events: none;
+        will-change: transform;
+      }
+      
+      .custom-slide.active {
+        pointer-events: auto;
+      }
+      
+      .custom-slider-wrapper {
+        overflow: hidden;
+      }
+    </style>
   </body>
 </html>
+
