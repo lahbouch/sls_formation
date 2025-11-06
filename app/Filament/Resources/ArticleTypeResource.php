@@ -31,9 +31,16 @@ class ArticleTypeResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\Textarea::make('nom')
+                Forms\Components\RichEditor::make('nom')
                     ->label('Nom')
-                    ->rows(3),
+                    ->toolbarButtons([
+                        'bold',
+                        'italic',
+                        'underline',
+                        'link',
+                        'h2',
+                        'h3',
+                    ]),
             ]);
     }
 

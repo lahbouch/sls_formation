@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Type extends Model
@@ -11,17 +12,18 @@ class Type extends Model
     use HasFactory;
 
     protected $fillable = [
+        'service_id',
         'code',
         'nom',
         'image',
     ];
 
     /**
-     * Get the services for the type.
+     * Get the service that owns the type.
      */
-    public function services(): HasMany
+    public function service(): BelongsTo
     {
-        return $this->hasMany(Service::class);
+        return $this->belongsTo(Service::class);
     }
 
     /**

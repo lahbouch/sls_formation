@@ -22,8 +22,8 @@ class AdminPanelProvider extends PanelProvider
 {
     public function boot(): void
     {
-        // Set locale to French for admin panel if intl extension is available
-        if (request()->is('admin*') && extension_loaded('intl')) {
+        // Set locale to French for admin panel
+        if (request()->is('admin*')) {
             app()->setLocale('fr');
         }
     }

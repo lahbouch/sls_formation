@@ -12,6 +12,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Facades\Storage;
 
 class GalleryResource extends Resource
 {
@@ -35,11 +36,27 @@ class GalleryResource extends Resource
                     ->label('Image')
                     ->image()
                     ->directory('galleries')
+                    ->disk('public')
                     ->visibility('public')
-                    ->required(),
-                Forms\Components\Textarea::make('description')
+                    ->required()
+                    ->imagePreviewHeight('250')
+                    ->loadingIndicatorPosition('left')
+                    ->panelAspectRatio('2:1'),
+                Forms\Components\RichEditor::make('description')
                     ->label('Description')
-                    ->rows(5),
+                    ->toolbarButtons([
+                        'bold',
+                        'italic',
+                        'underline',
+                        'strike',
+                        'link',
+                        'bulletList',
+                        'orderedList',
+                        'blockquote',
+                        'codeBlock',
+                        'h2',
+                        'h3',
+                    ]),
             ]);
     }
 
@@ -48,7 +65,9 @@ class GalleryResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\ImageColumn::make('image')
-                    ->label('Image'),
+                    ->label('Image')
+                    ->disk('public')
+                    ->circular(),
                 Tables\Columns\TextColumn::make('description')
                     ->label('Description')
                     ->searchable()

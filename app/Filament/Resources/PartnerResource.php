@@ -12,6 +12,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Facades\Storage;
 
 class PartnerResource extends Resource
 {
@@ -35,7 +36,11 @@ class PartnerResource extends Resource
                     ->label('Image')
                     ->image()
                     ->directory('partners')
-                    ->visibility('public'),
+                    ->disk('public')
+                    ->visibility('public')
+                    ->imagePreviewHeight('250')
+                    ->loadingIndicatorPosition('left')
+                    ->panelAspectRatio('2:1'),
                 Forms\Components\TextInput::make('siteweb')
                     ->label('Site Web')
                     ->url()
@@ -48,7 +53,9 @@ class PartnerResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\ImageColumn::make('image')
-                    ->label('Image'),
+                    ->label('Image')
+                    ->disk('public')
+                    ->circular(),
                 Tables\Columns\TextColumn::make('siteweb')
                     ->label('Site Web')
                     ->url(fn ($record) => $record->siteweb)

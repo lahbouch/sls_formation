@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\TypeResource\Pages;
 use App\Filament\Resources\TypeResource\RelationManagers;
 use App\Models\Type;
+use App\Models\Service;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -12,6 +13,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Facades\Storage;
 
 class TypeResource extends Resource
 {
@@ -19,30 +21,50 @@ class TypeResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-tag';
     
-    protected static ?string $navigationLabel = 'Types de Formation';
+    protected static ?string $navigationLabel = 'Types de Service';
     
-    protected static ?string $modelLabel = 'Type de Formation';
+    protected static ?string $modelLabel = 'Type de Service';
     
-    protected static ?string $pluralModelLabel = 'Types de Formation';
+    protected static ?string $pluralModelLabel = 'Types de Service';
     
-    protected static ?int $navigationSort = 1;
+    protected static ?int $navigationSort = 2;
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
+                Forms\Components\Select::make('service_id')
+                    ->label('Service')
+                    ->relationship('service', 'titre')
+                    ->getOptionLabelFromRecordUsing(function ($record) {
+                        return $record->display_title ?? "Service #{$record->id}";
+                    })
+                    ->searchable()
+                    ->preload()
+                    ->required(),
                 Forms\Components\TextInput::make('code')
                     ->label('Code')
                     ->maxLength(1)
                     ->placeholder('P, M, or D'),
-                Forms\Components\Textarea::make('nom')
+                Forms\Components\RichEditor::make('nom')
                     ->label('Nom')
-                    ->rows(3),
+                    ->toolbarButtons([
+                        'bold',
+                        'italic',
+                        'underline',
+                        'link',
+                        'h2',
+                        'h3',
+                    ]),
                 Forms\Components\FileUpload::make('image')
                     ->label('Image')
                     ->image()
                     ->directory('types')
-                    ->visibility('public'),
+                    ->disk('public')
+                    ->visibility('public')
+                    ->imagePreviewHeight('250')
+                    ->loadingIndicatorPosition('left')
+                    ->panelAspectRatio('2:1'),
             ]);
     }
 
@@ -50,6 +72,10 @@ class TypeResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\TextColumn::make('service.titre')
+                    ->label('Service')
+                    ->searchable()
+                    ->sortable(),
                 Tables\Columns\TextColumn::make('code')
                     ->label('Code')
                     ->searchable(),
@@ -58,7 +84,12 @@ class TypeResource extends Resource
                     ->searchable()
                     ->limit(50),
                 Tables\Columns\ImageColumn::make('image')
-                    ->label('Image'),
+                    ->label('Image')
+                    ->disk('public')
+                    ->circular(),
+                Tables\Columns\TextColumn::make('offres_count')
+                    ->label('Offres')
+                    ->counts('offres'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -69,7 +100,9 @@ class TypeResource extends Resource
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                //
+                Tables\Filters\SelectFilter::make('service_id')
+                    ->label('Service')
+                    ->relationship('service', 'titre'),
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),

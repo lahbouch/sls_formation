@@ -5,7 +5,6 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\ServiceResource\Pages;
 use App\Filament\Resources\ServiceResource\RelationManagers;
 use App\Models\Service;
-use App\Models\Type;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -13,6 +12,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Facades\Storage;
 
 class ServiceResource extends Resource
 {
@@ -26,29 +26,46 @@ class ServiceResource extends Resource
     
     protected static ?string $pluralModelLabel = 'Services';
     
-    protected static ?int $navigationSort = 2;
+    protected static ?int $navigationSort = 1;
 
     public static function form(Form $form): Form
     {
         return $form
             ->schema([
-                Forms\Components\Select::make('type_id')
-                    ->label('Type')
-                    ->relationship('type', 'nom')
-                    ->searchable()
-                    ->preload()
-                    ->required(),
-                Forms\Components\Textarea::make('titre')
+                Forms\Components\RichEditor::make('titre')
                     ->label('Titre')
-                    ->rows(3),
+                    ->toolbarButtons([
+                        'bold',
+                        'italic',
+                        'underline',
+                        'link',
+                        'h2',
+                        'h3',
+                    ]),
                 Forms\Components\FileUpload::make('image')
                     ->label('Image')
                     ->image()
                     ->directory('services')
-                    ->visibility('public'),
-                Forms\Components\Textarea::make('description')
+                    ->disk('public')
+                    ->visibility('public')
+                    ->imagePreviewHeight('250')
+                    ->loadingIndicatorPosition('left')
+                    ->panelAspectRatio('2:1'),
+                Forms\Components\RichEditor::make('description')
                     ->label('Description')
-                    ->rows(5),
+                    ->toolbarButtons([
+                        'bold',
+                        'italic',
+                        'underline',
+                        'strike',
+                        'link',
+                        'bulletList',
+                        'orderedList',
+                        'blockquote',
+                        'codeBlock',
+                        'h2',
+                        'h3',
+                    ]),
             ]);
     }
 
@@ -56,16 +73,17 @@ class ServiceResource extends Resource
     {
         return $table
             ->columns([
-                Tables\Columns\TextColumn::make('type.nom')
-                    ->label('Type')
-                    ->searchable()
-                    ->sortable(),
                 Tables\Columns\TextColumn::make('titre')
                     ->label('Titre')
                     ->searchable()
                     ->limit(50),
                 Tables\Columns\ImageColumn::make('image')
-                    ->label('Image'),
+                    ->label('Image')
+                    ->disk('public')
+                    ->circular(),
+                Tables\Columns\TextColumn::make('types_count')
+                    ->label('Types')
+                    ->counts('types'),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
@@ -76,9 +94,7 @@ class ServiceResource extends Resource
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
             ->filters([
-                Tables\Filters\SelectFilter::make('type_id')
-                    ->label('Type')
-                    ->relationship('type', 'nom'),
+                //
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),

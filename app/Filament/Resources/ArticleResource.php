@@ -36,9 +36,16 @@ class ArticleResource extends Resource
                     ->relationship('articleType', 'nom')
                     ->searchable()
                     ->preload(),
-                Forms\Components\Textarea::make('titre')
+                Forms\Components\RichEditor::make('titre')
                     ->label('Titre')
-                    ->rows(3),
+                    ->toolbarButtons([
+                        'bold',
+                        'italic',
+                        'underline',
+                        'link',
+                        'h2',
+                        'h3',
+                    ]),
                 Forms\Components\DatePicker::make('date_created')
                     ->label('Date de création')
                     ->default(now()),

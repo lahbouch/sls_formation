@@ -83,7 +83,7 @@ return [
     |
     */
 
-    'locale' => 'en', // Change to 'fr' after enabling PHP intl extension
+    'locale' => 'fr',
 
     /*
     |--------------------------------------------------------------------------

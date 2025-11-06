@@ -5,6 +5,7 @@ namespace App\Filament\Resources;
 use App\Filament\Resources\OffreResource\Pages;
 use App\Filament\Resources\OffreResource\RelationManagers;
 use App\Models\Offre;
+use App\Models\Type;
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
@@ -32,8 +33,11 @@ class OffreResource extends Resource
         return $form
             ->schema([
                 Forms\Components\Select::make('type_id')
-                    ->label('Type')
+                    ->label('Type de Service')
                     ->relationship('type', 'nom')
+                    ->getOptionLabelFromRecordUsing(function ($record) {
+                        return $record->nom ?: "Type #{$record->id}";
+                    })
                     ->searchable()
                     ->preload()
                     ->required(),
@@ -42,12 +46,26 @@ class OffreResource extends Resource
                     ->numeric()
                     ->minValue(1)
                     ->maxValue(3),
-                Forms\Components\Textarea::make('titre')
+                Forms\Components\RichEditor::make('titre')
                     ->label('Titre')
-                    ->rows(3),
-                Forms\Components\Textarea::make('intitule')
+                    ->toolbarButtons([
+                        'bold',
+                        'italic',
+                        'underline',
+                        'link',
+                        'h2',
+                        'h3',
+                    ]),
+                Forms\Components\RichEditor::make('intitule')
                     ->label('Intitulé')
-                    ->rows(3),
+                    ->toolbarButtons([
+                        'bold',
+                        'italic',
+                        'underline',
+                        'link',
+                        'h2',
+                        'h3',
+                    ]),
                 Forms\Components\RichEditor::make('objectif')
                     ->label('Objectif')
                     ->toolbarButtons([
@@ -95,7 +113,7 @@ class OffreResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('type.nom')
-                    ->label('Type')
+                    ->label('Type de Service')
                     ->searchable()
                     ->sortable(),
                 Tables\Columns\TextColumn::make('num')
@@ -120,7 +138,7 @@ class OffreResource extends Resource
             ])
             ->filters([
                 Tables\Filters\SelectFilter::make('type_id')
-                    ->label('Type')
+                    ->label('Type de Service')
                     ->relationship('type', 'nom'),
             ])
             ->actions([
