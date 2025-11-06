@@ -2,6 +2,18 @@
 
 /*
 |--------------------------------------------------------------------------
+| Load intl fallback if extension is not available
+|--------------------------------------------------------------------------
+|
+| Load a fallback NumberFormatter class if the intl extension is not loaded.
+| This prevents errors when using Filament with French locale.
+|
+*/
+
+require_once __DIR__.'/intl.php';
+
+/*
+|--------------------------------------------------------------------------
 | Create The Application
 |--------------------------------------------------------------------------
 |
