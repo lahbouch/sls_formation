@@ -39,7 +39,8 @@ Route::get('/evenements', function () {
 
 
 Route::get('/galleries', function () {
-    return view('galleries');
+    $galleries = \App\Models\Gallery::whereNotNull('image')->paginate(12);
+    return view('galleries', compact('galleries'));
 })->name('galleries');
 
 
