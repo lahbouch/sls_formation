@@ -22,6 +22,9 @@ class ManageInfo extends ManageRecords
                 'phone' => null,
                 'email' => null,
                 'address' => null,
+                'facebook_url' => 'https://www.facebook.com',
+                'twitter_url' => 'https://www.twitter.com',
+                'instagram_url' => 'https://www.instagram.com',
             ]);
         }
 

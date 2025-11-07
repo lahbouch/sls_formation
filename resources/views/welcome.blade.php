@@ -1563,7 +1563,6 @@
         opacity: 1;
         transition: 0.2s;
       }
-      .Tj01hh,
       .jhxvbR {
         display: block;
         height: 100%;
@@ -1578,37 +1577,6 @@
       }
       .jhxvbR[data-animate-blur] img[data-load-done] {
         filter: none;
-      }
-      .WzbAF8 {
-        direction: var(--direction);
-      }
-      .WzbAF8 .mpGTIt .O6KwRn {
-        display: var(--item-display);
-        height: var(--item-size);
-        margin-block: var(--item-margin-block);
-        margin-inline: var(--item-margin-inline);
-        width: var(--item-size);
-      }
-      .WzbAF8 .mpGTIt .O6KwRn:last-child {
-        margin-block: 0;
-        margin-inline: 0;
-      }
-      .WzbAF8 .mpGTIt .O6KwRn .oRtuWN {
-        display: block;
-      }
-      .WzbAF8 .mpGTIt .O6KwRn .oRtuWN .YaS0jR {
-        height: var(--item-size);
-        width: var(--item-size);
-      }
-      .WzbAF8 .mpGTIt {
-        height: 100%;
-        position: absolute;
-        white-space: nowrap;
-        width: 100%;
-      }
-      :host(.device-mobile-optimized) .WzbAF8 .mpGTIt,
-      body.device-mobile-optimized .WzbAF8 .mpGTIt {
-        white-space: normal;
       }
       .big2ZD {
         display: grid;
@@ -14868,10 +14836,10 @@
                                                  <span class="StylableButton2545352419__icon wixui-button__icon" aria-hidden="true" data-testid="stylablebutton-icon">
                                                    <span>
                                                      <svg data-bbox="16.5 53.141 167 93.72" viewBox="0 0 200 200" height="200" width="200" xmlns="http://www.w3.org/2000/svg" data-type="shape">
-                                                       <g>
-                                                         <path d="M166.471 56.5l-66.674 66.218-66.219-66.674c-3.826-3.852-10.323-3.874-14.175-.048s-3.874 10.322-.049 14.175l73.281 73.786c3.826 3.852 10.323 3.874 14.175.049l73.786-73.281c3.852-3.826 3.874-10.323.049-14.175s-10.027-3.876-14.174-.05z"></path>
-                                                       </g>
-                                                     </svg>
+    <g>
+        <path d="M166.471 56.5l-66.674 66.218-66.219-66.674c-3.826-3.852-10.323-3.874-14.175-.048s-3.874 10.322-.049 14.175l73.281 73.786c3.826 3.852 10.323 3.874 14.175.049l73.786-73.281c3.852-3.826 3.874-10.323.049-14.175s-10.027-3.876-14.174-.05z"></path>
+    </g>
+</svg>
                                                    </span>
                                                  </span>
                                                </span>

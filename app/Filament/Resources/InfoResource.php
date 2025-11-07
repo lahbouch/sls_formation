@@ -39,6 +39,22 @@ class InfoResource extends Resource
                     ->email(),
                 Forms\Components\TextInput::make('address')
                     ->label('Adresse'),
+                Forms\Components\Section::make('Réseaux Sociaux')
+                    ->schema([
+                        Forms\Components\TextInput::make('facebook_url')
+                            ->label('URL Facebook')
+                            ->url()
+                            ->placeholder('https://www.facebook.com/...'),
+                        Forms\Components\TextInput::make('twitter_url')
+                            ->label('URL Twitter')
+                            ->url()
+                            ->placeholder('https://www.twitter.com/...'),
+                        Forms\Components\TextInput::make('instagram_url')
+                            ->label('URL Instagram')
+                            ->url()
+                            ->placeholder('https://www.instagram.com/...'),
+                    ])
+                    ->columns(1),
             ]);
     }
 
