@@ -269,7 +269,9 @@
                 @if($isEven)
                     <!-- Title column (left) with dark blue overlay and background image -->
                     <div class="service-column service-title-column" @if($imageUrl) style="background-image: url('{{ $imageUrl }}'); background-position: {{ $isEven ? '50%' : '100%' }} 50%;" @endif>
-                        <h2 class="service-title">{{ strtoupper($service->titre) }}</h2>
+                        <a href="{{ route('service', $service->id) }}" style="text-decoration: none; color: inherit; display: block; width: 100%;">
+                            <h2 class="service-title">{{ strtoupper($service->titre) }}</h2>
+                        </a>
                     </div>
                     <!-- Description column (right) with white background -->
                     <div class="service-column service-desc-column">
@@ -282,7 +284,9 @@
                     </div>
                     <!-- Title column (right) with dark blue overlay and background image -->
                     <div class="service-column service-title-column" @if($imageUrl) style="background-image: url('{{ $imageUrl }}'); background-position: {{ $isEven ? '50%' : '100%' }} 50%;" @endif>
-                        <h2 class="service-title">{{ strtoupper($service->titre) }}</h2>
+                        <a href="{{ route('service', $service->id) }}" style="text-decoration: none; color: inherit; display: block; width: 100%;">
+                            <h2 class="service-title">{{ strtoupper($service->titre) }}</h2>
+                        </a>
                     </div>
                 @endif
             </div>

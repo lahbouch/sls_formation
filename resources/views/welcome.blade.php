@@ -14846,9 +14846,9 @@
                                            </div>
                                            <!-- Slide 1 Button -->
                                            <div id="comp-larzfavx" class="comp-larzfavx" data-semantic-classname="button" data-motion-enter="done" style="pointer-events: auto !important; z-index: 2000 !important; position: relative;">
-                                             <a data-testid="linkElement" href="https://google.com" target="_self" class="StylableButton2545352419__root style-las8o0wn__root wixui-button StylableButton2545352419__link" aria-label="Nous connaitre" style="pointer-events: auto !important; z-index: 2000 !important; position: relative;">
+                                             <a data-testid="linkElement" href="{{ route('contact') }}" target="_self" class="StylableButton2545352419__root style-las8o0wn__root wixui-button StylableButton2545352419__link" aria-label="Contactez-nous" style="pointer-events: auto !important; z-index: 2000 !important; position: relative;">
                                                <span class="StylableButton2545352419__container">
-                                                 <Button style="z-index: 2000 !important; position: relative;" class="StylableButton2545352419__label wixui-button__label" data-testid="stylablebutton-label">Nous connaitre</Button>
+                                                 <Button style="z-index: 2000 !important; position: relative;" class="StylableButton2545352419__label wixui-button__label" data-testid="stylablebutton-label">Contactez-nous</Button>
                                                  <span class="StylableButton2545352419__icon wixui-button__icon" aria-hidden="true" data-testid="stylablebutton-icon">
                                                    <span>
                                                      <svg data-bbox="16.5 53.141 167 93.72" viewBox="0 0 200 200" height="200" width="200" xmlns="http://www.w3.org/2000/svg" data-type="shape">
@@ -14907,9 +14907,9 @@
                                            </div>
                                            <!-- Slide 2 Button -->
                                            <div id="comp-larzfavx-slide2" class="comp-larzfavx" data-semantic-classname="button" data-motion-enter="done" style="pointer-events: auto !important; z-index: 2000 !important; position: relative;">
-                                             <a data-testid="linkElement" href="https://google.com" target="_self" class="StylableButton2545352419__root style-las8o0wn__root wixui-button StylableButton2545352419__link" aria-label="Nous connaitre" style="pointer-events: auto !important; z-index: 2000 !important; position: relative;">
+                                             <a data-testid="linkElement" href="{{ route('contact') }}" target="_self" class="StylableButton2545352419__root style-las8o0wn__root wixui-button StylableButton2545352419__link" aria-label="Contactez-nous" style="pointer-events: auto !important; z-index: 2000 !important; position: relative;">
                                                <span class="StylableButton2545352419__container">
-                                                 <Button style="z-index: 2000 !important; position: relative;" class="StylableButton2545352419__label wixui-button__label" data-testid="stylablebutton-label">Nous connaitre</Button>
+                                                 <Button style="z-index: 2000 !important; position: relative;" class="StylableButton2545352419__label wixui-button__label" data-testid="stylablebutton-label">Contactez-nous</Button>
                                                  <span class="StylableButton2545352419__icon wixui-button__icon" aria-hidden="true" data-testid="stylablebutton-icon">
                                                    <span>
                                                      <svg data-bbox="16.5 53.141 167 93.72" viewBox="0 0 200 200" height="200" width="200" xmlns="http://www.w3.org/2000/svg" data-type="shape">
@@ -14933,7 +14933,7 @@
                                          <div id="bgMedia_comp-laryd985-slide3" data-motion-part="BG_MEDIA comp-laryd985-slide3" class="VgO9Yg">
                                            <wow-image id="img_comp-laryd985-slide3" class="jhxvbR Kv1aVt dLPlxY mNGsUM bgImage" data-image-info="{&quot;containerId&quot;:&quot;comp-laryd985-slide3&quot;,&quot;alignType&quot;:&quot;center&quot;,&quot;displayMode&quot;:&quot;fill&quot;,&quot;targetWidth&quot;:1419,&quot;targetHeight&quot;:609,&quot;isLQIP&quot;:true,&quot;encoding&quot;:&quot;AVIF&quot;,&quot;imageData&quot;:{&quot;width&quot;:6000,&quot;height&quot;:1972,&quot;uri&quot;:&quot;0ba5583727e04a07a2b0920b3359f2c0.jpg&quot;,&quot;name&quot;:&quot;&quot;,&quot;displayMode&quot;:&quot;fill&quot;}}" data-motion-part="BG_IMG comp-laryd985-slide3" data-bg-effect-name="" data-has-ssr-src="true">
                                            <!-- TODO: Replace with your third slide image URL -->
-                                           <img src="https://static.wixstatic.com/media/0ba5583727e04a07a2b0920b3359f2c0.jpg/v1/fill/w_1897,h_609,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/0ba5583727e04a07a2b0920b3359f2c0.jpg" alt="Slide 3" width="1419" height="609" style="width: 1897px; height: 609px; object-fit: cover; object-position: 50% 50%;" data-ssr-src-done="true" fetchpriority="high">
+                                           <img src="{{ asset('images/3.avif') }}" alt="Slide 3" width="1419" height="609" style="width: 1897px; height: 609px; object-fit: cover; object-position: 50% 50%;" data-ssr-src-done="true" fetchpriority="high">
                                            </wow-image>
                                          </div>
                                        </div>
@@ -14970,9 +14970,9 @@
                                            </div>
                                            <!-- Slide 3 Button -->
                                            <div id="comp-larzfavx-slide3" class="comp-larzfavx" data-semantic-classname="button" data-motion-enter="done" style="pointer-events: auto !important; z-index: 2000 !important; position: relative;">
-                                             <a data-testid="linkElement" href="https://google.com" target="_self" class="StylableButton2545352419__root style-las8o0wn__root wixui-button StylableButton2545352419__link" aria-label="Nous connaitre" style="pointer-events: auto !important; z-index: 2000 !important; position: relative;">
+                                             <a data-testid="linkElement" href="{{ route('contact') }}" target="_self" class="StylableButton2545352419__root style-las8o0wn__root wixui-button StylableButton2545352419__link" aria-label="Contactez-nous" style="pointer-events: auto !important; z-index: 2000 !important; position: relative;">
                                                <span class="StylableButton2545352419__container">
-                                                 <Button style="z-index: 2000 !important; position: relative;" class="StylableButton2545352419__label wixui-button__label" data-testid="stylablebutton-label">Nous connaitre</Button>
+                                                 <Button style="z-index: 2000 !important; position: relative;" class="StylableButton2545352419__label wixui-button__label" data-testid="stylablebutton-label">Contactez-nous</Button>
                                                  <span class="StylableButton2545352419__icon wixui-button__icon" aria-hidden="true" data-testid="stylablebutton-icon">
                                                    <span>
                                                      <svg data-bbox="16.5 53.141 167 93.72" viewBox="0 0 200 200" height="200" width="200" xmlns="http://www.w3.org/2000/svg" data-type="shape">
@@ -14991,24 +14991,24 @@
 
                                    </div>
                                    
-                                   <!-- Navigation Buttons -->
-                                   <button class="slider-nav-btn slider-prev" aria-label="Previous slide" style="position: absolute; left: 20px; top: 50%; transform: translateY(-50%); z-index: 1000; background: rgba(255, 255, 255, 0.7); border: none; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.3s; pointer-events: auto;">
-                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                       <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                     </svg>
-                                   </button>
-                                   <button class="slider-nav-btn slider-next" aria-label="Next slide" style="position: absolute; right: 20px; top: 50%; transform: translateY(-50%); z-index: 1000; background: rgba(255, 255, 255, 0.7); border: none; width: 50px; height: 50px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.3s; pointer-events: auto;">
-                                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                       <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                     </svg>
-                                   </button>
-                                   
-                                   <!-- Slide Indicators -->
-                                   <div class="slider-indicators" style="position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 1000; display: flex; gap: 10px; pointer-events: auto;">
-                                     <button class="slider-indicator active" data-slide="0" aria-label="Go to slide 1" style="width: 12px; height: 12px; border-radius: 50%; border: none; background: rgba(255, 255, 255, 0.7); cursor: pointer; transition: background 0.3s; pointer-events: auto;"></button>
-                                     <button class="slider-indicator" data-slide="1" aria-label="Go to slide 2" style="width: 12px; height: 12px; border-radius: 50%; border: none; background: rgba(255, 255, 255, 0.4); cursor: pointer; transition: background 0.3s; pointer-events: auto;"></button>
-                                     <button class="slider-indicator" data-slide="2" aria-label="Go to slide 3" style="width: 12px; height: 12px; border-radius: 50%; border: none; background: rgba(255, 255, 255, 0.4); cursor: pointer; transition: background 0.3s; pointer-events: auto;"></button>
-                                   </div>
+                                  <!-- Navigation Buttons -->
+                                  <button class="slider-nav-btn slider-prev" aria-label="Previous slide" style="position: absolute !important; left: 20px; top: 50%; transform: translateY(-50%); z-index: 10000 !important; background: rgba(255, 255, 255, 0.7); border: none; width: 50px; height: 50px; border-radius: 50%; cursor: pointer !important; display: flex; align-items: center; justify-content: center; transition: background 0.3s; pointer-events: auto !important;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="pointer-events: none;">
+                                      <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                  </button>
+                                  <button class="slider-nav-btn slider-next" aria-label="Next slide" style="position: absolute !important; right: 20px; top: 50%; transform: translateY(-50%); z-index: 10000 !important; background: rgba(255, 255, 255, 0.7); border: none; width: 50px; height: 50px; border-radius: 50%; cursor: pointer !important; display: flex; align-items: center; justify-content: center; transition: background 0.3s; pointer-events: auto !important;">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="pointer-events: none;">
+                                      <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                  </button>
+                                  
+                                  <!-- Slide Indicators -->
+                                  <div class="slider-indicators" style="position: absolute !important; bottom: 20px; left: 50%; transform: translateX(-50%); z-index: 10000 !important; display: flex; gap: 10px; pointer-events: auto !important;">
+                                    <button class="slider-indicator active" data-slide="0" aria-label="Go to slide 1" style="width: 12px; height: 12px; border-radius: 50%; border: none; background: rgba(255, 255, 255, 0.7); cursor: pointer !important; transition: background 0.3s; pointer-events: auto !important; position: relative !important; z-index: 10000 !important;"></button>
+                                    <button class="slider-indicator" data-slide="1" aria-label="Go to slide 2" style="width: 12px; height: 12px; border-radius: 50%; border: none; background: rgba(255, 255, 255, 0.4); cursor: pointer !important; transition: background 0.3s; pointer-events: auto !important; position: relative !important; z-index: 10000 !important;"></button>
+                                    <button class="slider-indicator" data-slide="2" aria-label="Go to slide 3" style="width: 12px; height: 12px; border-radius: 50%; border: none; background: rgba(255, 255, 255, 0.4); cursor: pointer !important; transition: background 0.3s; pointer-events: auto !important; position: relative !important; z-index: 10000 !important;"></button>
+                                  </div>
                                  </div>
                                </div>
                              </div>
@@ -16336,9 +16336,20 @@
         const indicators = document.querySelectorAll('.slider-indicator');
         let currentSlide = 0;
         const totalSlides = slides.length;
+        let autoPlayInterval = null;
+        let isTransitioning = false;
         
         // Function to show a specific slide
         function showSlide(index) {
+          // Prevent multiple rapid transitions
+          if (isTransitioning) return;
+          
+          // Don't do anything if trying to show the same slide
+          if (index === currentSlide && slides[index].classList.contains('active')) {
+            return;
+          }
+          
+          isTransitioning = true;
           const direction = index > currentSlide ? 1 : -1;
           
           // Remove active class from all slides and indicators
@@ -16362,49 +16373,62 @@
           });
           
           // Trigger reflow to ensure transition works
-          setTimeout(() => {
-            // Add active class to current slide and indicator
-            slides[index].classList.add('active');
-            slides[index].style.transform = 'translateX(0%)';
-            indicators[index].classList.add('active');
-            indicators[index].style.background = 'rgba(255, 255, 255, 0.7)';
-          }, 10);
-          
-          currentSlide = index;
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              // Add active class to current slide and indicator
+              slides[index].classList.add('active');
+              slides[index].style.transform = 'translateX(0%)';
+              indicators[index].classList.add('active');
+              indicators[index].style.background = 'rgba(255, 255, 255, 0.7)';
+              
+              currentSlide = index;
+              
+              // Allow transitions after animation completes (600ms for transition)
+              setTimeout(() => {
+                isTransitioning = false;
+              }, 600);
+            });
+          });
         }
         
-        // Auto-play functionality - switches every 3 seconds
-        let autoPlayInterval;
-        
+        // Auto-play functionality - switches every 5 seconds
         function startAutoPlay() {
+          // Clear any existing interval first
+          stopAutoPlay();
+          
           autoPlayInterval = setInterval(() => {
-            const next = (currentSlide + 1) % totalSlides;
-            showSlide(next);
-          }, 3000);
+            if (!isTransitioning) {
+              const next = (currentSlide + 1) % totalSlides;
+              showSlide(next);
+            }
+          }, 5000);
         }
         
         function stopAutoPlay() {
           if (autoPlayInterval) {
             clearInterval(autoPlayInterval);
+            autoPlayInterval = null;
           }
         }
         
         // Next slide function
         function nextSlide() {
+          if (isTransitioning) return;
           const next = (currentSlide + 1) % totalSlides;
           showSlide(next);
           stopAutoPlay();
-          // Resume auto-play after 10 seconds
-          setTimeout(startAutoPlay, 10000);
+          // Resume auto-play after 5 seconds
+          setTimeout(startAutoPlay, 5000);
         }
         
         // Previous slide function
         function prevSlide() {
+          if (isTransitioning) return;
           const prev = (currentSlide - 1 + totalSlides) % totalSlides;
           showSlide(prev);
           stopAutoPlay();
-          // Resume auto-play after 10 seconds
-          setTimeout(startAutoPlay, 10000);
+          // Resume auto-play after 5 seconds
+          setTimeout(startAutoPlay, 5000);
         }
         
         // Event listeners for navigation buttons
@@ -16418,10 +16442,11 @@
         // Event listeners for indicators
         indicators.forEach((indicator, index) => {
           indicator.addEventListener('click', () => {
+            if (isTransitioning) return;
             showSlide(index);
             stopAutoPlay();
-            // Resume auto-play after 10 seconds
-            setTimeout(startAutoPlay, 10000);
+            // Resume auto-play after 5 seconds
+            setTimeout(startAutoPlay, 5000);
           });
         });
         
@@ -16436,28 +16461,59 @@
           });
         }
         
-        // Start auto-play
-        startAutoPlay();
-        
-        // Initialize first slide
+        // Initialize first slide first
         showSlide(0);
+        
+        // Start auto-play after a short delay to ensure initialization is complete
+        setTimeout(() => {
+          startAutoPlay();
+        }, 100);
       });
     </script>
     
     <!-- Custom Slider CSS -->
     <style>
+      .custom-slider-container {
+        position: relative;
+      }
+      
+      .custom-slider-wrapper {
+        overflow: hidden;
+        position: relative;
+      }
+      
+      .custom-slide {
+        pointer-events: none;
+        will-change: transform;
+        z-index: 1;
+      }
+      
+      .custom-slide.active {
+        pointer-events: auto;
+        z-index: 2;
+      }
+      
+      /* Force all interactive elements in active slides to be clickable */
+      .custom-slide.active * {
+        pointer-events: auto;
+      }
+      
+      /* Navigation buttons - HIGHEST PRIORITY */
       .slider-nav-btn {
         pointer-events: auto !important;
-        z-index: 1000 !important;
+        z-index: 10000 !important;
+        position: absolute !important;
       }
       
       .slider-nav-btn:hover {
         background: rgba(255, 255, 255, 0.9) !important;
       }
       
+      /* Slide indicators - HIGHEST PRIORITY */
       .slider-indicator {
         pointer-events: auto !important;
-        z-index: 1000 !important;
+        z-index: 10000 !important;
+        position: relative !important;
       }
       
       .slider-indicator:hover {
@@ -16466,21 +16522,8 @@
       
       .slider-indicators {
         pointer-events: auto !important;
-        z-index: 1000 !important;
-      }
-      
-      .custom-slide {
-        pointer-events: none;
-        will-change: transform;
-      }
-      
-      .custom-slide.active {
-        pointer-events: auto;
-      }
-      
-      /* Force all interactive elements in active slides to be clickable */
-      .custom-slide.active * {
-        pointer-events: auto;
+        z-index: 10000 !important;
+        position: absolute !important;
       }
       
       /* But allow specific button elements to always be clickable */
@@ -16488,9 +16531,10 @@
       .custom-slide #comp-larzfavx-slide2,
       .custom-slide #comp-larzfavx-slide3 {
         pointer-events: auto !important;
+        z-index: 100 !important;
       }
       
-      /* Ensure buttons inside slides are always clickable - HIGHEST PRIORITY */
+      /* Ensure buttons inside slides are always clickable */
       #comp-larzfavx,
       #comp-larzfavx *,
       #comp-larzfavx-slide2,
@@ -16501,7 +16545,7 @@
       .comp-larzfavx * {
         pointer-events: auto !important;
         position: relative !important;
-        z-index: 9999 !important;
+        z-index: 100 !important;
         cursor: pointer !important;
       }
       
@@ -16511,7 +16555,7 @@
       .StylableButton2545352419__container,
       .StylableButton2545352419__label {
         pointer-events: auto !important;
-        z-index: 9999 !important;
+        z-index: 100 !important;
         position: relative !important;
         cursor: pointer !important;
       }
@@ -16521,20 +16565,20 @@
       .custom-slide .eF_jBL,
       .custom-slide .wfm0FO {
         pointer-events: none !important;
+        z-index: 0 !important;
       }
       
       /* Ensure button wrapper divs don't block clicks */
       .custom-slide [data-mesh-id*="inlineContent"],
       .custom-slide [data-mesh-id*="gridContainer"] {
         pointer-events: auto !important;
+        z-index: 10 !important;
       }
       
-      .custom-slider-wrapper {
-        overflow: hidden;
-      }
-      
-      .custom-slider-container {
-        position: relative;
+      /* Ensure navigation buttons are not blocked by any slide elements */
+      .custom-slider-container > .slider-nav-btn,
+      .custom-slider-container > .slider-indicators {
+        z-index: 10000 !important;
       }
     </style>
   </body>

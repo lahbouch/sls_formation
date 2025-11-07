@@ -18,6 +18,12 @@ Route::get('/', function () {
 })->name('home');
 
 
+Route::get('/services/{id}', function ($id) {
+    $service = \App\Models\Service::with(['types.offres'])->findOrFail($id);
+    return view('service', compact('service'));
+})->name('service');
+
+
 Route::get('/a-propos', function () {
     $partners = \App\Models\Partner::all();
     return view('a_propos', compact('partners'));
