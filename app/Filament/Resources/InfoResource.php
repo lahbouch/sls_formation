@@ -42,41 +42,7 @@ class InfoResource extends Resource
             ]);
     }
 
-    public static function table(Table $table): Table
-    {
-        return $table
-            ->columns([
-                Tables\Columns\TextColumn::make('phone')
-                    ->label('Téléphone')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('email')
-                    ->label('Email')
-                    ->searchable(),
-                Tables\Columns\TextColumn::make('address')
-                    ->label('Adresse')
-                    ->searchable()
-                    ->limit(50),
-                Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-                Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime()
-                    ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
-            ])
-            ->filters([
-                //
-            ])
-            ->actions([
-                Tables\Actions\EditAction::make(),
-            ])
-            ->bulkActions([
-                Tables\Actions\BulkActionGroup::make([
-                    Tables\Actions\DeleteBulkAction::make(),
-                ]),
-            ]);
-    }
+    // Removed table() method - this is a singleton resource
 
     public static function getRelations(): array
     {
@@ -88,9 +54,8 @@ class InfoResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListInfos::route('/'),
-            'create' => Pages\CreateInfo::route('/create'),
-            'edit' => Pages\EditInfo::route('/{record}/edit'),
+            'index' => Pages\ManageInfo::route('/'),
+            'edit' => Pages\EditInfo::route('/edit'),
         ];
     }
 }

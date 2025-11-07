@@ -13,7 +13,7 @@ class ListContacts extends ListRecords
     protected function getHeaderActions(): array
     {
         return [
-            Actions\CreateAction::make(),
+            // Create action removed - contact messages should only be created through the website form
         ];
     }
 }

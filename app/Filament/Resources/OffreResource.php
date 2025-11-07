@@ -63,48 +63,48 @@ class OffreResource extends Resource
                 Forms\Components\RichEditor::make('objectif')
                     ->label('Objectif')
                     ->toolbarButtons([
-                        'bold',
-                        'italic',
-                        'underline',
-                        'strike',
-                        'link',
-                        'image',
-                        'bulletList',
-                        'orderedList',
+                        'attachFiles',
                         'blockquote',
+                        'bold',
+                        'bulletList',
                         'codeBlock',
+                        'italic',
+                        'link',
+                        'orderedList',
+                        'strike',
+                        'underline',
                     ])
                     ->fileAttachmentsDirectory('rich-editor')
                     ->fileAttachmentsDisk('public'),
                 Forms\Components\RichEditor::make('prerequis')
                     ->label('Prérequis')
                     ->toolbarButtons([
-                        'bold',
-                        'italic',
-                        'underline',
-                        'strike',
-                        'link',
-                        'image',
-                        'bulletList',
-                        'orderedList',
+                        'attachFiles',
                         'blockquote',
+                        'bold',
+                        'bulletList',
                         'codeBlock',
+                        'italic',
+                        'link',
+                        'orderedList',
+                        'strike',
+                        'underline',
                     ])
                     ->fileAttachmentsDirectory('rich-editor')
                     ->fileAttachmentsDisk('public'),
                 Forms\Components\RichEditor::make('programme')
                     ->label('Programme')
                     ->toolbarButtons([
-                        'bold',
-                        'italic',
-                        'underline',
-                        'strike',
-                        'link',
-                        'image',
-                        'bulletList',
-                        'orderedList',
+                        'attachFiles',
                         'blockquote',
+                        'bold',
+                        'bulletList',
                         'codeBlock',
+                        'italic',
+                        'link',
+                        'orderedList',
+                        'strike',
+                        'underline',
                     ])
                     ->fileAttachmentsDirectory('rich-editor')
                     ->fileAttachmentsDisk('public'),

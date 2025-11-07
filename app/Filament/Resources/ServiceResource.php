@@ -46,18 +46,18 @@ class ServiceResource extends Resource
                 Forms\Components\RichEditor::make('description')
                     ->label('Description')
                     ->toolbarButtons([
-                        'bold',
-                        'italic',
-                        'underline',
-                        'strike',
-                        'link',
-                        'image',
-                        'bulletList',
-                        'orderedList',
+                        'attachFiles',
                         'blockquote',
+                        'bold',
+                        'bulletList',
                         'codeBlock',
                         'h2',
                         'h3',
+                        'italic',
+                        'link',
+                        'orderedList',
+                        'strike',
+                        'underline',
                     ])
                     ->fileAttachmentsDirectory('rich-editor')
                     ->fileAttachmentsDisk('public'),

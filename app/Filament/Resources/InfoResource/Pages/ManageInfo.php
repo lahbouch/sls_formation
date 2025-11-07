@@ -4,21 +4,15 @@ namespace App\Filament\Resources\InfoResource\Pages;
 
 use App\Filament\Resources\InfoResource;
 use App\Models\Info;
-use Filament\Resources\Pages\EditRecord;
+use Filament\Resources\Pages\ManageRecords;
 
-class EditInfo extends EditRecord
+class ManageInfo extends ManageRecords
 {
     protected static string $resource = InfoResource::class;
 
     protected static ?string $title = 'Informations de Contact';
 
-    protected function getHeaderActions(): array
-    {
-        // No delete action for singleton resource
-        return [];
-    }
-
-    public function mount(int | string | null $record = null): void
+    public function mount(): void
     {
         // Get or create the single info record
         $info = Info::first();
@@ -31,7 +25,8 @@ class EditInfo extends EditRecord
             ]);
         }
 
-        // Always use the first record
-        parent::mount($info->id);
+        // Redirect to edit page
+        $this->redirect(InfoResource::getUrl('edit'));
     }
 }
+

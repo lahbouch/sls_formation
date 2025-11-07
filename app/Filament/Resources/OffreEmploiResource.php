@@ -43,9 +43,24 @@ class OffreEmploiResource extends Resource
                     ->imagePreviewHeight('250')
                     ->loadingIndicatorPosition('left')
                     ->panelAspectRatio('2:1'),
-                Forms\Components\Textarea::make('description')
+                Forms\Components\RichEditor::make('description')
                     ->label('Description')
-                    ->rows(5),
+                    ->toolbarButtons([
+                        'attachFiles',
+                        'blockquote',
+                        'bold',
+                        'bulletList',
+                        'codeBlock',
+                        'h2',
+                        'h3',
+                        'italic',
+                        'link',
+                        'orderedList',
+                        'strike',
+                        'underline',
+                    ])
+                    ->fileAttachmentsDirectory('rich-editor')
+                    ->fileAttachmentsDisk('public'),
                 Forms\Components\Toggle::make('active')
                     ->label('Active')
                     ->default(true),

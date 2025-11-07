@@ -44,18 +44,18 @@ class ArticleResource extends Resource
                 Forms\Components\RichEditor::make('content')
                     ->label('Contenu')
                     ->toolbarButtons([
-                        'bold',
-                        'italic',
-                        'underline',
-                        'strike',
-                        'link',
-                        'image',
-                        'bulletList',
-                        'orderedList',
+                        'attachFiles',
                         'blockquote',
+                        'bold',
+                        'bulletList',
                         'codeBlock',
                         'h2',
                         'h3',
+                        'italic',
+                        'link',
+                        'orderedList',
+                        'strike',
+                        'underline',
                     ])
                     ->fileAttachmentsDirectory('rich-editor')
                     ->fileAttachmentsDisk('public'),
