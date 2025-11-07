@@ -536,7 +536,7 @@
                                 avenir-lt-w05_35-light, sans-serif;
                             " class="wixui-rich-text__text"><span class="color_32 wixui-rich-text__text"><span
                                         style="letter-spacing: normal" class="wixui-rich-text__text">
-                                        {{ $phone ?: '123-456-7890' }}</span></span></span>
+                                        {{ $phone ?: '' }}</span></span></span>
                         </p>
 
                         <p class="font_8 wixui-rich-text__text" style="
@@ -594,49 +594,21 @@
                                 @if(trim($line))
                                     <p class="font_8 wixui-rich-text__text"
                                         style="
-                                                                                                                                                                                                                                                                                    line-height: 1.6em;
-                                                                                                                                                                                                                                                                                    text-align: center;
-                                                                                                                                                                                                                                                                                    font-size: 14px;
-                                                                                                                                                                                                                                                                                  ">
+                                                                                                                                                                                                                                                                                                            line-height: 1.6em;
+                                                                                                                                                                                                                                                                                                            text-align: center;
+                                                                                                                                                                                                                                                                                                            font-size: 14px;
+                                                                                                                                                                                                                                                                                                          ">
                                         <span
                                             style="
-                                                                                                                                                                                                                                                                                      font-family: avenir-lt-w01_35-light1475496,
-                                                                                                                                                                                                                                                                                        avenir-lt-w05_35-light, sans-serif;
-                                                                                                                                                                                                                                                                                    "
+                                                                                                                                                                                                                                                                                                              font-family: avenir-lt-w01_35-light1475496,
+                                                                                                                                                                                                                                                                                                                avenir-lt-w05_35-light, sans-serif;
+                                                                                                                                                                                                                                                                                                            "
                                             class="wixui-rich-text__text"><span class="color_32 wixui-rich-text__text"><span
                                                     style="letter-spacing: normal"
                                                     class="wixui-rich-text__text">{{ trim($line) }}</span></span></span>
                                     </p>
                                 @endif
                             @endforeach
-                        @else
-                            <p class="font_8 wixui-rich-text__text" style="
-                                                                                                                line-height: 1.6em;
-                                                                                                                text-align: center;
-                                                                                                                font-size: 14px;
-                                                                                                              ">
-                                <span style="
-                                                                                                                  font-family: avenir-lt-w01_35-light1475496,
-                                                                                                                    avenir-lt-w05_35-light, sans-serif;
-                                                                                                                "
-                                    class="wixui-rich-text__text"><span class="color_32 wixui-rich-text__text"><span
-                                            style="letter-spacing: normal" class="wixui-rich-text__text">500 Terry Francois
-                                            Street</span></span></span>
-                            </p>
-
-                            <p class="font_8 wixui-rich-text__text" style="
-                                                                                                                line-height: 1.6em;
-                                                                                                                text-align: center;
-                                                                                                                font-size: 14px;
-                                                                                                              ">
-                                <span style="
-                                                                                                                  font-family: avenir-lt-w01_35-light1475496,
-                                                                                                                    avenir-lt-w05_35-light, sans-serif;
-                                                                                                                "
-                                    class="wixui-rich-text__text"><span class="color_32 wixui-rich-text__text"><span
-                                            style="letter-spacing: normal" class="wixui-rich-text__text">San Francisco, CA
-                                            94158</span></span></span>
-                            </p>
                         @endif
                     </div>
                     <!--/$-->

@@ -122,6 +122,22 @@
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js" defer=""></script><script>window.addEventListener('DOMContentLoaded', function() { jQuery.event.special.touchstart = { setup: function( _, ns, handle ) { this.addEventListener("touchstart", handle, { passive: !ns.includes("noPreventDefault") }); } }; jQuery.event.special.touchmove = { setup: function( _, ns, handle ) { this.addEventListener("touchmove", handle, { passive: !ns.includes("noPreventDefault") }); } }; jQuery.event.special.wheel = { setup: function( _, ns, handle ){ this.addEventListener("wheel", handle, { passive: true }); } }; jQuery.event.special.mousewheel = { setup: function( _, ns, handle ){ this.addEventListener("mousewheel", handle, { passive: true }); } }; });</script><meta name="title" content="Untitled"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="robots" content="index, follow"><meta name="googlebot" content="index, follow"><meta property="og:title" content="Untitled"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Untitled"><title>Untitled</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" sizes="16x16" href="/favicon-16x16.png"><link rel="manifest" href="/site.webmanifest"></head>
 <body class="">
+<style>
+  /* Sticky Footer */
+  html, body {
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  body > main#PAGES_CONTAINER,
+  body > #PAGES_CONTAINER {
+    flex: 1 0 auto;
+  }
+  #SITE_FOOTER {
+    flex-shrink: 0;
+  }
+</style>
 
 
 

@@ -55,5 +55,11 @@ Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
 
+Route::post('/contact', [\App\Http\Controllers\ContactController::class, 'store'])->name('contact.store');
+
+Route::get('/contact/merci', function () {
+    return view('contact-thank-you');
+})->name('contact.thank-you');
+
 
 

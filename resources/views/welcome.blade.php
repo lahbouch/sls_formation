@@ -14692,6 +14692,22 @@
     <link rel="manifest" href="/site.webmanifest" />
   </head>
   <body class="">
+    <style>
+      /* Sticky Footer */
+      html, body {
+        height: 100%;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+      body > main#PAGES_CONTAINER,
+      body > #PAGES_CONTAINER {
+        flex: 1 0 auto;
+      }
+      #SITE_FOOTER {
+        flex-shrink: 0;
+      }
+    </style>
     <!--pageHtmlEmbeds.bodyStart start-->
 
     <!--pageHtmlEmbeds.bodyStart end-->

@@ -108,6 +108,9 @@
 <style>.TWFxr5{height:auto!important}.May50y{overflow:hidden!important}</style>
 <title>Contact | SLS Formation</title>
   
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  
   
   
   
@@ -122,6 +125,22 @@
 
 <meta name="title" content="Untitled"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="robots" content="index, follow"><meta name="googlebot" content="index, follow"><meta property="og:title" content="Untitled"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Untitled"><title>Untitled</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" sizes="16x16" href="/favicon-16x16.png"><link rel="manifest" href="/site.webmanifest"></head>
 <body class="">
+<style>
+  /* Sticky Footer */
+  html, body {
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  body > main#PAGES_CONTAINER,
+  body > #PAGES_CONTAINER {
+    flex: 1 0 auto;
+  }
+  #SITE_FOOTER {
+    flex-shrink: 0;
+  }
+</style>
 
 
 
@@ -164,7 +183,9 @@
     
     <main id="PAGES_CONTAINER" class="PAGES_CONTAINER" tabindex="-1" data-main-content="true"><div id="SITE_PAGES" class="JsJXaX SITE_PAGES"><div id="SITE_PAGES_TRANSITION_GROUP" class="AnQkDU"><div id="uckg7" class="dBAkHi uckg7"><div class="PFkO7r wixui-page" data-testid="page-bg"></div><div class="HT5ybB"><!--$--><div id="Containeruckg7" class="Containeruckg7 SPY_vo"><div data-mesh-id="Containeruckg7inlineContent" data-testid="inline-content" class=""><div data-mesh-id="Containeruckg7inlineContent-gridContainer" data-testid="mesh-container-content"><!--$--><section id="comp-lc96quej" tabindex="-1" class="Oqnisf comp-lc96quej wixui-section" data-block-level-container="ClassicSection"><div id="bgLayers_comp-lc96quej" data-hook="bgLayers" data-motion-part="BG_LAYER comp-lc96quej" class="MW5IWV"><div data-testid="colorUnderlay" class="LWbAav Kv1aVt"></div><div id="bgMedia_comp-lc96quej" data-motion-part="BG_MEDIA comp-lc96quej" class="VgO9Yg"></div></div><div data-mesh-id="comp-lc96quejinlineContent" data-testid="inline-content" class=""><div data-mesh-id="comp-lc96quejinlineContent-gridContainer" data-testid="mesh-container-content"><!--$--><section id="comp-imon3xm8" class="comp-imon3xm8 CohWsy wixui-column-strip"><div id="bgLayers_comp-imon3xm8" data-hook="bgLayers" data-motion-part="BG_LAYER comp-imon3xm8" class="if7Vw2"><div data-testid="colorUnderlay" class="tcElKx i1tH8h"></div><div id="bgMedia_comp-imon3xm8" data-motion-part="BG_MEDIA comp-imon3xm8" class="wG8dni"></div></div><div data-testid="columns" class="V5AUxf"><!--$--><div id="mediaiu40sho71" class="mediaiu40sho71 YzqVVZ wixui-column-strip__column"><div id="bgLayers_mediaiu40sho71" data-hook="bgLayers" data-motion-part="BG_LAYER mediaiu40sho71" class="MW5IWV"><div data-testid="colorUnderlay" class="LWbAav Kv1aVt"></div><div id="bgMedia_mediaiu40sho71" data-motion-part="BG_MEDIA mediaiu40sho71" class="VgO9Yg"></div></div><div data-mesh-id="mediaiu40sho71inlineContent" data-testid="inline-content" class=""><div data-mesh-id="mediaiu40sho71inlineContent-gridContainer" data-testid="mesh-container-content"><!--$--><div id="comp-imon55qt" class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-imon55qt wixui-rich-text" data-testid="richTextElement"><h1 class="font_2 wixui-rich-text__text" style="line-height:normal; text-align:center; font-size:26px;"><span style="color:#113C66;" class="wixui-rich-text__text"><span style="font-family:avenir-lt-w01_85-heavy1475544,avenir-lt-w05_85-heavy,sans-serif;" class="wixui-rich-text__text"><span style="font-weight:bold;" class="wixui-rich-text__text"><span style="letter-spacing:normal;" class="wixui-rich-text__text">Nous contacter</span></span></span></span></h1></div><!--/$--><!--$--><div id="comp-imos0gwr" class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-imos0gwr wixui-rich-text" data-testid="richTextElement"><p class="font_8 wixui-rich-text__text" style="line-height:1.6em; font-size:14px;"><span style="letter-spacing:normal;" class="wixui-rich-text__text"><span style="font-family:helvetica-w01-light,helvetica-w02-light,sans-serif;" class="wixui-rich-text__text">Avez vous besoin de plus d'informations.&nbsp;</span></span></p>
 
-<p class="font_8 wixui-rich-text__text" style="line-height:1.6em; font-size:14px;"><span style="letter-spacing:normal;" class="wixui-rich-text__text"><span style="font-family:helvetica-w01-light,helvetica-w02-light,sans-serif;" class="wixui-rich-text__text">Veuillez nous laissez un message dans le formulaire ci-dessous.</span></span></p></div><!--/$--><!--$--><div id="comp-imonehra" class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-imonehra wixui-rich-text" data-testid="richTextElement"><p class="font_7 wixui-rich-text__text" style="font-size:14px; line-height:1.6em;"><span style="letter-spacing:normal;" class="wixui-rich-text__text"><span style="font-family:helvetica-w01-light,helvetica-w02-light,sans-serif;" class="wixui-rich-text__text"><span style="font-size:14px;" class="wixui-rich-text__text">For all inquiries, please call our main reception between 8.30am-3.30pm: 123-456-7890</span></span></span></p></div><!--/$--><!--$--><form id="comp-jn4hmzs5" class="JVi7i2 comp-jn4hmzs5 wixui-form"><div data-mesh-id="comp-jn4hmzs5inlineContent" data-testid="inline-content" class=""><div data-mesh-id="comp-jn4hmzs5inlineContent-gridContainer" data-testid="mesh-container-content"><!--$--><div id="comp-jn4hn02h" class="MpKiNN comp-jn4hn02h wixui-text-input lPl_oN"><div class="pUnTVX"><input name="nom-et prénom" id="input_comp-jn4hn02h" class="KvoMHf has-custom-focus wixui-text-input__input" type="text" placeholder="Nom et prénom" required="" aria-invalid="false" maxlength="100" autocomplete="off" value=""></div></div><!--/$--><!--$--><div id="comp-jn4hom1q" class="MpKiNN comp-jn4hom1q wixui-text-input"><div class="pUnTVX"><input name="email" id="input_comp-jn4hom1q" class="KvoMHf has-custom-focus wixui-text-input__input" type="email" placeholder="Email" aria-invalid="false" maxlength="250" autocomplete="off" aria-required="false" value=""></div></div><!--/$--><!--$--><div id="comp-jn4hop4r" class="MpKiNN comp-jn4hop4r wixui-text-input lPl_oN"><div class="pUnTVX"><input name="sujet" id="input_comp-jn4hop4r" class="KvoMHf has-custom-focus wixui-text-input__input" type="text" placeholder="Sujet" required="" aria-invalid="false" autocomplete="off" value=""></div></div><!--/$--><!--$--><div id="comp-laqu474t" class="MpKiNN comp-laqu474t wixui-text-input"><div class="pUnTVX"><input name="phone" id="input_comp-laqu474t" class="KvoMHf has-custom-focus wixui-text-input__input" type="tel" placeholder="Téléphone" aria-invalid="false" pattern="^[+]?([(][0-9]{1,3}[)][-]?)?([0-9][-]?){3,16}[0-9]$" maxlength="50" autocomplete="off" aria-required="false" value=""></div></div><!--/$--><!--$--><div id="comp-jn4hoptm" class="snt4Te comp-jn4hoptm wixui-text-box NyPO4H"><label for="textarea_comp-jn4hoptm" class="PSkPrR wixui-text-box__label"></label><textarea id="textarea_comp-jn4hoptm" class="rEindN has-custom-focus wixui-text-box__input" placeholder="Message" required="" aria-required="true" aria-invalid="true"></textarea></div><!--/$--><!--$--><div class="comp-jn4hmzvs FubTgk" id="comp-jn4hmzvs" aria-disabled="false"><button aria-disabled="false" aria-label="Envoyer" data-testid="buttonElement" class="uDW_Qe wixui-button PlZyDq"><span class="l7_2fn wixui-button__label">Envoyer</span></button></div><!--/$--><!--$--><div id="comp-jn4hmzvn" class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-jn4hmzvn wixui-rich-text" data-testid="richTextElement"><p class="font_8 wixui-rich-text__text" style="line-height:normal; text-align:right; font-size:14px;"><span style="letter-spacing:normal;" class="wixui-rich-text__text"><span class="color_19 wixui-rich-text__text">Merci pour votre message !</span></span></p></div><!--/$--></div></div></form><!--/$--><!--$--><div id="comp-imot2ny2" class="comp-imot2ny2 aVng1S wixui-horizontal-line"></div><!--/$--><!--$--><div id="comp-imos3hzv" class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-imos3hzv wixui-rich-text" data-testid="richTextElement"><p class="font_8 wixui-rich-text__text" style="line-height:1.6em; font-size:14px;"><span style="letter-spacing:normal;" class="wixui-rich-text__text"><span class="color_19 wixui-rich-text__text">500 Terry Francois Street</span></span></p>
+<p class="font_8 wixui-rich-text__text" style="line-height:1.6em; font-size:14px;"><span style="letter-spacing:normal;" class="wixui-rich-text__text"><span style="font-family:helvetica-w01-light,helvetica-w02-light,sans-serif;" class="wixui-rich-text__text">Veuillez nous laissez un message dans le formulaire ci-dessous.</span></span></p></div><!--/$--><!--$--><form id="comp-jn4hmzs5" class="JVi7i2 comp-jn4hmzs5 wixui-form" action="{{ route('contact.store') }}" method="POST">
+@csrf
+<div data-mesh-id="comp-jn4hmzs5inlineContent" data-testid="inline-content" class=""><div data-mesh-id="comp-jn4hmzs5inlineContent-gridContainer" data-testid="mesh-container-content"><!--$--><div id="comp-jn4hn02h" class="MpKiNN comp-jn4hn02h wixui-text-input lPl_oN"><div class="pUnTVX"><input name="full_name" id="input_comp-jn4hn02h" class="KvoMHf has-custom-focus wixui-text-input__input" type="text" placeholder="Nom et prénom" required="" aria-invalid="false" maxlength="100" autocomplete="off" value=""></div></div><!--/$--><!--$--><div id="comp-jn4hom1q" class="MpKiNN comp-jn4hom1q wixui-text-input"><div class="pUnTVX"><input name="email" id="input_comp-jn4hom1q" class="KvoMHf has-custom-focus wixui-text-input__input" type="email" placeholder="Email" required="" aria-invalid="false" maxlength="250" autocomplete="off" aria-required="true" value=""></div></div><!--/$--><!--$--><div id="comp-jn4hop4r" class="MpKiNN comp-jn4hop4r wixui-text-input lPl_oN"><div class="pUnTVX"><input name="sujet" id="input_comp-jn4hop4r" class="KvoMHf has-custom-focus wixui-text-input__input" type="text" placeholder="Sujet" required="" aria-invalid="false" autocomplete="off" value=""></div></div><!--/$--><!--$--><div id="comp-laqu474t" class="MpKiNN comp-laqu474t wixui-text-input"><div class="pUnTVX"><input name="telephone" id="input_comp-laqu474t" class="KvoMHf has-custom-focus wixui-text-input__input" type="tel" placeholder="Téléphone" aria-invalid="false" pattern="^[+]?([(][0-9]{1,3}[)][-]?)?([0-9][-]?){3,16}[0-9]$" maxlength="50" autocomplete="off" aria-required="false" value=""></div></div><!--/$--><!--$--><div id="comp-jn4hoptm" class="snt4Te comp-jn4hoptm wixui-text-box NyPO4H"><label for="textarea_comp-jn4hoptm" class="PSkPrR wixui-text-box__label"></label><textarea name="message" id="textarea_comp-jn4hoptm" class="rEindN has-custom-focus wixui-text-box__input" placeholder="Message" required="" aria-required="true" aria-invalid="false"></textarea></div><!--/$--><!--$--><div class="comp-jn4hmzvs FubTgk" id="comp-jn4hmzvs" aria-disabled="false"><button type="submit" aria-disabled="false" aria-label="Envoyer" data-testid="buttonElement" class="uDW_Qe wixui-button PlZyDq"><span class="l7_2fn wixui-button__label">Envoyer</span></button></div><!--/$--><!--$--><div id="comp-jn4hmzvn" class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-jn4hmzvn wixui-rich-text" data-testid="richTextElement" style="display: none;"><p class="font_8 wixui-rich-text__text" style="line-height:normal; text-align:right; font-size:14px;"><span style="letter-spacing:normal;" class="wixui-rich-text__text"><span class="color_19 wixui-rich-text__text">Merci pour votre message !</span></span></p></div><!--/$--></div></div></form><!--/$--><!--$--><div id="comp-imot2ny2" class="comp-imot2ny2 aVng1S wixui-horizontal-line"></div><!--/$--><!--$--><div id="comp-imos3hzv" class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-imos3hzv wixui-rich-text" data-testid="richTextElement"><p class="font_8 wixui-rich-text__text" style="line-height:1.6em; font-size:14px;"><span style="letter-spacing:normal;" class="wixui-rich-text__text"><span class="color_19 wixui-rich-text__text">500 Terry Francois Street</span></span></p>
 
 <p class="font_8 wixui-rich-text__text" style="line-height:1.6em; font-size:14px;"><span style="letter-spacing:normal;" class="wixui-rich-text__text"><span class="color_19 wixui-rich-text__text">San Francisco, CA 94158</span></span></p>
 
@@ -360,4 +381,71 @@ window.addEventListener('DOMContentLoaded', function() {
             });
         }
     });
+    
+    // Contact Form Submission with SweetAlert
+    const contactForm = document.getElementById('comp-jn4hmzs5');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(contactForm);
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            const originalButtonText = submitButton.querySelector('.l7_2fn').textContent;
+            
+            // Disable submit button
+            submitButton.disabled = true;
+            submitButton.querySelector('.l7_2fn').textContent = 'Envoi en cours...';
+            
+            fetch(contactForm.action, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest',
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Redirect to thank you page
+                    if (data.redirect) {
+                        window.location.href = data.redirect;
+                    } else {
+                        window.location.href = '{{ route("contact.thank-you") }}';
+                    }
+                } else {
+                    // Validation errors
+                    let errorMessages = '';
+                    if (data.errors) {
+                        errorMessages = Object.values(data.errors).flat().join('<br>');
+                    } else {
+                        errorMessages = 'Une erreur est survenue. Veuillez réessayer.';
+                    }
+                    
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Erreur de validation',
+                        html: errorMessages,
+                        confirmButtonColor: '#113c66',
+                        confirmButtonText: 'OK'
+                    });
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Erreur',
+                    text: 'Une erreur est survenue lors de l\'envoi du message. Veuillez réessayer.',
+                    confirmButtonColor: '#113c66',
+                    confirmButtonText: 'OK'
+                });
+            })
+            .finally(() => {
+                // Re-enable submit button
+                submitButton.disabled = false;
+                submitButton.querySelector('.l7_2fn').textContent = originalButtonText;
+            });
+        });
+    }
 });</script></body></html>
