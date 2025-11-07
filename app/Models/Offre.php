@@ -13,7 +13,6 @@ class Offre extends Model
     protected $fillable = [
         'type_id',
         'num',
-        'titre',
         'intitule',
         'image',
         'objectif',

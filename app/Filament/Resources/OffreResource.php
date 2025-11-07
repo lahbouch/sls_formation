@@ -21,11 +21,11 @@ class OffreResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-academic-cap';
     
-    protected static ?string $navigationLabel = 'Offres de Formation';
+    protected static ?string $navigationLabel = 'Offres';
     
     protected static ?string $modelLabel = 'Offre de Formation';
     
-    protected static ?string $pluralModelLabel = 'Offres de Formation';
+    protected static ?string $pluralModelLabel = 'Offres';
     
     protected static ?int $navigationSort = 3;
 
@@ -43,12 +43,7 @@ class OffreResource extends Resource
                     ->preload()
                     ->required(),
                 Forms\Components\TextInput::make('num')
-                    ->label('Numéro')
-                    ->numeric()
-                    ->minValue(1)
-                    ->maxValue(3),
-                Forms\Components\TextInput::make('titre')
-                    ->label('Titre'),
+                    ->label('Numéro'),
                 Forms\Components\TextInput::make('intitule')
                     ->label('Intitulé'),
                 Forms\Components\FileUpload::make('image')
@@ -122,10 +117,6 @@ class OffreResource extends Resource
                 Tables\Columns\TextColumn::make('num')
                     ->label('Numéro')
                     ->sortable(),
-                Tables\Columns\TextColumn::make('titre')
-                    ->label('Titre')
-                    ->searchable()
-                    ->limit(50),
                 Tables\Columns\TextColumn::make('intitule')
                     ->label('Intitulé')
                     ->searchable()

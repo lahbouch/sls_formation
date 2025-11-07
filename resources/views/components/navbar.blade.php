@@ -340,11 +340,11 @@
         position: absolute;
         width: 100%;
       }
-      .uYj0Sg {
+      /* .uYj0Sg {
         background-color: rgba(
           var(--bg, var(--color_11, color_11)),
           var(--alpha-bg, 1)
-        );
+        ); */
         border: var(--brw, 0px) solid
           rgba(var(--brd, var(--color_15, color_15)), var(--alpha-brd, 1));
         border-radius: var(--rd, 0px 0px 30px 0px);
@@ -809,7 +809,7 @@
                                         data-testid="mesh-container-content">
                                         <!--$-->
                                         <div id="comp-ilt53v9b" class="KaEeLN comp-ilt53v9b">
-                                            <div class="uYj0Sg wixui-box" data-testid="container-bg"></div>
+                                            {{-- <div class="uYj0Sg wixui-box" data-testid="container-bg"></div> --}}
                                             <div data-mesh-id="comp-ilt53v9binlineContent" data-testid="inline-content"
                                                 class="">
                                                 <div data-mesh-id="comp-ilt53v9binlineContent-gridContainer"

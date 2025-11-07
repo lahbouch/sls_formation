@@ -67,5 +67,10 @@ Route::get('/contact/merci', function () {
     return view('contact-thank-you');
 })->name('contact.thank-you');
 
+Route::get('/offres/{id}', function ($id) {
+    $offre = \App\Models\Offre::with('type.service')->findOrFail($id);
+    return view('offre-details', compact('offre'));
+})->name('offre.details');
+
 
 

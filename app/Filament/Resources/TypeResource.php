@@ -48,15 +48,6 @@ class TypeResource extends Resource
                     ->placeholder('P, M, or D'),
                 Forms\Components\TextInput::make('nom')
                     ->label('Nom'),
-                Forms\Components\FileUpload::make('image')
-                    ->label('Image')
-                    ->image()
-                    ->directory('types')
-                    ->disk('public')
-                    ->visibility('public')
-                    ->imagePreviewHeight('250')
-                    ->loadingIndicatorPosition('left')
-                    ->panelAspectRatio('2:1'),
             ]);
     }
 
@@ -75,10 +66,6 @@ class TypeResource extends Resource
                     ->label('Nom')
                     ->searchable()
                     ->limit(50),
-                Tables\Columns\ImageColumn::make('image')
-                    ->label('Image')
-                    ->disk('public')
-                    ->circular(),
                 Tables\Columns\TextColumn::make('offres_count')
                     ->label('Offres')
                     ->counts('offres'),

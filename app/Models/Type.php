@@ -15,7 +15,6 @@ class Type extends Model
         'service_id',
         'code',
         'nom',
-        'image',
     ];
 
     /**

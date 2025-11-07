@@ -312,7 +312,7 @@
                         <div class="offres-grid" id="offresGrid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 980px;">
                             @foreach($service->types as $type)
                                 @foreach($type->offres as $offre)
-                                    <div class="offre-card" data-type-id="{{ $type->id }}" data-offre-id="{{ $offre->id }}" style="background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;">
+                                    <div class="offre-card" data-type-id="{{ $type->id }}" data-offre-id="{{ $offre->id }}" onclick="window.location.href='{{ route('offre.details', $offre->id) }}'" style="background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;">
                                         @if($offre->image)
                                             <img src="{{ \Illuminate\Support\Facades\Storage::disk('public')->url($offre->image) }}" alt="{{ $offre->intitule }}" class="offre-card-image" style="width: 100%; height: 223px; object-fit: cover;">
                                         @else
@@ -394,6 +394,11 @@
                         }
                     </script>
                     <style>
+                        .offre-card:hover {
+                            transform: translateY(-5px);
+                            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+                        }
+                        
                         @media (max-width: 1024px) {
                             .offres-grid {
                                 grid-template-columns: repeat(3, 1fr) !important;
