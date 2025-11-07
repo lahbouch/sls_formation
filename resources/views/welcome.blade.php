@@ -14811,7 +14811,7 @@
                                          <div data-testid="colorUnderlay" class="LWbAav Kv1aVt"></div>
                                          <div id="bgMedia_comp-laryd985" data-motion-part="BG_MEDIA comp-laryd985" class="VgO9Yg">
                                            <wow-image id="img_comp-laryd985" class="jhxvbR Kv1aVt dLPlxY mNGsUM bgImage" data-image-info="{&quot;containerId&quot;:&quot;comp-laryd985&quot;,&quot;alignType&quot;:&quot;center&quot;,&quot;displayMode&quot;:&quot;fill&quot;,&quot;targetWidth&quot;:1419,&quot;targetHeight&quot;:609,&quot;isLQIP&quot;:true,&quot;encoding&quot;:&quot;AVIF&quot;,&quot;imageData&quot;:{&quot;width&quot;:6000,&quot;height&quot;:1972,&quot;uri&quot;:&quot;0ba5583727e04a07a2b0920b3359f2c0.jpg&quot;,&quot;name&quot;:&quot;&quot;,&quot;displayMode&quot;:&quot;fill&quot;}}" data-motion-part="BG_IMG comp-laryd985" data-bg-effect-name="" data-has-ssr-src="true">
-                                             <img src="https://static.wixstatic.com/media/0ba5583727e04a07a2b0920b3359f2c0.jpg/v1/fill/w_1897,h_609,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/0ba5583727e04a07a2b0920b3359f2c0.jpg" alt="Consultation Web" width="1419" height="609" style="width: 1897px; height: 609px; object-fit: cover; object-position: 50% 50%;" data-ssr-src-done="true" fetchpriority="high">
+                                             <img src="{{ asset('images/1.jpg') }}" alt="Consultation Web" width="1419" height="609" style="width: 1897px; height: 609px; object-fit: cover; object-position: 50% 50%;" data-ssr-src-done="true" fetchpriority="high">
                                            </wow-image>
                                          </div>
                                        </div>
@@ -14872,7 +14872,7 @@
                                          <div id="bgMedia_comp-laryd985-slide2" data-motion-part="BG_MEDIA comp-laryd985-slide2" class="VgO9Yg">
                                            <wow-image id="img_comp-laryd985-slide2" class="jhxvbR Kv1aVt dLPlxY mNGsUM bgImage" data-image-info="{&quot;containerId&quot;:&quot;comp-laryd985-slide2&quot;,&quot;alignType&quot;:&quot;center&quot;,&quot;displayMode&quot;:&quot;fill&quot;,&quot;targetWidth&quot;:1419,&quot;targetHeight&quot;:609,&quot;isLQIP&quot;:true,&quot;encoding&quot;:&quot;AVIF&quot;,&quot;imageData&quot;:{&quot;width&quot;:6000,&quot;height&quot;:1972,&quot;uri&quot;:&quot;0ba5583727e04a07a2b0920b3359f2c0.jpg&quot;,&quot;name&quot;:&quot;&quot;,&quot;displayMode&quot;:&quot;fill&quot;}}" data-motion-part="BG_IMG comp-laryd985-slide2" data-bg-effect-name="" data-has-ssr-src="true">
                                            <!-- TODO: Replace with your second slide image URL -->
-                                           <img src="https://static.wixstatic.com/media/0ba5583727e04a07a2b0920b3359f2c0.jpg/v1/fill/w_1897,h_609,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/0ba5583727e04a07a2b0920b3359f2c0.jpg" alt="Slide 2" width="1419" height="609" style="width: 1897px; height: 609px; object-fit: cover; object-position: 50% 50%;" data-ssr-src-done="true" fetchpriority="high">
+                                           <img src="{{ asset('images/2.jpg') }}" alt="Slide 2" width="1419" height="609" style="width: 1897px; height: 609px; object-fit: cover; object-position: 50% 50%;" data-ssr-src-done="true" fetchpriority="high">
                                            </wow-image>
                                          </div>
                                        </div>
@@ -14899,7 +14899,7 @@
                                                <span style="font-size:39px;" class="wixui-rich-text__text">
                                                  <span class="color_11 wixui-rich-text__text">
                                                    <span style="font-family:avenir-lt-w01_85-heavy1475544,avenir-lt-w05_85-heavy,sans-serif;" class="wixui-rich-text__text">
-                                                     <span style="font-weight:700; letter-spacing:-0.02em;" class="wixui-rich-text__text">Un acteur reconnue en conseil et formation</span>
+                                                     <span style="font-weight:700; letter-spacing:-0.02em;" class="wixui-rich-text__text">Un expertise au service de votre performance</span>
                                                    </span>
                                                  </span>
                                                </span>
@@ -14960,7 +14960,9 @@
                                                <span style="font-size:39px;" class="wixui-rich-text__text">
                                                  <span class="color_11 wixui-rich-text__text">
                                                    <span style="font-family:avenir-lt-w01_85-heavy1475544,avenir-lt-w05_85-heavy,sans-serif;" class="wixui-rich-text__text">
-                                                     <span style="font-weight:700; letter-spacing:-0.02em;" class="wixui-rich-text__text">Un acteur reconnue en conseil et formation</span>
+                                                     <span style="font-weight:700; letter-spacing:-0.02em;" class="wixui-rich-text__text">Des actions avec forte valeur ajoutée
+
+                                                     </span>
                                                    </span>
                                                  </span>
                                                </span>
