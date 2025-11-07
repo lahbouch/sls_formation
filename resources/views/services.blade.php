@@ -146,6 +146,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    justify-content: center;
 }
 
 .service-title-column::before {
@@ -167,6 +168,7 @@
 .service-desc-column {
     background-color: #ffffff;
     color: rgb(52, 63, 100);
+    padding: 40px 60px;
 }
 
 .service-title {
@@ -178,10 +180,7 @@
     text-transform: uppercase;
     margin: 0;
     width: 100%;
-}
-
-.service-title.right-align {
-    text-align: right;
+    text-align: center;
 }
 
 .service-description {
@@ -254,7 +253,7 @@
                 @if($isEven)
                     <!-- Title column (left) with dark blue overlay and background image -->
                     <div class="service-column service-title-column" @if($imageUrl) style="background-image: url('{{ $imageUrl }}'); background-position: {{ $isEven ? '50%' : '100%' }} 50%;" @endif>
-                        <h2 class="service-title right-align">{{ strtoupper($service->titre) }}</h2>
+                        <h2 class="service-title">{{ strtoupper($service->titre) }}</h2>
                     </div>
                     <!-- Description column (right) with white background -->
                     <div class="service-column service-desc-column">
@@ -452,5 +451,7 @@ window.addEventListener('DOMContentLoaded', function() {
                 ]
             });
         }
+    });
+});</script></body></html>
     });
 });</script></body></html>
