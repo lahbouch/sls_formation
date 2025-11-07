@@ -25,7 +25,8 @@ Route::get('/a-propos', function () {
 
 
 Route::get('/services', function () {
-    return view('services');
+    $services = \App\Models\Service::all();
+    return view('services', compact('services'));
 })->name('services');
 
 
