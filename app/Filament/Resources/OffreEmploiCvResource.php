@@ -289,8 +289,6 @@ class OffreEmploiCvResource extends Resource
         return [
             'index' => Pages\ListOffreEmploiCvs::route('/'),
             'view' => Pages\ViewOffreEmploiCv::route('/{record}'),
-            'create' => Pages\CreateOffreEmploiCv::route('/create'),
-            'edit' => Pages\EditOffreEmploiCv::route('/{record}/edit'),
         ];
     }
 }

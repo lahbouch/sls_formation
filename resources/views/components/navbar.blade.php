@@ -821,7 +821,7 @@
                                                         <a data-testid="linkElement" href="{{ route('home') }}"
                                                             target="_self" class="j7pOnl"><img fetchpriority="high"
                                                                 sizes="72px" id="img_comp-lalf0k92"
-                                                                src="http://127.0.0.1:8000/images/SLS-_Logo_png_small.webp"
+                                                                src="http://localhost:8000/images/SLS-_Logo_png_small.webp"
                                                                 alt="SLS- Logo png small" style="object-fit: cover"
                                                                 class="BI8PVQ Tj01hh" width="72" height="40"></a>
                                                     </div>

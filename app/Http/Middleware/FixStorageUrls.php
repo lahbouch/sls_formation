@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Illuminate\Support\Facades\URL;
 
 class FixStorageUrls
 {
@@ -15,6 +16,20 @@ class FixStorageUrls
      */
     public function handle(Request $request, Closure $next): Response
     {
+        // Ensure asset URLs are generated with the correct APP_URL including port
+        $appUrl = env('APP_URL') ?: 'http://localhost:8000';
+        
+        // If APP_URL doesn't include a port number and we're on localhost, add :8000
+        if (str_contains($appUrl, 'localhost') && !preg_match('/localhost:\d+/', $appUrl)) {
+            $appUrl = str_replace('http://localhost', 'http://localhost:8000', $appUrl);
+            $appUrl = str_replace('https://localhost', 'https://localhost:8000', $appUrl);
+        } elseif (str_contains($appUrl, '127.0.0.1') && !preg_match('/127\.0\.0\.1:\d+/', $appUrl)) {
+            $appUrl = str_replace('http://127.0.0.1', 'http://127.0.0.1:8000', $appUrl);
+            $appUrl = str_replace('https://127.0.0.1', 'https://127.0.0.1:8000', $appUrl);
+        }
+        
+        URL::forceRootUrl($appUrl);
+
         $response = $next($request);
 
         // Add CORS headers for storage files

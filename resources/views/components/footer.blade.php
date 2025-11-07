@@ -15,20 +15,20 @@
                             <li id="dataItem-imomo2yl1-comp-imomo2yb" class="O6KwRn">
                                 <a data-testid="linkElement" href="http://www.facebook.com/wix" target="_blank"
                                     class="oRtuWN"><img sizes="undefinedpx" id="img_0_comp-imomo2yb"
-                                        src="http://127.0.0.1:8000/images/23fd2a2be53141ed810f4d3dcdcd01fa.webp" alt=""
+                                        src="http://localhost:8000/images/23fd2a2be53141ed810f4d3dcdcd01fa.webp" alt=""
                                         style="object-fit: cover" class="YaS0jR Tj01hh"></a>
                             </li>
                             <li id="dataItem-imomo2yn-comp-imomo2yb" class="O6KwRn">
                                 <a data-testid="linkElement" href="http://www.twitter.com/wix" target="_blank"
                                     class="oRtuWN"><img sizes="undefinedpx" id="img_1_comp-imomo2yb"
-                                        src="http://127.0.0.1:8000/images/01ab6619093f45388d66736ec22e5885.webp" alt=""
+                                        src="http://localhost:8000/images/01ab6619093f45388d66736ec22e5885.webp" alt=""
                                         style="object-fit: cover" class="YaS0jR Tj01hh"></a>
                             </li>
                             <li id="dataItem-imomo2yo5-comp-imomo2yb" class="O6KwRn">
                                 <a data-testid="linkElement" href="https://instagram.com/wix/" target="_blank"
                                     class="oRtuWN" aria-label="White Instagram Icon"><img sizes="undefinedpx"
                                         id="img_2_comp-imomo2yb"
-                                        src="http://127.0.0.1:8000/images/81af6121f84c41a5b4391d7d37fce12a.webp"
+                                        src="http://localhost:8000/images/81af6121f84c41a5b4391d7d37fce12a.webp"
                                         alt="White Instagram Icon" style="object-fit: cover" class="YaS0jR Tj01hh"></a>
                             </li>
                         </ul>

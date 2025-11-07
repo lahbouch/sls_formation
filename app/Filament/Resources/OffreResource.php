@@ -13,6 +13,7 @@ use Filament\Tables;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Facades\Storage;
 
 class OffreResource extends Resource
 {
@@ -46,26 +47,19 @@ class OffreResource extends Resource
                     ->numeric()
                     ->minValue(1)
                     ->maxValue(3),
-                Forms\Components\RichEditor::make('titre')
-                    ->label('Titre')
-                    ->toolbarButtons([
-                        'bold',
-                        'italic',
-                        'underline',
-                        'link',
-                        'h2',
-                        'h3',
-                    ]),
-                Forms\Components\RichEditor::make('intitule')
-                    ->label('Intitulé')
-                    ->toolbarButtons([
-                        'bold',
-                        'italic',
-                        'underline',
-                        'link',
-                        'h2',
-                        'h3',
-                    ]),
+                Forms\Components\TextInput::make('titre')
+                    ->label('Titre'),
+                Forms\Components\TextInput::make('intitule')
+                    ->label('Intitulé'),
+                Forms\Components\FileUpload::make('image')
+                    ->label('Image')
+                    ->image()
+                    ->directory('offres')
+                    ->disk('public')
+                    ->visibility('public')
+                    ->imagePreviewHeight('250')
+                    ->loadingIndicatorPosition('left')
+                    ->panelAspectRatio('2:1'),
                 Forms\Components\RichEditor::make('objectif')
                     ->label('Objectif')
                     ->toolbarButtons([
@@ -74,11 +68,14 @@ class OffreResource extends Resource
                         'underline',
                         'strike',
                         'link',
+                        'image',
                         'bulletList',
                         'orderedList',
                         'blockquote',
                         'codeBlock',
-                    ]),
+                    ])
+                    ->fileAttachmentsDirectory('rich-editor')
+                    ->fileAttachmentsDisk('public'),
                 Forms\Components\RichEditor::make('prerequis')
                     ->label('Prérequis')
                     ->toolbarButtons([
@@ -87,11 +84,14 @@ class OffreResource extends Resource
                         'underline',
                         'strike',
                         'link',
+                        'image',
                         'bulletList',
                         'orderedList',
                         'blockquote',
                         'codeBlock',
-                    ]),
+                    ])
+                    ->fileAttachmentsDirectory('rich-editor')
+                    ->fileAttachmentsDisk('public'),
                 Forms\Components\RichEditor::make('programme')
                     ->label('Programme')
                     ->toolbarButtons([
@@ -100,11 +100,14 @@ class OffreResource extends Resource
                         'underline',
                         'strike',
                         'link',
+                        'image',
                         'bulletList',
                         'orderedList',
                         'blockquote',
                         'codeBlock',
-                    ]),
+                    ])
+                    ->fileAttachmentsDirectory('rich-editor')
+                    ->fileAttachmentsDisk('public'),
             ]);
     }
 
@@ -127,6 +130,10 @@ class OffreResource extends Resource
                     ->label('Intitulé')
                     ->searchable()
                     ->limit(50),
+                Tables\Columns\ImageColumn::make('image')
+                    ->label('Image')
+                    ->disk('public')
+                    ->circular(),
                 Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()

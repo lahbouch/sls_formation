@@ -32,16 +32,8 @@ class ServiceResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\RichEditor::make('titre')
-                    ->label('Titre')
-                    ->toolbarButtons([
-                        'bold',
-                        'italic',
-                        'underline',
-                        'link',
-                        'h2',
-                        'h3',
-                    ]),
+                Forms\Components\TextInput::make('titre')
+                    ->label('Titre'),
                 Forms\Components\FileUpload::make('image')
                     ->label('Image')
                     ->image()
@@ -59,13 +51,16 @@ class ServiceResource extends Resource
                         'underline',
                         'strike',
                         'link',
+                        'image',
                         'bulletList',
                         'orderedList',
                         'blockquote',
                         'codeBlock',
                         'h2',
                         'h3',
-                    ]),
+                    ])
+                    ->fileAttachmentsDirectory('rich-editor')
+                    ->fileAttachmentsDisk('public'),
             ]);
     }
 

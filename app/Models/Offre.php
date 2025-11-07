@@ -15,6 +15,7 @@ class Offre extends Model
         'num',
         'titre',
         'intitule',
+        'image',
         'objectif',
         'prerequis',
         'programme',

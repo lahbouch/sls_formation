@@ -42,21 +42,9 @@ class GalleryResource extends Resource
                     ->imagePreviewHeight('250')
                     ->loadingIndicatorPosition('left')
                     ->panelAspectRatio('2:1'),
-                Forms\Components\RichEditor::make('description')
+                Forms\Components\Textarea::make('description')
                     ->label('Description')
-                    ->toolbarButtons([
-                        'bold',
-                        'italic',
-                        'underline',
-                        'strike',
-                        'link',
-                        'bulletList',
-                        'orderedList',
-                        'blockquote',
-                        'codeBlock',
-                        'h2',
-                        'h3',
-                    ]),
+                    ->rows(5),
             ]);
     }
 

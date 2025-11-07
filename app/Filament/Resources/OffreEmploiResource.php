@@ -32,16 +32,8 @@ class OffreEmploiResource extends Resource
     {
         return $form
             ->schema([
-                Forms\Components\RichEditor::make('titre')
-                    ->label('Titre')
-                    ->toolbarButtons([
-                        'bold',
-                        'italic',
-                        'underline',
-                        'link',
-                        'h2',
-                        'h3',
-                    ]),
+                Forms\Components\TextInput::make('titre')
+                    ->label('Titre'),
                 Forms\Components\FileUpload::make('image')
                     ->label('Image')
                     ->image()
@@ -51,21 +43,9 @@ class OffreEmploiResource extends Resource
                     ->imagePreviewHeight('250')
                     ->loadingIndicatorPosition('left')
                     ->panelAspectRatio('2:1'),
-                Forms\Components\RichEditor::make('description')
+                Forms\Components\Textarea::make('description')
                     ->label('Description')
-                    ->toolbarButtons([
-                        'bold',
-                        'italic',
-                        'underline',
-                        'strike',
-                        'link',
-                        'bulletList',
-                        'orderedList',
-                        'blockquote',
-                        'codeBlock',
-                        'h2',
-                        'h3',
-                    ]),
+                    ->rows(5),
                 Forms\Components\Toggle::make('active')
                     ->label('Active')
                     ->default(true),

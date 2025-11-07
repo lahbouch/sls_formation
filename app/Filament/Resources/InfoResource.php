@@ -37,9 +37,8 @@ class InfoResource extends Resource
                 Forms\Components\TextInput::make('email')
                     ->label('Email')
                     ->email(),
-                Forms\Components\Textarea::make('address')
-                    ->label('Adresse')
-                    ->rows(3),
+                Forms\Components\TextInput::make('address')
+                    ->label('Adresse'),
             ]);
     }
 
