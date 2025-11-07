@@ -19,7 +19,8 @@ Route::get('/', function () {
 
 
 Route::get('/a-propos', function () {
-    return view('a_propos');
+    $partners = \App\Models\Partner::all();
+    return view('a_propos', compact('partners'));
 })->name('a-propos');
 
 
