@@ -17,7 +17,7 @@ class FixStorageUrls
     public function handle(Request $request, Closure $next): Response
     {
         // Ensure asset URLs are generated with the correct APP_URL including port
-        $appUrl = env('APP_URL') ?: 'http://localhost';
+        $appUrl = env('APP_URL') ?: 'http://127.0.0.1';
         
         URL::forceRootUrl($appUrl);
 
