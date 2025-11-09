@@ -15227,7 +15227,7 @@
                                                               );
                                                             "
                                                             ><img
-                                                                      alt="{{ ucwords($service->titre) }}"
+                                                                      alt="{{ ucwords(strtolower($service->titre)) }}"
                                                               style="
                                                                 width: 277px;
                                                                 height: 246px;
@@ -15301,9 +15301,9 @@
                                                                             background-color: #113c66;
                                                                           "
                                                                           class="wixui-rich-text__text"
-                                                                          >&nbsp;
-                                                                                {{ ucwords($service->titre) }}
-                                                                          &nbsp;</span
+                                                                                >&nbsp;
+                                                                                {{ ucwords(strtolower($service->titre)) }}
+                                                                                &nbsp;</span
                                                                         ></span
                                                                       ></span
                                                                     ></span
