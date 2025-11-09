@@ -295,7 +295,7 @@
                 <div data-mesh-id="comp-laohuz5q1inlineContent-gridContainer" data-testid="mesh-container-content">
                     <!-- Service Type Filters -->
                     <div id="comp-laptck7e" class="comp-laptck7e wixui-selection-tags" style="margin: 40px auto; max-width: 980px; padding: 0 20px;">
-                        <div class="service-type-filters" id="serviceTypeFilters" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; justify-items: center;">
+                        <div class="service-type-filters" id="serviceTypeFilters" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; justify-items: center;">
                             <button class="service-type-filter active" data-type-id="all" onclick="filterOffres('all')" style="background-color: #113c66; border: none; color: #ffffff; padding: 12px 20px; border-radius: 4px; cursor: pointer; font-family: avenir-lt-w01_35-light1475496, avenir-lt-w05_35-light, sans-serif; font-size: 13px; font-weight: 700; transition: all 0.3s ease; text-align: center; width: 100%; max-width: 250px; box-shadow: none;">
                                 Tous
                             </button>
@@ -401,6 +401,9 @@
                         
                         @media (max-width: 1024px) {
                             .offres-grid {
+                                grid-template-columns: repeat(3, 1fr) !important;
+                            }
+                            .service-type-filters {
                                 grid-template-columns: repeat(3, 1fr) !important;
                             }
                         }
