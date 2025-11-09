@@ -184,7 +184,56 @@
 
 
 
-<main id="PAGES_CONTAINER" class="PAGES_CONTAINER" tabindex="-1" data-main-content="true"><div id="SITE_PAGES" class="JsJXaX SITE_PAGES"><div id="SITE_PAGES_TRANSITION_GROUP" class="AnQkDU"><div id="pck1h" class="dBAkHi pck1h"><div class="PFkO7r wixui-page" data-testid="page-bg"></div><div class="HT5ybB"><!--$--><div id="Containerpck1h" class="Containerpck1h SPY_vo"><div data-mesh-id="Containerpck1hinlineContent" data-testid="inline-content" class=""><div data-mesh-id="Containerpck1hinlineContent-gridContainer" data-testid="mesh-container-content"><!--$--><section id="comp-lc96qu9z" tabindex="-1" class="Oqnisf comp-lc96qu9z wixui-section" data-block-level-container="ClassicSection"><div id="bgLayers_comp-lc96qu9z" data-hook="bgLayers" data-motion-part="BG_LAYER comp-lc96qu9z" class="MW5IWV"><div data-testid="colorUnderlay" class="LWbAav Kv1aVt"></div><div id="bgMedia_comp-lc96qu9z" data-motion-part="BG_MEDIA comp-lc96qu9z" class="VgO9Yg"></div></div><div data-mesh-id="comp-lc96qu9zinlineContent" data-testid="inline-content" class=""><div data-mesh-id="comp-lc96qu9zinlineContent-gridContainer" data-testid="mesh-container-content"><!--$--><div id="comp-laohuylq" style="display:none"></div><!--/$--><!--$--><section id="comp-laohuylu" class="comp-laohuylu CohWsy wixui-column-strip"><div id="bgLayers_comp-laohuylu" data-hook="bgLayers" data-motion-part="BG_LAYER comp-laohuylu" class="if7Vw2"><div data-testid="colorUnderlay" class="tcElKx i1tH8h"></div><div id="bgMedia_comp-laohuylu" data-motion-part="BG_MEDIA comp-laohuylu" class="wG8dni"></div></div><div data-testid="columns" class="V5AUxf"><!--$--><div id="comp-laohuym1" class="comp-laohuym1 YzqVVZ wixui-column-strip__column"><div id="bgLayers_comp-laohuym1" data-hook="bgLayers" data-motion-part="BG_LAYER comp-laohuym1" class="MW5IWV"><div data-testid="colorUnderlay" class="LWbAav Kv1aVt"></div><div id="bgMedia_comp-laohuym1" data-motion-part="BG_MEDIA comp-laohuym1" class="VgO9Yg"></div></div><div data-mesh-id="comp-laohuym1inlineContent" data-testid="inline-content" class=""><div data-mesh-id="comp-laohuym1inlineContent-gridContainer" data-testid="mesh-container-content"><!--$--><div id="comp-laoljmrt" class="KaEeLN comp-laoljmrt"><div class="uYj0Sg wixui-box" data-testid="container-bg"></div><div data-mesh-id="comp-laoljmrtinlineContent" data-testid="inline-content" class=""><div data-mesh-id="comp-laoljmrtinlineContent-gridContainer" data-testid="mesh-container-content"><!--$--><div id="comp-lgjlzf23" class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-lgjlzf23 wixui-rich-text" data-testid="richTextElement"><h1 class="font_0 wixui-rich-text__text" style="font-size:25px; line-height:normal;"><span style="font-size:25px;" class="wixui-rich-text__text"><span style="font-family:avenir-lt-w01_35-light1475496,avenir-lt-w05_35-light,sans-serif;" class="wixui-rich-text__text"><span style="font-weight:bold;" class="wixui-rich-text__text"><span class="color_11 wixui-rich-text__text"><span style="letter-spacing:normal;" class="wixui-rich-text__text">@if($article->articleType)
+<main id="PAGES_CONTAINER" class="PAGES_CONTAINER" tabindex="-1" data-main-content="true"><div id="SITE_PAGES" class="JsJXaX SITE_PAGES"><div id="SITE_PAGES_TRANSITION_GROUP" class="AnQkDU"><div id="pck1h" class="dBAkHi pck1h"><div class="PFkO7r wixui-page" data-testid="page-bg"></div><div class="HT5ybB"><!--$--><div id="Containerpck1h" class="Containerpck1h SPY_vo"><div data-mesh-id="Containerpck1hinlineContent" data-testid="inline-content" class=""><div data-mesh-id="Containerpck1hinlineContent-gridContainer" data-testid="mesh-container-content"><!--$--><section id="comp-lc96qu9z" tabindex="-1" class="Oqnisf comp-lc96qu9z wixui-section" data-block-level-container="ClassicSection"><div id="bgLayers_comp-lc96qu9z" data-hook="bgLayers" data-motion-part="BG_LAYER comp-lc96qu9z" class="MW5IWV"><div data-testid="colorUnderlay" class="LWbAav Kv1aVt"></div><div id="bgMedia_comp-lc96qu9z" data-motion-part="BG_MEDIA comp-lc96qu9z" class="VgO9Yg"></div></div><div data-mesh-id="comp-lc96qu9zinlineContent" data-testid="inline-content" class=""><div data-mesh-id="comp-lc96qu9zinlineContent-gridContainer" data-testid="mesh-container-content" style="max-width: 800px; margin: 0 auto; padding: 60px 20px;"><!--$--><div id="comp-laohuylq" style="display:none"></div><!--/$--><article style="background: #fff; padding: 0;">
+@php
+  $articleImageUrl = $article->image ? \Illuminate\Support\Facades\Storage::disk('public')->url($article->image) : null;
+@endphp
+
+<!-- Featured Image -->
+@if($articleImageUrl)
+<div style="width: 100%; margin-bottom: 40px; border-radius: 8px; overflow: hidden;">
+  <img src="{{ $articleImageUrl }}" alt="{{ $article->titre }}" style="width: 100%; height: auto; max-height: 500px; object-fit: cover; display: block;">
+</div>
+@endif
+
+<!-- Article Header -->
+<header style="margin-bottom: 30px; text-align: center; padding-bottom: 30px; border-bottom: 1px solid #e0e0e0;">
+  <!-- Category -->
+  @if($article->articleType)
+  <div style="margin-bottom: 15px;">
+    <span style="display: inline-block; padding: 6px 16px; background-color: #113c66; color: #fff; border-radius: 20px; font-size: 13px; font-weight: 500; font-family: avenir-lt-w01_35-light1475496, avenir-lt-w05_35-light, sans-serif; letter-spacing: 0.5px;">
+      {{ ucwords(strtolower($article->articleType->nom)) }}
+    </span>
+  </div>
+  @endif
+  
+  <!-- Title -->
+  <h1 style="font-size: 42px; line-height: 1.3; color: #113c66; margin: 0 0 20px 0; font-family: avenir-lt-w01_85-heavy1475544, avenir-lt-w05_85-heavy, sans-serif; font-weight: bold;">
+    {{ ucwords(strtolower($article->titre)) }}
+  </h1>
+  
+  <!-- Date -->
+  @if($article->date_created)
+  <div style="color: #666; font-size: 15px; font-family: avenir-lt-w01_35-light1475496, avenir-lt-w05_35-light, sans-serif;">
+    Publié le {{ $article->date_created->format('d F Y') }}
+  </div>
+  @endif
+</header>
+
+<!-- Article Content -->
+<div style="font-size: 18px; line-height: 1.8; color: #333; font-family: avenir-lt-w01_35-light1475496, avenir-lt-w05_35-light, sans-serif; margin-bottom: 40px;">
+  @if($article->content)
+    {!! $article->content !!}
+  @endif
+</div>
+
+<!-- Back Button -->
+<div style="margin-top: 60px; padding-top: 30px; border-top: 1px solid #e0e0e0; text-align: center;">
+  <a href="{{ route('actualites') }}" style="display: inline-block; padding: 12px 24px; background-color: #113c66; color: #fff; text-decoration: none; border-radius: 4px; font-size: 16px; font-family: avenir-lt-w01_35-light1475496, avenir-lt-w05_35-light, sans-serif; transition: background-color 0.3s;">
+    ← Retour aux actualités
+  </a>
+</div>
+</article><!--$--><section id="comp-laohuylu" class="comp-laohuylu CohWsy wixui-column-strip" style="display:none;"><div id="bgLayers_comp-laohuylu" data-hook="bgLayers" data-motion-part="BG_LAYER comp-laohuylu" class="if7Vw2"><div data-testid="colorUnderlay" class="tcElKx i1tH8h"></div><div id="bgMedia_comp-laohuylu" data-motion-part="BG_MEDIA comp-laohuylu" class="wG8dni"></div></div><div data-testid="columns" class="V5AUxf"><!--$--><div id="comp-laohuym1" class="comp-laohuym1 YzqVVZ wixui-column-strip__column"><div id="bgLayers_comp-laohuym1" data-hook="bgLayers" data-motion-part="BG_LAYER comp-laohuym1" class="MW5IWV"><div data-testid="colorUnderlay" class="LWbAav Kv1aVt"></div><div id="bgMedia_comp-laohuym1" data-motion-part="BG_MEDIA comp-laohuym1" class="VgO9Yg"></div></div><div data-mesh-id="comp-laohuym1inlineContent" data-testid="inline-content" class=""><div data-mesh-id="comp-laohuym1inlineContent-gridContainer" data-testid="mesh-container-content"><!--$--><div id="comp-laoljmrt" class="KaEeLN comp-laoljmrt"><div class="uYj0Sg wixui-box" data-testid="container-bg"></div><div data-mesh-id="comp-laoljmrtinlineContent" data-testid="inline-content" class=""><div data-mesh-id="comp-laoljmrtinlineContent-gridContainer" data-testid="mesh-container-content"><!--$--><div id="comp-lgjlzf23" class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-lgjlzf23 wixui-rich-text" data-testid="richTextElement"><h1 class="font_0 wixui-rich-text__text" style="font-size:25px; line-height:normal;"><span style="font-size:25px;" class="wixui-rich-text__text"><span style="font-family:avenir-lt-w01_35-light1475496,avenir-lt-w05_35-light,sans-serif;" class="wixui-rich-text__text"><span style="font-weight:bold;" class="wixui-rich-text__text"><span class="color_11 wixui-rich-text__text"><span style="letter-spacing:normal;" class="wixui-rich-text__text">@if($article->articleType)
   {{ ucwords(strtolower($article->articleType->nom)) }}
 @endif</span></span></span></span></span></h1></div><!--/$--></div></div></div><!--/$--><!--$--><div id="comp-laohuym91" class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-laohuym91 wixui-rich-text" data-testid="richTextElement"><h1 class="font_0 wixui-rich-text__text" style="font-size:25px; line-height:normal;"><span style="font-family:avenir-lt-w01_35-light1475496,avenir-lt-w05_35-light,sans-serif;" class="wixui-rich-text__text"><span style="font-size:25px;" class="wixui-rich-text__text"><span style="color:#324158;" class="wixui-rich-text__text"><span style="font-weight:bold;" class="wixui-rich-text__text"><span style="letter-spacing:normal;" class="wixui-rich-text__text">{{ ucwords(strtolower($article->titre)) }}</span></span></span></span></span></h1></div><!--/$--><!--$--><div id="comp-lgjmw1tv-title" class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-lgjmw1tv-title wixui-rich-text" data-testid="richTextElement" style="display:none;"><p class="font_8 wixui-rich-text__text" style="font-size:16px; line-height:normal;"><span style="font-family:avenir-lt-w01_85-heavy1475544,avenir-lt-w05_85-heavy,sans-serif;" class="wixui-rich-text__text"><span style="font-size:16px;" class="wixui-rich-text__text"><span class="color_19 wixui-rich-text__text"><span style="text-decoration:underline;" class="wixui-rich-text__text"></span></span></span></span></p></div><!--/$--><!--$--><div id="comp-laoknqr3-title" class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-laoknqr3-title wixui-rich-text" data-testid="richTextElement" style="display:none;"><p class="font_8 wixui-rich-text__text" style="font-size:20px; line-height:normal;"><span class="color_19 wixui-rich-text__text"><span style="font-size:20px;" class="wixui-rich-text__text"><span style="font-weight:bold;" class="wixui-rich-text__text"><span style="font-family:avenir-lt-w01_35-light1475496,avenir-lt-w05_35-light,sans-serif;" class="wixui-rich-text__text">
   
