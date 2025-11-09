@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $services = \App\Models\Service::all();
+    return view('welcome', compact('services'));
 })->name('home');
 
 

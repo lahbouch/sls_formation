@@ -4977,6 +4977,21 @@
       .T7n0L6 {
         direction: ltr;
         margin: var(--item-margin);
+        flex: 0 0 calc(33.333% - 2 * var(--item-margin, 0px));
+        max-width: calc(33.333% - 2 * var(--item-margin, 0px));
+        box-sizing: border-box;
+      }
+      @media (max-width: 980px) {
+        .T7n0L6 {
+          flex: 0 0 calc(50% - 2 * var(--item-margin, 0px));
+          max-width: calc(50% - 2 * var(--item-margin, 0px));
+        }
+      }
+      @media (max-width: 600px) {
+        .T7n0L6 {
+          flex: 0 0 100%;
+          max-width: 100%;
+        }
       }
       .E6jjcn,
       .cGWabE {
@@ -15163,20 +15178,29 @@
                                               class="comp-lamqvxen wixui-repeater"
                                             >
                                               <div role="list" class="hRdzm4">
-                                                <div class="cGWabE">
+                                                @if(isset($services) && $services->count() > 0)
+                                                  @foreach($services as $service)
+                                                    @php
+                                                      $imagePath = $service->minimized_image ?: $service->image;
+                                                      $imageUrl = $imagePath ? \Illuminate\Support\Facades\Storage::disk('public')->url($imagePath) : '';
+                                                      $itemId = 'comp-lamqvxfv1__item-' . $service->id;
+                                                      $textId = 'comp-lamqvxg32__item-' . $service->id;
+                                                    @endphp
                                                   <div
                                                     role="listitem"
                                                     class="T7n0L6"
+                                                      style="cursor: pointer;"
+                                                      onclick="window.location.href='{{ route('service', $service->id) }}'"
                                                   >
                                                     <!--$-->
                                                     <div
-                                                      id="comp-lamqvxfv1__item1"
+                                                            id="{{ $itemId }}"
                                                       class="comp-lamqvxfv1 YzqVVZ wixui-repeater__item"
                                                     >
                                                       <div
-                                                        id="bgLayers_comp-lamqvxfv1__item1"
+                                                              id="bgLayers_{{ $itemId }}"
                                                         data-hook="bgLayers"
-                                                        data-motion-part="BG_LAYER comp-lamqvxfv1__item1"
+                                                              data-motion-part="BG_LAYER {{ $itemId }}"
                                                         class="MW5IWV"
                                                       >
                                                         <div
@@ -15184,25 +15208,26 @@
                                                           class="LWbAav Kv1aVt"
                                                         ></div>
                                                         <div
-                                                          id="bgMedia_comp-lamqvxfv1__item1"
-                                                          data-motion-part="BG_MEDIA comp-lamqvxfv1__item1"
+                                                                id="bgMedia_{{ $itemId }}"
+                                                                data-motion-part="BG_MEDIA {{ $itemId }}"
                                                           class="VgO9Yg"
                                                         >
+                                                                @if($imageUrl)
                                                           <wow-image
-                                                            id="img_comp-lamqvxfv1__item1"
+                                                                    id="img_{{ $itemId }}"
                                                             class="jhxvbR Kv1aVt dLPlxY mNGsUM bgImage"
-                                                            data-image-info='{"containerId":"comp-lamqvxfv1__item1","alignType":"center","displayMode":"fill","targetWidth":277,"targetHeight":246,"encoding":"AVIF","imageData":{"width":3000,"height":2000,"uri":"8ad880_87096ffca61348ac891165532aae3c70~mv2.jpg","name":"","displayMode":"fill"}}'
-                                                            data-motion-part="BG_IMG comp-lamqvxfv1__item1"
+                                                                    data-image-info='{"containerId":"{{ $itemId }}","alignType":"center","displayMode":"fill","targetWidth":277,"targetHeight":246,"encoding":"AVIF","imageData":{"width":277,"height":246,"uri":"{{ $imagePath }}","name":"","displayMode":"fill"}}'
+                                                                    data-motion-part="BG_IMG {{ $itemId }}"
                                                             data-bg-effect-name=""
                                                             data-has-ssr-src=""
                                                             style="
                                                               --wix-img-max-width: max(
-                                                                3000px,
+                                                                        277px,
                                                                 100%
                                                               );
                                                             "
                                                             ><img
-                                                              alt=""
+                                                                      alt="{{ ucwords($service->titre) }}"
                                                               style="
                                                                 width: 277px;
                                                                 height: 246px;
@@ -15212,22 +15237,27 @@
                                                               height="246"
                                                               data-ssr-src-done="true"
                                                               fetchpriority="high"
-                                                              src="{{ asset('/images/8ad880_87096ffca61348ac891165532aae3c70~mv2.webp') }}"
+                                                                      src="{{ $imageUrl }}"
                                                           /></wow-image>
+                                                                @else
+                                                                  <div style="width: 277px; height: 246px; background-color: #f0f0f0; display: flex; align-items: center; justify-content: center; color: #999;">
+                                                                    <span>Aucune image</span>
                                                         </div>
+                                                                @endif
                                                       </div>
-                                                      <div
-                                                        data-mesh-id="comp-lamqvxfv1__item1inlineContent"
+                                                  </div>
+                                                  <div
+                                                              data-mesh-id="{{ $itemId }}inlineContent"
                                                         data-testid="inline-content"
                                                         class=""
                                                       >
                                                         <div
-                                                          data-mesh-id="comp-lamqvxfv1__item1inlineContent-gridContainer"
+                                                                data-mesh-id="{{ $itemId }}inlineContent-gridContainer"
                                                           data-testid="mesh-container-content"
                                                         >
                                                           <!--$-->
                                                           <div
-                                                            id="comp-lamqvxg32__item1"
+                                                                  id="{{ $textId }}"
                                                             class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-lamqvxg32 wixui-rich-text"
                                                             data-testid="richTextElement"
                                                           >
@@ -15272,7 +15302,7 @@
                                                                           "
                                                                           class="wixui-rich-text__text"
                                                                           >&nbsp;
-                                                                          Formation
+                                                                                {{ ucwords($service->titre) }}
                                                                           &nbsp;</span
                                                                         ></span
                                                                       ></span
@@ -15288,610 +15318,12 @@
                                                     </div>
                                                     <!--/$-->
                                                   </div>
-                                                  <div
-                                                    role="listitem"
-                                                    class="T7n0L6"
-                                                  >
-                                                    <!--$-->
-                                                    <div
-                                                      id="comp-lamqvxfv1__item2"
-                                                      class="comp-lamqvxfv1 YzqVVZ wixui-repeater__item"
-                                                    >
-                                                      <div
-                                                        id="bgLayers_comp-lamqvxfv1__item2"
-                                                        data-hook="bgLayers"
-                                                        data-motion-part="BG_LAYER comp-lamqvxfv1__item2"
-                                                        class="MW5IWV"
-                                                      >
-                                                        <div
-                                                          data-testid="colorUnderlay"
-                                                          class="LWbAav Kv1aVt"
-                                                        ></div>
-                                                        <div
-                                                          id="bgMedia_comp-lamqvxfv1__item2"
-                                                          data-motion-part="BG_MEDIA comp-lamqvxfv1__item2"
-                                                          class="VgO9Yg"
-                                                        >
-                                                          <wow-image
-                                                            id="img_comp-lamqvxfv1__item2"
-                                                            class="jhxvbR Kv1aVt dLPlxY mNGsUM bgImage"
-                                                            data-image-info='{"containerId":"comp-lamqvxfv1__item2","alignType":"center","displayMode":"fill","targetWidth":277,"targetHeight":246,"encoding":"AVIF","imageData":{"width":3000,"height":2000,"uri":"8ad880_9c955e6809dd454391700975d68f91d5~mv2.jpg","name":"","displayMode":"fill"}}'
-                                                            data-motion-part="BG_IMG comp-lamqvxfv1__item2"
-                                                            data-bg-effect-name=""
-                                                            data-has-ssr-src=""
-                                                            style="
-                                                              --wix-img-max-width: max(
-                                                                3000px,
-                                                                100%
-                                                              );
-                                                            "
-                                                            ><img
-                                                              alt=""
-                                                              style="
-                                                                width: 277px;
-                                                                height: 246px;
-                                                                object-fit: cover;
-                                                              "
-                                                              width="277"
-                                                              height="246"
-                                                              data-ssr-src-done="true"
-                                                              fetchpriority="high"
-                                                              src="{{ asset('/images/8ad880_9c955e6809dd454391700975d68f91d5~mv2.webp') }}"
-                                                          /></wow-image>
+                                                  @endforeach
+                                                @else
+                                                  <div style="text-align: center; padding: 40px; color: #666;">
+                                                    <p>Aucun service disponible pour le moment.</p>
                                                         </div>
-                                                      </div>
-                                                      <div
-                                                        data-mesh-id="comp-lamqvxfv1__item2inlineContent"
-                                                        data-testid="inline-content"
-                                                        class=""
-                                                      >
-                                                        <div
-                                                          data-mesh-id="comp-lamqvxfv1__item2inlineContent-gridContainer"
-                                                          data-testid="mesh-container-content"
-                                                        >
-                                                          <!--$-->
-                                                          <div
-                                                            id="comp-lamqvxg32__item2"
-                                                            class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-lamqvxg32 wixui-rich-text"
-                                                            data-testid="richTextElement"
-                                                          >
-                                                            <p
-                                                              class="font_7 wixui-rich-text__text"
-                                                              style="
-                                                                font-size: 22px;
-                                                                text-align: center;
-                                                              "
-                                                            >
-                                                              <span
-                                                                style="
-                                                                  font-size: 22px;
-                                                                "
-                                                                class="wixui-rich-text__text"
-                                                                ><span
-                                                                  style="
-                                                                    color: #ffffff;
-                                                                  "
-                                                                  class="wixui-rich-text__text"
-                                                                  ><span
-                                                                    style="
-                                                                      font-weight: bold;
-                                                                    "
-                                                                    class="wixui-rich-text__text"
-                                                                    ><span
-                                                                      style="
-                                                                        font-family: avenir-lt-w01_35-light1475496,
-                                                                          avenir-lt-w05_35-light,
-                                                                          sans-serif;
-                                                                      "
-                                                                      class="wixui-rich-text__text"
-                                                                      ><span
-                                                                        style="
-                                                                          background-color: #113c66;
-                                                                        "
-                                                                        class="wixui-rich-text__text"
-                                                                        >&nbsp;
-                                                                        Coaching
-                                                                        &nbsp;</span
-                                                                      ></span
-                                                                    ></span
-                                                                  ></span
-                                                                ></span
-                                                              >
-                                                            </p>
-                                                          </div>
-                                                          <!--/$-->
-                                                        </div>
-                                                      </div>
-                                                    </div>
-                                                    <!--/$-->
-                                                  </div>
-                                                </div>
-                                                <div class="cGWabE">
-                                                  <div
-                                                    role="listitem"
-                                                    class="T7n0L6"
-                                                  >
-                                                    <!--$-->
-                                                    <div
-                                                      id="comp-lamqvxfv1__item-lamqwrmp"
-                                                      class="comp-lamqvxfv1 YzqVVZ wixui-repeater__item"
-                                                    >
-                                                      <div
-                                                        id="bgLayers_comp-lamqvxfv1__item-lamqwrmp"
-                                                        data-hook="bgLayers"
-                                                        data-motion-part="BG_LAYER comp-lamqvxfv1__item-lamqwrmp"
-                                                        class="MW5IWV"
-                                                      >
-                                                        <div
-                                                          data-testid="colorUnderlay"
-                                                          class="LWbAav Kv1aVt"
-                                                        ></div>
-                                                        <div
-                                                          id="bgMedia_comp-lamqvxfv1__item-lamqwrmp"
-                                                          data-motion-part="BG_MEDIA comp-lamqvxfv1__item-lamqwrmp"
-                                                          class="VgO9Yg"
-                                                        >
-                                                          <wow-image
-                                                            id="img_comp-lamqvxfv1__item-lamqwrmp"
-                                                            class="jhxvbR Kv1aVt dLPlxY mNGsUM bgImage"
-                                                            data-image-info='{"containerId":"comp-lamqvxfv1__item-lamqwrmp","alignType":"center","displayMode":"fill","targetWidth":277,"targetHeight":246,"encoding":"AVIF","imageData":{"width":3000,"height":2000,"uri":"8ad880_09bfb4846808431499294111c9cb699f~mv2.jpg","name":"","displayMode":"fill"}}'
-                                                            data-motion-part="BG_IMG comp-lamqvxfv1__item-lamqwrmp"
-                                                            data-bg-effect-name=""
-                                                            data-has-ssr-src=""
-                                                            style="
-                                                              --wix-img-max-width: max(
-                                                                3000px,
-                                                                100%
-                                                              );
-                                                            "
-                                                            ><img
-                                                              alt=""
-                                                              style="
-                                                                width: 277px;
-                                                                height: 246px;
-                                                                object-fit: cover;
-                                                              "
-                                                              width="277"
-                                                              height="246"
-                                                              data-ssr-src-done="true"
-                                                              fetchpriority="high"
-                                                              src="{{ asset('/images/8ad880_09bfb4846808431499294111c9cb699f~mv2.webp') }}"
-                                                          /></wow-image>
-                                                        </div>
-                                                      </div>
-                                                      <div
-                                                        data-mesh-id="comp-lamqvxfv1__item-lamqwrmpinlineContent"
-                                                        data-testid="inline-content"
-                                                        class=""
-                                                      >
-                                                        <div
-                                                          data-mesh-id="comp-lamqvxfv1__item-lamqwrmpinlineContent-gridContainer"
-                                                          data-testid="mesh-container-content"
-                                                        >
-                                                          <!--$-->
-                                                          <div
-                                                            id="comp-lamqvxg32__item-lamqwrmp"
-                                                            class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-lamqvxg32 wixui-rich-text"
-                                                            data-testid="richTextElement"
-                                                          >
-                                                            <p
-                                                              class="font_7 wixui-rich-text__text"
-                                                              style="
-                                                                font-size: 22px;
-                                                                line-height: normal;
-                                                                text-align: center;
-                                                              "
-                                                            >
-                                                              <span
-                                                                style="
-                                                                  font-size: 22px;
-                                                                "
-                                                                class="wixui-rich-text__text"
-                                                                ><span
-                                                                  style="
-                                                                    color: #ffffff;
-                                                                  "
-                                                                  class="wixui-rich-text__text"
-                                                                  ><span
-                                                                    style="
-                                                                      font-weight: bold;
-                                                                    "
-                                                                    class="wixui-rich-text__text"
-                                                                    ><span
-                                                                      style="
-                                                                        font-family: avenir-lt-w01_35-light1475496,
-                                                                          avenir-lt-w05_35-light,
-                                                                          sans-serif;
-                                                                      "
-                                                                      class="wixui-rich-text__text"
-                                                                      ><span
-                                                                        style="
-                                                                          letter-spacing: normal;
-                                                                        "
-                                                                        class="wixui-rich-text__text"
-                                                                        ><span
-                                                                          style="
-                                                                            background-color: #113c66;
-                                                                          "
-                                                                          class="wixui-rich-text__text"
-                                                                          >&nbsp;
-                                                                          Consulting
-                                                                          &nbsp;</span
-                                                                        ></span
-                                                                      ></span
-                                                                    ></span
-                                                                  ></span
-                                                                ></span
-                                                              >
-                                                            </p>
-                                                          </div>
-                                                          <!--/$-->
-                                                        </div>
-                                                      </div>
-                                                    </div>
-                                                    <!--/$-->
-                                                  </div>
-                                                  <div
-                                                    role="listitem"
-                                                    class="T7n0L6"
-                                                  >
-                                                    <!--$-->
-                                                    <div
-                                                      id="comp-lamqvxfv1__item3"
-                                                      class="comp-lamqvxfv1 YzqVVZ wixui-repeater__item"
-                                                    >
-                                                      <div
-                                                        id="bgLayers_comp-lamqvxfv1__item3"
-                                                        data-hook="bgLayers"
-                                                        data-motion-part="BG_LAYER comp-lamqvxfv1__item3"
-                                                        class="MW5IWV"
-                                                      >
-                                                        <div
-                                                          data-testid="colorUnderlay"
-                                                          class="LWbAav Kv1aVt"
-                                                        ></div>
-                                                        <div
-                                                          id="bgMedia_comp-lamqvxfv1__item3"
-                                                          data-motion-part="BG_MEDIA comp-lamqvxfv1__item3"
-                                                          class="VgO9Yg"
-                                                        >
-                                                          <wow-image
-                                                            id="img_comp-lamqvxfv1__item3"
-                                                            class="jhxvbR Kv1aVt dLPlxY mNGsUM bgImage"
-                                                            data-image-info='{"containerId":"comp-lamqvxfv1__item3","alignType":"center","displayMode":"fill","targetWidth":277,"targetHeight":246,"encoding":"AVIF","imageData":{"width":3000,"height":2000,"uri":"8ad880_e6a9ae7ed4f54e1d9ca6e3b21fa4fbad~mv2.jpg","name":"","displayMode":"fill"}}'
-                                                            data-motion-part="BG_IMG comp-lamqvxfv1__item3"
-                                                            data-bg-effect-name=""
-                                                            data-has-ssr-src=""
-                                                            style="
-                                                              --wix-img-max-width: max(
-                                                                3000px,
-                                                                100%
-                                                              );
-                                                            "
-                                                            ><img
-                                                              alt=""
-                                                              style="
-                                                                width: 277px;
-                                                                height: 246px;
-                                                                object-fit: cover;
-                                                              "
-                                                              width="277"
-                                                              height="246"
-                                                              data-ssr-src-done="true"
-                                                              fetchpriority="high"
-                                                              src="{{ asset('/images/8ad880_e6a9ae7ed4f54e1d9ca6e3b21fa4fbad~mv2.webp') }}"
-                                                          /></wow-image>
-                                                        </div>
-                                                      </div>
-                                                      <div
-                                                        data-mesh-id="comp-lamqvxfv1__item3inlineContent"
-                                                        data-testid="inline-content"
-                                                        class=""
-                                                      >
-                                                        <div
-                                                          data-mesh-id="comp-lamqvxfv1__item3inlineContent-gridContainer"
-                                                          data-testid="mesh-container-content"
-                                                        >
-                                                          <!--$-->
-                                                          <div
-                                                            id="comp-lamqvxg32__item3"
-                                                            class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-lamqvxg32 wixui-rich-text"
-                                                            data-testid="richTextElement"
-                                                          >
-                                                            <p
-                                                              class="font_7 wixui-rich-text__text"
-                                                              style="
-                                                                font-size: 22px;
-                                                                text-align: center;
-                                                              "
-                                                            >
-                                                              <span
-                                                                style="
-                                                                  font-size: 22px;
-                                                                "
-                                                                class="wixui-rich-text__text"
-                                                                ><span
-                                                                  style="
-                                                                    color: #ffffff;
-                                                                  "
-                                                                  class="wixui-rich-text__text"
-                                                                  ><span
-                                                                    style="
-                                                                      font-weight: bold;
-                                                                    "
-                                                                    class="wixui-rich-text__text"
-                                                                    ><span
-                                                                      style="
-                                                                        font-family: avenir-lt-w01_35-light1475496,
-                                                                          avenir-lt-w05_35-light,
-                                                                          sans-serif;
-                                                                      "
-                                                                      class="wixui-rich-text__text"
-                                                                      ><span
-                                                                        style="
-                                                                          background-color: #113c66;
-                                                                        "
-                                                                        class="wixui-rich-text__text"
-                                                                        >&nbsp;
-                                                                        Recrutement
-                                                                        &nbsp;</span
-                                                                      ></span
-                                                                    ></span
-                                                                  ></span
-                                                                ></span
-                                                              >
-                                                            </p>
-                                                          </div>
-                                                          <!--/$-->
-                                                        </div>
-                                                      </div>
-                                                    </div>
-                                                    <!--/$-->
-                                                  </div>
-                                                </div>
-                                                <div class="cGWabE">
-                                                  <div
-                                                    role="listitem"
-                                                    class="T7n0L6"
-                                                  >
-                                                    <!--$-->
-                                                    <div
-                                                      id="comp-lamqvxfv1__item-lamrwad7"
-                                                      class="comp-lamqvxfv1 YzqVVZ wixui-repeater__item"
-                                                    >
-                                                      <div
-                                                        id="bgLayers_comp-lamqvxfv1__item-lamrwad7"
-                                                        data-hook="bgLayers"
-                                                        data-motion-part="BG_LAYER comp-lamqvxfv1__item-lamrwad7"
-                                                        class="MW5IWV"
-                                                      >
-                                                        <div
-                                                          data-testid="colorUnderlay"
-                                                          class="LWbAav Kv1aVt"
-                                                        ></div>
-                                                        <div
-                                                          id="bgMedia_comp-lamqvxfv1__item-lamrwad7"
-                                                          data-motion-part="BG_MEDIA comp-lamqvxfv1__item-lamrwad7"
-                                                          class="VgO9Yg"
-                                                        >
-                                                          <wow-image
-                                                            id="img_comp-lamqvxfv1__item-lamrwad7"
-                                                            class="jhxvbR Kv1aVt dLPlxY mNGsUM bgImage"
-                                                            data-image-info='{"containerId":"comp-lamqvxfv1__item-lamrwad7","alignType":"center","displayMode":"fill","targetWidth":277,"targetHeight":246,"encoding":"AVIF","imageData":{"width":3000,"height":2000,"uri":"8ad880_4649047f26e349708582a447abe41463~mv2.jpg","name":"","displayMode":"fill"}}'
-                                                            data-motion-part="BG_IMG comp-lamqvxfv1__item-lamrwad7"
-                                                            data-bg-effect-name=""
-                                                            data-has-ssr-src=""
-                                                            style="
-                                                              --wix-img-max-width: max(
-                                                                3000px,
-                                                                100%
-                                                              );
-                                                            "
-                                                            ><img
-                                                              alt=""
-                                                              style="
-                                                                width: 277px;
-                                                                height: 246px;
-                                                                object-fit: cover;
-                                                              "
-                                                              width="277"
-                                                              height="246"
-                                                              data-ssr-src-done="true"
-                                                              fetchpriority="high"
-                                                              src="{{ asset('/images/8ad880_4649047f26e349708582a447abe41463~mv2.webp') }}"
-                                                          /></wow-image>
-                                                        </div>
-                                                      </div>
-                                                      <div
-                                                        data-mesh-id="comp-lamqvxfv1__item-lamrwad7inlineContent"
-                                                        data-testid="inline-content"
-                                                        class=""
-                                                      >
-                                                        <div
-                                                          data-mesh-id="comp-lamqvxfv1__item-lamrwad7inlineContent-gridContainer"
-                                                          data-testid="mesh-container-content"
-                                                        >
-                                                          <!--$-->
-                                                          <div
-                                                            id="comp-lamqvxg32__item-lamrwad7"
-                                                            class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-lamqvxg32 wixui-rich-text"
-                                                            data-testid="richTextElement"
-                                                          >
-                                                            <p
-                                                              class="font_7 wixui-rich-text__text"
-                                                              style="
-                                                                font-size: 22px;
-                                                                line-height: normal;
-                                                                text-align: center;
-                                                              "
-                                                            >
-                                                              <span
-                                                                style="
-                                                                  font-size: 22px;
-                                                                "
-                                                                class="wixui-rich-text__text"
-                                                                ><span
-                                                                  style="
-                                                                    color: #ffffff;
-                                                                  "
-                                                                  class="wixui-rich-text__text"
-                                                                  ><span
-                                                                    style="
-                                                                      font-weight: bold;
-                                                                    "
-                                                                    class="wixui-rich-text__text"
-                                                                    ><span
-                                                                      style="
-                                                                        font-family: avenir-lt-w01_35-light1475496,
-                                                                          avenir-lt-w05_35-light,
-                                                                          sans-serif;
-                                                                      "
-                                                                      class="wixui-rich-text__text"
-                                                                      ><span
-                                                                        style="
-                                                                          letter-spacing: normal;
-                                                                        "
-                                                                        class="wixui-rich-text__text"
-                                                                        ><span
-                                                                          style="
-                                                                            background-color: #113c66;
-                                                                          "
-                                                                          class="wixui-rich-text__text"
-                                                                          >&nbsp;
-                                                                          Accompagnement
-                                                                          &nbsp;</span
-                                                                        ></span
-                                                                      ></span
-                                                                    ></span
-                                                                  ></span
-                                                                ></span
-                                                              >
-                                                            </p>
-                                                          </div>
-                                                          <!--/$-->
-                                                        </div>
-                                                      </div>
-                                                    </div>
-                                                    <!--/$-->
-                                                  </div>
-                                                  <div
-                                                    role="listitem"
-                                                    class="T7n0L6"
-                                                  >
-                                                    <!--$-->
-                                                    <div
-                                                      id="comp-lamqvxfv1__item-lamr08p5"
-                                                      class="comp-lamqvxfv1 YzqVVZ wixui-repeater__item"
-                                                    >
-                                                      <div
-                                                        id="bgLayers_comp-lamqvxfv1__item-lamr08p5"
-                                                        data-hook="bgLayers"
-                                                        data-motion-part="BG_LAYER comp-lamqvxfv1__item-lamr08p5"
-                                                        class="MW5IWV"
-                                                      >
-                                                        <div
-                                                          data-testid="colorUnderlay"
-                                                          class="LWbAav Kv1aVt"
-                                                        ></div>
-                                                        <div
-                                                          id="bgMedia_comp-lamqvxfv1__item-lamr08p5"
-                                                          data-motion-part="BG_MEDIA comp-lamqvxfv1__item-lamr08p5"
-                                                          class="VgO9Yg"
-                                                        >
-                                                          <wow-image
-                                                            id="img_comp-lamqvxfv1__item-lamr08p5"
-                                                            class="jhxvbR Kv1aVt dLPlxY mNGsUM bgImage"
-                                                            data-image-info='{"containerId":"comp-lamqvxfv1__item-lamr08p5","alignType":"center","displayMode":"fill","targetWidth":277,"targetHeight":246,"encoding":"AVIF","imageData":{"width":2500,"height":1730,"uri":"8ad880_1597f7cd06964048af2ca3b45c4c04aa~mv2.jpg","name":"","displayMode":"fill"}}'
-                                                            data-motion-part="BG_IMG comp-lamqvxfv1__item-lamr08p5"
-                                                            data-bg-effect-name=""
-                                                            data-has-ssr-src=""
-                                                            style="
-                                                              --wix-img-max-width: max(
-                                                                2500px,
-                                                                100%
-                                                              );
-                                                            "
-                                                            ><img
-                                                              alt=""
-                                                              style="
-                                                                width: 277px;
-                                                                height: 246px;
-                                                                object-fit: cover;
-                                                              "
-                                                              width="277"
-                                                              height="246"
-                                                              data-ssr-src-done="true"
-                                                              fetchpriority="high"
-                                                              src="{{ asset('/images/8ad880_1597f7cd06964048af2ca3b45c4c04aa~mv2.webp') }}"
-                                                          /></wow-image>
-                                                        </div>
-                                                      </div>
-                                                      <div
-                                                        data-mesh-id="comp-lamqvxfv1__item-lamr08p5inlineContent"
-                                                        data-testid="inline-content"
-                                                        class=""
-                                                      >
-                                                        <div
-                                                          data-mesh-id="comp-lamqvxfv1__item-lamr08p5inlineContent-gridContainer"
-                                                          data-testid="mesh-container-content"
-                                                        >
-                                                          <!--$-->
-                                                          <div
-                                                            id="comp-lamqvxg32__item-lamr08p5"
-                                                            class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-lamqvxg32 wixui-rich-text"
-                                                            data-testid="richTextElement"
-                                                          >
-                                                            <p
-                                                              class="font_7 wixui-rich-text__text"
-                                                              style="
-                                                                font-size: 22px;
-                                                                text-align: center;
-                                                              "
-                                                            >
-                                                              <span
-                                                                style="
-                                                                  font-size: 22px;
-                                                                "
-                                                                class="wixui-rich-text__text"
-                                                                ><span
-                                                                  style="
-                                                                    color: #ffffff;
-                                                                  "
-                                                                  class="wixui-rich-text__text"
-                                                                  ><span
-                                                                    style="
-                                                                      font-weight: bold;
-                                                                    "
-                                                                    class="wixui-rich-text__text"
-                                                                    ><span
-                                                                      style="
-                                                                        font-family: avenir-lt-w01_35-light1475496,
-                                                                          avenir-lt-w05_35-light,
-                                                                          sans-serif;
-                                                                      "
-                                                                      class="wixui-rich-text__text"
-                                                                      ><span
-                                                                        style="
-                                                                          background-color: #113c66;
-                                                                        "
-                                                                        class="wixui-rich-text__text"
-                                                                        >&nbsp;
-                                                                        Comptabilité
-                                                                        &nbsp;</span
-                                                                      ></span
-                                                                    ></span
-                                                                  ></span
-                                                                ></span
-                                                              >
-                                                            </p>
-                                                          </div>
-                                                          <!--/$-->
-                                                        </div>
-                                                      </div>
-                                                    </div>
-                                                    <!--/$-->
-                                                  </div>
-                                                </div>
+                                                @endif
                                               </div>
                                             </div>
                                             <!--/$-->
