@@ -15605,6 +15605,75 @@
                                     </div>
                                   </section>
                                   <!--/$-->
+                                  
+                                  <!-- Offres d'emploi Section -->
+                                  <section id="comp-offres-emploi" tabindex="-1" class="Oqnisf comp-offres-emploi wixui-section" style="padding: 60px 20px; background-color: #f8f9fa;">
+                                    <div style="max-width: 1200px; margin: 0 auto;">
+                                      <div style="text-align: center; margin-bottom: 50px;">
+                                        <h2 style="font-size: 36px; color: #113c66; margin-bottom: 15px; font-family: avenir-lt-w01_85-heavy1475544, avenir-lt-w05_85-heavy, sans-serif; font-weight: bold;">
+                                          Offres d'emploi
+                                        </h2>
+                                        <p style="font-size: 18px; color: #666; font-family: avenir-lt-w01_35-light1475496, avenir-lt-w05_35-light, sans-serif;">
+                                          Découvrez nos dernières opportunités de carrière
+                                        </p>
+                                      </div>
+                                      
+                                      @if(isset($offres) && $offres->count() > 0)
+                                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 40px;">
+                                          @foreach($offres as $offre)
+                                            @php
+                                              $offreImageUrl = $offre->image ? \Illuminate\Support\Facades\Storage::disk('public')->url($offre->image) : asset('/images/11062b_2a2076836abe4624a8d0cf69c0c18a0fmv2.webp');
+                                            @endphp
+                                            <a href="{{ route('offre-emploi.show', $offre->id) }}" style="text-decoration: none; color: inherit; display: block;">
+                                              <div style="background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;">
+                                                @if($offre->image)
+                                                  <img src="{{ $offreImageUrl }}" alt="{{ $offre->titre }}" style="width: 100%; height: 200px; object-fit: cover;">
+                                                @endif
+                                                <div style="padding: 20px;">
+                                                  <span style="display: inline-block; padding: 5px 12px; background-color: #113c66; color: #fff; border-radius: 12px; font-size: 11px; font-weight: 600; text-transform: uppercase; margin-bottom: 12px;">
+                                                    {{ $offre->contrat ? strtoupper($offre->contrat) : 'EMPLOI' }}
+                                                  </span>
+                                                  <h3 style="font-size: 20px; font-weight: bold; color: #113c66; margin: 0 0 10px 0; font-family: avenir-lt-w01_85-heavy1475544, avenir-lt-w05_85-heavy, sans-serif;">
+                                                    {{ $offre->titre }}
+                                                  </h3>
+                                                  @if($offre->entreprise)
+                                                    <p style="font-size: 14px; color: #666; margin: 5px 0; font-family: avenir-lt-w01_35-light1475496, avenir-lt-w05_35-light, sans-serif;">
+                                                      <strong>Entreprise:</strong> {{ $offre->entreprise }}
+                                                    </p>
+                                                  @endif
+                                                  @if($offre->ville)
+                                                    <p style="font-size: 14px; color: #666; margin: 5px 0; font-family: avenir-lt-w01_35-light1475496, avenir-lt-w05_35-light, sans-serif;">
+                                                      <strong>Ville:</strong> {{ $offre->ville }}
+                                                    </p>
+                                                  @endif
+                                                  @if($offre->description)
+                                                    <p style="font-size: 14px; color: #555; line-height: 1.6; margin-top: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-family: avenir-lt-w01_35-light1475496, avenir-lt-w05_35-light, sans-serif;">
+                                                      {{ Str::limit(strip_tags($offre->description), 100) }}
+                                                    </p>
+                                                  @endif
+                                                  <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #e0e0e0; text-align: center; color: #113c66; font-weight: 500;">
+                                                    Voir les détails →
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </a>
+                                          @endforeach
+                                        </div>
+                                        
+                                        <div style="text-align: center;">
+                                          <a href="{{ route('recrutement') }}" style="display: inline-block; padding: 12px 32px; background-color: #113c66; color: #fff; text-decoration: none; border-radius: 4px; font-size: 16px; font-weight: 600; font-family: avenir-lt-w01_35-light1475496, avenir-lt-w05_35-light, sans-serif; transition: background-color 0.3s;">
+                                            Découvrir tout
+                                          </a>
+                                        </div>
+                                      @else
+                                        <div style="text-align: center; padding: 40px; color: #666;">
+                                          <p>Aucune offre d'emploi disponible pour le moment.</p>
+                                        </div>
+                                      @endif
+                                    </div>
+                                  </section>
+                                  <!--/$-->
+                                  
                                 </div>
                               </div>
                             </section>

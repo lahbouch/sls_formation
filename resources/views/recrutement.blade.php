@@ -1846,7 +1846,12 @@
           display: flex;
           flex-direction: column;
         }
-        .offre-card:hover {
+        .offre-card-link {
+          text-decoration: none;
+          color: inherit;
+          display: block;
+        }
+        .offre-card-link:hover .offre-card {
           transform: translateY(-5px);
           box-shadow: 0 12px 24px rgba(0,0,0,0.15);
         }
@@ -2004,6 +2009,7 @@
             @php
               $offreImageUrl = $offre->image ? \Illuminate\Support\Facades\Storage::disk('public')->url($offre->image) : asset('/images/11062b_2a2076836abe4624a8d0cf69c0c18a0fmv2.webp');
             @endphp
+            <a href="{{ route('offre-emploi.show', $offre->id) }}" class="offre-card-link">
             <div class="offre-card">
               @if($offre->image)
                 <img src="{{ $offreImageUrl }}" alt="{{ $offre->titre }}" class="offre-image">
@@ -2032,20 +2038,15 @@
                 @endif
                 
                 @if($offre->description)
-                  <div class="offre-description">{{ strip_tags($offre->description) }}</div>
+                  <div class="offre-description">{{ Str::limit(strip_tags($offre->description), 150) }}</div>
                 @endif
                 
-                <div class="cv-upload-section">
-                  <form class="cv-upload-form" id="cv-form-{{ $offre->id }}" enctype="multipart/form-data">
-                    @csrf
-                    <input type="hidden" name="offre_emploi_id" value="{{ $offre->id }}">
-                    <input type="file" name="cv" accept=".pdf,.doc,.docx" required>
-                    <button type="submit">Envoyer mon CV</button>
-                    <div class="cv-upload-message" id="message-{{ $offre->id }}" style="display: none;"></div>
-                  </form>
+                <div class="offre-read-more">
+                  <span>Voir les détails →</span>
                 </div>
               </div>
             </div>
+            </a>
           @endforeach
         </div>
       @else
@@ -2308,7 +2309,5 @@ window.addEventListener('DOMContentLoaded', function() {
                 ]
             });
         }
-    });
-});</script></body></html>
     });
 });</script></body></html>

@@ -16,7 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     $services = \App\Models\Service::all();
     $articles = \App\Models\Article::with('articleType')->latest('date_created')->limit(3)->get();
-    return view('welcome', compact('services', 'articles'));
+    $offres = \App\Models\OffreEmploi::where('active', true)->latest('created_at')->limit(3)->get();
+    return view('welcome', compact('services', 'articles', 'offres'));
 })->name('home');
 
 
@@ -76,6 +77,7 @@ Route::get('/actualites', function () {
 
 
 Route::get('/recrutement', [\App\Http\Controllers\RecrutementController::class, 'index'])->name('recrutement');
+Route::get('/recrutement/{id}', [\App\Http\Controllers\RecrutementController::class, 'show'])->name('offre-emploi.show');
 Route::post('/recrutement/cv', [\App\Http\Controllers\RecrutementController::class, 'uploadCv'])->name('recrutement.cv.upload');
 
 Route::get('/contact', function () {

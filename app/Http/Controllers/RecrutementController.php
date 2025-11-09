@@ -19,6 +19,12 @@ class RecrutementController extends Controller
         return view('recrutement', compact('offres'));
     }
 
+    public function show($id)
+    {
+        $offre = OffreEmploi::where('active', true)->findOrFail($id);
+        return view('offre-emploi-details', compact('offre'));
+    }
+
     public function uploadCv(Request $request)
     {
         $validator = Validator::make($request->all(), [
