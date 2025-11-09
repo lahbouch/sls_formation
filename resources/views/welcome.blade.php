@@ -15301,9 +15301,9 @@
                                                                             background-color: #113c66;
                                                                           "
                                                                           class="wixui-rich-text__text"
-                                                                                >&nbsp;
+                                                                          >&nbsp;
                                                                                 {{ ucwords(strtolower($service->titre)) }}
-                                                                                &nbsp;</span
+                                                                          &nbsp;</span
                                                                         ></span
                                                                       ></span
                                                                     ></span
@@ -15464,15 +15464,18 @@
                                             <div
                                               id="comp-lamrzn46"
                                               class="TWFxr5"
-                                              style="min-width: 0px"
+                                              style="min-width: 0px; display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; max-width: 980px; margin: 0 auto;"
                                             >
+                                              @if(isset($articles) && $articles->count() > 0)
+                                                @foreach($articles as $article)
                                               <div style="
     position: relative;
     width: 292px !important;
     height: 292px !important;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-">
+                                                    cursor: pointer;
+                                                  " onclick="window.location.href='{{ route('actualites') }}'">
     <!-- Background Image -->
     <div style="
         position: absolute;
@@ -15504,13 +15507,15 @@
         font-family: 'Inter', Arial, sans-serif;
     ">
         <!-- Category -->
+                                                        @if($article->articleType)
         <div class="wixui-rich-text__text" style="
             font-size: 13px;
             font-weight: 400;
             margin-bottom: 8px;
             opacity: 0.95;
             letter-spacing: 0.3px;
-        ">Textile</div>
+                                                          ">{{ ucwords(strtolower($article->articleType->nom)) }}</div>
+                                                        @endif
         
         <!-- Title -->
         <p
@@ -15518,7 +15523,7 @@
                                                               style="
                                                                 font-size: 22px;
                                                                 line-height: normal;
-                                                                text-align: center;
+                                                            text-align: left;
                                                               "
                                                             >
                                                               <span
@@ -15549,10 +15554,9 @@
                                                                         "
                                                                         class="wixui-rich-text__text"
                                                                         ><span
-                                                                         
                                                                           class="wixui-rich-text__text"
                                                                           >
-                                                                          Accompagnement
+                                                                      {{ ucwords(strtolower($article->titre)) }}
                                                                           &nbsp;</span
                                                                         ></span
                                                                       ></span
@@ -15563,6 +15567,12 @@
                                                             </p>
     </div>
 </div>
+                                                @endforeach
+                                              @else
+                                                <div style="text-align: center; padding: 40px; color: #666; width: 100%;">
+                                                  <p>Aucun article disponible pour le moment.</p>
+                                                </div>
+                                              @endif
                                             </div>
                                             <!--/$--><!--$-->
                                             <div

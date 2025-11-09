@@ -15,7 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     $services = \App\Models\Service::all();
-    return view('welcome', compact('services'));
+    $articles = \App\Models\Article::with('articleType')->latest('date_created')->limit(3)->get();
+    return view('welcome', compact('services', 'articles'));
 })->name('home');
 
 
