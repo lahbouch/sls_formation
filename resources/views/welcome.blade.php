@@ -13021,6 +13021,147 @@
         width: 222px;
         height: 46px;
       }
+      #comp-lc96qudd {
+        left: 0;
+        margin-left: 0;
+        width: 100%;
+        min-width: 0;
+      }
+      [data-mesh-id="comp-lc96quddinlineContent"] {
+        height: auto;
+        width: 100%;
+      }
+      [data-mesh-id="comp-lc96quddinlineContent-gridContainer"] {
+        position: static;
+        display: grid;
+        height: auto;
+        width: 100%;
+        min-height: auto;
+        grid-template-rows: 1fr;
+        grid-template-columns: 100%;
+      }
+      [data-mesh-id="comp-lc96quddinlineContent-gridContainer"]
+        > [id="comp-lamrzcyo"],
+      [data-mesh-id="comp-lc96quddinlineContent-gridContainer"]
+        > wix-interact-element
+        > [id="comp-lamrzcyo"] {
+        position: relative;
+        margin: 0px 0px 0px calc((100% - 980px) * 0.5);
+        left: 0px;
+        grid-area: 1 / 1 / 2 / 2;
+        justify-self: start;
+        align-self: start;
+      }
+      #comp-lamrzcyo {
+        left: 0;
+        margin-left: 0;
+        width: 100%;
+        min-width: 980px;
+      }
+      [data-mesh-id="comp-lamrzczpinlineContent"] {
+        height: auto;
+        width: 100%;
+      }
+      [data-mesh-id="comp-lamrzczpinlineContent-gridContainer"] {
+        position: static;
+        display: grid;
+        height: auto;
+        width: 100%;
+        min-height: auto;
+        grid-template-rows: repeat(2, min-content) 1fr;
+        grid-template-columns: 100%;
+      }
+      [data-mesh-id="comp-lamrzczpinlineContent-gridContainer"]
+        > [id="comp-lamrzn47"],
+      [data-mesh-id="comp-lamrzczpinlineContent-gridContainer"]
+        > wix-interact-element
+        > [id="comp-lamrzn47"] {
+        position: relative;
+        margin: 0px 0px 33px calc((100% - 980px) * 0.5);
+        left: 0px;
+        grid-area: 1 / 1 / 2 / 2;
+        justify-self: start;
+        align-self: start;
+      }
+      [data-mesh-id="comp-lamrzczpinlineContent-gridContainer"]
+        > [id="comp-lamrzn48"],
+      [data-mesh-id="comp-lamrzczpinlineContent-gridContainer"]
+        > wix-interact-element
+        > [id="comp-lamrzn48"] {
+        position: relative;
+        margin: 0px 0px 40px calc((100% - 980px) * 0.5);
+        left: 0px;
+        grid-area: 2 / 1 / 3 / 2;
+        justify-self: start;
+        align-self: start;
+      }
+      [data-mesh-id="comp-lamrzczpinlineContent-gridContainer"]
+        > [id="comp-lams11d4"],
+      [data-mesh-id="comp-lamrzczpinlineContent-gridContainer"]
+        > wix-interact-element
+        > [id="comp-lams11d4"] {
+        position: relative;
+        margin: 0px 0px 60px calc((100% - 980px) * 0.5);
+        left: 379px;
+        grid-area: 3 / 1 / 4 / 2;
+        justify-self: start;
+        align-self: start;
+      }
+      #comp-lamrzczp {
+        width: 980px;
+      }
+      #comp-lamrzn47 {
+        --backgroundColor: 0, 0, 0;
+        --alpha-backgroundColor: 0;
+        --blendMode: normal;
+        --textShadow: 0px 0px transparent;
+        --textOutline: 0px 0px transparent;
+      }
+      #comp-lamrzn47 {
+        width: 980px;
+        height: auto;
+      }
+      #comp-lamrzn48 {
+        width: 980px;
+        height: 332px;
+      }
+      #comp-lams11d4 {
+        --rd: 0px;
+        --trans1: border-color 0.4s ease 0s, background-color 0.4s ease 0s;
+        --shd: none;
+        --fnt: normal normal normal 14px/1.4em avenir-lt-w01_35-light1475496,
+          sans-serif;
+        --trans2: color 0.4s ease 0s;
+        --txt: var(--color_32);
+        --brw: 1px;
+        --bg: 17, 60, 102;
+        --brd: 29, 29, 54;
+        --bgh: 92, 90, 219;
+        --brdh: 255, 255, 255;
+        --txth: 255, 255, 255;
+        --bgd: 204, 204, 204;
+        --alpha-bgd: 1;
+        --brdd: 204, 204, 204;
+        --alpha-brdd: 1;
+        --txtd: 255, 255, 255;
+        --alpha-txtd: 1;
+        --alpha-bg: 1;
+        --alpha-bgh: 0;
+        --alpha-brd: 1;
+        --alpha-brdh: 1;
+        --alpha-txt: 1;
+        --alpha-txth: 1;
+        --boxShadowToggleOn-shd: none;
+      }
+      @media (prefers-reduced-motion: no-preference) {
+        #comp-lams11d4:not([data-motion-enter="done"]) {
+          opacity: var(--comp-opacity, 1);
+        }
+      }
+      #comp-lams11d4 {
+        width: 222px;
+        height: 46px;
+      }
     </style>
     <style id="stylableCss_iijbr">
       /* END STYLABLE DIRECTIVE RULES */
@@ -14563,6 +14704,16 @@
         --label-align: center;
         --label-text-align: center;
       }
+      #comp-lams11d4 {
+        --shc-mutated-brightness: 9, 30, 51;
+        --margin-start: 0px;
+        --margin-end: 0px;
+        --fnt: normal normal normal 14px/1.4em avenir-lt-w01_35-light1475496,
+          sans-serif;
+        direction: var(--wix-opt-in-direction, ltr);
+        --label-align: center;
+        --label-text-align: center;
+      }
     </style>
 
     <script
@@ -15605,75 +15756,276 @@
                                     </div>
                                   </section>
                                   <!--/$-->
-                                  
-                                  <!-- Offres d'emploi Section -->
-                                  <section id="comp-offres-emploi" tabindex="-1" class="Oqnisf comp-offres-emploi wixui-section" style="padding: 60px 20px; background-color: #f8f9fa;">
-                                    <div style="max-width: 1200px; margin: 0 auto;">
-                                      <div style="text-align: center; margin-bottom: 50px;">
-                                        <h2 style="font-size: 36px; color: #113c66; margin-bottom: 15px; font-family: avenir-lt-w01_85-heavy1475544, avenir-lt-w05_85-heavy, sans-serif; font-weight: bold;">
-                                          Offres d'emploi
-                                        </h2>
-                                        <p style="font-size: 18px; color: #666; font-family: avenir-lt-w01_35-light1475496, avenir-lt-w05_35-light, sans-serif;">
-                                          Découvrez nos dernières opportunités de carrière
-                                        </p>
-                                      </div>
-                                      
-                                      @if(isset($offres) && $offres->count() > 0)
-                                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 40px;">
-                                          @foreach($offres as $offre)
-                                            @php
-                                              $offreImageUrl = $offre->image ? \Illuminate\Support\Facades\Storage::disk('public')->url($offre->image) : asset('/images/11062b_2a2076836abe4624a8d0cf69c0c18a0fmv2.webp');
-                                            @endphp
-                                            <a href="{{ route('offre-emploi.show', $offre->id) }}" style="text-decoration: none; color: inherit; display: block;">
-                                              <div style="background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;">
-                                                @if($offre->image)
-                                                  <img src="{{ $offreImageUrl }}" alt="{{ $offre->titre }}" style="width: 100%; height: 200px; object-fit: cover;">
-                                                @endif
-                                                <div style="padding: 20px;">
-                                                  <span style="display: inline-block; padding: 5px 12px; background-color: #113c66; color: #fff; border-radius: 12px; font-size: 11px; font-weight: 600; text-transform: uppercase; margin-bottom: 12px;">
-                                                    {{ $offre->contrat ? strtoupper($offre->contrat) : 'EMPLOI' }}
-                                                  </span>
-                                                  <h3 style="font-size: 20px; font-weight: bold; color: #113c66; margin: 0 0 10px 0; font-family: avenir-lt-w01_85-heavy1475544, avenir-lt-w05_85-heavy, sans-serif;">
-                                                    {{ $offre->titre }}
-                                                  </h3>
-                                                  @if($offre->entreprise)
-                                                    <p style="font-size: 14px; color: #666; margin: 5px 0; font-family: avenir-lt-w01_35-light1475496, avenir-lt-w05_35-light, sans-serif;">
-                                                      <strong>Entreprise:</strong> {{ $offre->entreprise }}
-                                                    </p>
-                                                  @endif
-                                                  @if($offre->ville)
-                                                    <p style="font-size: 14px; color: #666; margin: 5px 0; font-family: avenir-lt-w01_35-light1475496, avenir-lt-w05_35-light, sans-serif;">
-                                                      <strong>Ville:</strong> {{ $offre->ville }}
-                                                    </p>
-                                                  @endif
-                                                  @if($offre->description)
-                                                    <p style="font-size: 14px; color: #555; line-height: 1.6; margin-top: 12px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-family: avenir-lt-w01_35-light1475496, avenir-lt-w05_35-light, sans-serif;">
-                                                      {{ Str::limit(strip_tags($offre->description), 100) }}
-                                                    </p>
-                                                  @endif
-                                                  <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #e0e0e0; text-align: center; color: #113c66; font-weight: 500;">
-                                                    Voir les détails →
+                                </div>
+                              </div>
+                            </section>
+                            <!--/$--><!--$-->
+                            <section
+                              id="comp-lc96qudd"
+                              tabindex="-1"
+                              class="Oqnisf comp-lc96qudd wixui-section"
+                              data-block-level-container="ClassicSection"
+                            >
+                              <div
+                                id="bgLayers_comp-lc96qudd"
+                                data-hook="bgLayers"
+                                data-motion-part="BG_LAYER comp-lc96qudd"
+                                class="MW5IWV"
+                              >
+                                <div
+                                  data-testid="colorUnderlay"
+                                  class="LWbAav Kv1aVt"
+                                ></div>
+                                <div
+                                  id="bgMedia_comp-lc96qudd"
+                                  data-motion-part="BG_MEDIA comp-lc96qudd"
+                                  class="VgO9Yg"
+                                ></div>
+                              </div>
+                              <div
+                                data-mesh-id="comp-lc96quddinlineContent"
+                                data-testid="inline-content"
+                                class=""
+                              >
+                                <div
+                                  data-mesh-id="comp-lc96quddinlineContent-gridContainer"
+                                  data-testid="mesh-container-content"
+                                >
+                                  <!--$-->
+                                  <section
+                                    id="comp-lamrzcyo"
+                                    class="comp-lamrzcyo CohWsy wixui-column-strip"
+                                  >
+                                    <div
+                                      id="bgLayers_comp-lamrzcyo"
+                                      data-hook="bgLayers"
+                                      data-motion-part="BG_LAYER comp-lamrzcyo"
+                                      class="if7Vw2"
+                                    >
+                                      <div
+                                        data-testid="colorUnderlay"
+                                        class="tcElKx i1tH8h"
+                                      ></div>
+                                      <div
+                                        id="bgMedia_comp-lamrzcyo"
+                                        data-motion-part="BG_MEDIA comp-lamrzcyo"
+                                        class="wG8dni"
+                                      ></div>
+                                    </div>
+                                    <div data-testid="columns" class="V5AUxf">
+                                      <!--$-->
+                                      <div
+                                        id="comp-lamrzczp"
+                                        class="comp-lamrzczp YzqVVZ wixui-column-strip__column"
+                                      >
+                                        <div
+                                          id="bgLayers_comp-lamrzczp"
+                                          data-hook="bgLayers"
+                                          data-motion-part="BG_LAYER comp-lamrzczp"
+                                          class="MW5IWV"
+                                        >
+                                          <div
+                                            data-testid="colorUnderlay"
+                                            class="LWbAav Kv1aVt"
+                                          ></div>
+                                          <div
+                                            id="bgMedia_comp-lamrzczp"
+                                            data-motion-part="BG_MEDIA comp-lamrzczp"
+                                            class="VgO9Yg"
+                                          ></div>
+                                        </div>
+                                        <div
+                                          data-mesh-id="comp-lamrzczpinlineContent"
+                                          data-testid="inline-content"
+                                          class=""
+                                        >
+                                          <div
+                                            data-mesh-id="comp-lamrzczpinlineContent-gridContainer"
+                                            data-testid="mesh-container-content"
+                                          >
+                                            <!--$-->
+                                            <div
+                                              id="comp-lamrzn47"
+                                              class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-lamrzn47 wixui-rich-text"
+                                              data-testid="richTextElement"
+                                            >
+                                              <h2
+                                                class="font_2 wixui-rich-text__text"
+                                                style="
+                                                  line-height: normal;
+                                                  text-align: center;
+                                                  font-size: 26px;
+                                                "
+                                              >
+                                                <span
+                                                  style="color: #113c66"
+                                                  class="wixui-rich-text__text"
+                                                  ><span
+                                                    style="
+                                                      font-family: avenir-lt-w01_85-heavy1475544,
+                                                        avenir-lt-w05_85-heavy,
+                                                        sans-serif;
+                                                    "
+                                                    class="wixui-rich-text__text"
+                                                    ><span
+                                                      style="font-weight: bold"
+                                                      class="wixui-rich-text__text"
+                                                      ><span
+                                                        style="
+                                                          letter-spacing: normal;
+                                                        "
+                                                        class="wixui-rich-text__text"
+                                                        >Offres d'emploi</span
+                                                      ></span
+                                                    ></span
+                                                  ></span
+                                                >
+                                              </h2>
+                                            </div>
+                                            <!--/$--><!--$-->
+                                            <div
+                                              id="comp-lamrzn48"
+                                              class="TWFxr5"
+                                              style="min-width: 0px; display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; max-width: 980px; margin: 0 auto; padding-bottom: 40px;"
+                                            >
+                                              @if(isset($offres) && $offres->count() > 0)
+                                                @foreach($offres as $offre)
+                                                  @php
+                                                    $offreImageUrl = $offre->image ? \Illuminate\Support\Facades\Storage::disk('public')->url($offre->image) : asset('/images/11062b_2a2076836abe4624a8d0cf69c0c18a0fmv2.webp');
+                                                  @endphp
+                                                  <div style="
+                                                    position: relative;
+                                                    width: 292px !important;
+                                                    height: 292px !important;
+                                                    overflow: hidden;
+                                                    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                                                    cursor: pointer;
+                                                  " onclick="window.location.href='{{ route('offre-emploi.show', $offre->id) }}'">
+                                                    <!-- Background Image -->
+                                                    <div style="
+                                                        position: absolute;
+                                                        top: 0;
+                                                        left: 0;
+                                                        width: 292px;
+                                                        height: 292px;
+                                                        background-image: url({{ $offreImageUrl }});
+                                                        background-size: cover;
+                                                        background-position: center;
+                                                    "></div>
+            
+                                                    <!-- Overlay -->
+                                                    <div style="
+                                                        position: absolute;
+                                                        top: 0;
+                                                        left: 0;
+                                                        width: 292px;
+                                                        height: 292px;
+                                                        background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+                                                    "></div>
+                                                    
+                                                    <!-- Content -->
+                                                    <div style="
+                                                        position: absolute;
+                                                        bottom: 30px;
+                                                        left: 30px;
+                                                        color: white;
+                                                        font-family: 'Inter', Arial, sans-serif;
+                                                    ">
+                                                        <!-- Contract Type -->
+                                                        @if($offre->contrat)
+                                                        <div class="wixui-rich-text__text" style="
+                                                            font-size: 13px;
+                                                            font-weight: 400;
+                                                            margin-bottom: 8px;
+                                                            opacity: 0.95;
+                                                            letter-spacing: 0.3px;
+                                                        ">{{ strtoupper($offre->contrat) }}</div>
+                                                        @endif
+                                                        
+                                                        <!-- Title -->
+                                                        <p
+                                                          class="font_7 wixui-rich-text__text"
+                                                          style="
+                                                            font-size: 22px;
+                                                            line-height: normal;
+                                                            text-align: left;
+                                                          "
+                                                        >
+                                                          <span
+                                                            style="
+                                                              font-size: 22px;
+                                                            "
+                                                            class="wixui-rich-text__text"
+                                                            ><span
+                                                              style="
+                                                                color: #ffffff;
+                                                              "
+                                                              class="wixui-rich-text__text"
+                                                              ><span
+                                                                style="
+                                                                  font-weight: bold;
+                                                                "
+                                                                class="wixui-rich-text__text"
+                                                                ><span
+                                                                  style="
+                                                                    font-family: avenir-lt-w01_35-light1475496,
+                                                                      avenir-lt-w05_35-light,
+                                                                      sans-serif;
+                                                                  "
+                                                                  class="wixui-rich-text__text"
+                                                                  ><span
+                                                                    style="
+                                                                      letter-spacing: normal;
+                                                                    "
+                                                                    class="wixui-rich-text__text"
+                                                                    ><span
+                                                                      class="wixui-rich-text__text"
+                                                                      >
+                                                                  {{ $offre->titre }}
+                                                                      &nbsp;</span
+                                                                    ></span
+                                                                  ></span
+                                                                ></span
+                                                              ></span
+                                                            ></span
+                                                          >
+                                                        </p>
+                                                    </div>
                                                   </div>
+                                                @endforeach
+                                              @else
+                                                <div style="text-align: center; padding: 40px; color: #666; width: 100%;">
+                                                  <p>Aucune offre d'emploi disponible pour le moment.</p>
                                                 </div>
-                                              </div>
-                                            </a>
-                                          @endforeach
+                                              @endif
+                                            </div>
+                                            <!--/$--><!--$-->
+                                            <div
+                                              class="comp-lams11d4 FubTgk"
+                                              id="comp-lams11d4"
+                                              aria-disabled="false"
+                                            >
+                                              <a
+                                                data-testid="linkElement"
+                                                href="{{ route('recrutement') }}"
+                                                target="_self"
+                                                class="uDW_Qe wixui-button PlZyDq"
+                                                aria-disabled="false"
+                                                aria-label="Découvrir toutes les offres d'emploi"
+                                                ><span
+                                                  class="l7_2fn wixui-button__label"
+                                                  >Découvrir tout</span
+                                                ></a
+                                              >
+                                            </div>
+                                            <!--/$-->
+                                          </div>
                                         </div>
-                                        
-                                        <div style="text-align: center;">
-                                          <a href="{{ route('recrutement') }}" style="display: inline-block; padding: 12px 32px; background-color: #113c66; color: #fff; text-decoration: none; border-radius: 4px; font-size: 16px; font-weight: 600; font-family: avenir-lt-w01_35-light1475496, avenir-lt-w05_35-light, sans-serif; transition: background-color 0.3s;">
-                                            Découvrir tout
-                                          </a>
-                                        </div>
-                                      @else
-                                        <div style="text-align: center; padding: 40px; color: #666;">
-                                          <p>Aucune offre d'emploi disponible pour le moment.</p>
-                                        </div>
-                                      @endif
+                                      </div>
+                                      <!--/$-->
                                     </div>
                                   </section>
                                   <!--/$-->
-                                  
                                 </div>
                               </div>
                             </section>
