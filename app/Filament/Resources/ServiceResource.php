@@ -43,6 +43,16 @@ class ServiceResource extends Resource
                     ->imagePreviewHeight('250')
                     ->loadingIndicatorPosition('left')
                     ->panelAspectRatio('2:1'),
+                Forms\Components\FileUpload::make('minimized_image')
+                    ->label('Image Minimisée (277x246)')
+                    ->image()
+                    ->directory('services/minimized')
+                    ->disk('public')
+                    ->visibility('public')
+                    ->imagePreviewHeight('246')
+                    ->loadingIndicatorPosition('left')
+                    ->panelAspectRatio('277:246')
+                    ->helperText('Image à afficher en 277x246 pixels'),
                 Forms\Components\RichEditor::make('description')
                     ->label('Description')
                     ->toolbarButtons([
@@ -76,6 +86,11 @@ class ServiceResource extends Resource
                     ->label('Image')
                     ->disk('public')
                     ->circular(),
+                Tables\Columns\ImageColumn::make('minimized_image')
+                    ->label('Image Minimisée')
+                    ->disk('public')
+                    ->width(138)
+                    ->height(123),
                 Tables\Columns\TextColumn::make('types_count')
                     ->label('Types')
                     ->counts('types'),
