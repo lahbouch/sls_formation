@@ -74,5 +74,10 @@ Route::get('/offres/{id}', function ($id) {
     return view('offre-details', compact('offre'));
 })->name('offre.details');
 
+Route::get('/articles/{id}', function ($id) {
+    $article = \App\Models\Article::with('articleType')->findOrFail($id);
+    return view('article-details', compact('article'));
+})->name('article.details');
+
 
 

@@ -15464,29 +15464,32 @@
                                             <div
                                               id="comp-lamrzn46"
                                               class="TWFxr5"
-                                              style="min-width: 0px; display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; max-width: 980px; margin: 0 auto;"
+                                              style="min-width: 0px; display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; max-width: 980px; margin: 0 auto; padding-bottom: 40px;"
                                             >
                                               @if(isset($articles) && $articles->count() > 0)
                                                 @foreach($articles as $article)
-                                              <div style="
-    position: relative;
-    width: 292px !important;
-    height: 292px !important;
-    overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                                                  @php
+                                                    $articleImageUrl = $article->image ? \Illuminate\Support\Facades\Storage::disk('public')->url($article->image) : asset('/images/11062b_2a2076836abe4624a8d0cf69c0c18a0fmv2.webp');
+                                                  @endphp
+                                                  <div style="
+                                                    position: relative;
+                                                    width: 292px !important;
+                                                    height: 292px !important;
+                                                    overflow: hidden;
+                                                    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
                                                     cursor: pointer;
-                                                  " onclick="window.location.href='{{ route('actualites') }}'">
-    <!-- Background Image -->
-    <div style="
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 292px;
-        height: 292px;
-        background-image: url({{ asset('/images/11062b_2a2076836abe4624a8d0cf69c0c18a0fmv2.webp') }});
-        background-size: cover;
-        background-position: center;
-    "></div>
+                                                  " onclick="window.location.href='{{ route('article.details', $article->id) }}'">
+                                                    <!-- Background Image -->
+                                                    <div style="
+                                                        position: absolute;
+                                                        top: 0;
+                                                        left: 0;
+                                                        width: 292px;
+                                                        height: 292px;
+                                                        background-image: url({{ $articleImageUrl }});
+                                                        background-size: cover;
+                                                        background-position: center;
+                                                    "></div>
     
     <!-- Overlay -->
     <div style="

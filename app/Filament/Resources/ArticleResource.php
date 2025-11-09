@@ -38,6 +38,19 @@ class ArticleResource extends Resource
                     ->preload(),
                 Forms\Components\TextInput::make('titre')
                     ->label('Titre'),
+                Forms\Components\FileUpload::make('image')
+                    ->label('Image')
+                    ->image()
+                    ->directory('articles')
+                    ->disk('public')
+                    ->imageEditor()
+                    ->imageEditorAspectRatios([
+                        null,
+                        '16:9',
+                        '4:3',
+                        '1:1',
+                    ])
+                    ->columnSpanFull(),
                 Forms\Components\DatePicker::make('date_created')
                     ->label('Date de création')
                     ->default(now()),
@@ -66,6 +79,11 @@ class ArticleResource extends Resource
     {
         return $table
             ->columns([
+                Tables\Columns\ImageColumn::make('image')
+                    ->label('Image')
+                    ->disk('public')
+                    ->circular()
+                    ->size(50),
                 Tables\Columns\TextColumn::make('articleType.nom')
                     ->label('Type')
                     ->searchable()
