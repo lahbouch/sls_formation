@@ -75,6 +75,9 @@ Route::get('/actualites', function () {
 
 
 
+Route::get('/recrutement', [\App\Http\Controllers\RecrutementController::class, 'index'])->name('recrutement');
+Route::post('/recrutement/cv', [\App\Http\Controllers\RecrutementController::class, 'uploadCv'])->name('recrutement.cv.upload');
+
 Route::get('/contact', function () {
     return view('contact');
 })->name('contact');

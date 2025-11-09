@@ -879,7 +879,7 @@
                                         <!--/$--><!--$--><wix-dropdown-menu id="comp-ils2cgqy"
                                             class="XwCBRN NHM1d1 comp-ils2cgqy wixui-dropdown-menu hidden-during-prewarmup"
                                             tabindex="-1" dir="ltr" data-stretch-buttons-to-menu-width="true"
-                                            data-same-width-buttons="false" data-num-items="7" data-menuborder-y="0"
+                                            data-same-width-buttons="false" data-num-items="8" data-menuborder-y="0"
                                             data-menubtn-border="0" data-ribbon-els="0" data-label-pad="0"
                                             data-ribbon-extra="0" data-dropalign="right" style="
                                     visibility: inherit;
@@ -1054,8 +1054,33 @@
                                                         </a>
                                                     </li>
                                                     <li id="comp-ils2cgqy6" data-direction="ltr"
+                                                        data-listposition="center" data-data-id="dataItem-recruitment"
+                                                        data-state="menu {{ request()->routeIs('recrutement') ? 'selected' : 'false' }}  link" data-index="6"
+                                                        class="Tg1gOB wixui-dropdown-menu__item xTjc1A"
+                                                        data-original-gap-between-text-and-btn="10" aria-hidden="false"
+                                                        style="
+                                          width: 110px;
+                                          height: 40px;
+                                          position: relative;
+                                          box-sizing: border-box;
+                                          overflow: visible;
+                                          visibility: inherit;
+                                        ">
+                                                        <a data-testid="linkElement" href="{{ route('recrutement') }}"
+                                                            target="_self" class="UiHgGh" {{ request()->routeIs('recrutement') ? 'aria-current="page"' : '' }}>
+                                                            <div class="yRj2ms">
+                                                                <div class="">
+                                                                    <p class="JS76Uv" id="comp-ils2cgqy6label"
+                                                                        style="line-height: 40px">
+                                                                        Recrutement
+                                                                    </p>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                    <li id="comp-ils2cgqy7" data-direction="ltr"
                                                         data-listposition="right" data-data-id="dataItem-lapv5jcj"
-                                                        data-state="menu {{ request()->routeIs('contact') ? 'selected' : 'false' }}  link" data-index="6"
+                                                        data-state="menu {{ request()->routeIs('contact') ? 'selected' : 'false' }}  link" data-index="7"
                                                         class="Tg1gOB wixui-dropdown-menu__item xTjc1A"
                                                         data-original-gap-between-text-and-btn="10" aria-hidden="false"
                                                         style="
@@ -1070,7 +1095,7 @@
                                                             target="_self" class="UiHgGh" {{ request()->routeIs('contact') ? 'aria-current="page"' : '' }}>
                                                             <div class="yRj2ms">
                                                                 <div class="">
-                                                                    <p class="JS76Uv" id="comp-ils2cgqy6label"
+                                                                    <p class="JS76Uv" id="comp-ils2cgqy7label"
                                                                         style="line-height: 40px">
                                                                         Contact
                                                                     </p>
