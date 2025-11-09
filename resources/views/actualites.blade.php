@@ -1809,7 +1809,247 @@
     
     
     
-    <main id="PAGES_CONTAINER" class="PAGES_CONTAINER" tabindex="-1" data-main-content="true"><div id="SITE_PAGES" class="JsJXaX SITE_PAGES"><div id="SITE_PAGES_TRANSITION_GROUP" class="AnQkDU"><div id="gmhiu" class="fEm0Bo zK7MhX gmhiu"><div class="c7cMWz wixui-page" data-testid="page-bg"></div><div class="FVGvCX"><!--$--><div id="Containergmhiu" class="Containergmhiu SPY_vo"><div data-mesh-id="ContainergmhiuinlineContent" data-testid="inline-content" class=""><div data-mesh-id="ContainergmhiuinlineContent-gridContainer" data-testid="mesh-container-content"><!--$--><section id="comp-lc96qudi" tabindex="-1" class="Oqnisf comp-lc96qudi wixui-section" data-block-level-container="ClassicSection"><div id="bgLayers_comp-lc96qudi" data-hook="bgLayers" data-motion-part="BG_LAYER comp-lc96qudi" class="MW5IWV"><div data-testid="colorUnderlay" class="LWbAav Kv1aVt"></div><div id="bgMedia_comp-lc96qudi" data-motion-part="BG_MEDIA comp-lc96qudi" class="VgO9Yg"></div></div><div data-mesh-id="comp-lc96qudiinlineContent" data-testid="inline-content" class=""><div data-mesh-id="comp-lc96qudiinlineContent-gridContainer" data-testid="mesh-container-content"><!--$--><div id="TPASection_j8bcczyd" class="TWFxr5  " style="min-width: 0px;"><div class="TPASection_j8bcczyd"><div style="--wix-color-29:var(--wix-color-3);--wix-color-37:var(--wix-color-5);--wix-color-38:var(--wix-color-8);--wix-color-39:var(--wix-color-8);--wix-color-40:var(--wix-color-1);--wix-color-41:var(--wix-color-8);--wix-color-42:var(--wix-color-8);--wix-color-43:var(--wix-color-1);--wix-color-44:var(--wix-color-3);--wix-color-45:var(--wix-color-3);--wix-color-46:var(--wix-color-1);--wix-color-47:var(--wix-color-1);--wix-color-48:var(--wix-color-8);--wix-color-49:var(--wix-color-8);--wix-color-50:var(--wix-color-1);--wix-color-51:var(--wix-color-8);--wix-color-52:var(--wix-color-8);--wix-color-53:var(--wix-color-1);--wix-color-54:var(--wix-color-3);--wix-color-55:var(--wix-color-3)" data-hook="tpa-components-provider"><div><div style="--root-width:980px" class="md lt-lg lt-xl gt-xs gt-s gt-sm gt-740 gt-830 gt-886 gt-940 w686-980 lte-w980 lte-banner-w1564 lte-banner-w1425 lte-banner-w1181 lte-banner-w980 lte-category-header-w1364  Mu0bmS" data-hook="feed-page-root"><div class="L5x0Fp blog-background-color is-desktop app-desktop"><div class="qi0cF2 message" data-hook="message"></div><div class="WmZAIu" id="new-blog-popover-root"></div><div id="content-wrapper"><div class="vAU8Qm aSX36E XDcQnF WIEJ0e blog-header-background-color" style="--padding:20px" data-hook="blog-desktop-header-container"><div class="kiyM2X NEquMY"><nav class="AsxoCK kU2es5 blog-header__navigation blog-navigation-container-font" aria-label="Blog"><ul class="LnLd_R"><li data-hook="header-navigation__/"><a aria-current="page" href="/sls-formation/actualités" class="blog-navigation-container-color blog-navigation-container-font  blog-navigation-link-hover-color blog-navigation-link-active-color" data-hook="link">All Posts</a></li><li data-hook="header-navigation__/categories/automobile"><a href="/sls-formation/actualités/categories/automobile" class="blog-navigation-container-color blog-navigation-container-font  blog-navigation-link-hover-color" data-hook="link">Automobile</a></li><li data-hook="header-navigation__/categories/textile"><a href="/sls-formation/actualités/categories/textile" class="blog-navigation-container-color blog-navigation-container-font  blog-navigation-link-hover-color" data-hook="link">Textile</a></li><li data-hook="header-navigation__/categories/aeronautique"><a href="/sls-formation/actualités/categories/aeronautique" class="blog-navigation-container-color blog-navigation-container-font  blog-navigation-link-hover-color" data-hook="link">Aeronautique</a></li><li data-hook="header-navigation__/categories/agroalimentaire"><a href="/sls-formation/actualités/categories/agroalimentaire" class="blog-navigation-container-color blog-navigation-container-font  blog-navigation-link-hover-color" data-hook="link">Agroalimentaire</a></li></ul></nav><div style="flex-grow:1"></div>
+    <main id="PAGES_CONTAINER" class="PAGES_CONTAINER" tabindex="-1" data-main-content="true">
+    <!-- Dynamic Blog Content -->
+    <div style="max-width: 1200px; margin: 0 auto; padding: 60px 20px; min-height: 60vh;">
+      <style>
+        .blog-category-filter {
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          gap: 12px;
+          margin-bottom: 50px;
+          padding: 20px 0;
+          border-bottom: 2px solid #e0e0e0;
+        }
+        .blog-category-filter a {
+          display: inline-block;
+          padding: 10px 24px;
+          background-color: #f5f5f5;
+          color: #113c66;
+          text-decoration: none;
+          border-radius: 25px;
+          font-size: 15px;
+          font-weight: 500;
+          font-family: avenir-lt-w01_35-light1475496, avenir-lt-w05_35-light, sans-serif;
+          transition: all 0.3s ease;
+          border: 2px solid transparent;
+          position: relative;
+        }
+        .blog-category-filter a:hover {
+          background-color: #113c66;
+          color: #fff;
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(17, 60, 102, 0.2);
+        }
+        .blog-category-filter a.active {
+          background-color: #113c66;
+          color: #fff;
+          border-color: #113c66;
+          box-shadow: 0 4px 12px rgba(17, 60, 102, 0.3);
+        }
+        .blog-category-filter a.active::after {
+          content: '';
+          position: absolute;
+          bottom: -2px;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 30px;
+          height: 3px;
+          background-color: #113c66;
+          border-radius: 2px;
+        }
+        .blog-articles-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+          gap: 40px;
+          margin-bottom: 60px;
+        }
+        .blog-article-card {
+          background: #fff;
+          border-radius: 12px;
+          overflow: hidden;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+          transition: all 0.3s ease;
+          cursor: pointer;
+          text-decoration: none;
+          color: inherit;
+          display: block;
+        }
+        .blog-article-card:hover {
+          transform: translateY(-8px);
+          box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+        }
+        .blog-article-image {
+          width: 100%;
+          height: 220px;
+          object-fit: cover;
+          display: block;
+        }
+        .blog-article-content {
+          padding: 24px;
+        }
+        .blog-article-category {
+          display: inline-block;
+          padding: 4px 12px;
+          background-color: #113c66;
+          color: #fff;
+          border-radius: 12px;
+          font-size: 11px;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          margin-bottom: 12px;
+          font-family: avenir-lt-w01_35-light1475496, avenir-lt-w05_35-light, sans-serif;
+        }
+        .blog-article-title {
+          font-size: 22px;
+          font-weight: bold;
+          color: #113c66;
+          margin: 0 0 12px 0;
+          line-height: 1.4;
+          font-family: avenir-lt-w01_85-heavy1475544, avenir-lt-w05_85-heavy, sans-serif;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+        .blog-article-date {
+          font-size: 13px;
+          color: #999;
+          font-family: avenir-lt-w01_35-light1475496, avenir-lt-w05_35-light, sans-serif;
+        }
+        .blog-pagination {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 8px;
+          margin-top: 60px;
+          padding-top: 40px;
+          border-top: 1px solid #e0e0e0;
+        }
+        .blog-pagination a,
+        .blog-pagination span {
+          display: inline-block;
+          padding: 10px 16px;
+          background-color: #f5f5f5;
+          color: #113c66;
+          text-decoration: none;
+          border-radius: 6px;
+          font-size: 14px;
+          font-family: avenir-lt-w01_35-light1475496, avenir-lt-w05_35-light, sans-serif;
+          transition: all 0.3s ease;
+        }
+        .blog-pagination a:hover {
+          background-color: #113c66;
+          color: #fff;
+        }
+        .blog-pagination .active {
+          background-color: #113c66;
+          color: #fff;
+        }
+        .blog-empty-state {
+          text-align: center;
+          padding: 80px 20px;
+          color: #999;
+        }
+        .blog-empty-state h3 {
+          font-size: 24px;
+          color: #666;
+          margin-bottom: 12px;
+          font-family: avenir-lt-w01_85-heavy1475544, avenir-lt-w05_85-heavy, sans-serif;
+        }
+        @media (max-width: 768px) {
+          .blog-articles-grid {
+            grid-template-columns: 1fr;
+            gap: 30px;
+          }
+          .blog-category-filter {
+            gap: 8px;
+          }
+          .blog-category-filter a {
+            padding: 8px 16px;
+            font-size: 13px;
+          }
+        }
+      </style>
+      
+      <!-- Category Filter Navigation -->
+      <nav class="blog-category-filter" aria-label="Filtres de catégories">
+        <a href="{{ route('actualites') }}" class="{{ !$selectedCategory ? 'active' : '' }}">
+          Tous les articles
+        </a>
+        @foreach($categories as $category)
+          @if($category->articles_count > 0)
+            <a href="{{ route('actualites', ['category' => $category->id]) }}" 
+               class="{{ $selectedCategory == $category->id ? 'active' : '' }}">
+              {{ ucwords(strtolower($category->nom)) }}
+              <span style="margin-left: 6px; opacity: 0.7;">({{ $category->articles_count }})</span>
+            </a>
+          @endif
+        @endforeach
+      </nav>
+      
+      <!-- Articles Grid -->
+      @if($articles->count() > 0)
+        <div class="blog-articles-grid">
+          @foreach($articles as $article)
+            @php
+              $articleImageUrl = $article->image ? \Illuminate\Support\Facades\Storage::disk('public')->url($article->image) : asset('/images/11062b_2a2076836abe4624a8d0cf69c0c18a0fmv2.webp');
+            @endphp
+            <a href="{{ route('article.details', $article->id) }}" class="blog-article-card">
+              <img src="{{ $articleImageUrl }}" alt="{{ $article->titre }}" class="blog-article-image">
+              <div class="blog-article-content">
+                @if($article->articleType)
+                  <span class="blog-article-category">{{ ucwords(strtolower($article->articleType->nom)) }}</span>
+                @endif
+                <h3 class="blog-article-title">{{ ucwords(strtolower($article->titre)) }}</h3>
+                @if($article->date_created)
+                  <div class="blog-article-date">{{ $article->date_created->format('d F Y') }}</div>
+                @endif
+              </div>
+            </a>
+          @endforeach
+        </div>
+        
+        <!-- Pagination -->
+        @if($articles->hasPages())
+          @php
+            $articles->appends(request()->query());
+          @endphp
+          <div class="blog-pagination">
+            @if($articles->onFirstPage())
+              <span>&laquo; Précédent</span>
+            @else
+              <a href="{{ $articles->previousPageUrl() }}">&laquo; Précédent</a>
+            @endif
+            
+            @foreach($articles->getUrlRange(1, $articles->lastPage()) as $page => $url)
+              @if($page == $articles->currentPage())
+                <span class="active">{{ $page }}</span>
+              @else
+                <a href="{{ $url }}">{{ $page }}</a>
+              @endif
+            @endforeach
+            
+            @if($articles->hasMorePages())
+              <a href="{{ $articles->nextPageUrl() }}">Suivant &raquo;</a>
+            @else
+              <span>Suivant &raquo;</span>
+            @endif
+          </div>
+        @endif
+      @else
+        <div class="blog-empty-state">
+          <h3>Aucun article trouvé</h3>
+          <p>Aucun article n'est disponible pour cette catégorie pour le moment.</p>
+          <a href="{{ route('actualites') }}" style="display: inline-block; margin-top: 20px; padding: 12px 24px; background-color: #113c66; color: #fff; text-decoration: none; border-radius: 4px; font-family: avenir-lt-w01_35-light1475496, avenir-lt-w05_35-light, sans-serif;">
+            Voir tous les articles
+          </a>
+        </div>
+      @endif
+    </div>
+    <!-- End Dynamic Blog Content --><div id="SITE_PAGES" class="JsJXaX SITE_PAGES"><div id="SITE_PAGES_TRANSITION_GROUP" class="AnQkDU"><div id="gmhiu" class="fEm0Bo zK7MhX gmhiu"><div class="c7cMWz wixui-page" data-testid="page-bg"></div><div class="FVGvCX"><!--$--><div id="Containergmhiu" class="Containergmhiu SPY_vo"><div data-mesh-id="ContainergmhiuinlineContent" data-testid="inline-content" class=""><div data-mesh-id="ContainergmhiuinlineContent-gridContainer" data-testid="mesh-container-content"><!--$--><section id="comp-lc96qudi" tabindex="-1" class="Oqnisf comp-lc96qudi wixui-section" data-block-level-container="ClassicSection"><div id="bgLayers_comp-lc96qudi" data-hook="bgLayers" data-motion-part="BG_LAYER comp-lc96qudi" class="MW5IWV"><div data-testid="colorUnderlay" class="LWbAav Kv1aVt"></div><div id="bgMedia_comp-lc96qudi" data-motion-part="BG_MEDIA comp-lc96qudi" class="VgO9Yg"></div></div><div data-mesh-id="comp-lc96qudiinlineContent" data-testid="inline-content" class=""><div data-mesh-id="comp-lc96qudiinlineContent-gridContainer" data-testid="mesh-container-content"><!--$--><div id="TPASection_j8bcczyd" class="TWFxr5  " style="min-width: 0px; display: none;"><div class="TPASection_j8bcczyd"><div style="--wix-color-29:var(--wix-color-3);--wix-color-37:var(--wix-color-5);--wix-color-38:var(--wix-color-8);--wix-color-39:var(--wix-color-8);--wix-color-40:var(--wix-color-1);--wix-color-41:var(--wix-color-8);--wix-color-42:var(--wix-color-8);--wix-color-43:var(--wix-color-1);--wix-color-44:var(--wix-color-3);--wix-color-45:var(--wix-color-3);--wix-color-46:var(--wix-color-1);--wix-color-47:var(--wix-color-1);--wix-color-48:var(--wix-color-8);--wix-color-49:var(--wix-color-8);--wix-color-50:var(--wix-color-1);--wix-color-51:var(--wix-color-8);--wix-color-52:var(--wix-color-8);--wix-color-53:var(--wix-color-1);--wix-color-54:var(--wix-color-3);--wix-color-55:var(--wix-color-3)" data-hook="tpa-components-provider"><div><div style="--root-width:980px" class="md lt-lg lt-xl gt-xs gt-s gt-sm gt-740 gt-830 gt-886 gt-940 w686-980 lte-w980 lte-banner-w1564 lte-banner-w1425 lte-banner-w1181 lte-banner-w980 lte-category-header-w1364  Mu0bmS" data-hook="feed-page-root"><div class="L5x0Fp blog-background-color is-desktop app-desktop"><div class="qi0cF2 message" data-hook="message"></div><div class="WmZAIu" id="new-blog-popover-root"></div><div id="content-wrapper"><div class="vAU8Qm aSX36E XDcQnF WIEJ0e blog-header-background-color" style="--padding:20px" data-hook="blog-desktop-header-container"><div class="kiyM2X NEquMY"><nav class="AsxoCK kU2es5 blog-header__navigation blog-navigation-container-font" aria-label="Blog"><ul class="LnLd_R"><li data-hook="header-navigation__/"><a aria-current="page" href="/sls-formation/actualités" class="blog-navigation-container-color blog-navigation-container-font  blog-navigation-link-hover-color blog-navigation-link-active-color" data-hook="link">All Posts</a></li><li data-hook="header-navigation__/categories/automobile"><a href="/sls-formation/actualités/categories/automobile" class="blog-navigation-container-color blog-navigation-container-font  blog-navigation-link-hover-color" data-hook="link">Automobile</a></li><li data-hook="header-navigation__/categories/textile"><a href="/sls-formation/actualités/categories/textile" class="blog-navigation-container-color blog-navigation-container-font  blog-navigation-link-hover-color" data-hook="link">Textile</a></li><li data-hook="header-navigation__/categories/aeronautique"><a href="/sls-formation/actualités/categories/aeronautique" class="blog-navigation-container-color blog-navigation-container-font  blog-navigation-link-hover-color" data-hook="link">Aeronautique</a></li><li data-hook="header-navigation__/categories/agroalimentaire"><a href="/sls-formation/actualités/categories/agroalimentaire" class="blog-navigation-container-color blog-navigation-container-font  blog-navigation-link-hover-color" data-hook="link">Agroalimentaire</a></li></ul></nav><div style="flex-grow:1"></div>
     
     
     

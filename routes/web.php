@@ -53,7 +53,23 @@ Route::get('/galleries', function () {
 
 
 Route::get('/actualites', function () {
-    return view('actualites');
+    $selectedCategory = request()->query('category');
+    
+    // Get all categories with article counts
+    $categories = \App\Models\ArticleType::withCount('articles')->get();
+    
+    // Get articles based on selected category
+    $articlesQuery = \App\Models\Article::with('articleType')->latest('date_created');
+    
+    if ($selectedCategory) {
+        $articlesQuery->whereHas('articleType', function($query) use ($selectedCategory) {
+            $query->where('id', $selectedCategory);
+        });
+    }
+    
+    $articles = $articlesQuery->paginate(9);
+    
+    return view('actualites', compact('articles', 'categories', 'selectedCategory'));
 })->name('actualites');
 
 
