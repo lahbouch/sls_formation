@@ -326,13 +326,9 @@
                                                     <span class="offre-card-code" style="font-family: helvetica-w01-light, helvetica-w02-light, sans-serif; font-size: 18px; font-weight: bold; color: #113c66; margin-bottom: 5px;">{{ $type->code }}{{ $offre->num }}</span>
                                                     <div class="offre-card-underline" style="height: 2px; background-color: #d4a574; width: 100%; margin-bottom: 5px;"></div>
                                                 </div>
-                                                <span class="offre-card-type-name" style="font-family: helvetica-w01-light, helvetica-w02-light, sans-serif; font-size: 18px; font-weight: bold; color: #113c66; text-align: right;">{{ $type->nom }}</span>
+                                                <span class="offre-card-type-name" style="font-family: helvetica-w01-light, helvetica-w02-light, sans-serif; font-size: 18px; font-weight: bold; color: #113c66; text-align: right;">{{ $offre->title }}</span>
                                             </div>
-                                            @if($offre->title)
-                                            <div class="offre-card-title" style="font-family: avenir-lt-w01_35-light1475496, avenir-lt-w05_35-light, sans-serif; font-size: 16px; font-weight: bold; color: #113c66; line-height: 1.4em; text-align: left; margin-top: 10px; margin-bottom: 8px;">
-                                                {{ $offre->title }}
-                                            </div>
-                                            @endif
+                                            
                                             <div class="offre-card-intitule" style="font-family: avenir-lt-w01_35-light1475496, avenir-lt-w05_35-light, sans-serif; font-size: 14px; color: #343f64; line-height: 1.6em; text-align: left; margin-top: 10px;">
                                                 {{ $offre->intitule }}
                                             </div>
