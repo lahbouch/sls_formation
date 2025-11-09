@@ -15737,7 +15737,7 @@
                                             >
                                               <a
                                                 data-testid="linkElement"
-                                                href="/sls-formation/actualités"
+                                                href="{{ route('actualites') }}"
                                                 target="_self"
                                                 class="uDW_Qe wixui-button PlZyDq"
                                                 aria-disabled="false"
@@ -15767,22 +15767,7 @@
                               class="Oqnisf comp-lc96qudd wixui-section"
                               data-block-level-container="ClassicSection"
                             >
-                              <div
-                                id="bgLayers_comp-lc96qudd"
-                                data-hook="bgLayers"
-                                data-motion-part="BG_LAYER comp-lc96qudd"
-                                class="MW5IWV"
-                              >
-                                <div
-                                  data-testid="colorUnderlay"
-                                  class="LWbAav Kv1aVt"
-                                ></div>
-                                <div
-                                  id="bgMedia_comp-lc96qudd"
-                                  data-motion-part="BG_MEDIA comp-lc96qudd"
-                                  class="VgO9Yg"
-                                ></div>
-                              </div>
+                           
                               <div
                                 data-mesh-id="comp-lc96quddinlineContent"
                                 data-testid="inline-content"
