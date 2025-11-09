@@ -44,6 +44,10 @@ class OffreResource extends Resource
                     ->required(),
                 Forms\Components\TextInput::make('num')
                     ->label('Numéro'),
+                Forms\Components\Textarea::make('title')
+                    ->label('Titre')
+                    ->rows(2)
+                    ->columnSpanFull(),
                 Forms\Components\TextInput::make('intitule')
                     ->label('Intitulé'),
                 Forms\Components\FileUpload::make('image')
@@ -117,6 +121,10 @@ class OffreResource extends Resource
                 Tables\Columns\TextColumn::make('num')
                     ->label('Numéro')
                     ->sortable(),
+                Tables\Columns\TextColumn::make('title')
+                    ->label('Titre')
+                    ->searchable()
+                    ->limit(50),
                 Tables\Columns\TextColumn::make('intitule')
                     ->label('Intitulé')
                     ->searchable()
