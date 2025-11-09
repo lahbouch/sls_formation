@@ -2038,7 +2038,7 @@
                 @endif
                 
                 @if($offre->description)
-                  <div class="offre-description">{{ Str::limit(strip_tags($offre->description), 150) }}</div>
+                  <div class="offre-description">{{ \Illuminate\Support\Str::limit(strip_tags($offre->description), 150) }}</div>
                 @endif
                 
                 <div class="offre-read-more">

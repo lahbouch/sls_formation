@@ -15340,7 +15340,7 @@
                                                   <div
                                                     role="listitem"
                                                     class="T7n0L6"
-                                                      style="cursor: pointer;"
+                                                      style="cursor: pointer; pointer-events: auto;"
                                                       onclick="window.location.href='{{ route('service', $service->id) }}'"
                                                   >
                                                     <!--$-->
@@ -15629,6 +15629,7 @@
                                                     overflow: hidden;
                                                     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
                                                     cursor: pointer;
+                                                    pointer-events: auto;
                                                   " onclick="window.location.href='{{ route('article.details', $article->id) }}'">
                                                     <!-- Background Image -->
                                                     <div style="
