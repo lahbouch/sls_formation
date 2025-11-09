@@ -7,16 +7,28 @@ use App\Models\OffreEmploiCv;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Log;
 
 class RecrutementController extends Controller
 {
     public function index()
     {
-        $offres = OffreEmploi::where('active', true)
-            ->orderBy('created_at', 'desc')
-            ->get();
-        
-        return view('recrutement', compact('offres'));
+        try {
+            $offres = OffreEmploi::where('active', true)
+                ->orderBy('created_at', 'desc')
+                ->get();
+            
+            return view('recrutement', compact('offres'));
+        } catch (\Exception $e) {
+            // Log the error for debugging
+            Log::error('Recrutement page error: ' . $e->getMessage(), [
+                'trace' => $e->getTraceAsString()
+            ]);
+            
+            // Return empty collection if there's an error
+            $offres = collect([]);
+            return view('recrutement', compact('offres'));
+        }
     }
 
     public function show($id)
