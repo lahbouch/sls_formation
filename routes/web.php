@@ -21,10 +21,21 @@ Route::get('/', function () {
     // Get events and process them
     $eventsRaw = \App\Models\Event::orderBy('start_date', 'desc')->limit(3)->get();
     $events = $eventsRaw->map(function($event) {
+        // Pre-process image URL
+        $imageUrl = null;
+        if (!empty($event->image)) {
+            try {
+                $imageUrl = \Illuminate\Support\Facades\Storage::disk('public')->url($event->image);
+            } catch (\Exception $e) {
+                // If storage fails, imageUrl remains null
+            }
+        }
+        
         return (object)[
             'id' => $event->id,
             'title' => $event->title,
-            'image' => $event->image,
+            'image' => $event->image, // Keep original for data attributes
+            'image_url' => $imageUrl, // Pre-processed URL
             'start_date' => $event->start_date,
             'end_date' => $event->end_date,
             'location' => $event->location,

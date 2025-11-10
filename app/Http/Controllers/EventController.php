@@ -90,34 +90,65 @@ class EventController extends Controller
     public function show($id)
     {
         try {
-            $event = Event::findOrFail($id);
+            $eventData = null;
             
-            // Pre-process event data
-            $imageUrl = null;
-            if (!empty($event->image)) {
-                try {
-                    $imageUrl = Storage::disk('public')->url($event->image);
-                } catch (\Exception $e) {
-                    // If storage fails, imageUrl remains null
+            try {
+                $event = Event::findOrFail($id);
+                
+                // Pre-process all event data in controller
+                $imageUrl = null;
+                if (!empty($event->image)) {
+                    try {
+                        $imageUrl = Storage::disk('public')->url($event->image);
+                    } catch (\Exception $e) {
+                        Log::error('EventController@show - Error getting image URL: ' . $e->getMessage());
+                        // If storage fails, imageUrl remains null
+                    }
                 }
+                
+                $isActive = $event->isCurrentlyActive();
+                
+                // Format dates
+                $startDateFormatted = $event->start_date ? $event->start_date->format('d M Y') : 'N/A';
+                $endDateFormatted = $event->end_date ? $event->end_date->format('d M Y') : 'N/A';
+                $startDateShort = $event->start_date ? $event->start_date->format('d/m/Y') : 'N/A';
+                $endDateShort = $event->end_date ? $event->end_date->format('d/m/Y') : 'N/A';
+                
+                // Pre-process description (strip tags, etc.)
+                $description = $event->description ?? '';
+                $descriptionPlain = strip_tags($description);
+                
+                $eventData = (object)[
+                    'id' => $event->id,
+                    'title' => $event->title ?? 'Événement',
+                    'image_url' => $imageUrl,
+                    'start_date' => $event->start_date, // Carbon instance for flexibility
+                    'end_date' => $event->end_date, // Carbon instance
+                    'start_date_formatted' => $startDateFormatted,
+                    'end_date_formatted' => $endDateFormatted,
+                    'start_date_short' => $startDateShort,
+                    'end_date_short' => $endDateShort,
+                    'location' => $event->location ?? '',
+                    'description' => $description,
+                    'description_plain' => $descriptionPlain,
+                    'active' => $isActive,
+                ];
+            } catch (\Exception $e) {
+                Log::error('EventController@show - Error fetching event: ' . $e->getMessage(), [
+                    'trace' => $e->getTraceAsString(),
+                    'file' => $e->getFile(),
+                    'line' => $e->getLine(),
+                ]);
+                abort(404);
             }
             
-            $isActive = $event->isCurrentlyActive();
-            
-            $eventData = (object)[
-                'id' => $event->id,
-                'title' => $event->title,
-                'image_url' => $imageUrl,
-                'start_date' => $event->start_date,
-                'end_date' => $event->end_date,
-                'location' => $event->location ?? '',
-                'description' => $event->description ?? '',
-                'active' => $isActive,
-            ];
-            
             return view('event-details', compact('eventData'));
-        } catch (\Exception $e) {
-            Log::error('Event details error: ' . $e->getMessage());
+        } catch (\Throwable $e) {
+            Log::error('EventController@show - Fatal error: ' . $e->getMessage(), [
+                'trace' => $e->getTraceAsString(),
+                'file' => $e->getFile(),
+                'line' => $e->getLine(),
+            ]);
             abort(404);
         }
     }
