@@ -12967,6 +12967,18 @@
         align-self: start;
       }
       [data-mesh-id="comp-events-column-innerinlineContent-gridContainer"]
+        > [id="comp-events-repeater"],
+      [data-mesh-id="comp-events-column-innerinlineContent-gridContainer"]
+        > wix-interact-element
+        > [id="comp-events-repeater"] {
+        position: relative;
+        margin: 0px 0px 62px calc((100% - 980px) * 0.5);
+        left: 0px;
+        grid-area: 2 / 1 / 3 / 2;
+        justify-self: start;
+        align-self: start;
+      }
+      [data-mesh-id="comp-events-column-innerinlineContent-gridContainer"]
         > wix-interact-element
         > [id="comp-events-button"] {
         position: relative;
@@ -15352,8 +15364,9 @@
                                                 @if(isset($services) && $services->count() > 0)
                                                   @foreach($services as $service)
                                                     @php
-                                                      $imagePath = $service->minimized_image ?: $service->image;
-                                                      $imageUrl = $imagePath ? \Illuminate\Support\Facades\Storage::disk('public')->url($imagePath) : null;
+                                                      // Image URL already pre-processed in controller
+                                                      $imageUrl = $service->image_url ?? null;
+                                                      $imagePath = $service->image ?? null;
                                                       $itemId = 'comp-lamqvxfv1__item-' . $service->id;
                                                       $textId = 'comp-lamqvxg32__item-' . $service->id;
                                                     @endphp
@@ -15398,7 +15411,7 @@
                                                               );
                                                             "
                                                             ><img
-                                                                      alt="{{ ucwords(strtolower($service->titre)) }}"
+                                                                      alt="{{ $service->titre }}"
                                                               style="
                                                                 width: 277px;
                                                                 height: 246px;
@@ -15473,7 +15486,7 @@
                                                                           "
                                                                           class="wixui-rich-text__text"
                                                                           >&nbsp;
-                                                                                {{ ucwords(strtolower($service->titre)) }}
+                                                                                {{ $service->titre }}
                                                                           &nbsp;</span
                                                                         ></span
                                                                       ></span
@@ -15625,7 +15638,8 @@
                                               @if(isset($offres) && $offres->count() > 0)
                                                 @foreach($offres as $offre)
                                                   @php
-                                                    $offreImageUrl = $offre->image ? \Illuminate\Support\Facades\Storage::disk('public')->url($offre->image) : null;
+                                                    // Image URL already pre-processed in controller
+                                                    $offreImageUrl = $offre->image_url ?? null;
                                                   @endphp
                                                   <div style="
                                                     position: relative;
@@ -15961,7 +15975,7 @@
                                                               );
                                                             "
                                                             ><img
-                                                                      alt="{{ ucwords(strtolower($event->title)) }}"
+                                                                      alt="{{ $event->title }}"
                                                               style="
                                                                 width: 277px;
                                                                 height: 246px;
@@ -16036,7 +16050,7 @@
                                                                           "
                                                                           class="wixui-rich-text__text"
                                                                           >&nbsp;
-                                                                                {{ ucwords(strtolower($event->title)) }}
+                                                                                {{ $event->title_formatted ?? $event->title }}
                                                                           &nbsp;</span
                                                                         ></span
                                                                       ></span
@@ -16223,7 +16237,8 @@
                                               @if(isset($articles) && $articles->count() > 0)
                                                 @foreach($articles as $article)
                                                   @php
-                                                    $articleImageUrl = $article->image ? \Illuminate\Support\Facades\Storage::disk('public')->url($article->image) : null;
+                                                    // Image URL already pre-processed in controller
+                                                    $articleImageUrl = $article->image_url ?? null;
                                                   @endphp
                                                   <div style="
                                                     position: relative;
@@ -16289,7 +16304,7 @@
             margin-bottom: 8px;
             opacity: 0.95;
             letter-spacing: 0.3px;
-                                                          ">{{ ucwords(strtolower($article->articleType->nom)) }}</div>
+                                                          ">{{ $article->articleType->nom_formatted ?? $article->articleType->nom ?? '' }}</div>
                                                         @endif
         
         <!-- Title -->
@@ -16331,7 +16346,7 @@
                                                                         ><span
                                                                           class="wixui-rich-text__text"
                                                                           >
-                                                                      {{ ucwords(strtolower($article->titre)) }}
+                                                                      {{ $article->titre_formatted ?? $article->titre }}
                                                                           &nbsp;</span
                                                                         ></span
                                                                       ></span

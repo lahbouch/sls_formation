@@ -262,7 +262,8 @@
     @foreach($services as $index => $service)
         @php
             $isEven = $index % 2 == 0;
-            $imageUrl = $service->image ? \Illuminate\Support\Facades\Storage::disk('public')->url($service->image) : null;
+            // Image URL already pre-processed in controller
+            $imageUrl = $service->image_url ?? null;
         @endphp
         <section class="service-section">
             <div class="service-content">

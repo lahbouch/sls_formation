@@ -101,7 +101,7 @@
   <style>.MW5IWV{height:100%;left:0;-webkit-mask-image:var(--mask-image,none);mask-image:var(--mask-image,none);-webkit-mask-position:var(--mask-position,0);mask-position:var(--mask-position,0);-webkit-mask-repeat:var(--mask-repeat,no-repeat);mask-repeat:var(--mask-repeat,no-repeat);-webkit-mask-size:var(--mask-size,100%);mask-size:var(--mask-size,100%);overflow:hidden;pointer-events:var(--fill-layer-background-media-pointer-events);position:absolute;top:0;width:100%}.MW5IWV.N3eg0s{clip:rect(0,auto,auto,0)}.MW5IWV .Kv1aVt{height:100%;position:absolute;top:0;width:100%}.MW5IWV .dLPlxY{height:var(--fill-layer-image-height,100%);opacity:var(--fill-layer-image-opacity)}.MW5IWV .dLPlxY img{height:100%;width:100%}@supports(-webkit-hyphens:none){.MW5IWV.N3eg0s{clip:auto;-webkit-clip-path:inset(0)}}.VgO9Yg{height:100%}.LWbAav{background-color:var(--bg-overlay-color);background-image:var(--bg-gradient);transition:var(--inherit-transition)}.K_YxMd,.yK6aSC{opacity:var(--fill-layer-video-opacity)}.NGjcJN{bottom:var(--media-padding-bottom);height:var(--media-padding-height);position:absolute;top:var(--media-padding-top);width:100%}.mNGsUM{transform:scale(var(--scale,1));transition:var(--transform-duration,transform 0s)}.K_YxMd{height:100%;position:relative;width:100%}wix-media-canvas{display:block;height:100%}.I8xA4L{opacity:var(--fill-layer-video-opacity,var(--fill-layer-image-opacity,1))}.I8xA4L .K_YxMd,.I8xA4L .dLPlxY,.I8xA4L .yK6aSC{opacity:1}.Oqnisf{overflow:visible}.Oqnisf>.MW5IWV .LWbAav{background-color:var(--section-corvid-background-color,var(--bg-overlay-color))}.cM88eO{backface-visibility:hidden}.YtfWHd{left:0;top:0}.YtfWHd,.mj3xJ8{position:absolute}.mj3xJ8{clip:rect(0 0 0 0);background-color:#fff;border-radius:50%;bottom:3px;color:#000;display:grid;height:24px;outline:1px solid #000;place-items:center;pointer-events:none;right:3px;width:24px;z-index:9999}.mj3xJ8:active,.mj3xJ8:focus{clip:auto;pointer-events:auto}.Tj01hh,.jhxvbR{display:block;height:100%;width:100%}.jhxvbR img{max-width:var(--wix-img-max-width,100%)}.jhxvbR[data-animate-blur] img{filter:blur(9px);transition:filter .8s ease-in}.jhxvbR[data-animate-blur] img[data-load-done]{filter:none}.bX9O_S{clip-path:var(--fill-layer-clip)}.Z_wCwr,.bX9O_S{position:absolute;top:0}.Jxk_UL img,.Z_wCwr,.bX9O_S{height:100%;width:100%}.K8MSra{opacity:0}.K8MSra,.YTb3b4{position:absolute;top:0}.YTb3b4{height:0;left:0;overflow:hidden;width:0}.SUz0WK{left:0;pointer-events:var(--fill-layer-background-media-pointer-events);position:var(--fill-layer-background-media-position)}.FNxOn5,.SUz0WK,.m4khSP{height:100%;top:0;width:100%}.FNxOn5{position:absolute}.m4khSP{background-color:var(--fill-layer-background-overlay-color);opacity:var(--fill-layer-background-overlay-blend-opacity-fallback,1);position:var(--fill-layer-background-overlay-position);transform:var(--fill-layer-background-overlay-transform)}@supports(mix-blend-mode:overlay){.m4khSP{mix-blend-mode:var(--fill-layer-background-overlay-blend-mode);opacity:var(--fill-layer-background-overlay-blend-opacity,1)}}.dkukWC{--divider-pin-height__:min(1,calc(var(--divider-layers-pin-factor__) + 1));--divider-pin-layer-height__:var( --divider-layers-pin-factor__ );--divider-pin-border__:min(1,calc(var(--divider-layers-pin-factor__) / -1 + 1));height:calc(var(--divider-height__) + var(--divider-pin-height__)*var(--divider-layers-size__)*var(--divider-layers-y__))}.dkukWC,.dkukWC .FRCqDF{left:0;position:absolute;width:100%}.dkukWC .FRCqDF{--divider-layer-i__:var(--divider-layer-i,0);background-position:left calc(50% + var(--divider-offset-x__) + var(--divider-layers-x__)*var(--divider-layer-i__)) bottom;background-repeat:repeat-x;border-bottom-style:solid;border-bottom-width:calc(var(--divider-pin-border__)*var(--divider-layer-i__)*var(--divider-layers-y__));height:calc(var(--divider-height__) + var(--divider-pin-layer-height__)*var(--divider-layer-i__)*var(--divider-layers-y__));opacity:calc(1 - var(--divider-layer-i__)/(var(--divider-layer-i__) + 1))}.xnZvZH{--divider-height__:var(--divider-top-height,auto);--divider-offset-x__:var(--divider-top-offset-x,0px);--divider-layers-size__:var(--divider-top-layers-size,0);--divider-layers-y__:var(--divider-top-layers-y,0px);--divider-layers-x__:var(--divider-top-layers-x,0px);--divider-layers-pin-factor__:var(--divider-top-layers-pin-factor,0);border-top:var(--divider-top-padding,0) solid var(--divider-top-color,currentColor);opacity:var(--divider-top-opacity,1);top:0;transform:var(--divider-top-flip,scaleY(-1))}.xnZvZH .FRCqDF{background-image:var(--divider-top-image,none);background-size:var(--divider-top-size,contain);border-color:var(--divider-top-color,currentColor);bottom:0;filter:var(--divider-top-filter,none)}.xnZvZH .FRCqDF[data-divider-layer="1"]{display:var(--divider-top-layer-1-display,block)}.xnZvZH .FRCqDF[data-divider-layer="2"]{display:var(--divider-top-layer-2-display,block)}.xnZvZH .FRCqDF[data-divider-layer="3"]{display:var(--divider-top-layer-3-display,block)}.MBOSCN{--divider-height__:var(--divider-bottom-height,auto);--divider-offset-x__:var(--divider-bottom-offset-x,0px);--divider-layers-size__:var(--divider-bottom-layers-size,0);--divider-layers-y__:var(--divider-bottom-layers-y,0px);--divider-layers-x__:var(--divider-bottom-layers-x,0px);--divider-layers-pin-factor__:var(--divider-bottom-layers-pin-factor,0);border-bottom:var(--divider-bottom-padding,0) solid var(--divider-bottom-color,currentColor);bottom:0;opacity:var(--divider-bottom-opacity,1);transform:var(--divider-bottom-flip,none)}.MBOSCN .FRCqDF{background-image:var(--divider-bottom-image,none);background-size:var(--divider-bottom-size,contain);border-color:var(--divider-bottom-color,currentColor);bottom:0;filter:var(--divider-bottom-filter,none)}.MBOSCN .FRCqDF[data-divider-layer="1"]{display:var(--divider-bottom-layer-1-display,block)}.MBOSCN .FRCqDF[data-divider-layer="2"]{display:var(--divider-bottom-layer-2-display,block)}.MBOSCN .FRCqDF[data-divider-layer="3"]{display:var(--divider-bottom-layer-3-display,block)}</style>
   <style>.OQ8Tzd,.nKphmK{overflow:hidden}.nKphmK{height:100%;position:relative;width:100%}.nKphmK:-ms-fullscreen{min-height:auto!important}.nKphmK:fullscreen{min-height:auto!important}.pvlz2w{visibility:hidden}</style>
   <style>.TWFxr5{height:auto!important}.May50y{overflow:hidden!important}</style>
-  <title>{{ ucwords(strtolower($article->titre)) }} - Actualités</title>
+  <title>{{ $articleData->titre_formatted ?? $articleData->titre }} - Actualités</title>
     
     
     
@@ -185,14 +185,10 @@
 
 
 <main id="PAGES_CONTAINER" class="PAGES_CONTAINER" tabindex="-1" data-main-content="true"><div id="SITE_PAGES" class="JsJXaX SITE_PAGES"><div id="SITE_PAGES_TRANSITION_GROUP" class="AnQkDU"><div id="pck1h" class="dBAkHi pck1h"><div class="PFkO7r wixui-page" data-testid="page-bg"></div><div class="HT5ybB"><!--$--><div id="Containerpck1h" class="Containerpck1h SPY_vo"><div data-mesh-id="Containerpck1hinlineContent" data-testid="inline-content" class=""><div data-mesh-id="Containerpck1hinlineContent-gridContainer" data-testid="mesh-container-content"><!--$--><section id="comp-lc96qu9z" tabindex="-1" class="Oqnisf comp-lc96qu9z wixui-section" data-block-level-container="ClassicSection"><div id="bgLayers_comp-lc96qu9z" data-hook="bgLayers" data-motion-part="BG_LAYER comp-lc96qu9z" class="MW5IWV"><div data-testid="colorUnderlay" class="LWbAav Kv1aVt"></div><div id="bgMedia_comp-lc96qu9z" data-motion-part="BG_MEDIA comp-lc96qu9z" class="VgO9Yg"></div></div><div data-mesh-id="comp-lc96qu9zinlineContent" data-testid="inline-content" class=""><div data-mesh-id="comp-lc96qu9zinlineContent-gridContainer" data-testid="mesh-container-content" style="max-width: 800px; margin: 0 auto; padding: 60px 20px;"><!--$--><div id="comp-laohuylq" style="display:none"></div><!--/$--><article style="background: #fff; padding: 0;">
-@php
-  $articleImageUrl = $article->image ? \Illuminate\Support\Facades\Storage::disk('public')->url($article->image) : null;
-@endphp
-
 <!-- Featured Image -->
-@if($articleImageUrl)
+@if($articleData->image_url)
 <div style="width: 100%; margin-bottom: 40px; border-radius: 8px; overflow: hidden;">
-  <img src="{{ $articleImageUrl }}" alt="{{ $article->titre }}" style="width: 100%; height: auto; max-height: 500px; object-fit: cover; display: block;">
+  <img src="{{ $articleData->image_url }}" alt="{{ $articleData->titre }}" style="width: 100%; height: auto; max-height: 500px; object-fit: cover; display: block;">
 </div>
 @else
 <div style="width: 100%; margin-bottom: 40px; border-radius: 8px; overflow: hidden; background-color: #e9ecef; min-height: 300px; display: flex; align-items: center; justify-content: center;">
@@ -203,31 +199,31 @@
 <!-- Article Header -->
 <header style="margin-bottom: 30px; text-align: center; padding-bottom: 30px; border-bottom: 1px solid #e0e0e0;">
   <!-- Category -->
-  @if($article->articleType)
+  @if($articleData->articleType)
   <div style="margin-bottom: 15px;">
     <span style="display: inline-block; padding: 6px 16px; background-color: #113c66; color: #fff; border-radius: 20px; font-size: 13px; font-weight: 500; font-family: avenir-lt-w01_35-light1475496, avenir-lt-w05_35-light, sans-serif; letter-spacing: 0.5px;">
-      {{ ucwords(strtolower($article->articleType->nom)) }}
+      {{ $articleData->articleType->nom_formatted ?? $articleData->articleType->nom }}
     </span>
   </div>
   @endif
   
   <!-- Title -->
   <h1 style="font-size: 42px; line-height: 1.3; color: #113c66; margin: 0 0 20px 0; font-family: avenir-lt-w01_85-heavy1475544, avenir-lt-w05_85-heavy, sans-serif; font-weight: bold;">
-    {{ ucwords(strtolower($article->titre)) }}
+    {{ $articleData->titre_formatted ?? $articleData->titre }}
   </h1>
   
   <!-- Date -->
-  @if($article->date_created)
+  @if($articleData->date_formatted)
   <div style="color: #666; font-size: 15px; font-family: avenir-lt-w01_35-light1475496, avenir-lt-w05_35-light, sans-serif;">
-    Publié le {{ $article->date_created->format('d F Y') }}
+    Publié le {{ $articleData->date_formatted }}
   </div>
   @endif
 </header>
 
 <!-- Article Content -->
 <div style="font-size: 18px; line-height: 1.8; color: #333; font-family: avenir-lt-w01_35-light1475496, avenir-lt-w05_35-light, sans-serif; margin-bottom: 40px;">
-  @if($article->content)
-    {!! $article->content !!}
+  @if($articleData->description)
+    {!! $articleData->description !!}
   @endif
 </div>
 
@@ -267,8 +263,8 @@
 </div></div></div><!--/$--><!--$--><div id="comp-laojtv7b" class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-laojtv7b wixui-rich-text" data-testid="richTextElement"><div class="font_8 wixui-rich-text__text" style="font-size:16px; line-height:normal;"><span class="color_19 wixui-rich-text__text"><span style="font-size:16px;" class="wixui-rich-text__text"><span style="letter-spacing:normal;" class="wixui-rich-text__text">
     
 
-@if($article->content)
-{!! $article->content !!}
+@if($articleData->description)
+{!! $articleData->description !!}
 @endif
 
 

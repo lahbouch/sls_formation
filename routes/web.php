@@ -13,56 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $services = \App\Models\Service::all();
-    $articles = \App\Models\Article::with('articleType')->latest('date_created')->limit(3)->get();
-    $offres = \App\Models\OffreEmploi::where('active', true)->latest('created_at')->limit(3)->get();
-    
-    // Get events and process them
-    $eventsRaw = \App\Models\Event::orderBy('start_date', 'desc')->limit(3)->get();
-    $events = $eventsRaw->map(function($event) {
-        // Pre-process image URL
-        $imageUrl = null;
-        if (!empty($event->image)) {
-            try {
-                $imageUrl = \Illuminate\Support\Facades\Storage::disk('public')->url($event->image);
-            } catch (\Exception $e) {
-                // If storage fails, imageUrl remains null
-            }
-        }
-        
-        return (object)[
-            'id' => $event->id,
-            'title' => $event->title,
-            'image' => $event->image, // Keep original for data attributes
-            'image_url' => $imageUrl, // Pre-processed URL
-            'start_date' => $event->start_date,
-            'end_date' => $event->end_date,
-            'location' => $event->location,
-            'active' => $event->isCurrentlyActive(), // true if active=true AND end_date hasn't passed
-        ];
-    });
-    
-    return view('welcome', compact('services', 'articles', 'offres', 'events'));
-})->name('home');
+Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-Route::get('/services/{id}', function ($id) {
-    $service = \App\Models\Service::with(['types.offres'])->findOrFail($id);
-    return view('service', compact('service'));
-})->name('service');
+Route::get('/services/{id}', [\App\Http\Controllers\ServicesController::class, 'show'])->name('service');
 
 
-Route::get('/a-propos', function () {
-    $partners = \App\Models\Partner::all();
-    return view('a_propos', compact('partners'));
-})->name('a-propos');
+Route::get('/a-propos', [\App\Http\Controllers\PartnerController::class, 'index'])->name('a-propos');
 
 
-Route::get('/services', function () {
-    $services = \App\Models\Service::all();
-    return view('services', compact('services'));
-})->name('services');
+Route::get('/services', [\App\Http\Controllers\ServicesController::class, 'index'])->name('services');
 
 
 
@@ -73,31 +33,10 @@ Route::get('/evenements', function () {
 
 
 
-Route::get('/galleries', function () {
-    $galleries = \App\Models\Gallery::whereNotNull('image')->paginate(12);
-    return view('galleries', compact('galleries'));
-})->name('galleries');
+Route::get('/galleries', [\App\Http\Controllers\GalleryController::class, 'index'])->name('galleries');
 
 
-Route::get('/actualites', function () {
-    $selectedCategory = request()->query('category');
-    
-    // Get all categories with article counts
-    $categories = \App\Models\ArticleType::withCount('articles')->get();
-    
-    // Get articles based on selected category
-    $articlesQuery = \App\Models\Article::with('articleType')->latest('date_created');
-    
-    if ($selectedCategory) {
-        $articlesQuery->whereHas('articleType', function($query) use ($selectedCategory) {
-            $query->where('id', $selectedCategory);
-        });
-    }
-    
-    $articles = $articlesQuery->paginate(9);
-    
-    return view('actualites', compact('articles', 'categories', 'selectedCategory'));
-})->name('actualites');
+Route::get('/actualites', [\App\Http\Controllers\ActualitesController::class, 'index'])->name('actualites');
 
 
 
@@ -142,10 +81,7 @@ Route::get('/offres/{id}', function ($id) {
     return view('offre-details', compact('offre'));
 })->name('offre.details');
 
-Route::get('/articles/{id}', function ($id) {
-    $article = \App\Models\Article::with('articleType')->findOrFail($id);
-    return view('article-details', compact('article'));
-})->name('article.details');
+Route::get('/articles/{id}', [\App\Http\Controllers\ArticleController::class, 'show'])->name('article.details');
 
 // Events routes
 Route::get('/events', [\App\Http\Controllers\EventController::class, 'index'])->name('events');

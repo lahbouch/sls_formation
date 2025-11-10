@@ -905,11 +905,12 @@
         <h6 class="font_6 wixui-rich-text__text">Galerie Photos</h6>
     </div>
     
-    @if(isset($galleries) && $galleries->count() > 0)
+    @if(isset($galleriesPaginated) && $galleriesPaginated->count() > 0)
         <div class="gallery-grid">
-            @foreach($galleries as $gallery)
+            @foreach($galleriesPaginated as $gallery)
                 @php
-                    $galleryImageUrl = $gallery->image ? \Illuminate\Support\Facades\Storage::disk('public')->url($gallery->image) : null;
+                    // Image URL already pre-processed in controller
+                    $galleryImageUrl = $gallery->image_url ?? null;
                 @endphp
                 <div class="gallery-item" 
                      data-image-url="{{ $galleryImageUrl ?? '#' }}"
@@ -923,9 +924,9 @@
             @endforeach
         </div>
         
-        @if($galleries->hasPages())
+        @if($galleriesPaginated->hasPages())
             <div class="gallery-pagination">
-                {{ $galleries->links() }}
+                {{ $galleriesPaginated->links() }}
             </div>
         @endif
     @else

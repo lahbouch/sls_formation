@@ -706,25 +706,17 @@
 </style>
 <div id="comp-lh8v9gq9">
     <div class="partners-grid-container">
-        @php
-            $partnersWithImages = isset($partners) ? $partners->filter(function($partner) {
-                return !empty($partner->image);
-            }) : collect();
-        @endphp
-        @if($partnersWithImages->count() > 0)
+        @if(isset($partnersWithImages) && $partnersWithImages->count() > 0)
             <div class="partners-grid">
                 @foreach($partnersWithImages as $partner)
                     <div class="partner-item">
-                        @if($partner->image)
-                            @php
-                                $partnerImageUrl = \Illuminate\Support\Facades\Storage::disk('public')->url($partner->image);
-                            @endphp
+                        @if($partner->image_url)
                             @if($partner->siteweb)
                                 <a href="{{ $partner->siteweb }}" target="_blank" rel="noopener noreferrer">
-                                    <img src="{{ $partnerImageUrl }}" alt="Partner Logo">
+                                    <img src="{{ $partner->image_url }}" alt="Partner Logo">
                                 </a>
                             @else
-                                <img src="{{ $partnerImageUrl }}" alt="Partner Logo">
+                                <img src="{{ $partner->image_url }}" alt="Partner Logo">
                             @endif
                         @else
                             <div style="width: 100%; height: 100%; background-color: #e9ecef; display: flex; align-items: center; justify-content: center; min-height: 100px;">

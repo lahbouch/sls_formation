@@ -2018,11 +2018,12 @@
       </nav>
       
       <!-- Articles Grid -->
-      @if($articles->count() > 0)
+      @if($articlesPaginated->count() > 0)
         <div class="blog-articles-grid">
-          @foreach($articles as $article)
+          @foreach($articlesPaginated as $article)
             @php
-              $articleImageUrl = $article->image ? \Illuminate\Support\Facades\Storage::disk('public')->url($article->image) : null;
+              // Image URL already pre-processed in controller
+              $articleImageUrl = $article->image_url ?? null;
             @endphp
             <a href="{{ route('article.details', $article->id) }}" class="blog-article-card">
               @if($articleImageUrl)
@@ -2032,11 +2033,11 @@
               @endif
               <div class="blog-article-content">
                 @if($article->articleType)
-                  <span class="blog-article-category">{{ ucwords(strtolower($article->articleType->nom)) }}</span>
+                  <span class="blog-article-category">{{ $article->articleType->nom_formatted ?? $article->articleType->nom }}</span>
                 @endif
-                <h3 class="blog-article-title">{{ ucwords(strtolower($article->titre)) }}</h3>
-                @if($article->date_created)
-                  <div class="blog-article-date">{{ $article->date_created->format('d F Y') }}</div>
+                <h3 class="blog-article-title">{{ $article->titre_formatted ?? $article->titre }}</h3>
+                @if($article->date_formatted)
+                  <div class="blog-article-date">{{ $article->date_formatted }}</div>
                 @endif
               </div>
             </a>
@@ -2044,27 +2045,27 @@
         </div>
         
         <!-- Pagination -->
-        @if($articles->hasPages())
+        @if($articlesPaginated->hasPages())
           @php
-            $articles->appends(request()->query());
+            $articlesPaginated->appends(request()->query());
           @endphp
           <div class="blog-pagination">
-            @if($articles->onFirstPage())
+            @if($articlesPaginated->onFirstPage())
               <span>&laquo; Précédent</span>
             @else
-              <a href="{{ $articles->previousPageUrl() }}">&laquo; Précédent</a>
+              <a href="{{ $articlesPaginated->previousPageUrl() }}">&laquo; Précédent</a>
             @endif
             
-            @foreach($articles->getUrlRange(1, $articles->lastPage()) as $page => $url)
-              @if($page == $articles->currentPage())
+            @foreach($articlesPaginated->getUrlRange(1, $articlesPaginated->lastPage()) as $page => $url)
+              @if($page == $articlesPaginated->currentPage())
                 <span class="active">{{ $page }}</span>
               @else
                 <a href="{{ $url }}">{{ $page }}</a>
               @endif
             @endforeach
             
-            @if($articles->hasMorePages())
-              <a href="{{ $articles->nextPageUrl() }}">Suivant &raquo;</a>
+            @if($articlesPaginated->hasMorePages())
+              <a href="{{ $articlesPaginated->nextPageUrl() }}">Suivant &raquo;</a>
             @else
               <span>Suivant &raquo;</span>
             @endif
