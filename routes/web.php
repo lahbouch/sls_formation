@@ -76,9 +76,9 @@ Route::get('/actualites', function () {
 
 
 
-Route::get('/recrutement', [\App\Http\Controllers\RecrutementController::class, 'index'])->name('recrutement');
-Route::get('/recrutement/{id}', [\App\Http\Controllers\RecrutementController::class, 'show'])->name('offre-emploi.show');
-Route::post('/recrutement/cv', [\App\Http\Controllers\RecrutementController::class, 'uploadCv'])->name('recrutement.cv.upload');
+Route::get('/jobs_ma', [\App\Http\Controllers\RecrutementController::class, 'index'])->name('recrutement');
+Route::get('/jobs_ma/{id}', [\App\Http\Controllers\RecrutementController::class, 'show'])->name('offre-emploi.show');
+Route::post('/jobs_ma/cv', [\App\Http\Controllers\RecrutementController::class, 'uploadCv'])->name('recrutement.cv.upload');
 
 Route::get('/contact', function () {
     return view('contact');
