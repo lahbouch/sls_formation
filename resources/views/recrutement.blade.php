@@ -1834,6 +1834,23 @@
           transform: translateY(-8px);
           box-shadow: 0 12px 24px rgba(0,0,0,0.15);
         }
+        .offre-card.inactive {
+          background-color: #f5f5f5;
+          opacity: 0.6;
+          cursor: not-allowed;
+          pointer-events: none;
+        }
+        .offre-card.inactive:hover {
+          transform: none;
+          box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .offre-card.inactive .offre-image,
+        .offre-card.inactive .offre-image-placeholder {
+          filter: grayscale(100%);
+        }
+        .offre-card.inactive .offre-content {
+          color: #999;
+        }
         .offre-image {
           width: 100%;
           height: 200px;
@@ -1966,8 +1983,13 @@
           @foreach($offres as $offre)
             @php
               $offreImageUrl = $offre->image ? \Illuminate\Support\Facades\Storage::disk('public')->url($offre->image) : null;
+              $isInactive = !$offre->active;
             @endphp
-            <a href="{{ route('offre-emploi.show', $offre->id) }}" class="offre-card">
+            @if($isInactive)
+              <div class="offre-card inactive">
+            @else
+              <a href="{{ route('offre-emploi.show', $offre->id) }}" class="offre-card">
+            @endif
               @if($offreImageUrl)
                 <img src="{{ $offreImageUrl }}" alt="{{ $offre->titre }}" class="offre-image">
               @else
@@ -1986,7 +2008,11 @@
                   <div class="offre-description">{{ \Illuminate\Support\Str::limit(strip_tags($offre->description), 100) }}</div>
                 @endif
               </div>
-            </a>
+            @if($isInactive)
+              </div>
+            @else
+              </a>
+            @endif
           @endforeach
         </div>
       @else

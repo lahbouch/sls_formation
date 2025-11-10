@@ -14,9 +14,14 @@ class RecrutementController extends Controller
     public function index()
     {
         try {
-            $offres = OffreEmploi::where('active', true)
-                ->orderBy('created_at', 'desc')
-                ->get();
+            // Get all offers, then sort in memory to avoid database issues
+            $offres = OffreEmploi::orderBy('created_at', 'desc')
+                ->get()
+                ->sortByDesc(function ($offre) {
+                    // Sort by active status first (true = 1, false = 0)
+                    return $offre->active ? 1 : 0;
+                })
+                ->values(); // Re-index the collection
             
             return view('recrutement', compact('offres'));
         } catch (\Exception $e) {

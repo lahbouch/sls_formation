@@ -1067,11 +1067,11 @@
                                           visibility: inherit;
                                         ">
                                                         <a data-testid="linkElement" href="{{ route('recrutement') }}"
-                                                            target="_self" class="UiHgGh" {{ request()->routeIs('recrutement') ? 'aria-current="page"' : '' }}>
+                                                            target="_self" class="UiHgGh" style="pointer-events: auto;" {{ request()->routeIs('recrutement') ? 'aria-current="page"' : '' }}>
                                                             <div class="yRj2ms">
                                                                 <div class="">
                                                                     <p class="JS76Uv" id="comp-ils2cgqy6label"
-                                                                        style="line-height: 40px">
+                                                                        style="line-height: 40px; pointer-events: auto;">
                                                                         Recrutement
                                                                     </p>
                                                                 </div>
@@ -1092,11 +1092,11 @@
                                           visibility: inherit;
                                         ">
                                                         <a data-testid="linkElement" href="{{ route('contact') }}"
-                                                            target="_self" class="UiHgGh" {{ request()->routeIs('contact') ? 'aria-current="page"' : '' }}>
+                                                            target="_self" class="UiHgGh" style="pointer-events: auto;" {{ request()->routeIs('contact') ? 'aria-current="page"' : '' }}>
                                                             <div class="yRj2ms">
                                                                 <div class="">
                                                                     <p class="JS76Uv" id="comp-ils2cgqy7label"
-                                                                        style="line-height: 40px">
+                                                                        style="line-height: 40px; pointer-events: auto;">
                                                                         Contact
                                                                     </p>
                                                                 </div>
