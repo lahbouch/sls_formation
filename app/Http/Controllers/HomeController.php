@@ -21,10 +21,30 @@ class HomeController extends Controller
             
             if ($cachedData !== null) {
                 try {
+                    // Ensure cached data has all required keys
+                    if (!isset($cachedData['services'])) {
+                        $cachedData['services'] = collect([]);
+                    }
+                    if (!isset($cachedData['articles'])) {
+                        $cachedData['articles'] = collect([]);
+                    }
+                    if (!isset($cachedData['offres'])) {
+                        $cachedData['offres'] = collect([]);
+                    }
+                    if (!isset($cachedData['events'])) {
+                        $cachedData['events'] = collect([]);
+                    }
                     return view('welcome', $cachedData);
                 } catch (\Exception $e) {
-                    Log::error('HomeController@index - Error rendering cached view: ' . $e->getMessage());
-                    // Fall through to regenerate cache
+                    Log::error('HomeController@index - Error rendering cached view: ' . $e->getMessage(), [
+                        'trace' => $e->getTraceAsString()
+                    ]);
+                    // Clear bad cache and fall through to regenerate
+                    try {
+                        Cache::forget($cacheKey);
+                    } catch (\Exception $cacheError) {
+                        // Ignore cache clear errors
+                    }
                 }
             }
             
@@ -87,16 +107,30 @@ class HomeController extends Controller
                 $events = collect([]);
             }
             
-            // Prepare data for view
+            // Prepare data for view - ensure all required variables are present
             $viewData = [
-                'services' => $services,
-                'articles' => $articles,
-                'offres' => $offres,
-                'events' => $events,
+                'services' => $services ?? collect([]),
+                'articles' => $articles ?? collect([]),
+                'offres' => $offres ?? collect([]),
+                'events' => $events ?? collect([]),
                 'pageTitle' => 'Accueil - Services, Actualités et Offres d\'emploi',
                 'pageDescription' => 'Découvrez nos services, actualités, événements et offres d\'emploi. Votre partenaire de confiance pour tous vos besoins.',
                 'pageKeywords' => 'services, actualités, événements, offres d\'emploi, recrutement',
             ];
+            
+            // Ensure all are collections
+            if (!($viewData['services'] instanceof \Illuminate\Support\Collection)) {
+                $viewData['services'] = collect([]);
+            }
+            if (!($viewData['articles'] instanceof \Illuminate\Support\Collection)) {
+                $viewData['articles'] = collect([]);
+            }
+            if (!($viewData['offres'] instanceof \Illuminate\Support\Collection)) {
+                $viewData['offres'] = collect([]);
+            }
+            if (!($viewData['events'] instanceof \Illuminate\Support\Collection)) {
+                $viewData['events'] = collect([]);
+            }
             
             // Cache the processed data for 5 minutes
             try {
@@ -108,13 +142,20 @@ class HomeController extends Controller
             try {
                 return view('welcome', $viewData);
             } catch (\Exception $e) {
-                Log::error('HomeController@index - Error rendering view: ' . $e->getMessage());
-                // Return minimal view with empty data
+                Log::error('HomeController@index - Error rendering view: ' . $e->getMessage(), [
+                    'trace' => $e->getTraceAsString(),
+                    'file' => $e->getFile(),
+                    'line' => $e->getLine()
+                ]);
+                // Return minimal view with empty data and SEO
                 return view('welcome', [
                     'services' => collect([]),
                     'articles' => collect([]),
                     'offres' => collect([]),
                     'events' => collect([]),
+                    'pageTitle' => 'Accueil - Services, Actualités et Offres d\'emploi',
+                    'pageDescription' => 'Découvrez nos services, actualités, événements et offres d\'emploi. Votre partenaire de confiance pour tous vos besoins.',
+                    'pageKeywords' => 'services, actualités, événements, offres d\'emploi, recrutement',
                 ]);
             }
         } catch (\Throwable $e) {
@@ -124,17 +165,25 @@ class HomeController extends Controller
                 'line' => $e->getLine()
             ]);
             
-            // Return empty collections on error
+            // Return empty collections on error with SEO data
             try {
                 return view('welcome', [
                     'services' => collect([]),
                     'articles' => collect([]),
                     'offres' => collect([]),
                     'events' => collect([]),
+                    'pageTitle' => 'Accueil - Services, Actualités et Offres d\'emploi',
+                    'pageDescription' => 'Découvrez nos services, actualités, événements et offres d\'emploi. Votre partenaire de confiance pour tous vos besoins.',
+                    'pageKeywords' => 'services, actualités, événements, offres d\'emploi, recrutement',
                 ]);
             } catch (\Exception $viewError) {
-                Log::error('HomeController@index - Cannot render view: ' . $viewError->getMessage());
-                return response('Service temporarily unavailable. Please try again later.', 503);
+                Log::error('HomeController@index - Cannot render view: ' . $viewError->getMessage(), [
+                    'trace' => $viewError->getTraceAsString(),
+                    'file' => $viewError->getFile(),
+                    'line' => $viewError->getLine()
+                ]);
+                // Try to return a simple HTML response instead of 503
+                return response('<!DOCTYPE html><html><head><title>Service Temporairement Indisponible</title></head><body><h1>Service temporairement indisponible</h1><p>Veuillez réessayer dans quelques instants.</p></body></html>', 503);
             }
         }
     }
