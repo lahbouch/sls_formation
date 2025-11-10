@@ -2072,11 +2072,8 @@
         @endif
       @else
         <div class="blog-empty-state">
-          <h3>Aucun article trouvé</h3>
           <p>Aucun article n'est disponible pour cette catégorie pour le moment.</p>
-          <a href="{{ route('actualites') }}" style="display: inline-block; margin-top: 20px; padding: 12px 24px; background-color: #113c66; color: #fff; text-decoration: none; border-radius: 4px; font-family: avenir-lt-w01_35-light1475496, avenir-lt-w05_35-light, sans-serif;">
-            Voir tous les articles
-          </a>
+         
         </div>
       @endif
     </div>
