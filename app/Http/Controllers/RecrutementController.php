@@ -22,13 +22,49 @@ class RecrutementController extends Controller
                 $allOffres = OffreEmploi::orderBy('created_at', 'desc')->get();
                 
                 if ($allOffres && $allOffres->count() > 0) {
-                    // Separate active and inactive offers
-                    $activeOffres = $allOffres->filter(function($offre) {
-                        return isset($offre->active) && ($offre->active === true || $offre->active === 1);
+                    // Pre-process offers in controller to reduce view complexity
+                    $offres = $allOffres->map(function($offre) {
+                        // Pre-calculate image URL
+                        $imageUrl = null;
+                        if (!empty($offre->image)) {
+                            try {
+                                $imageUrl = Storage::disk('public')->url($offre->image);
+                            } catch (\Exception $e) {
+                                // If storage fails, imageUrl remains null
+                            }
+                        }
+                        
+                        // Pre-process description
+                        $description = '';
+                        if (!empty($offre->description)) {
+                            $description = strip_tags($offre->description);
+                            if (mb_strlen($description) > 100) {
+                                $description = mb_substr($description, 0, 100) . '...';
+                            }
+                        }
+                        
+                        // Determine if inactive
+                        $isActive = isset($offre->active) && ($offre->active === true || $offre->active === 1);
+                        
+                        return (object)[
+                            'id' => $offre->id,
+                            'titre' => $offre->titre ?? 'Offre d\'emploi',
+                            'image_url' => $imageUrl,
+                            'contrat' => $offre->contrat ?? '',
+                            'ville' => $offre->ville ?? '',
+                            'entreprise' => $offre->entreprise ?? '',
+                            'description' => $description,
+                            'active' => $isActive,
+                        ];
                     });
                     
-                    $inactiveOffres = $allOffres->filter(function($offre) {
-                        return !isset($offre->active) || $offre->active === false || $offre->active === 0 || $offre->active === null;
+                    // Separate active and inactive
+                    $activeOffres = $offres->filter(function($offre) {
+                        return $offre->active === true;
+                    });
+                    
+                    $inactiveOffres = $offres->filter(function($offre) {
+                        return $offre->active === false;
                     });
                     
                     // Merge: active first, then inactive
