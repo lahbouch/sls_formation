@@ -262,7 +262,7 @@
     @foreach($services as $index => $service)
         @php
             $isEven = $index % 2 == 0;
-            $imageUrl = $service->image ? \Illuminate\Support\Facades\Storage::disk('public')->url($service->image) : '';
+            $imageUrl = $service->image ? \Illuminate\Support\Facades\Storage::disk('public')->url($service->image) : asset('images/SLS-_Logo_png_small.webp');
         @endphp
         <section class="service-section">
             <div class="service-content">

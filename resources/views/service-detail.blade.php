@@ -313,13 +313,10 @@
                             @foreach($service->types as $type)
                                 @foreach($type->offres as $offre)
                                     <div class="offre-card" data-type-id="{{ $type->id }}" data-offre-id="{{ $offre->id }}" style="background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;">
-                                        @if($offre->image)
-                                            <img src="{{ \Illuminate\Support\Facades\Storage::disk('public')->url($offre->image) }}" alt="{{ $offre->intitule }}" class="offre-card-image" style="width: 100%; height: 223px; object-fit: cover;">
-                                        @else
-                                            <div class="offre-card-image" style="width: 100%; height: 223px; background-color: #f0f0f0; display: flex; align-items: center; justify-content: center; color: #999;">
-                                                <span>Aucune image</span>
-                                            </div>
-                                        @endif
+                                        @php
+                                            $offreImageUrl = $offre->image ? \Illuminate\Support\Facades\Storage::disk('public')->url($offre->image) : asset('images/SLS-_Logo_png_small.webp');
+                                        @endphp
+                                        <img src="{{ $offreImageUrl }}" alt="{{ $offre->intitule }}" class="offre-card-image" style="width: 100%; height: 223px; object-fit: cover;">
                                         <div class="offre-card-content" style="padding: 15px;">
                                             <div class="offre-card-header" style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px;">
                                                 <div class="offre-card-code-section" style="display: flex; flex-direction: column;">

@@ -2003,7 +2003,7 @@
         <div class="blog-articles-grid">
           @foreach($articles as $article)
             @php
-              $articleImageUrl = $article->image ? \Illuminate\Support\Facades\Storage::disk('public')->url($article->image) : asset('/images/11062b_2a2076836abe4624a8d0cf69c0c18a0fmv2.webp');
+              $articleImageUrl = $article->image ? \Illuminate\Support\Facades\Storage::disk('public')->url($article->image) : asset('images/SLS-_Logo_png_small.webp');
             @endphp
             <a href="{{ route('article.details', $article->id) }}" class="blog-article-card">
               <img src="{{ $articleImageUrl }}" alt="{{ $article->titre }}" class="blog-article-image">

@@ -186,7 +186,7 @@
 
 <main id="PAGES_CONTAINER" class="PAGES_CONTAINER" tabindex="-1" data-main-content="true"><div id="SITE_PAGES" class="JsJXaX SITE_PAGES"><div id="SITE_PAGES_TRANSITION_GROUP" class="AnQkDU"><div id="pck1h" class="dBAkHi pck1h"><div class="PFkO7r wixui-page" data-testid="page-bg"></div><div class="HT5ybB"><!--$--><div id="Containerpck1h" class="Containerpck1h SPY_vo"><div data-mesh-id="Containerpck1hinlineContent" data-testid="inline-content" class=""><div data-mesh-id="Containerpck1hinlineContent-gridContainer" data-testid="mesh-container-content"><!--$--><section id="comp-lc96qu9z" tabindex="-1" class="Oqnisf comp-lc96qu9z wixui-section" data-block-level-container="ClassicSection"><div id="bgLayers_comp-lc96qu9z" data-hook="bgLayers" data-motion-part="BG_LAYER comp-lc96qu9z" class="MW5IWV"><div data-testid="colorUnderlay" class="LWbAav Kv1aVt"></div><div id="bgMedia_comp-lc96qu9z" data-motion-part="BG_MEDIA comp-lc96qu9z" class="VgO9Yg"></div></div><div data-mesh-id="comp-lc96qu9zinlineContent" data-testid="inline-content" class=""><div data-mesh-id="comp-lc96qu9zinlineContent-gridContainer" data-testid="mesh-container-content" style="max-width: 800px; margin: 0 auto; padding: 60px 20px;"><!--$--><div id="comp-laohuylq" style="display:none"></div><!--/$--><article style="background: #fff; padding: 0;">
 @php
-  $articleImageUrl = $article->image ? \Illuminate\Support\Facades\Storage::disk('public')->url($article->image) : null;
+  $articleImageUrl = $article->image ? \Illuminate\Support\Facades\Storage::disk('public')->url($article->image) : asset('images/SLS-_Logo_png_small.webp');
 @endphp
 
 <!-- Featured Image -->
@@ -244,12 +244,10 @@
   Publié le {{ $article->date_created->format('d/m/Y') }}
 @endif</span></span></span></span></span></p></div><!--/$--><!--$--><div id="comp-lgjmz7zx" class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-lgjmz7zx wixui-rich-text" data-testid="richTextElement"><p class="font_8 wixui-rich-text__text" style="font-size:16px; line-height:normal;"><span style="font-family:avenir-lt-w01_85-heavy1475544,avenir-lt-w05_85-heavy,sans-serif;" class="wixui-rich-text__text"><span style="font-size:16px;" class="wixui-rich-text__text"><span class="color_19 wixui-rich-text__text"><span style="text-decoration:underline;" class="wixui-rich-text__text"><span style="letter-spacing:normal;" class="wixui-rich-text__text"><span class="backcolor_32 wixui-rich-text__text"></span></span></span></span></span></span></p></div><!--/$--><!--$--><div id="comp-laohuymx1" class="MazNVa comp-laohuymx1 wixui-image"><div data-testid="linkElement" class="j7pOnl"><div class="nTOEE9 sqUyGm" tabindex="0"><wow-image id="img_comp-laohuymx1" class="jhxvbR BI8PVQ" data-image-info="{&quot;containerId&quot;:&quot;comp-laohuymx1&quot;,&quot;displayMode&quot;:&quot;stretch&quot;,&quot;targetWidth&quot;:382,&quot;targetHeight&quot;:382,&quot;isLQIP&quot;:false,&quot;encoding&quot;:&quot;AVIF&quot;,&quot;imageData&quot;:{&quot;width&quot;:5472,&quot;height&quot;:3648,&quot;uri&quot;:&quot;11062b_b0210b1228624c0f8919acc7c3c3ae8b~mv2.jpg&quot;,&quot;name&quot;:&quot;Image-empty-state.png&quot;,&quot;displayMode&quot;:&quot;stretch&quot;}}" data-motion-part="BG_IMG comp-laohuymx1" data-bg-effect-name="" data-has-ssr-src="">
     
-    @if($article->image)
-        @php
-            $articleImageUrl = \Illuminate\Support\Facades\Storage::disk('public')->url($article->image);
-        @endphp
-        <img src="{{ $articleImageUrl }}" alt="{{ $article->titre }}" style="width:382px;height:382px;object-fit:cover;border-radius:8px;" width="382" height="382" fetchpriority="high">
-    @endif
+    @php
+        $articleImageUrl = $article->image ? \Illuminate\Support\Facades\Storage::disk('public')->url($article->image) : asset('images/SLS-_Logo_png_small.webp');
+    @endphp
+    <img src="{{ $articleImageUrl }}" alt="{{ $article->titre }}" style="width:382px;height:382px;object-fit:cover;border-radius:8px;" width="382" height="382" fetchpriority="high">
 
 </wow-image>
 

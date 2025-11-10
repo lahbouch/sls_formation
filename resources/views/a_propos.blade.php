@@ -715,12 +715,15 @@
             <div class="partners-grid">
                 @foreach($partnersWithImages as $partner)
                     <div class="partner-item">
+                        @php
+                            $partnerImageUrl = $partner->image ? \Illuminate\Support\Facades\Storage::disk('public')->url($partner->image) : asset('images/SLS-_Logo_png_small.webp');
+                        @endphp
                         @if($partner->siteweb)
                             <a href="{{ $partner->siteweb }}" target="_blank" rel="noopener noreferrer">
-                                <img src="{{ \Illuminate\Support\Facades\Storage::disk('public')->url($partner->image) }}" alt="Partner Logo">
+                                <img src="{{ $partnerImageUrl }}" alt="Partner Logo">
                             </a>
                         @else
-                            <img src="{{ \Illuminate\Support\Facades\Storage::disk('public')->url($partner->image) }}" alt="Partner Logo">
+                            <img src="{{ $partnerImageUrl }}" alt="Partner Logo">
                         @endif
                     </div>
                 @endforeach

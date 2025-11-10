@@ -1810,31 +1810,13 @@
     
     
     <main id="PAGES_CONTAINER" class="PAGES_CONTAINER" tabindex="-1" data-main-content="true">
-    <!-- Offres d'emploi Content -->
+    <!-- Dynamic Recrutement Content -->
     <div style="max-width: 1200px; margin: 0 auto; padding: 30px 20px 40px 20px;">
       <style>
-        .recrutement-header {
-          text-align: center;
-          margin-bottom: 40px;
-          padding-bottom: 30px;
-          border-bottom: 2px solid #e0e0e0;
-        }
-        .recrutement-header h1 {
-          font-size: 32px;
-          font-weight: bold;
-          color: #113c66;
-          margin: 0 0 15px 0;
-          font-family: avenir-lt-w01_85-heavy1475544, avenir-lt-w05_85-heavy, sans-serif;
-        }
-        .recrutement-header p {
-          font-size: 16px;
-          color: #666;
-          font-family: avenir-lt-w01_35-light1475496, avenir-lt-w05_35-light, sans-serif;
-        }
         .offres-grid {
           display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-          gap: 30px;
+          grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+          gap: 25px;
           margin-bottom: 40px;
         }
         .offre-card {
@@ -1843,16 +1825,13 @@
           overflow: hidden;
           box-shadow: 0 2px 8px rgba(0,0,0,0.08);
           transition: all 0.3s ease;
-          display: flex;
-          flex-direction: column;
-        }
-        .offre-card-link {
+          cursor: pointer;
           text-decoration: none;
           color: inherit;
           display: block;
         }
-        .offre-card-link:hover .offre-card {
-          transform: translateY(-5px);
+        .offre-card:hover {
+          transform: translateY(-8px);
           box-shadow: 0 12px 24px rgba(0,0,0,0.15);
         }
         .offre-image {
@@ -1862,36 +1841,37 @@
           display: block;
         }
         .offre-content {
-          padding: 25px;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
+          padding: 20px;
         }
         .offre-badge {
           display: inline-block;
-          padding: 5px 12px;
+          padding: 4px 10px;
           background-color: #113c66;
           color: #fff;
           border-radius: 12px;
-          font-size: 11px;
+          font-size: 10px;
           font-weight: 600;
           text-transform: uppercase;
           letter-spacing: 0.5px;
-          margin-bottom: 12px;
+          margin-bottom: 10px;
           font-family: avenir-lt-w01_35-light1475496, avenir-lt-w05_35-light, sans-serif;
         }
         .offre-title {
-          font-size: 22px;
+          font-size: 20px;
           font-weight: bold;
           color: #113c66;
-          margin: 0 0 15px 0;
+          margin: 0 0 10px 0;
           line-height: 1.4;
           font-family: avenir-lt-w01_85-heavy1475544, avenir-lt-w05_85-heavy, sans-serif;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
         }
         .offre-info {
-          font-size: 14px;
+          font-size: 13px;
           color: #666;
-          margin-bottom: 8px;
+          margin-bottom: 6px;
           font-family: avenir-lt-w01_35-light1475496, avenir-lt-w05_35-light, sans-serif;
         }
         .offre-info strong {
@@ -1899,89 +1879,27 @@
           font-weight: 600;
         }
         .offre-description {
-          font-size: 14px;
-          color: #555;
-          line-height: 1.6;
-          margin: 15px 0;
+          font-size: 13px;
+          color: #999;
+          margin-top: 10px;
+          font-family: avenir-lt-w01_35-light1475496, avenir-lt-w05_35-light, sans-serif;
           display: -webkit-box;
-          -webkit-line-clamp: 3;
+          -webkit-line-clamp: 2;
           -webkit-box-orient: vertical;
           overflow: hidden;
-          font-family: avenir-lt-w01_35-light1475496, avenir-lt-w05_35-light, sans-serif;
         }
-        .cv-upload-section {
-          margin-top: 20px;
-          padding-top: 20px;
-          border-top: 1px solid #e0e0e0;
-        }
-        .cv-upload-form {
-          display: flex;
-          flex-direction: column;
-          gap: 12px;
-        }
-        .cv-upload-form input[type="file"] {
-          padding: 10px;
-          border: 2px dashed #113c66;
-          border-radius: 6px;
-          background-color: #f9f9f9;
-          font-size: 14px;
-          font-family: avenir-lt-w01_35-light1475496, avenir-lt-w05_35-light, sans-serif;
-          cursor: pointer;
-        }
-        .cv-upload-form input[type="file"]:hover {
-          background-color: #f0f0f0;
-        }
-        .cv-upload-form button {
-          padding: 12px 24px;
-          background-color: #113c66;
-          color: #fff;
-          border: none;
-          border-radius: 6px;
-          font-size: 15px;
-          font-weight: 600;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          font-family: avenir-lt-w01_35-light1475496, avenir-lt-w05_35-light, sans-serif;
-        }
-        .cv-upload-form button:hover {
-          background-color: #0d2d4d;
-          transform: translateY(-2px);
-          box-shadow: 0 4px 12px rgba(17, 60, 102, 0.3);
-        }
-        .cv-upload-form button:disabled {
-          background-color: #999;
-          cursor: not-allowed;
-          transform: none;
-        }
-        .cv-upload-message {
-          padding: 10px;
-          border-radius: 6px;
-          font-size: 14px;
-          font-family: avenir-lt-w01_35-light1475496, avenir-lt-w05_35-light, sans-serif;
-          margin-top: 10px;
-        }
-        .cv-upload-message.success {
-          background-color: #d4edda;
-          color: #155724;
-          border: 1px solid #c3e6cb;
-        }
-        .cv-upload-message.error {
-          background-color: #f8d7da;
-          color: #721c24;
-          border: 1px solid #f5c6cb;
-        }
-        .empty-state {
+        .offre-empty-state {
           text-align: center;
-          padding: 60px 20px;
+          padding: 50px 20px;
           color: #999;
         }
-        .empty-state h3 {
+        .offre-empty-state h3 {
           font-size: 24px;
           color: #666;
           margin-bottom: 12px;
           font-family: avenir-lt-w01_85-heavy1475544, avenir-lt-w05_85-heavy, sans-serif;
         }
-        .empty-state p {
+        .offre-empty-state p {
           font-size: 16px;
           font-family: avenir-lt-w01_35-light1475496, avenir-lt-w05_35-light, sans-serif;
         }
@@ -1990,14 +1908,35 @@
             grid-template-columns: 1fr;
             gap: 25px;
           }
-          .recrutement-header h1 {
-            font-size: 26px;
+        }
+        @media (min-width: 769px) and (max-width: 1024px) {
+          .offres-grid {
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
           }
+        }
+        .page-header {
+          text-align: center;
+          margin-bottom: 40px;
+          padding-bottom: 30px;
+          border-bottom: 2px solid #e0e0e0;
+        }
+        .page-header h1 {
+          font-size: 32px;
+          font-weight: bold;
+          color: #113c66;
+          margin: 0 0 15px 0;
+          font-family: avenir-lt-w01_85-heavy1475544, avenir-lt-w05_85-heavy, sans-serif;
+        }
+        .page-header p {
+          font-size: 16px;
+          color: #666;
+          font-family: avenir-lt-w01_35-light1475496, avenir-lt-w05_35-light, sans-serif;
         }
       </style>
       
-      <!-- Header -->
-      <div class="recrutement-header">
+      <!-- Page Header -->
+      <div class="page-header">
         <h1>Offres d'emploi</h1>
         <p>Découvrez nos opportunités de carrière et postulez en ligne</p>
       </div>
@@ -2007,128 +1946,32 @@
         <div class="offres-grid">
           @foreach($offres as $offre)
             @php
-              $offreImageUrl = $offre->image ? \Illuminate\Support\Facades\Storage::disk('public')->url($offre->image) : asset('/images/11062b_2a2076836abe4624a8d0cf69c0c18a0fmv2.webp');
+              $offreImageUrl = $offre->image ? \Illuminate\Support\Facades\Storage::disk('public')->url($offre->image) : asset('images/SLS-_Logo_png_small.webp');
             @endphp
-            <a href="{{ route('offre-emploi.show', $offre->id) }}" class="offre-card-link">
-            <div class="offre-card">
-              @if($offre->image)
-                <img src="{{ $offreImageUrl }}" alt="{{ $offre->titre }}" class="offre-image">
-              @endif
+            <a href="{{ route('offre-emploi.show', $offre->id) }}" class="offre-card">
+              <img src="{{ $offreImageUrl }}" alt="{{ $offre->titre }}" class="offre-image">
               <div class="offre-content">
                 <span class="offre-badge">{{ $offre->contrat ? strtoupper($offre->contrat) : 'EMPLOI' }}</span>
                 <h3 class="offre-title">{{ $offre->titre }}</h3>
-                
+                @if($offre->ville)
+                  <div class="offre-info"><strong>Lieu:</strong> {{ $offre->ville }}</div>
+                @endif
                 @if($offre->entreprise)
                   <div class="offre-info"><strong>Entreprise:</strong> {{ $offre->entreprise }}</div>
                 @endif
-                @if($offre->ville)
-                  <div class="offre-info"><strong>Ville:</strong> {{ $offre->ville }}</div>
-                @endif
-                @if($offre->domaine)
-                  <div class="offre-info"><strong>Domaine:</strong> {{ $offre->domaine }}</div>
-                @endif
-                @if($offre->fonction)
-                  <div class="offre-info"><strong>Fonction:</strong> {{ $offre->fonction }}</div>
-                @endif
-                @if($offre->niveau_etude)
-                  <div class="offre-info"><strong>Niveau d'étude:</strong> {{ $offre->niveau_etude }}</div>
-                @endif
-                @if($offre->salaire)
-                  <div class="offre-info"><strong>Salaire:</strong> {{ $offre->salaire }}</div>
-                @endif
-                
                 @if($offre->description)
-                  <div class="offre-description">{{ \Illuminate\Support\Str::limit(strip_tags($offre->description), 150) }}</div>
+                  <div class="offre-description">{{ \Illuminate\Support\Str::limit(strip_tags($offre->description), 100) }}</div>
                 @endif
-                
-                <div class="offre-read-more">
-                  <span>Voir les détails →</span>
-                </div>
               </div>
-            </div>
             </a>
           @endforeach
         </div>
       @else
-        <div class="empty-state">
-          <h3>Aucune offre d'emploi disponible</h3>
+        <div class="offre-empty-state">
           <p>Il n'y a actuellement aucune offre d'emploi disponible. Revenez bientôt pour découvrir de nouvelles opportunités.</p>
         </div>
       @endif
     </div>
-    <!-- End Offres d'emploi Content -->
-    
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        // Handle CV upload forms
-        document.querySelectorAll('.cv-upload-form').forEach(function(form) {
-          form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const formData = new FormData(form);
-            const submitButton = form.querySelector('button[type="submit"]');
-            const messageDiv = form.querySelector('.cv-upload-message');
-            const offreId = formData.get('offre_emploi_id');
-            
-            // Disable submit button
-            submitButton.disabled = true;
-            submitButton.textContent = 'Envoi en cours...';
-            messageDiv.style.display = 'none';
-            
-            fetch('{{ route("recrutement.cv.upload") }}', {
-              method: 'POST',
-              body: formData,
-              headers: {
-                'X-Requested-With': 'XMLHttpRequest',
-                'Accept': 'application/json'
-              }
-            })
-            .then(response => response.json())
-            .then(data => {
-              if (data.success) {
-                Swal.fire({
-                  icon: 'success',
-                  title: 'Succès',
-                  text: 'Votre CV a été envoyé avec succès.',
-                  confirmButtonColor: '#113c66',
-                  confirmButtonText: 'OK'
-                });
-                form.reset();
-              } else {
-                let errorMessages = '';
-                if (data.errors) {
-                  errorMessages = Object.values(data.errors).flat().join('<br>');
-                } else {
-                  errorMessages = 'Une erreur est survenue. Veuillez réessayer.';
-                }
-                
-                Swal.fire({
-                  icon: 'error',
-                  title: 'Erreur',
-                  html: errorMessages,
-                  confirmButtonColor: '#113c66',
-                  confirmButtonText: 'OK'
-                });
-              }
-            })
-            .catch(error => {
-              Swal.fire({
-                icon: 'error',
-                title: 'Erreur',
-                text: 'Une erreur est survenue lors de l\'envoi. Veuillez réessayer.',
-                confirmButtonColor: '#113c66',
-                confirmButtonText: 'OK'
-              });
-            })
-            .finally(() => {
-              submitButton.disabled = false;
-              submitButton.textContent = 'Envoyer mon CV';
-            });
-          });
-        });
-      });
-    </script>
     
     
     

@@ -889,10 +889,13 @@
     @if(isset($galleries) && $galleries->count() > 0)
         <div class="gallery-grid">
             @foreach($galleries as $gallery)
+                @php
+                    $galleryImageUrl = $gallery->image ? \Illuminate\Support\Facades\Storage::disk('public')->url($gallery->image) : asset('images/SLS-_Logo_png_small.webp');
+                @endphp
                 <div class="gallery-item" 
-                     data-image-url="{{ \Illuminate\Support\Facades\Storage::disk('public')->url($gallery->image) }}"
+                     data-image-url="{{ $galleryImageUrl }}"
                      data-description="{{ htmlspecialchars($gallery->description ?? '', ENT_QUOTES, 'UTF-8') }}">
-                    <img src="{{ \Illuminate\Support\Facades\Storage::disk('public')->url($gallery->image) }}" alt="Gallery Image">
+                    <img src="{{ $galleryImageUrl }}" alt="Gallery Image">
                 </div>
             @endforeach
         </div>
