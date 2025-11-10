@@ -15361,15 +15361,8 @@
                                               class="comp-lamqvxen wixui-repeater"
                                             >
                                               <div role="list" class="hRdzm4">
-                                                @if(isset($services) && $services->count() > 0)
+                                                @if(!empty($services))
                                                   @foreach($services as $service)
-                                                    @php
-                                                      // Image URL already pre-processed in controller
-                                                      $imageUrl = $service->image_url ?? null;
-                                                      $imagePath = $service->image ?? null;
-                                                      $itemId = 'comp-lamqvxfv1__item-' . $service->id;
-                                                      $textId = 'comp-lamqvxg32__item-' . $service->id;
-                                                    @endphp
                                                   <div
                                                     role="listitem"
                                                     class="T7n0L6"
@@ -15378,13 +15371,13 @@
                                                   >
                                                     <!--$-->
                                                     <div
-                                                            id="{{ $itemId }}"
+                                                            id="{{ $service->item_id }}"
                                                       class="comp-lamqvxfv1 YzqVVZ wixui-repeater__item"
                                                     >
                                                       <div
-                                                              id="bgLayers_{{ $itemId }}"
+                                                              id="bgLayers_{{ $service->item_id }}"
                                                         data-hook="bgLayers"
-                                                              data-motion-part="BG_LAYER {{ $itemId }}"
+                                                              data-motion-part="BG_LAYER {{ $service->item_id }}"
                                                         class="MW5IWV"
                                                       >
                                                         <div
@@ -15392,16 +15385,16 @@
                                                           class="LWbAav Kv1aVt"
                                                         ></div>
                                                         <div
-                                                                id="bgMedia_{{ $itemId }}"
-                                                                data-motion-part="BG_MEDIA {{ $itemId }}"
+                                                                id="bgMedia_{{ $service->item_id }}"
+                                                                data-motion-part="BG_MEDIA {{ $service->item_id }}"
                                                           class="VgO9Yg"
                                                         >
-                                                                @if($imageUrl)
+                                                                @if($service->image_url)
                                                           <wow-image
-                                                                    id="img_{{ $itemId }}"
+                                                                    id="img_{{ $service->item_id }}"
                                                             class="jhxvbR Kv1aVt dLPlxY mNGsUM bgImage"
-                                                                    data-image-info='{"containerId":"{{ $itemId }}","alignType":"center","displayMode":"fill","targetWidth":277,"targetHeight":246,"encoding":"AVIF","imageData":{"width":277,"height":246,"uri":"{{ $imagePath }}","name":"","displayMode":"fill"}}'
-                                                                    data-motion-part="BG_IMG {{ $itemId }}"
+                                                                    data-image-info='{"containerId":"{{ $service->item_id }}","alignType":"center","displayMode":"fill","targetWidth":277,"targetHeight":246,"encoding":"AVIF","imageData":{"width":277,"height":246,"uri":"{{ $service->image }}","name":"","displayMode":"fill"}}'
+                                                                    data-motion-part="BG_IMG {{ $service->item_id }}"
                                                             data-bg-effect-name=""
                                                             data-has-ssr-src=""
                                                             style="
@@ -15421,7 +15414,7 @@
                                                               height="246"
                                                               data-ssr-src-done="true"
                                                               fetchpriority="high"
-                                                                      src="{{ $imageUrl }}"
+                                                                      src="{{ $service->image_url }}"
                                                           /></wow-image>
                                                                 @else
                                                                   <div style="width: 277px; height: 246px; background-color: #e9ecef; display: flex; align-items: center; justify-content: center;">
@@ -15431,17 +15424,17 @@
                                                       </div>
                                                   </div>
                                                   <div
-                                                              data-mesh-id="{{ $itemId }}inlineContent"
+                                                              data-mesh-id="{{ $service->item_id }}inlineContent"
                                                         data-testid="inline-content"
                                                         class=""
                                                       >
                                                         <div
-                                                                data-mesh-id="{{ $itemId }}inlineContent-gridContainer"
+                                                                data-mesh-id="{{ $service->item_id }}inlineContent-gridContainer"
                                                           data-testid="mesh-container-content"
                                                         >
                                                           <!--$-->
                                                           <div
-                                                                  id="{{ $textId }}"
+                                                                  id="{{ $service->text_id }}"
                                                             class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-lamqvxg32 wixui-rich-text"
                                                             data-testid="richTextElement"
                                                           >
@@ -15635,12 +15628,8 @@
                                               class="TWFxr5"
                                               style="min-width: 0px; display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; max-width: 980px; margin: 0 auto; padding-bottom: 40px;"
                                             >
-                                              @if(isset($offres) && $offres->count() > 0)
+                                              @if(!empty($offres))
                                                 @foreach($offres as $offre)
-                                                  @php
-                                                    // Image URL already pre-processed in controller
-                                                    $offreImageUrl = $offre->image_url ?? null;
-                                                  @endphp
                                                   <div style="
                                                     position: relative;
                                                     width: 292px !important;
@@ -15649,7 +15638,7 @@
                                                     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
                                                     cursor: pointer;
                                                   " onclick="window.location.href='{{ route('offre-emploi.show', $offre->id) }}'">
-                                                    @if($offreImageUrl)
+                                                    @if($offre->image_url)
                                                     <!-- Background Image -->
                                                     <div style="
                                                         position: absolute;
@@ -15657,7 +15646,7 @@
                                                         left: 0;
                                                         width: 292px;
                                                         height: 292px;
-                                                        background-image: url({{ $offreImageUrl }});
+                                                        background-image: url({{ $offre->image_url }});
                                                         background-size: cover;
                                                         background-position: center;
                                                     "></div>
@@ -15924,31 +15913,23 @@
                                               class="comp-events-repeater wixui-repeater"
                                             >
                                               <div role="list" class="hRdzm4">
-                                                @if(isset($events) && $events->count() > 0)
+                                                @if(!empty($events))
                                                   @foreach($events as $event)
-                                                    @php
-                                                      // Image URL already pre-processed in controller
-                                                      $eventImageUrl = $event->image_url ?? null;
-                                                      // active already checks if active=true AND end_date hasn't passed (from isCurrentlyActive())
-                                                      $isInactive = !$event->active;
-                                                      $itemId = 'comp-events-item-' . $event->id;
-                                                      $textId = 'comp-events-text-' . $event->id;
-                                                    @endphp
                                                   <div
                                                     role="listitem"
                                                     class="T7n0L6"
-                                                      style="cursor: {{ $isInactive ? 'not-allowed' : 'pointer' }}; pointer-events: {{ $isInactive ? 'none' : 'auto' }}; opacity: {{ $isInactive ? '0.6' : '1' }}; filter: {{ $isInactive ? 'grayscale(100%)' : 'none' }};"
-                                                      @if(!$isInactive) onclick="window.location.href='{{ route('event.show', $event->id) }}'" @endif
+                                                      style="cursor: {{ $event->is_inactive ? 'not-allowed' : 'pointer' }}; pointer-events: {{ $event->is_inactive ? 'none' : 'auto' }}; opacity: {{ $event->is_inactive ? '0.6' : '1' }}; filter: {{ $event->is_inactive ? 'grayscale(100%)' : 'none' }};"
+                                                      @if(!$event->is_inactive) onclick="window.location.href='{{ route('event.show', $event->id) }}'" @endif
                                                   >
                                                     <!--$-->
                                                     <div
-                                                            id="{{ $itemId }}"
+                                                            id="{{ $event->item_id }}"
                                                       class="comp-events-item YzqVVZ wixui-repeater__item"
                                                     >
                                                       <div
-                                                              id="bgLayers_{{ $itemId }}"
+                                                              id="bgLayers_{{ $event->item_id }}"
                                                         data-hook="bgLayers"
-                                                              data-motion-part="BG_LAYER {{ $itemId }}"
+                                                              data-motion-part="BG_LAYER {{ $event->item_id }}"
                                                         class="MW5IWV"
                                                       >
                                                         <div
@@ -15956,16 +15937,16 @@
                                                           class="LWbAav Kv1aVt"
                                                         ></div>
                                                         <div
-                                                                id="bgMedia_{{ $itemId }}"
-                                                                data-motion-part="BG_MEDIA {{ $itemId }}"
+                                                                id="bgMedia_{{ $event->item_id }}"
+                                                                data-motion-part="BG_MEDIA {{ $event->item_id }}"
                                                           class="VgO9Yg"
                                                         >
-                                                                @if($eventImageUrl)
+                                                                @if($event->image_url)
                                                           <wow-image
-                                                                    id="img_{{ $itemId }}"
+                                                                    id="img_{{ $event->item_id }}"
                                                             class="jhxvbR Kv1aVt dLPlxY mNGsUM bgImage"
-                                                                    data-image-info='{"containerId":"{{ $itemId }}","alignType":"center","displayMode":"fill","targetWidth":277,"targetHeight":246,"encoding":"AVIF","imageData":{"width":277,"height":246,"uri":"{{ $event->image }}","name":"","displayMode":"fill"}}'
-                                                                    data-motion-part="BG_IMG {{ $itemId }}"
+                                                                    data-image-info='{"containerId":"{{ $event->item_id }}","alignType":"center","displayMode":"fill","targetWidth":277,"targetHeight":246,"encoding":"AVIF","imageData":{"width":277,"height":246,"uri":"{{ $event->image }}","name":"","displayMode":"fill"}}'
+                                                                    data-motion-part="BG_IMG {{ $event->item_id }}"
                                                             data-bg-effect-name=""
                                                             data-has-ssr-src=""
                                                             style="
@@ -15985,7 +15966,7 @@
                                                               height="246"
                                                               data-ssr-src-done="true"
                                                               fetchpriority="high"
-                                                                      src="{{ $eventImageUrl }}"
+                                                                      src="{{ $event->image_url }}"
                                                           /></wow-image>
                                                                 @else
                                                                   <div style="width: 277px; height: 246px; background-color: #e9ecef; display: flex; align-items: center; justify-content: center;">
@@ -15995,17 +15976,17 @@
                                                       </div>
                                                   </div>
                                                   <div
-                                                              data-mesh-id="{{ $itemId }}inlineContent"
+                                                              data-mesh-id="{{ $event->item_id }}inlineContent"
                                                         data-testid="inline-content"
                                                         class=""
                                                       >
                                                         <div
-                                                                data-mesh-id="{{ $itemId }}inlineContent-gridContainer"
+                                                                data-mesh-id="{{ $event->item_id }}inlineContent-gridContainer"
                                                           data-testid="mesh-container-content"
                                                         >
                                                           <!--$-->
                                                           <div
-                                                                  id="{{ $textId }}"
+                                                                  id="{{ $event->text_id }}"
                                                             class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-events-text wixui-rich-text"
                                                             data-testid="richTextElement"
                                                           >
@@ -16234,12 +16215,8 @@
                                               class="TWFxr5"
                                               style="min-width: 0px; display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; max-width: 980px; margin: 0 auto; padding-bottom: 40px;"
                                             >
-                                              @if(isset($articles) && $articles->count() > 0)
+                                              @if(!empty($articles))
                                                 @foreach($articles as $article)
-                                                  @php
-                                                    // Image URL already pre-processed in controller
-                                                    $articleImageUrl = $article->image_url ?? null;
-                                                  @endphp
                                                   <div style="
                                                     position: relative;
                                                     width: 292px !important;
@@ -16249,7 +16226,7 @@
                                                     cursor: pointer;
                                                     pointer-events: auto;
                                                   " onclick="window.location.href='{{ route('article.details', $article->id) }}'">
-                                                    @if($articleImageUrl)
+                                                    @if($article->image_url)
                                                     <!-- Background Image -->
                                                     <div style="
                                                         position: absolute;
@@ -16257,7 +16234,7 @@
                                                         left: 0;
                                                         width: 292px;
                                                         height: 292px;
-                                                        background-image: url({{ $articleImageUrl }});
+                                                        background-image: url({{ $article->image_url }});
                                                         background-size: cover;
                                                         background-position: center;
                                                     "></div>

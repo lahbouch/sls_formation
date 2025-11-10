@@ -20,9 +20,8 @@ class HomeController extends Controller
             $offres = collect([]);
             $events = collect([]);
             
-            // Process each section independently with timeout protection
+            // Process each section independently - no timeout limits to avoid issues
             try {
-                set_time_limit(10); // Limit processing time
                 $services = $this->processServices();
             } catch (\Exception $e) {
                 Log::error('HomeController@index - Error processing services: ' . $e->getMessage());
@@ -33,7 +32,6 @@ class HomeController extends Controller
             }
             
             try {
-                set_time_limit(10);
                 $articles = $this->processArticles();
             } catch (\Exception $e) {
                 Log::error('HomeController@index - Error processing articles: ' . $e->getMessage());
@@ -44,7 +42,6 @@ class HomeController extends Controller
             }
             
             try {
-                set_time_limit(10);
                 $offres = $this->processOffres();
             } catch (\Exception $e) {
                 Log::error('HomeController@index - Error processing offres: ' . $e->getMessage());
@@ -55,7 +52,6 @@ class HomeController extends Controller
             }
             
             try {
-                set_time_limit(10);
                 $events = $this->processEvents();
             } catch (\Exception $e) {
                 Log::error('HomeController@index - Error processing events: ' . $e->getMessage());
@@ -144,6 +140,8 @@ class HomeController extends Controller
                         'image' => $imagePath,
                         'image_url' => $imageUrl,
                         'minimized_image' => $service->minimized_image ?? null,
+                        'item_id' => 'comp-lamqvxfv1__item-' . ($service->id ?? ''),
+                        'text_id' => 'comp-lamqvxg32__item-' . ($service->id ?? ''),
                     ]);
                 } catch (\Exception $e) {
                     Log::error('HomeController - Error processing single service: ' . $e->getMessage());
@@ -342,6 +340,9 @@ class HomeController extends Controller
                         'end_date' => $event->end_date ?? null,
                         'location' => $event->location ?? '',
                         'active' => $isActive,
+                        'is_inactive' => !$isActive,
+                        'item_id' => 'comp-events-item-' . ($event->id ?? ''),
+                        'text_id' => 'comp-events-text-' . ($event->id ?? ''),
                     ]);
                 } catch (\Exception $e) {
                     Log::error('HomeController - Error processing single event: ' . $e->getMessage());
