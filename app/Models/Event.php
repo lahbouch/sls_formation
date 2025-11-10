@@ -31,16 +31,27 @@ class Event extends Model
      */
     public function isCurrentlyActive(): bool
     {
-        if (!$this->active) {
+        try {
+            if (!$this->active) {
+                return false;
+            }
+            
+            // If end_date is null, consider it as always active (no expiration)
+            if (!$this->end_date) {
+                return true;
+            }
+            
+            // Ensure end_date is a Carbon instance
+            if (!($this->end_date instanceof \Carbon\Carbon)) {
+                return false;
+            }
+            
+            // Compare dates (end of day for end_date to include the full day)
+            return $this->end_date->copy()->endOfDay()->isFuture();
+        } catch (\Exception $e) {
+            // If any error occurs, default to false
+            \Illuminate\Support\Facades\Log::error('Event::isCurrentlyActive - Error: ' . $e->getMessage());
             return false;
         }
-        
-        // If end_date is null, consider it as always active (no expiration)
-        if (!$this->end_date) {
-            return true;
-        }
-        
-        // Compare dates (end of day for end_date to include the full day)
-        return $this->end_date->endOfDay()->isFuture();
     }
 }

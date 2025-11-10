@@ -15927,7 +15927,7 @@
                                                 @if(isset($events) && $events->count() > 0)
                                                   @foreach($events as $event)
                                                     @php
-                                                      // Image URL already pre-processed in route
+                                                      // Image URL already pre-processed in controller
                                                       $eventImageUrl = $event->image_url ?? null;
                                                       // active already checks if active=true AND end_date hasn't passed (from isCurrentlyActive())
                                                       $isInactive = !$event->active;
