@@ -12966,6 +12966,16 @@
         justify-self: start;
         align-self: start;
       }
+      [data-mesh-id="comp-events-column-innerinlineContent-gridContainer"]
+        > wix-interact-element
+        > [id="comp-events-button"] {
+        position: relative;
+        margin: 0px 0px 60px calc((100% - 980px) * 0.5);
+        left: 379px;
+        grid-area: 3 / 1 / 4 / 2;
+        justify-self: start;
+        align-self: start;
+      }
       #comp-lamrzczo {
         width: 980px;
       }
@@ -14714,6 +14724,16 @@
         --label-align: center;
         --label-text-align: center;
       }
+      #comp-events-button {
+        --shc-mutated-brightness: 9, 30, 51;
+        --margin-start: 0px;
+        --margin-end: 0px;
+        --fnt: normal normal normal 14px/1.4em avenir-lt-w01_35-light1475496,
+          sans-serif;
+        direction: var(--wix-opt-in-direction, ltr);
+        --label-align: center;
+        --label-text-align: center;
+      }
     </style>
 
     <script
@@ -15947,74 +15967,74 @@
                                                         background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
                                                     "></div>
                                                     
-                                                    <!-- Content -->
-                                                    <div style="
-                                                        position: absolute;
-                                                        bottom: 30px;
-                                                        left: 30px;
-                                                        color: white;
-                                                        font-family: 'Inter', Arial, sans-serif;
-                                                    ">
-                                                        <!-- Date -->
-                                                        @if($event->start_date)
-                                                        <div class="wixui-rich-text__text" style="
-                                                            font-size: 13px;
-                                                            font-weight: 400;
-                                                            margin-bottom: 8px;
-                                                            opacity: 0.95;
-                                                            letter-spacing: 0.3px;
-                                                        ">{{ $event->start_date->format('d M Y') }}</div>
+    <!-- Content -->
+    <div style="
+        position: absolute;
+        bottom: 30px;
+        left: 30px;
+        color: white;
+        font-family: 'Inter', Arial, sans-serif;
+    ">
+        <!-- Location (Category-like) -->
+                                                        @if($event->location)
+        <div class="wixui-rich-text__text" style="
+            font-size: 13px;
+            font-weight: 400;
+            margin-bottom: 8px;
+            opacity: 0.95;
+            letter-spacing: 0.3px;
+                                                          ">{{ ucwords(strtolower($event->location)) }}</div>
                                                         @endif
-                                                        
-                                                        <!-- Title -->
-                                                        <p
-                                                          class="font_7 wixui-rich-text__text"
-                                                          style="
-                                                            font-size: 22px;
-                                                            line-height: normal;
-                                                            text-align: left;
-                                                          "
-                                                        >
-                                                          <span
-                                                            style="
-                                                              font-size: 22px;
-                                                            "
-                                                            class="wixui-rich-text__text"
-                                                            ><span
+        
+        <!-- Title -->
+        <p
+                                                              class="font_7 wixui-rich-text__text"
                                                               style="
-                                                                color: #ffffff;
+                                                                font-size: 22px;
+                                                                line-height: normal;
+                                                            text-align: left;
                                                               "
-                                                              class="wixui-rich-text__text"
-                                                              ><span
+                                                            >
+                                                              <span
                                                                 style="
-                                                                  font-weight: bold;
+                                                                  font-size: 22px;
                                                                 "
                                                                 class="wixui-rich-text__text"
                                                                 ><span
                                                                   style="
-                                                                    font-family: avenir-lt-w01_35-light1475496,
-                                                                      avenir-lt-w05_35-light,
-                                                                      sans-serif;
+                                                                    color: #ffffff;
                                                                   "
                                                                   class="wixui-rich-text__text"
                                                                   ><span
                                                                     style="
-                                                                      letter-spacing: normal;
+                                                                      font-weight: bold;
                                                                     "
                                                                     class="wixui-rich-text__text"
                                                                     ><span
+                                                                      style="
+                                                                        font-family: avenir-lt-w01_35-light1475496,
+                                                                          avenir-lt-w05_35-light,
+                                                                          sans-serif;
+                                                                      "
                                                                       class="wixui-rich-text__text"
-                                                                      >
-                                                                  {{ $event->title }}
-                                                                      &nbsp;</span
+                                                                      ><span
+                                                                        style="
+                                                                          letter-spacing: normal;
+                                                                        "
+                                                                        class="wixui-rich-text__text"
+                                                                        ><span
+                                                                          class="wixui-rich-text__text"
+                                                                          >
+                                                                      {{ ucwords(strtolower($event->title)) }}
+                                                                          &nbsp;</span
+                                                                        ></span
+                                                                      ></span
                                                                     ></span
                                                                   ></span
                                                                 ></span
-                                                              ></span
-                                                            ></span
-                                                          >
-                                                        </p>
-                                                    </div>
+                                                              >
+                                                            </p>
+    </div>
                                                   </div>
                                                 @endforeach
                                               @else
@@ -16038,7 +16058,8 @@
                                                 aria-label="Découvrir tous les événements"
                                                 ><span
                                                   class="l7_2fn wixui-button__label"
-                                                  >Découvrir tout</span
+                                                  >Découvrir nos
+                                                  événements</span
                                                 ></a
                                               >
                                             </div>

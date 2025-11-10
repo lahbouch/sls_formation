@@ -21,8 +21,8 @@ class Event extends Model
     ];
 
     protected $casts = [
-        'start_date' => 'datetime',
-        'end_date' => 'datetime',
+        'start_date' => 'date',
+        'end_date' => 'date',
         'active' => 'boolean',
     ];
 
@@ -40,6 +40,7 @@ class Event extends Model
             return true;
         }
         
-        return $this->end_date->isFuture();
+        // Compare dates (end of day for end_date to include the full day)
+        return $this->end_date->endOfDay()->isFuture();
     }
 }

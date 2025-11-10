@@ -225,13 +225,13 @@
     @if($eventData->start_date)
     <div>
       <strong style="color: #113c66; font-size: 14px; display: block; margin-bottom: 5px;">Date de début:</strong>
-      <span style="color: #666; font-size: 16px;">{{ $eventData->start_date->format('d/m/Y H:i') }}</span>
+      <span style="color: #666; font-size: 16px;">{{ $eventData->start_date->format('d/m/Y') }}</span>
     </div>
     @endif
     @if($eventData->end_date)
     <div>
       <strong style="color: #113c66; font-size: 14px; display: block; margin-bottom: 5px;">Date de fin:</strong>
-      <span style="color: #666; font-size: 16px;">{{ $eventData->end_date->format('d/m/Y H:i') }}</span>
+      <span style="color: #666; font-size: 16px;">{{ $eventData->end_date->format('d/m/Y') }}</span>
     </div>
     @endif
   </div>

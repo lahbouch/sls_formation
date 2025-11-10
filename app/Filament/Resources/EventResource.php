@@ -44,11 +44,11 @@ class EventResource extends Resource
                     ->imagePreviewHeight('250')
                     ->loadingIndicatorPosition('left')
                     ->panelAspectRatio('2:1'),
-                Forms\Components\DateTimePicker::make('start_date')
+                Forms\Components\DatePicker::make('start_date')
                     ->label('Date de début')
                     ->required()
                     ->native(false),
-                Forms\Components\DateTimePicker::make('end_date')
+                Forms\Components\DatePicker::make('end_date')
                     ->label('Date de fin')
                     ->required()
                     ->native(false),
@@ -93,11 +93,11 @@ class EventResource extends Resource
                     ->circular(),
                 Tables\Columns\TextColumn::make('start_date')
                     ->label('Date de début')
-                    ->dateTime('d/m/Y H:i')
+                    ->date('d/m/Y')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('end_date')
                     ->label('Date de fin')
-                    ->dateTime('d/m/Y H:i')
+                    ->date('d/m/Y')
                     ->sortable(),
                 Tables\Columns\TextColumn::make('location')
                     ->label('Lieu')

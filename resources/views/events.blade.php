@@ -1975,7 +1975,7 @@
                   <div class="event-info"><strong>Lieu:</strong> {{ $event->location }}</div>
             @endif
                 @if($event->end_date)
-                  <div class="event-info"><strong>Fin:</strong> {{ $event->end_date->format('d M Y H:i') }}</div>
+                  <div class="event-info"><strong>Fin:</strong> {{ $event->end_date->format('d M Y') }}</div>
         @endif
                 @if(!empty($event->description))
                   <div class="event-description">{{ $event->description }}</div>
