@@ -93,6 +93,14 @@ Route::get('/jobs_ma_debug', function() {
     }
 });
 
+// Minimal test route - just return text
+Route::get('/jobs_ma_simple', function() {
+    return "Route works! Controller is accessible.";
+});
+
+// Test route with controller but no view
+Route::get('/jobs_ma_minimal', [\App\Http\Controllers\RecrutementController::class, 'minimal']);
+
 Route::get('/contact', function () {
     return view('contact');
 })->name('contact');

@@ -14,25 +14,35 @@ class RecrutementController extends Controller
     public function index()
     {
         try {
-            // Get all offers ordered by creation date, then sort by active status
-            $offres = OffreEmploi::orderBy('created_at', 'desc')->get();
+            // Start with empty collection
+            $offres = collect([]);
             
-            // Separate active and inactive offers
-            $activeOffres = $offres->filter(function($offre) {
-                return $offre->active === true || $offre->active === 1;
-            });
-            
-            $inactiveOffres = $offres->filter(function($offre) {
-                return $offre->active === false || $offre->active === 0 || $offre->active === null;
-            });
-            
-            // Merge: active first, then inactive
-            $offres = $activeOffres->merge($inactiveOffres);
+            // Try to get offers with minimal operations
+            try {
+                $allOffres = OffreEmploi::orderBy('created_at', 'desc')->get();
+                
+                if ($allOffres && $allOffres->count() > 0) {
+                    // Separate active and inactive offers
+                    $activeOffres = $allOffres->filter(function($offre) {
+                        return isset($offre->active) && ($offre->active === true || $offre->active === 1);
+                    });
+                    
+                    $inactiveOffres = $allOffres->filter(function($offre) {
+                        return !isset($offre->active) || $offre->active === false || $offre->active === 0 || $offre->active === null;
+                    });
+                    
+                    // Merge: active first, then inactive
+                    $offres = $activeOffres->merge($inactiveOffres);
+                }
+            } catch (\Exception $dbError) {
+                // Log database error but continue with empty collection
+                Log::error('Recrutement DB error: ' . $dbError->getMessage());
+            }
             
             return view('recrutement', compact('offres'));
-        } catch (\Exception $e) {
-            // Log the error for debugging
-            Log::error('Recrutement page error: ' . $e->getMessage(), [
+        } catch (\Throwable $e) {
+            // Catch all errors including fatal errors
+            Log::error('Recrutement fatal error: ' . $e->getMessage(), [
                 'trace' => $e->getTraceAsString(),
                 'file' => $e->getFile(),
                 'line' => $e->getLine()
@@ -40,7 +50,23 @@ class RecrutementController extends Controller
             
             // Return empty collection if there's an error
             $offres = collect([]);
-            return view('recrutement', compact('offres'));
+            try {
+                return view('recrutement', compact('offres'));
+            } catch (\Throwable $viewError) {
+                // If view also fails, return simple response
+                Log::error('Recrutement view error: ' . $viewError->getMessage());
+                return response('Error loading page. Please check logs.', 500);
+            }
+        }
+    }
+
+    public function minimal()
+    {
+        try {
+            $count = OffreEmploi::count();
+            return response("Minimal test successful. Offers count: {$count}", 200);
+        } catch (\Exception $e) {
+            return response("Error: " . $e->getMessage(), 500);
         }
     }
 
