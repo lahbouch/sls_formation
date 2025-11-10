@@ -93,6 +93,9 @@ class HomeController extends Controller
                 'articles' => $articles,
                 'offres' => $offres,
                 'events' => $events,
+                'pageTitle' => 'Accueil - Services, Actualités et Offres d\'emploi',
+                'pageDescription' => 'Découvrez nos services, actualités, événements et offres d\'emploi. Votre partenaire de confiance pour tous vos besoins.',
+                'pageKeywords' => 'services, actualités, événements, offres d\'emploi, recrutement',
             ];
             
             // Cache the processed data for 5 minutes

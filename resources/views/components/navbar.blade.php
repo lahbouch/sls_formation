@@ -1095,11 +1095,11 @@
                                           cursor: pointer !important;
                                         ">
                                                         <a data-testid="linkElement" href="{{ route('contact') }}"
-                                                            target="_self" class="UiHgGh" style="pointer-events: auto !important; cursor: pointer !important; display: block; width: 100%; height: 100%;" {{ request()->routeIs('contact') ? 'aria-current="page"' : '' }}>
-                                                            <div class="yRj2ms" style="pointer-events: auto;">
-                                                                <div class="" style="pointer-events: auto;">
+                                                            target="_self" class="UiHgGh" style="pointer-events: auto !important; cursor: pointer !important; display: block; width: 100%; height: 100%; position: relative; z-index: 10;" {{ request()->routeIs('contact') ? 'aria-current="page"' : '' }}>
+                                                            <div class="yRj2ms" style="pointer-events: none;">
+                                                                <div class="" style="pointer-events: none;">
                                                                     <p class="JS76Uv" id="comp-ils2cgqy7label"
-                                                                        style="line-height: 40px; pointer-events: auto; cursor: pointer;">
+                                                                        style="line-height: 40px; pointer-events: none; cursor: pointer;">
                                                                         Contact
                                                                     </p>
                                                                 </div>

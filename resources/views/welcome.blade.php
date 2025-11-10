@@ -1,6 +1,28 @@
 <!DOCTYPE html>
 <html lang="fr" style="">
   <head>
+    <!-- SEO Meta Tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ $pageTitle ?? 'Accueil - Services, Actualités et Offres d\'emploi' }}</title>
+    <meta name="description" content="{{ $pageDescription ?? 'Découvrez nos services, actualités, événements et offres d\'emploi. Votre partenaire de confiance pour tous vos besoins.' }}">
+    <meta name="keywords" content="{{ $pageKeywords ?? 'services, actualités, événements, offres d\'emploi, recrutement' }}">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="{{ url('/') }}">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url('/') }}">
+    <meta property="og:title" content="{{ $pageTitle ?? 'Accueil - Services, Actualités et Offres d\'emploi' }}">
+    <meta property="og:description" content="{{ $pageDescription ?? 'Découvrez nos services, actualités, événements et offres d\'emploi. Votre partenaire de confiance pour tous vos besoins.' }}">
+    <meta property="og:locale" content="fr_FR">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{ url('/') }}">
+    <meta property="twitter:title" content="{{ $pageTitle ?? 'Accueil - Services, Actualités et Offres d\'emploi' }}">
+    <meta property="twitter:description" content="{{ $pageDescription ?? 'Découvrez nos services, actualités, événements et offres d\'emploi. Votre partenaire de confiance pour tous vos besoins.' }}">
+    
     <!-- Safari Pinned Tab Icon -->
     <!-- <link rel="mask-icon" href="https://www.wix.com/favicon.ico"> -->
 

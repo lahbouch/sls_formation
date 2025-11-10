@@ -34,7 +34,11 @@ class ServicesController extends Controller
                 ];
             });
             
-            return view('services', compact('services'));
+            $pageTitle = 'Nos Services';
+            $pageDescription = 'Découvrez tous nos services. Nous offrons une gamme complète de solutions pour répondre à tous vos besoins.';
+            $pageKeywords = 'services, solutions, prestations';
+            
+            return view('services', compact('services', 'pageTitle', 'pageDescription', 'pageKeywords'));
         } catch (\Throwable $e) {
             Log::error('ServicesController@index - Fatal error: ' . $e->getMessage(), [
                 'trace' => $e->getTraceAsString(),
@@ -111,7 +115,13 @@ class ServicesController extends Controller
                 'types' => $types,
             ];
             
-            return view('service', compact('serviceData'));
+            $descriptionShort = mb_strlen($serviceData->description) > 160 ? mb_substr(strip_tags($serviceData->description), 0, 160) . '...' : strip_tags($serviceData->description);
+            
+            $pageTitle = $serviceData->titre . ' - Services';
+            $pageDescription = $descriptionShort ?: 'Découvrez notre service ' . $serviceData->titre;
+            $pageKeywords = 'service, ' . strtolower($serviceData->titre) . ', solutions';
+            
+            return view('service', compact('serviceData', 'pageTitle', 'pageDescription', 'pageKeywords'));
         } catch (\Exception $e) {
             Log::error('ServicesController@show - Error: ' . $e->getMessage());
             abort(404);

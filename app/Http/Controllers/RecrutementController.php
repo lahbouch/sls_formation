@@ -75,7 +75,11 @@ class RecrutementController extends Controller
                 Log::error('Recrutement DB error: ' . $dbError->getMessage());
             }
             
-            return view('recrutement', compact('offres'));
+            $pageTitle = 'Offres d\'emploi - Recrutement';
+            $pageDescription = 'Découvrez nos offres d\'emploi et opportunités de carrière. Rejoignez notre équipe dynamique.';
+            $pageKeywords = 'offres d\'emploi, recrutement, emploi, carrière, jobs';
+            
+            return view('recrutement', compact('offres', 'pageTitle', 'pageDescription', 'pageKeywords'));
         } catch (\Throwable $e) {
             // Catch all errors including fatal errors
             Log::error('Recrutement fatal error: ' . $e->getMessage(), [
@@ -86,8 +90,12 @@ class RecrutementController extends Controller
             
             // Return empty collection if there's an error
             $offres = collect([]);
+            $pageTitle = 'Offres d\'emploi - Recrutement';
+            $pageDescription = 'Découvrez nos offres d\'emploi et opportunités de carrière. Rejoignez notre équipe dynamique.';
+            $pageKeywords = 'offres d\'emploi, recrutement, emploi, carrière, jobs';
+            
             try {
-                return view('recrutement', compact('offres'));
+                return view('recrutement', compact('offres', 'pageTitle', 'pageDescription', 'pageKeywords'));
             } catch (\Throwable $viewError) {
                 // If view also fails, return simple response
                 Log::error('Recrutement view error: ' . $viewError->getMessage());

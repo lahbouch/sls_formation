@@ -27,13 +27,17 @@ class ArticleController extends Controller
             $titreFormatted = $article->titre ? ucwords(strtolower($article->titre)) : '';
             $categoryName = $article->articleType ? ucwords(strtolower($article->articleType->nom)) : '';
             
+            $description = $article->description ?? $article->content ?? '';
+            $descriptionPlain = strip_tags($description);
+            $descriptionShort = mb_strlen($descriptionPlain) > 160 ? mb_substr($descriptionPlain, 0, 160) . '...' : $descriptionPlain;
+            
             $articleData = (object)[
                 'id' => $article->id,
                 'titre' => $article->titre,
                 'titre_formatted' => $titreFormatted,
                 'image' => $article->image,
                 'image_url' => $imageUrl,
-                'description' => $article->description ?? $article->content ?? '',
+                'description' => $description,
                 'date_created' => $article->date_created,
                 'date_formatted' => $dateFormatted,
                 'articleType' => $article->articleType ? (object)[
@@ -43,7 +47,11 @@ class ArticleController extends Controller
                 ] : null,
             ];
             
-            return view('article-details', compact('articleData'));
+            $pageTitle = $titreFormatted . ' - Actualités';
+            $pageDescription = $descriptionShort;
+            $pageKeywords = 'actualités, ' . ($categoryName ? strtolower($categoryName) . ', ' : '') . 'article';
+            
+            return view('article-details', compact('articleData', 'pageTitle', 'pageDescription', 'pageKeywords'));
         } catch (\Exception $e) {
             Log::error('ArticleController@show - Error: ' . $e->getMessage());
             abort(404);

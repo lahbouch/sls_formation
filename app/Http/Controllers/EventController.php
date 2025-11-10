@@ -69,7 +69,11 @@ class EventController extends Controller
                 Log::error('Events page DB error: ' . $dbError->getMessage());
             }
             
-            return view('events', compact('events'));
+            $pageTitle = 'Événements';
+            $pageDescription = 'Découvrez tous nos événements à venir et passés. Rejoignez-nous pour des moments inoubliables.';
+            $pageKeywords = 'événements, events, manifestations, activités';
+            
+            return view('events', compact('events', 'pageTitle', 'pageDescription', 'pageKeywords'));
         } catch (\Throwable $e) {
             Log::error('Events fatal error: ' . $e->getMessage(), [
                 'trace' => $e->getTraceAsString(),
@@ -142,7 +146,13 @@ class EventController extends Controller
                 abort(404);
             }
             
-            return view('event-details', compact('eventData'));
+            $descriptionShort = mb_strlen($eventData->description_plain) > 160 ? mb_substr($eventData->description_plain, 0, 160) . '...' : $eventData->description_plain;
+            
+            $pageTitle = $eventData->title . ' - Événement';
+            $pageDescription = $descriptionShort ?: 'Découvrez l\'événement ' . $eventData->title;
+            $pageKeywords = 'événement, ' . strtolower($eventData->title) . ', ' . ($eventData->location ? strtolower($eventData->location) : '');
+            
+            return view('event-details', compact('eventData', 'pageTitle', 'pageDescription', 'pageKeywords'));
         } catch (\Throwable $e) {
             Log::error('EventController@show - Fatal error: ' . $e->getMessage(), [
                 'trace' => $e->getTraceAsString(),

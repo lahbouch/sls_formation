@@ -62,7 +62,11 @@ class ActualitesController extends Controller
             // Replace the collection in paginator
             $articlesPaginated->setCollection($articles);
             
-            return view('actualites', compact('articlesPaginated', 'categories', 'selectedCategory'));
+            $pageTitle = 'Actualités' . ($selectedCategory ? ' - ' . ($categories->firstWhere('id', $selectedCategory)->nom ?? '') : '');
+            $pageDescription = 'Découvrez nos dernières actualités et articles. Restez informé de nos nouveautés et événements.';
+            $pageKeywords = 'actualités, articles, news, informations';
+            
+            return view('actualites', compact('articlesPaginated', 'categories', 'selectedCategory', 'pageTitle', 'pageDescription', 'pageKeywords'));
         } catch (\Throwable $e) {
             Log::error('ActualitesController@index - Fatal error: ' . $e->getMessage(), [
                 'trace' => $e->getTraceAsString(),
