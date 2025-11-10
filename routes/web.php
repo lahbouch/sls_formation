@@ -17,7 +17,22 @@ Route::get('/', function () {
     $services = \App\Models\Service::all();
     $articles = \App\Models\Article::with('articleType')->latest('date_created')->limit(3)->get();
     $offres = \App\Models\OffreEmploi::where('active', true)->latest('created_at')->limit(3)->get();
-    return view('welcome', compact('services', 'articles', 'offres'));
+    
+    // Get events and process them
+    $eventsRaw = \App\Models\Event::orderBy('start_date', 'desc')->limit(3)->get();
+    $events = $eventsRaw->map(function($event) {
+        return (object)[
+            'id' => $event->id,
+            'title' => $event->title,
+            'image' => $event->image,
+            'start_date' => $event->start_date,
+            'end_date' => $event->end_date,
+            'location' => $event->location,
+            'active' => $event->isCurrentlyActive(), // true if active=true AND end_date hasn't passed
+        ];
+    });
+    
+    return view('welcome', compact('services', 'articles', 'offres', 'events'));
 })->name('home');
 
 
@@ -120,6 +135,10 @@ Route::get('/articles/{id}', function ($id) {
     $article = \App\Models\Article::with('articleType')->findOrFail($id);
     return view('article-details', compact('article'));
 })->name('article.details');
+
+// Events routes
+Route::get('/events', [\App\Http\Controllers\EventController::class, 'index'])->name('events');
+Route::get('/events/{id}', [\App\Http\Controllers\EventController::class, 'show'])->name('event.show');
 
 
 

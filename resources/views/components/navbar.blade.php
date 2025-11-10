@@ -980,7 +980,7 @@
                                                     </li>
                                                     <li id="comp-ils2cgqy3" data-direction="ltr"
                                                         data-listposition="center" data-data-id="dataItem-lb3jrt2s"
-                                                        data-state="menu {{ request()->routeIs('evenements') ? 'selected' : 'false' }}  link" data-index="3"
+                                                        data-state="menu {{ request()->routeIs('events') ? 'selected' : 'false' }}  link" data-index="3"
                                                         class="Tg1gOB wixui-dropdown-menu__item xTjc1A"
                                                         data-original-gap-between-text-and-btn="10" aria-hidden="false"
                                                         style="
@@ -990,13 +990,14 @@
                                           box-sizing: border-box;
                                           overflow: visible;
                                           visibility: inherit;
+                                          pointer-events: auto;
                                         ">
-                                                        <a data-testid="linkElement" href="{{ route('evenements') }}"
-                                                            target="_self" class="UiHgGh" {{ request()->routeIs('evenements') ? 'aria-current="page"' : '' }}>
-                                                            <div class="yRj2ms">
-                                                                <div class="">
+                                                        <a data-testid="linkElement" href="{{ route('events') }}"
+                                                            target="_self" class="UiHgGh" style="pointer-events: auto !important; cursor: pointer !important;" {{ request()->routeIs('events') ? 'aria-current="page"' : '' }}>
+                                                            <div class="yRj2ms" style="pointer-events: auto;">
+                                                                <div class="" style="pointer-events: auto;">
                                                                     <p class="JS76Uv" id="comp-ils2cgqy3label"
-                                                                        style="line-height: 40px">
+                                                                        style="line-height: 40px; pointer-events: auto; cursor: pointer;">
                                                                         Évènements
                                                                     </p>
                                                                 </div>

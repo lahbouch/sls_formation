@@ -15761,6 +15761,299 @@
                               </div>
                             </section>
                             <!--/$--><!--$-->
+                            <!-- Events Section -->
+                            <section
+                              id="comp-events-section"
+                              tabindex="-1"
+                              class="Oqnisf comp-events-section wixui-section"
+                              data-block-level-container="ClassicSection"
+                            >
+                              <div
+                                id="bgLayers_comp-events-section"
+                                data-hook="bgLayers"
+                                data-motion-part="BG_LAYER comp-events-section"
+                                class="MW5IWV"
+                              >
+                                <div
+                                  data-testid="colorUnderlay"
+                                  class="LWbAav Kv1aVt"
+                                ></div>
+                                <div
+                                  id="bgMedia_comp-events-section"
+                                  data-motion-part="BG_MEDIA comp-events-section"
+                                  class="VgO9Yg"
+                                ></div>
+                              </div>
+                              <div
+                                data-mesh-id="comp-events-sectioninlineContent"
+                                data-testid="inline-content"
+                                class=""
+                              >
+                                <div
+                                  data-mesh-id="comp-events-sectioninlineContent-gridContainer"
+                                  data-testid="mesh-container-content"
+                                >
+                                  <!--$-->
+                                  <section
+                                    id="comp-events-column"
+                                    class="comp-events-column CohWsy wixui-column-strip"
+                                  >
+                                    <div
+                                      id="bgLayers_comp-events-column"
+                                      data-hook="bgLayers"
+                                      data-motion-part="BG_LAYER comp-events-column"
+                                      class="if7Vw2"
+                                    >
+                                      <div
+                                        data-testid="colorUnderlay"
+                                        class="tcElKx i1tH8h"
+                                      ></div>
+                                      <div
+                                        id="bgMedia_comp-events-column"
+                                        data-motion-part="BG_MEDIA comp-events-column"
+                                        class="wG8dni"
+                                      ></div>
+                                    </div>
+                                    <div data-testid="columns" class="V5AUxf">
+                                      <!--$-->
+                                      <div
+                                        id="comp-events-column-inner"
+                                        class="comp-events-column-inner YzqVVZ wixui-column-strip__column"
+                                      >
+                                        <div
+                                          id="bgLayers_comp-events-column-inner"
+                                          data-hook="bgLayers"
+                                          data-motion-part="BG_LAYER comp-events-column-inner"
+                                          class="MW5IWV"
+                                        >
+                                          <div
+                                            data-testid="colorUnderlay"
+                                            class="LWbAav Kv1aVt"
+                                          ></div>
+                                          <div
+                                            id="bgMedia_comp-events-column-inner"
+                                            data-motion-part="BG_MEDIA comp-events-column-inner"
+                                            class="VgO9Yg"
+                                          ></div>
+                                        </div>
+                                        <div
+                                          data-mesh-id="comp-events-column-innerinlineContent"
+                                          data-testid="inline-content"
+                                          class=""
+                                        >
+                                          <div
+                                            data-mesh-id="comp-events-column-innerinlineContent-gridContainer"
+                                            data-testid="mesh-container-content"
+                                          >
+                                            <!--$-->
+                                            <div
+                                              id="comp-events-title"
+                                              class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-events-title wixui-rich-text"
+                                              data-testid="richTextElement"
+                                            >
+                                              <h2
+                                                class="font_2 wixui-rich-text__text"
+                                                style="
+                                                  line-height: normal;
+                                                  text-align: center;
+                                                  font-size: 26px;
+                                                "
+                                              >
+                                                <span
+                                                  style="color: #113c66"
+                                                  class="wixui-rich-text__text"
+                                                  ><span
+                                                    style="
+                                                      font-family: avenir-lt-w01_85-heavy1475544,
+                                                        avenir-lt-w05_85-heavy,
+                                                        sans-serif;
+                                                    "
+                                                    class="wixui-rich-text__text"
+                                                    ><span
+                                                      style="font-weight: bold"
+                                                      class="wixui-rich-text__text"
+                                                      ><span
+                                                        style="
+                                                          letter-spacing: normal;
+                                                        "
+                                                        class="wixui-rich-text__text"
+                                                        >Événements</span
+                                                      ></span
+                                                    ></span
+                                                  ></span
+                                                >
+                                              </h2>
+                                            </div>
+                                            <!--/$--><!--$-->
+                                            <div
+                                              id="comp-events-grid"
+                                              class="TWFxr5"
+                                              style="min-width: 0px; display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; max-width: 980px; margin: 0 auto; padding-bottom: 40px;"
+                                            >
+                                              @if(isset($events) && $events->count() > 0)
+                                                @foreach($events as $event)
+                                                  @php
+                                                    $eventImageUrl = $event->image ? \Illuminate\Support\Facades\Storage::disk('public')->url($event->image) : null;
+                                                    // active already checks if active=true AND end_date hasn't passed (from isCurrentlyActive())
+                                                    $isInactive = !$event->active;
+                                                  @endphp
+                                                  <div style="
+                                                    position: relative;
+                                                    width: 292px !important;
+                                                    height: 292px !important;
+                                                    overflow: hidden;
+                                                    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                                                    cursor: {{ $isInactive ? 'not-allowed' : 'pointer' }};
+                                                    pointer-events: {{ $isInactive ? 'none' : 'auto' }};
+                                                    opacity: {{ $isInactive ? '0.6' : '1' }};
+                                                    filter: {{ $isInactive ? 'grayscale(100%)' : 'none' }};
+                                                  " @if(!$isInactive) onclick="window.location.href='{{ route('event.show', $event->id) }}'" @endif>
+                                                    @if($eventImageUrl)
+                                                    <!-- Background Image -->
+                                                    <div style="
+                                                        position: absolute;
+                                                        top: 0;
+                                                        left: 0;
+                                                        width: 292px;
+                                                        height: 292px;
+                                                        background-image: url({{ $eventImageUrl }});
+                                                        background-size: cover;
+                                                        background-position: center;
+                                                    "></div>
+                                                    @else
+                                                    <!-- Placeholder -->
+                                                    <div style="
+                                                        position: absolute;
+                                                        top: 0;
+                                                        left: 0;
+                                                        width: 292px;
+                                                        height: 292px;
+                                                        background-color: #e9ecef;
+                                                        display: flex;
+                                                        align-items: center;
+                                                        justify-content: center;
+                                                    ">
+                                                        <div style="width: 60px; height: 60px; background-image: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'24\' height=\'24\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'%23999\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'%3E%3Cpath d=\'M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z\'%3E%3C/path%3E%3Ccircle cx=\'12\' cy=\'13\' r=\'4\'%3E%3C/circle%3E%3Cline x1=\'1\' y1=\'1\' x2=\'23\' y2=\'23\' stroke=\'%23999\' stroke-width=\'2\'%3E%3C/line%3E%3C/svg%3E'); background-size: contain; background-repeat: no-repeat; background-position: center; opacity: 0.5;"></div>
+                                                    </div>
+                                                    @endif
+            
+                                                    <!-- Overlay -->
+                                                    <div style="
+                                                        position: absolute;
+                                                        top: 0;
+                                                        left: 0;
+                                                        width: 292px;
+                                                        height: 292px;
+                                                        background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+                                                    "></div>
+                                                    
+                                                    <!-- Content -->
+                                                    <div style="
+                                                        position: absolute;
+                                                        bottom: 30px;
+                                                        left: 30px;
+                                                        color: white;
+                                                        font-family: 'Inter', Arial, sans-serif;
+                                                    ">
+                                                        <!-- Date -->
+                                                        @if($event->start_date)
+                                                        <div class="wixui-rich-text__text" style="
+                                                            font-size: 13px;
+                                                            font-weight: 400;
+                                                            margin-bottom: 8px;
+                                                            opacity: 0.95;
+                                                            letter-spacing: 0.3px;
+                                                        ">{{ $event->start_date->format('d M Y') }}</div>
+                                                        @endif
+                                                        
+                                                        <!-- Title -->
+                                                        <p
+                                                          class="font_7 wixui-rich-text__text"
+                                                          style="
+                                                            font-size: 22px;
+                                                            line-height: normal;
+                                                            text-align: left;
+                                                          "
+                                                        >
+                                                          <span
+                                                            style="
+                                                              font-size: 22px;
+                                                            "
+                                                            class="wixui-rich-text__text"
+                                                            ><span
+                                                              style="
+                                                                color: #ffffff;
+                                                              "
+                                                              class="wixui-rich-text__text"
+                                                              ><span
+                                                                style="
+                                                                  font-weight: bold;
+                                                                "
+                                                                class="wixui-rich-text__text"
+                                                                ><span
+                                                                  style="
+                                                                    font-family: avenir-lt-w01_35-light1475496,
+                                                                      avenir-lt-w05_35-light,
+                                                                      sans-serif;
+                                                                  "
+                                                                  class="wixui-rich-text__text"
+                                                                  ><span
+                                                                    style="
+                                                                      letter-spacing: normal;
+                                                                    "
+                                                                    class="wixui-rich-text__text"
+                                                                    ><span
+                                                                      class="wixui-rich-text__text"
+                                                                      >
+                                                                  {{ $event->title }}
+                                                                      &nbsp;</span
+                                                                    ></span
+                                                                  ></span
+                                                                ></span
+                                                              ></span
+                                                            ></span
+                                                          >
+                                                        </p>
+                                                    </div>
+                                                  </div>
+                                                @endforeach
+                                              @else
+                                                <div style="text-align: center; padding: 40px; color: #666; width: 100%;">
+                                                  <p>Aucun événement disponible pour le moment.</p>
+                                                </div>
+                                              @endif
+                                            </div>
+                                            <!--/$--><!--$-->
+                                            <div
+                                              class="comp-events-button FubTgk"
+                                              id="comp-events-button"
+                                              aria-disabled="false"
+                                            >
+                                              <a
+                                                data-testid="linkElement"
+                                                href="{{ route('events') }}"
+                                                target="_self"
+                                                class="uDW_Qe wixui-button PlZyDq"
+                                                aria-disabled="false"
+                                                aria-label="Découvrir tous les événements"
+                                                ><span
+                                                  class="l7_2fn wixui-button__label"
+                                                  >Découvrir tout</span
+                                                ></a
+                                              >
+                                            </div>
+                                            <!--/$-->
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <!--/$-->
+                                    </div>
+                                  </section>
+                                  <!--/$-->
+                                </div>
+                              </div>
+                            </section>
+                            <!--/$--><!--$-->
                             <section
                               id="comp-lc96qudc"
                               tabindex="-1"
