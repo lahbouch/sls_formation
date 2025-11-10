@@ -14,37 +14,83 @@ class HomeController extends Controller
     public function index()
     {
         try {
-            // Pre-process all data in controller with individual error handling
+            // Initialize with empty collections
             $services = collect([]);
             $articles = collect([]);
             $offres = collect([]);
             $events = collect([]);
             
+            // Process each section independently with timeout protection
             try {
+                set_time_limit(10); // Limit processing time
                 $services = $this->processServices();
             } catch (\Exception $e) {
                 Log::error('HomeController@index - Error processing services: ' . $e->getMessage());
+                $services = collect([]);
+            } catch (\Throwable $e) {
+                Log::error('HomeController@index - Fatal error processing services: ' . $e->getMessage());
+                $services = collect([]);
             }
             
             try {
+                set_time_limit(10);
                 $articles = $this->processArticles();
             } catch (\Exception $e) {
                 Log::error('HomeController@index - Error processing articles: ' . $e->getMessage());
+                $articles = collect([]);
+            } catch (\Throwable $e) {
+                Log::error('HomeController@index - Fatal error processing articles: ' . $e->getMessage());
+                $articles = collect([]);
             }
             
             try {
+                set_time_limit(10);
                 $offres = $this->processOffres();
             } catch (\Exception $e) {
                 Log::error('HomeController@index - Error processing offres: ' . $e->getMessage());
+                $offres = collect([]);
+            } catch (\Throwable $e) {
+                Log::error('HomeController@index - Fatal error processing offres: ' . $e->getMessage());
+                $offres = collect([]);
             }
             
             try {
+                set_time_limit(10);
                 $events = $this->processEvents();
             } catch (\Exception $e) {
                 Log::error('HomeController@index - Error processing events: ' . $e->getMessage());
+                $events = collect([]);
+            } catch (\Throwable $e) {
+                Log::error('HomeController@index - Fatal error processing events: ' . $e->getMessage());
+                $events = collect([]);
             }
             
-            return view('welcome', compact('services', 'articles', 'offres', 'events'));
+            // Ensure all are collections
+            if (!($services instanceof \Illuminate\Support\Collection)) {
+                $services = collect([]);
+            }
+            if (!($articles instanceof \Illuminate\Support\Collection)) {
+                $articles = collect([]);
+            }
+            if (!($offres instanceof \Illuminate\Support\Collection)) {
+                $offres = collect([]);
+            }
+            if (!($events instanceof \Illuminate\Support\Collection)) {
+                $events = collect([]);
+            }
+            
+            try {
+                return view('welcome', compact('services', 'articles', 'offres', 'events'));
+            } catch (\Exception $e) {
+                Log::error('HomeController@index - Error rendering view: ' . $e->getMessage());
+                // Return minimal view with empty data
+                return view('welcome', [
+                    'services' => collect([]),
+                    'articles' => collect([]),
+                    'offres' => collect([]),
+                    'events' => collect([]),
+                ]);
+            }
         } catch (\Throwable $e) {
             Log::error('HomeController@index - Fatal error: ' . $e->getMessage(), [
                 'trace' => $e->getTraceAsString(),
@@ -53,21 +99,32 @@ class HomeController extends Controller
             ]);
             
             // Return empty collections on error
-            return view('welcome', [
-                'services' => collect([]),
-                'articles' => collect([]),
-                'offres' => collect([]),
-                'events' => collect([]),
-            ]);
+            try {
+                return view('welcome', [
+                    'services' => collect([]),
+                    'articles' => collect([]),
+                    'offres' => collect([]),
+                    'events' => collect([]),
+                ]);
+            } catch (\Exception $viewError) {
+                Log::error('HomeController@index - Cannot render view: ' . $viewError->getMessage());
+                return response('Service temporarily unavailable. Please try again later.', 503);
+            }
         }
     }
     
     private function processServices()
     {
         try {
-            $allServices = Service::all();
+            // Limit services to prevent memory issues
+            $allServices = Service::limit(50)->get();
             
-            return $allServices->map(function($service) {
+            if ($allServices->isEmpty()) {
+                return collect([]);
+            }
+            
+            $processed = collect([]);
+            foreach ($allServices as $service) {
                 try {
                     $imagePath = $service->minimized_image ?: $service->image;
                     $imageUrl = null;
@@ -80,21 +137,21 @@ class HomeController extends Controller
                         }
                     }
                     
-                    return (object)[
+                    $processed->push((object)[
                         'id' => $service->id ?? null,
                         'titre' => $service->titre ?? '',
                         'description' => $service->description ?? '',
                         'image' => $imagePath,
                         'image_url' => $imageUrl,
                         'minimized_image' => $service->minimized_image ?? null,
-                    ];
+                    ]);
                 } catch (\Exception $e) {
                     Log::error('HomeController - Error processing single service: ' . $e->getMessage());
-                    return null;
+                    // Continue with next service
                 }
-            })->filter(function($service) {
-                return $service !== null;
-            });
+            }
+            
+            return $processed;
         } catch (\Exception $e) {
             Log::error('HomeController - Error processing services: ' . $e->getMessage());
             return collect([]);
@@ -106,7 +163,12 @@ class HomeController extends Controller
         try {
             $allArticles = Article::with('articleType')->latest('date_created')->limit(3)->get();
             
-            return $allArticles->map(function($article) {
+            if ($allArticles->isEmpty()) {
+                return collect([]);
+            }
+            
+            $processed = collect([]);
+            foreach ($allArticles as $article) {
                 try {
                     $imageUrl = null;
                     if (!empty($article->image)) {
@@ -144,7 +206,7 @@ class HomeController extends Controller
                         }
                     }
                     
-                    return (object)[
+                    $processed->push((object)[
                         'id' => $article->id ?? null,
                         'titre' => $article->titre ?? '',
                         'titre_formatted' => $titreFormatted,
@@ -157,14 +219,14 @@ class HomeController extends Controller
                             'nom' => $article->articleType->nom ?? '',
                             'nom_formatted' => $categoryName,
                         ] : null,
-                    ];
+                    ]);
                 } catch (\Exception $e) {
                     Log::error('HomeController - Error processing single article: ' . $e->getMessage());
-                    return null;
+                    // Continue with next article
                 }
-            })->filter(function($article) {
-                return $article !== null;
-            });
+            }
+            
+            return $processed;
         } catch (\Exception $e) {
             Log::error('HomeController - Error processing articles: ' . $e->getMessage());
             return collect([]);
@@ -176,7 +238,12 @@ class HomeController extends Controller
         try {
             $allOffres = OffreEmploi::where('active', true)->latest('created_at')->limit(3)->get();
             
-            return $allOffres->map(function($offre) {
+            if ($allOffres->isEmpty()) {
+                return collect([]);
+            }
+            
+            $processed = collect([]);
+            foreach ($allOffres as $offre) {
                 try {
                     $imageUrl = null;
                     if (!empty($offre->image)) {
@@ -205,7 +272,7 @@ class HomeController extends Controller
                         }
                     }
                     
-                    return (object)[
+                    $processed->push((object)[
                         'id' => $offre->id ?? null,
                         'titre' => $offre->titre ?? '',
                         'titre_formatted' => $titreFormatted,
@@ -213,14 +280,14 @@ class HomeController extends Controller
                         'image_url' => $imageUrl,
                         'created_at' => $offre->created_at ?? null,
                         'date_formatted' => $dateFormatted,
-                    ];
+                    ]);
                 } catch (\Exception $e) {
                     Log::error('HomeController - Error processing single offre: ' . $e->getMessage());
-                    return null;
+                    // Continue with next offre
                 }
-            })->filter(function($offre) {
-                return $offre !== null;
-            });
+            }
+            
+            return $processed;
         } catch (\Exception $e) {
             Log::error('HomeController - Error processing offres: ' . $e->getMessage());
             return collect([]);
@@ -232,7 +299,12 @@ class HomeController extends Controller
         try {
             $allEvents = Event::orderBy('start_date', 'desc')->limit(3)->get();
             
-            return $allEvents->map(function($event) {
+            if ($allEvents->isEmpty()) {
+                return collect([]);
+            }
+            
+            $processed = collect([]);
+            foreach ($allEvents as $event) {
                 try {
                     $imageUrl = null;
                     if (!empty($event->image)) {
@@ -260,7 +332,7 @@ class HomeController extends Controller
                         Log::error('HomeController - Error checking event active status: ' . $e->getMessage());
                     }
                     
-                    return (object)[
+                    $processed->push((object)[
                         'id' => $event->id ?? null,
                         'title' => $event->title ?? '',
                         'title_formatted' => $titleFormatted,
@@ -270,14 +342,14 @@ class HomeController extends Controller
                         'end_date' => $event->end_date ?? null,
                         'location' => $event->location ?? '',
                         'active' => $isActive,
-                    ];
+                    ]);
                 } catch (\Exception $e) {
                     Log::error('HomeController - Error processing single event: ' . $e->getMessage());
-                    return null;
+                    // Continue with next event
                 }
-            })->filter(function($event) {
-                return $event !== null;
-            });
+            }
+            
+            return $processed;
         } catch (\Exception $e) {
             Log::error('HomeController - Error processing events: ' . $e->getMessage());
             return collect([]);

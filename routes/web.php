@@ -15,6 +15,20 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
+// Test route to check if controller is accessible
+Route::get('/home-test', function() {
+    try {
+        return response()->json([
+            'status' => 'ok',
+            'message' => 'Route is accessible',
+            'php_version' => PHP_VERSION,
+            'memory_limit' => ini_get('memory_limit'),
+        ]);
+    } catch (\Exception $e) {
+        return response()->json(['error' => $e->getMessage()], 500);
+    }
+});
+
 
 Route::get('/services/{id}', [\App\Http\Controllers\ServicesController::class, 'show'])->name('service');
 
