@@ -760,6 +760,25 @@
     object-fit: cover;
     display: block;
 }
+.gallery-item-placeholder {
+    width: 100%;
+    height: 100%;
+    background-color: #e9ecef;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.gallery-item-placeholder::before {
+    content: '';
+    width: 60px;
+    height: 60px;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z'%3E%3C/path%3E%3Ccircle cx='12' cy='13' r='4'%3E%3C/circle%3E%3Cline x1='1' y1='1' x2='23' y2='23' stroke='%23999' stroke-width='2'%3E%3C/line%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.5;
+}
 
 .gallery-empty {
     text-align: center;
@@ -890,12 +909,16 @@
         <div class="gallery-grid">
             @foreach($galleries as $gallery)
                 @php
-                    $galleryImageUrl = $gallery->image ? \Illuminate\Support\Facades\Storage::disk('public')->url($gallery->image) : asset('images/SLS-_Logo_png_small.webp');
+                    $galleryImageUrl = $gallery->image ? \Illuminate\Support\Facades\Storage::disk('public')->url($gallery->image) : null;
                 @endphp
                 <div class="gallery-item" 
-                     data-image-url="{{ $galleryImageUrl }}"
+                     data-image-url="{{ $galleryImageUrl ?? '#' }}"
                      data-description="{{ htmlspecialchars($gallery->description ?? '', ENT_QUOTES, 'UTF-8') }}">
-                    <img src="{{ $galleryImageUrl }}" alt="Gallery Image">
+                    @if($galleryImageUrl)
+                        <img src="{{ $galleryImageUrl }}" alt="Gallery Image">
+                    @else
+                        <div class="gallery-item-placeholder"></div>
+                    @endif
                 </div>
             @endforeach
         </div>

@@ -1840,6 +1840,25 @@
           object-fit: cover;
           display: block;
         }
+        .offre-image-placeholder {
+          width: 100%;
+          height: 200px;
+          background-color: #e9ecef;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+        }
+        .offre-image-placeholder::before {
+          content: '';
+          width: 60px;
+          height: 60px;
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23999' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z'%3E%3C/path%3E%3Ccircle cx='12' cy='13' r='4'%3E%3C/circle%3E%3Cline x1='1' y1='1' x2='23' y2='23' stroke='%23999' stroke-width='2'%3E%3C/line%3E%3C/svg%3E");
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          opacity: 0.5;
+        }
         .offre-content {
           padding: 20px;
         }
@@ -1946,10 +1965,14 @@
         <div class="offres-grid">
           @foreach($offres as $offre)
             @php
-              $offreImageUrl = $offre->image ? \Illuminate\Support\Facades\Storage::disk('public')->url($offre->image) : asset('images/SLS-_Logo_png_small.webp');
+              $offreImageUrl = $offre->image ? \Illuminate\Support\Facades\Storage::disk('public')->url($offre->image) : null;
             @endphp
             <a href="{{ route('offre-emploi.show', $offre->id) }}" class="offre-card">
-              <img src="{{ $offreImageUrl }}" alt="{{ $offre->titre }}" class="offre-image">
+              @if($offreImageUrl)
+                <img src="{{ $offreImageUrl }}" alt="{{ $offre->titre }}" class="offre-image">
+              @else
+                <div class="offre-image-placeholder"></div>
+              @endif
               <div class="offre-content">
                 <span class="offre-badge">{{ $offre->contrat ? strtoupper($offre->contrat) : 'EMPLOI' }}</span>
                 <h3 class="offre-title">{{ $offre->titre }}</h3>

@@ -262,13 +262,13 @@
     @foreach($services as $index => $service)
         @php
             $isEven = $index % 2 == 0;
-            $imageUrl = $service->image ? \Illuminate\Support\Facades\Storage::disk('public')->url($service->image) : asset('images/SLS-_Logo_png_small.webp');
+            $imageUrl = $service->image ? \Illuminate\Support\Facades\Storage::disk('public')->url($service->image) : null;
         @endphp
         <section class="service-section">
             <div class="service-content">
                 @if($isEven)
                     <!-- Title column (left) with dark blue overlay and background image -->
-                    <div class="service-column service-title-column" @if($imageUrl) style="background-image: url('{{ $imageUrl }}'); background-position: {{ $isEven ? '50%' : '100%' }} 50%;" @endif>
+                    <div class="service-column service-title-column" @if($imageUrl) style="background-image: url('{{ $imageUrl }}'); background-position: center; background-size: cover; background-repeat: no-repeat;" @else style="background-color: #e9ecef; background-image: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'24\' height=\'24\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'%23999\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'%3E%3Cpath d=\'M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z\'%3E%3C/path%3E%3Ccircle cx=\'12\' cy=\'13\' r=\'4\'%3E%3C/circle%3E%3Cline x1=\'1\' y1=\'1\' x2=\'23\' y2=\'23\' stroke=\'%23999\' stroke-width=\'2\'%3E%3C/line%3E%3C/svg%3E'); background-size: 80px 80px; background-position: center; background-repeat: no-repeat; opacity: 0.3;" @endif>
                         <a href="{{ route('service', $service->id) }}" style="text-decoration: none; color: inherit; display: block; width: 100%;">
                             <h2 class="service-title">{{ strtoupper($service->titre) }}</h2>
                         </a>
@@ -283,7 +283,7 @@
                         <div class="service-description">{!! $service->description !!}</div>
                     </div>
                     <!-- Title column (right) with dark blue overlay and background image -->
-                    <div class="service-column service-title-column" @if($imageUrl) style="background-image: url('{{ $imageUrl }}'); background-position: {{ $isEven ? '50%' : '100%' }} 50%;" @endif>
+                    <div class="service-column service-title-column" @if($imageUrl) style="background-image: url('{{ $imageUrl }}'); background-position: center; background-size: cover; background-repeat: no-repeat;" @else style="background-color: #e9ecef; background-image: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'24\' height=\'24\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'%23999\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'%3E%3Cpath d=\'M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z\'%3E%3C/path%3E%3Ccircle cx=\'12\' cy=\'13\' r=\'4\'%3E%3C/circle%3E%3Cline x1=\'1\' y1=\'1\' x2=\'23\' y2=\'23\' stroke=\'%23999\' stroke-width=\'2\'%3E%3C/line%3E%3C/svg%3E'); background-size: 80px 80px; background-position: center; background-repeat: no-repeat; opacity: 0.3;" @endif>
                         <a href="{{ route('service', $service->id) }}" style="text-decoration: none; color: inherit; display: block; width: 100%;">
                             <h2 class="service-title">{{ strtoupper($service->titre) }}</h2>
                         </a>

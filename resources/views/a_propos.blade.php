@@ -715,15 +715,21 @@
             <div class="partners-grid">
                 @foreach($partnersWithImages as $partner)
                     <div class="partner-item">
-                        @php
-                            $partnerImageUrl = $partner->image ? \Illuminate\Support\Facades\Storage::disk('public')->url($partner->image) : asset('images/SLS-_Logo_png_small.webp');
-                        @endphp
-                        @if($partner->siteweb)
-                            <a href="{{ $partner->siteweb }}" target="_blank" rel="noopener noreferrer">
+                        @if($partner->image)
+                            @php
+                                $partnerImageUrl = \Illuminate\Support\Facades\Storage::disk('public')->url($partner->image);
+                            @endphp
+                            @if($partner->siteweb)
+                                <a href="{{ $partner->siteweb }}" target="_blank" rel="noopener noreferrer">
+                                    <img src="{{ $partnerImageUrl }}" alt="Partner Logo">
+                                </a>
+                            @else
                                 <img src="{{ $partnerImageUrl }}" alt="Partner Logo">
-                            </a>
+                            @endif
                         @else
-                            <img src="{{ $partnerImageUrl }}" alt="Partner Logo">
+                            <div style="width: 100%; height: 100%; background-color: #e9ecef; display: flex; align-items: center; justify-content: center; min-height: 100px;">
+                                <div style="width: 50px; height: 50px; background-image: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'24\' height=\'24\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'%23999\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'%3E%3Cpath d=\'M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z\'%3E%3C/path%3E%3Ccircle cx=\'12\' cy=\'13\' r=\'4\'%3E%3C/circle%3E%3Cline x1=\'1\' y1=\'1\' x2=\'23\' y2=\'23\' stroke=\'%23999\' stroke-width=\'2\'%3E%3C/line%3E%3C/svg%3E'); background-size: contain; background-repeat: no-repeat; background-position: center; opacity: 0.5;"></div>
+                            </div>
                         @endif
                     </div>
                 @endforeach
