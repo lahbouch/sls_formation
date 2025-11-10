@@ -83,6 +83,16 @@ Route::post('/jobs_ma/cv', [\App\Http\Controllers\RecrutementController::class, 
 // Test route for recrutement page
 Route::get('/recrutement-test', [\App\Http\Controllers\RecrutementController::class, 'test'])->name('recrutement.test');
 
+// Diagnostic route to test if controller is accessible
+Route::get('/jobs_ma_debug', function() {
+    try {
+        $count = \App\Models\OffreEmploi::count();
+        return "Controller accessible. Database connection OK. Offers count: {$count}";
+    } catch (\Exception $e) {
+        return "Error: " . $e->getMessage();
+    }
+});
+
 Route::get('/contact', function () {
     return view('contact');
 })->name('contact');

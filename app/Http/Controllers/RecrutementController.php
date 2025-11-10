@@ -14,23 +14,20 @@ class RecrutementController extends Controller
     public function index()
     {
         try {
-            // Get all offers with error handling
+            // Get all offers ordered by creation date, then sort by active status
             $offres = OffreEmploi::orderBy('created_at', 'desc')->get();
             
-            // Ensure we have a collection
-            if (!$offres) {
-                $offres = collect([]);
-            }
+            // Separate active and inactive offers
+            $activeOffres = $offres->filter(function($offre) {
+                return $offre->active === true || $offre->active === 1;
+            });
             
-            // Sort in memory: active offers first, then by creation date
-            $offres = $offres->sort(function ($a, $b) {
-                // First sort by active status (active = true comes first)
-                if ($a->active != $b->active) {
-                    return $b->active ? 1 : -1;
-                }
-                // Then by creation date (newest first)
-                return $b->created_at <=> $a->created_at;
-            })->values();
+            $inactiveOffres = $offres->filter(function($offre) {
+                return $offre->active === false || $offre->active === 0 || $offre->active === null;
+            });
+            
+            // Merge: active first, then inactive
+            $offres = $activeOffres->merge($inactiveOffres);
             
             return view('recrutement', compact('offres'));
         } catch (\Exception $e) {
@@ -50,23 +47,20 @@ class RecrutementController extends Controller
     public function test()
     {
         try {
-            // Get all offers with error handling
+            // Get all offers ordered by creation date, then sort by active status
             $offres = OffreEmploi::orderBy('created_at', 'desc')->get();
             
-            // Ensure we have a collection
-            if (!$offres) {
-                $offres = collect([]);
-            }
+            // Separate active and inactive offers
+            $activeOffres = $offres->filter(function($offre) {
+                return $offre->active === true || $offre->active === 1;
+            });
             
-            // Sort in memory: active offers first, then by creation date
-            $offres = $offres->sort(function ($a, $b) {
-                // First sort by active status (active = true comes first)
-                if ($a->active != $b->active) {
-                    return $b->active ? 1 : -1;
-                }
-                // Then by creation date (newest first)
-                return $b->created_at <=> $a->created_at;
-            })->values();
+            $inactiveOffres = $offres->filter(function($offre) {
+                return $offre->active === false || $offre->active === 0 || $offre->active === null;
+            });
+            
+            // Merge: active first, then inactive
+            $offres = $activeOffres->merge($inactiveOffres);
             
             return view('recrutement-test', compact('offres'));
         } catch (\Exception $e) {
