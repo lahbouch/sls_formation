@@ -8,21 +8,38 @@ use App\Models\OffreEmploi;
 use App\Models\Event;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Cache;
 
 class HomeController extends Controller
 {
     public function index()
     {
         try {
+            // Use cache to speed up repeated requests (5 minutes cache)
+            $cacheKey = 'home_data_' . md5('home');
+            $cachedData = Cache::get($cacheKey);
+            
+            if ($cachedData !== null) {
+                try {
+                    return view('welcome', $cachedData);
+                } catch (\Exception $e) {
+                    Log::error('HomeController@index - Error rendering cached view: ' . $e->getMessage());
+                    // Fall through to regenerate cache
+                }
+            }
+            
             // Initialize with empty collections
             $services = collect([]);
             $articles = collect([]);
             $offres = collect([]);
             $events = collect([]);
             
-            // Process each section independently - no timeout limits to avoid issues
+            // Process each section independently with early returns
             try {
                 $services = $this->processServices();
+                if (!($services instanceof \Illuminate\Support\Collection)) {
+                    $services = collect([]);
+                }
             } catch (\Exception $e) {
                 Log::error('HomeController@index - Error processing services: ' . $e->getMessage());
                 $services = collect([]);
@@ -33,6 +50,9 @@ class HomeController extends Controller
             
             try {
                 $articles = $this->processArticles();
+                if (!($articles instanceof \Illuminate\Support\Collection)) {
+                    $articles = collect([]);
+                }
             } catch (\Exception $e) {
                 Log::error('HomeController@index - Error processing articles: ' . $e->getMessage());
                 $articles = collect([]);
@@ -43,6 +63,9 @@ class HomeController extends Controller
             
             try {
                 $offres = $this->processOffres();
+                if (!($offres instanceof \Illuminate\Support\Collection)) {
+                    $offres = collect([]);
+                }
             } catch (\Exception $e) {
                 Log::error('HomeController@index - Error processing offres: ' . $e->getMessage());
                 $offres = collect([]);
@@ -53,6 +76,9 @@ class HomeController extends Controller
             
             try {
                 $events = $this->processEvents();
+                if (!($events instanceof \Illuminate\Support\Collection)) {
+                    $events = collect([]);
+                }
             } catch (\Exception $e) {
                 Log::error('HomeController@index - Error processing events: ' . $e->getMessage());
                 $events = collect([]);
@@ -61,22 +87,23 @@ class HomeController extends Controller
                 $events = collect([]);
             }
             
-            // Ensure all are collections
-            if (!($services instanceof \Illuminate\Support\Collection)) {
-                $services = collect([]);
-            }
-            if (!($articles instanceof \Illuminate\Support\Collection)) {
-                $articles = collect([]);
-            }
-            if (!($offres instanceof \Illuminate\Support\Collection)) {
-                $offres = collect([]);
-            }
-            if (!($events instanceof \Illuminate\Support\Collection)) {
-                $events = collect([]);
+            // Prepare data for view
+            $viewData = [
+                'services' => $services,
+                'articles' => $articles,
+                'offres' => $offres,
+                'events' => $events,
+            ];
+            
+            // Cache the processed data for 5 minutes
+            try {
+                Cache::put($cacheKey, $viewData, now()->addMinutes(5));
+            } catch (\Exception $e) {
+                Log::error('HomeController@index - Error caching data: ' . $e->getMessage());
             }
             
             try {
-                return view('welcome', compact('services', 'articles', 'offres', 'events'));
+                return view('welcome', $viewData);
             } catch (\Exception $e) {
                 Log::error('HomeController@index - Error rendering view: ' . $e->getMessage());
                 // Return minimal view with empty data
@@ -112,25 +139,24 @@ class HomeController extends Controller
     private function processServices()
     {
         try {
-            // Limit services to prevent memory issues
-            $allServices = Service::limit(50)->get();
+            // Limit services to prevent memory issues - reduced to 20 for speed
+            $allServices = Service::limit(20)->get();
             
             if ($allServices->isEmpty()) {
                 return collect([]);
             }
             
             $processed = collect([]);
+            $baseUrl = asset('storage') . '/';
+            
             foreach ($allServices as $service) {
                 try {
                     $imagePath = $service->minimized_image ?: $service->image;
                     $imageUrl = null;
                     
+                    // Faster URL generation without Storage facade
                     if ($imagePath) {
-                        try {
-                            $imageUrl = Storage::disk('public')->url($imagePath);
-                        } catch (\Exception $e) {
-                            // If storage fails, imageUrl remains null
-                        }
+                        $imageUrl = $baseUrl . ltrim($imagePath, '/');
                     }
                     
                     $processed->push((object)[
@@ -166,15 +192,13 @@ class HomeController extends Controller
             }
             
             $processed = collect([]);
+            $baseUrl = asset('storage') . '/';
+            
             foreach ($allArticles as $article) {
                 try {
                     $imageUrl = null;
                     if (!empty($article->image)) {
-                        try {
-                            $imageUrl = Storage::disk('public')->url($article->image);
-                        } catch (\Exception $e) {
-                            // If storage fails, imageUrl remains null
-                        }
+                        $imageUrl = $baseUrl . ltrim($article->image, '/');
                     }
                     
                     $dateFormatted = '';
@@ -241,15 +265,13 @@ class HomeController extends Controller
             }
             
             $processed = collect([]);
+            $baseUrl = asset('storage') . '/';
+            
             foreach ($allOffres as $offre) {
                 try {
                     $imageUrl = null;
                     if (!empty($offre->image)) {
-                        try {
-                            $imageUrl = Storage::disk('public')->url($offre->image);
-                        } catch (\Exception $e) {
-                            // If storage fails, imageUrl remains null
-                        }
+                        $imageUrl = $baseUrl . ltrim($offre->image, '/');
                     }
                     
                     $titreFormatted = '';
@@ -302,15 +324,13 @@ class HomeController extends Controller
             }
             
             $processed = collect([]);
+            $baseUrl = asset('storage') . '/';
+            
             foreach ($allEvents as $event) {
                 try {
                     $imageUrl = null;
                     if (!empty($event->image)) {
-                        try {
-                            $imageUrl = Storage::disk('public')->url($event->image);
-                        } catch (\Exception $e) {
-                            // If storage fails, imageUrl remains null
-                        }
+                        $imageUrl = $baseUrl . ltrim($event->image, '/');
                     }
                     
                     $titleFormatted = '';
