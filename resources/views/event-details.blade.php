@@ -185,14 +185,10 @@
 
 
 <main id="PAGES_CONTAINER" class="PAGES_CONTAINER" tabindex="-1" data-main-content="true"><div id="SITE_PAGES" class="JsJXaX SITE_PAGES"><div id="SITE_PAGES_TRANSITION_GROUP" class="AnQkDU"><div id="pck1h" class="dBAkHi pck1h"><div class="PFkO7r wixui-page" data-testid="page-bg"></div><div class="HT5ybB"><!--$--><div id="Containerpck1h" class="Containerpck1h SPY_vo"><div data-mesh-id="Containerpck1hinlineContent" data-testid="inline-content" class=""><div data-mesh-id="Containerpck1hinlineContent-gridContainer" data-testid="mesh-container-content"><!--$--><section id="comp-lc96qu9z" tabindex="-1" class="Oqnisf comp-lc96qu9z wixui-section" data-block-level-container="ClassicSection"><div id="bgLayers_comp-lc96qu9z" data-hook="bgLayers" data-motion-part="BG_LAYER comp-lc96qu9z" class="MW5IWV"><div data-testid="colorUnderlay" class="LWbAav Kv1aVt"></div><div id="bgMedia_comp-lc96qu9z" data-motion-part="BG_MEDIA comp-lc96qu9z" class="VgO9Yg"></div></div><div data-mesh-id="comp-lc96qu9zinlineContent" data-testid="inline-content" class=""><div data-mesh-id="comp-lc96qu9zinlineContent-gridContainer" data-testid="mesh-container-content" style="max-width: 800px; margin: 0 auto; padding: 60px 20px;"><!--$--><div id="comp-laohuylq" style="display:none"></div><!--/$--><article style="background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
-@php
-  $eventImageUrl = $eventData->image_url;
-@endphp
-
 <!-- Featured Image -->
-@if($eventImageUrl)
+@if($eventData->image_url)
 <div style="width: 100%; margin-bottom: 40px; border-radius: 8px; overflow: hidden;">
-  <img src="{{ $eventImageUrl }}" alt="{{ $eventData->title }}" style="width: 100%; height: auto; max-height: 500px; object-fit: cover; display: block;">
+  <img src="{{ $eventData->image_url }}" alt="{{ $eventData->title }}" style="width: 100%; height: auto; max-height: 500px; object-fit: cover; display: block;">
 </div>
 @else
 <div style="width: 100%; margin-bottom: 40px; border-radius: 8px; overflow: hidden; background-color: #e9ecef; min-height: 300px; display: flex; align-items: center; justify-content: center;">
@@ -205,7 +201,7 @@
   <!-- Date Badge -->
   <div style="margin-bottom: 15px;">
     <span style="display: inline-block; padding: 6px 16px; background-color: #113c66; color: #fff; border-radius: 20px; font-size: 13px; font-weight: 500; font-family: avenir-lt-w01_35-light1475496, avenir-lt-w05_35-light, sans-serif; letter-spacing: 0.5px;">
-      {{ $eventData->start_date->format('d M Y') }}
+      {{ $eventData->start_date_formatted ?? 'N/A' }}
     </span>
   </div>
   
@@ -222,16 +218,16 @@
       <span style="color: #666; font-size: 16px;">{{ $eventData->location }}</span>
     </div>
     @endif
-    @if($eventData->start_date)
+    @if($eventData->start_date_short)
     <div>
       <strong style="color: #113c66; font-size: 14px; display: block; margin-bottom: 5px;">Date de début:</strong>
-      <span style="color: #666; font-size: 16px;">{{ $eventData->start_date->format('d/m/Y') }}</span>
+      <span style="color: #666; font-size: 16px;">{{ $eventData->start_date_short }}</span>
     </div>
     @endif
-    @if($eventData->end_date)
+    @if($eventData->end_date_short)
     <div>
       <strong style="color: #113c66; font-size: 14px; display: block; margin-bottom: 5px;">Date de fin:</strong>
-      <span style="color: #666; font-size: 16px;">{{ $eventData->end_date->format('d/m/Y') }}</span>
+      <span style="color: #666; font-size: 16px;">{{ $eventData->end_date_short }}</span>
     </div>
     @endif
   </div>
@@ -254,44 +250,7 @@
 
 <script>
 // Event details page - no form submission needed
-</script><!--$--><section id="comp-laohuylu" class="comp-laohuylu CohWsy wixui-column-strip" style="display:none;"><div id="bgLayers_comp-laohuylu" data-hook="bgLayers" data-motion-part="BG_LAYER comp-laohuylu" class="if7Vw2"><div data-testid="colorUnderlay" class="tcElKx i1tH8h"></div><div id="bgMedia_comp-laohuylu" data-motion-part="BG_MEDIA comp-laohuylu" class="wG8dni"></div></div><div data-testid="columns" class="V5AUxf"><!--$--><div id="comp-laohuym1" class="comp-laohuym1 YzqVVZ wixui-column-strip__column"><div id="bgLayers_comp-laohuym1" data-hook="bgLayers" data-motion-part="BG_LAYER comp-laohuym1" class="MW5IWV"><div data-testid="colorUnderlay" class="LWbAav Kv1aVt"></div><div id="bgMedia_comp-laohuym1" data-motion-part="BG_MEDIA comp-laohuym1" class="VgO9Yg"></div></div><div data-mesh-id="comp-laohuym1inlineContent" data-testid="inline-content" class=""><div data-mesh-id="comp-laohuym1inlineContent-gridContainer" data-testid="mesh-container-content"><!--$--><div id="comp-laoljmrt" class="KaEeLN comp-laoljmrt"><div class="uYj0Sg wixui-box" data-testid="container-bg"></div><div data-mesh-id="comp-laoljmrtinlineContent" data-testid="inline-content" class=""><div data-mesh-id="comp-laoljmrtinlineContent-gridContainer" data-testid="mesh-container-content"><!--$--><div id="comp-lgjlzf23" class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-lgjlzf23 wixui-rich-text" data-testid="richTextElement"><h1 class="font_0 wixui-rich-text__text" style="font-size:25px; line-height:normal;"><span style="font-size:25px;" class="wixui-rich-text__text"><span style="font-family:avenir-lt-w01_35-light1475496,avenir-lt-w05_35-light,sans-serif;" class="wixui-rich-text__text"><span style="font-weight:bold;" class="wixui-rich-text__text"><span class="color_11 wixui-rich-text__text"><span style="letter-spacing:normal;" class="wixui-rich-text__text">@if($offre->contrat)
-  {{ strtoupper($offre->contrat) }}
-@endif</span></span></span></span></span></h1></div><!--/$--></div></div></div><!--/$--><!--$--><div id="comp-laohuym91" class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-laohuym91 wixui-rich-text" data-testid="richTextElement"><h1 class="font_0 wixui-rich-text__text" style="font-size:25px; line-height:normal;"><span style="font-family:avenir-lt-w01_35-light1475496,avenir-lt-w05_35-light,sans-serif;" class="wixui-rich-text__text"><span style="font-size:25px;" class="wixui-rich-text__text"><span style="color:#324158;" class="wixui-rich-text__text"><span style="font-weight:bold;" class="wixui-rich-text__text"><span style="letter-spacing:normal;" class="wixui-rich-text__text">{{ ucwords(strtolower($offre->titre)) }}</span></span></span></span></span></h1></div><!--/$--><!--$--><div id="comp-lgjmw1tv-title" class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-lgjmw1tv-title wixui-rich-text" data-testid="richTextElement" style="display:none;"><p class="font_8 wixui-rich-text__text" style="font-size:16px; line-height:normal;"><span style="font-family:avenir-lt-w01_85-heavy1475544,avenir-lt-w05_85-heavy,sans-serif;" class="wixui-rich-text__text"><span style="font-size:16px;" class="wixui-rich-text__text"><span class="color_19 wixui-rich-text__text"><span style="text-decoration:underline;" class="wixui-rich-text__text"></span></span></span></span></p></div><!--/$--><!--$--><div id="comp-laoknqr3-title" class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-laoknqr3-title wixui-rich-text" data-testid="richTextElement" style="display:none;"><p class="font_8 wixui-rich-text__text" style="font-size:20px; line-height:normal;"><span class="color_19 wixui-rich-text__text"><span style="font-size:20px;" class="wixui-rich-text__text"><span style="font-weight:bold;" class="wixui-rich-text__text"><span style="font-family:avenir-lt-w01_35-light1475496,avenir-lt-w05_35-light,sans-serif;" class="wixui-rich-text__text">
-  
-
-  {{-- <span style="letter-spacing:normal;" class="wixui-rich-text__text">{{ ucwords(strtolower($offre->titre)) }}</span> --}}
-
-</span></span></span></span></p></div><!--/$--><!--$--><div id="comp-lgjmw1tv" class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-lgjmw1tv wixui-rich-text" data-testid="richTextElement"><p class="font_8 wixui-rich-text__text" style="font-size:16px; line-height:normal;"><span style="font-family:avenir-lt-w01_85-heavy1475544,avenir-lt-w05_85-heavy,sans-serif;" class="wixui-rich-text__text"><span style="font-size:16px;" class="wixui-rich-text__text"><span class="color_19 wixui-rich-text__text"><span style="text-decoration:underline;" class="wixui-rich-text__text"><span style="letter-spacing:normal;" class="wixui-rich-text__text"><span class="backcolor_32 wixui-rich-text__text"></span></span></span></span></span></span></p></div><!--/$--><!--$--><div id="comp-laoknqr3" class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-laoknqr3 wixui-rich-text" data-testid="richTextElement"><p class="font_8 wixui-rich-text__text" style="font-size:25px; line-height:normal;"><span class="color_19 wixui-rich-text__text"><span style="font-size:25px;" class="wixui-rich-text__text"><span style="font-weight:bold;" class="wixui-rich-text__text"><span style="font-family:avenir-lt-w01_35-light1475496,avenir-lt-w05_35-light,sans-serif;" class="wixui-rich-text__text"><span style="letter-spacing:normal;" class="wixui-rich-text__text">@if($offre->created_at)
-  Publié le {{ $offre->created_at->format('d/m/Y') }}
-@endif</span></span></span></span></span></p></div><!--/$--><!--$--><div id="comp-lgjmz7zx" class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-lgjmz7zx wixui-rich-text" data-testid="richTextElement"><p class="font_8 wixui-rich-text__text" style="font-size:16px; line-height:normal;"><span style="font-family:avenir-lt-w01_85-heavy1475544,avenir-lt-w05_85-heavy,sans-serif;" class="wixui-rich-text__text"><span style="font-size:16px;" class="wixui-rich-text__text"><span class="color_19 wixui-rich-text__text"><span style="text-decoration:underline;" class="wixui-rich-text__text"><span style="letter-spacing:normal;" class="wixui-rich-text__text"><span class="backcolor_32 wixui-rich-text__text"></span></span></span></span></span></span></p></div><!--/$--><!--$--><div id="comp-laohuymx1" class="MazNVa comp-laohuymx1 wixui-image"><div data-testid="linkElement" class="j7pOnl"><div class="nTOEE9 sqUyGm" tabindex="0"><wow-image id="img_comp-laohuymx1" class="jhxvbR BI8PVQ" data-image-info="{&quot;containerId&quot;:&quot;comp-laohuymx1&quot;,&quot;displayMode&quot;:&quot;stretch&quot;,&quot;targetWidth&quot;:382,&quot;targetHeight&quot;:382,&quot;isLQIP&quot;:false,&quot;encoding&quot;:&quot;AVIF&quot;,&quot;imageData&quot;:{&quot;width&quot;:5472,&quot;height&quot;:3648,&quot;uri&quot;:&quot;11062b_b0210b1228624c0f8919acc7c3c3ae8b~mv2.jpg&quot;,&quot;name&quot;:&quot;Image-empty-state.png&quot;,&quot;displayMode&quot;:&quot;stretch&quot;}}" data-motion-part="BG_IMG comp-laohuymx1" data-bg-effect-name="" data-has-ssr-src="">
-    
-    @if($offre->image)
-        @php
-            $offreImageUrl = \Illuminate\Support\Facades\Storage::disk('public')->url($offre->image);
-        @endphp
-        <img src="{{ $offreImageUrl }}" alt="{{ $offre->titre }}" style="width:382px;height:382px;object-fit:cover;border-radius:8px;" width="382" height="382" fetchpriority="high">
-    @else
-        <div style="width:382px;height:382px;background-color:#e9ecef;border-radius:8px;display:flex;align-items:center;justify-content:center;">
-            <div style="width: 60px; height: 60px; background-image: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'24\' height=\'24\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'%23999\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'%3E%3Cpath d=\'M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z\'%3E%3C/path%3E%3Ccircle cx=\'12\' cy=\'13\' r=\'4\'%3E%3C/circle%3E%3Cline x1=\'1\' y1=\'1\' x2=\'23\' y2=\'23\' stroke=\'%23999\' stroke-width=\'2\'%3E%3C/line%3E%3C/svg%3E'); background-size: contain; background-repeat: no-repeat; background-position: center; opacity: 0.5;"></div>
-        </div>
-    @endif
-
-</wow-image>
-
-
-
-
-</div></div></div><!--/$--><!--$--><div id="comp-laojtv7b" class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-laojtv7b wixui-rich-text" data-testid="richTextElement"><div class="font_8 wixui-rich-text__text" style="font-size:16px; line-height:normal;"><span class="color_19 wixui-rich-text__text"><span style="font-size:16px;" class="wixui-rich-text__text"><span style="letter-spacing:normal;" class="wixui-rich-text__text">
-    
-
-@if($offre->description)
-{!! $offre->description !!}
-@endif
-
-
-
-</span></span></span></div></div><!--/$--><!--$--><div id="comp-lgjn0c1h" class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-lgjn0c1h wixui-rich-text" data-testid="richTextElement"><p class="font_8 wixui-rich-text__text" style="font-size:16px; line-height:normal;"><span style="font-family:avenir-lt-w01_85-heavy1475544,avenir-lt-w05_85-heavy,sans-serif;" class="wixui-rich-text__text"><span style="font-size:16px;" class="wixui-rich-text__text"><span class="color_19 wixui-rich-text__text"><span style="text-decoration:underline;" class="wixui-rich-text__text"><span style="letter-spacing:normal;" class="wixui-rich-text__text"><span class="backcolor_32 wixui-rich-text__text"></span></span></span></span></span></span></p></div>
-<!--/$--><!--$--><div id="comp-laokpave" class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-laokpave wixui-rich-text" data-testid="richTextElement"><div class="font_8 wixui-rich-text__text" style="font-size:16px; line-height:normal;"><span class="color_19 wixui-rich-text__text"><span style="font-size:16px;" class="wixui-rich-text__text"><span style="letter-spacing:normal;" class="wixui-rich-text__text"></span></span></span></div></div><!--/$--><!--$--><div id="comp-lgjn24w4" class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-lgjn24w4 wixui-rich-text" data-testid="richTextElement"><p class="font_8 wixui-rich-text__text" style="font-size:16px; line-height:normal;"><span style="font-family:avenir-lt-w01_85-heavy1475544,avenir-lt-w05_85-heavy,sans-serif;" class="wixui-rich-text__text"><span style="font-size:16px;" class="wixui-rich-text__text"><span class="color_19 wixui-rich-text__text"><span style="text-decoration:underline;" class="wixui-rich-text__text"><span style="letter-spacing:normal;" class="wixui-rich-text__text"><span class="backcolor_32 wixui-rich-text__text"></span></span></span></span></span></span></p></div><!--/$--><!--$--><div id="comp-laojzu5x" class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-laojzu5x wixui-rich-text" data-testid="richTextElement"><div class="font_8 wixui-rich-text__text" style="font-size:16px; line-height:normal;"><span class="color_19 wixui-rich-text__text"><span style="font-size:16px;" class="wixui-rich-text__text"><span style="letter-spacing:normal;" class="wixui-rich-text__text"></span></span></span></div></div><!--/$--><!--$--><div id="comp-lgkrps5i" class="KaEeLN comp-lgkrps5i"><div class="uYj0Sg wixui-box" data-testid="container-bg"></div><div data-mesh-id="comp-lgkrps5iinlineContent" data-testid="inline-content" class=""><div data-mesh-id="comp-lgkrps5iinlineContent-gridContainer" data-testid="mesh-container-content"><!--$--><div id="comp-lgkrps6g" class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-lgkrps6g wixui-rich-text" data-testid="richTextElement"><h1 class="font_0 wixui-rich-text__text" style="font-size:16px; line-height:normal;"><a href="{{ route('recrutement') }}" target="_self" class="wixui-rich-text__text"><span style="font-size:16px;" class="wixui-rich-text__text"><span style="font-family:avenir-lt-w01_35-light1475496,avenir-lt-w05_35-light,sans-serif;" class="wixui-rich-text__text"><span class="color_11 wixui-rich-text__text"><span style="letter-spacing:normal;" class="wixui-rich-text__text">← Retour aux offres d'emploi</span></span></span></span></a></h1></div><!--/$--></div></div></div><!--/$--></div></div></div><!--/$--></div></section><!--/$--><!--$--><div id="comp-lapt07re" style="display:none"></div><!--/$--></div></div></section><!--/$--></div></div></div><!--/$--></div></div></div></div></main><!--$--><div id="soapAfterPagesContainer" class="page-without-sosp soapAfterPagesContainer page-without-sosp"><div data-mesh-id="soapAfterPagesContainerinlineContent" data-testid="inline-content" class=""><div data-mesh-id="soapAfterPagesContainerinlineContent-gridContainer" data-testid="mesh-container-content"><!--$--><div id="comp-jn4hmzm6" style="display:none"></div><!--/$--><!--$--><div id="CONTROLLER_COMP_CUSTOM_ID" style="display:none"></div><!--/$--></div></div></div><!--/$--><div id="pinnedBottomRight" class="pinnedBottomRight"><!--$--><div id="comp-kemk5dij-pinned-layer" class="comp-kemk5dij-pinned-layer big2ZD"><!--$--><div id="comp-kemk5dij" class="OQ8Tzd comp-kemk5dij" style="width: 94px; height: 94px; content: attr(x);"><iframe class="nKphmK" title="Wix Chat" aria-label="Wix Chat" scrolling="no" src="https://engage.wixapps.net/chat-widget-server/renderChatWidget/index?pageId=masterPage&amp;compId=comp-kemk5dij&amp;viewerCompId=comp-kemk5dij&amp;siteRevision=4&amp;viewMode=site&amp;deviceType=desktop&amp;locale=fr&amp;tz=Africa%2FCasablanca&amp;regionalLanguage=fr&amp;width=94&amp;height=94&amp;instance=_bTEnbR1ut_2w-2HqHrV7qNnYtxnRLQVnoraMgmgp1Q.eyJpbnN0YW5jZUlkIjoiZjA2OTk4MWItMmU3Zi00ODhiLTgyN2EtNjFiZWZjMTk2ZDU1IiwiYXBwRGVmSWQiOiIxNDUxN2UxYS0zZmYwLWFmOTgtNDA4ZS0yYmQ2OTUzYzM2YTIiLCJtZXRhU2l0ZUlkIjoiMjJjZDRiNTAtOTEwNy00ZTU2LTliODctMmJlZjVjNzE2MjhmIiwic2lnbkRhdGUiOiIyMDI1LTExLTAyVDAzOjAzOjQyLjcxOVoiLCJkZW1vTW9kZSI6ZmFsc2UsIm9yaWdpbkluc3RhbmNlSWQiOiIyYTA4NDZjMC1lYjBjLTQ5NDctODljYy0zMjc3NWY4NGIwNTQiLCJhaWQiOiI4MGJkZWUyNC0zYjNkLTRiZWEtYjJhNS1kZDEzNWI0ZTJlMDkiLCJiaVRva2VuIjoiZDJhNGQzNGItYmY3OC0wNmRkLTE5ZmQtNGE1MWEwNjgwZmRhIiwic2l0ZU93bmVySWQiOiI4YWQ4ODA1ZC1hM2VhLTQwMDgtODUyZi00NjgwNTA5MDg2ZjgiLCJicyI6ImpsTkk1TUtLTDQxZHZoY2dnWHJfWG1lU2x6TUQtUXRyQjhVMkZJak96ZU0iLCJzY2QiOiIyMDIxLTAzLTAyVDE0OjUzOjI2LjQ3MloifQ&amp;currency=MAD&amp;currentCurrency=MAD&amp;commonConfig=%7B%22brand%22%3A%22wix%22%2C%22host%22%3A%22VIEWER%22%2C%22bsi%22%3A%22b2734a14-57d7-4a0c-9212-54d41f09b247%7C1%22%2C%22siteRevision%22%3A%224%22%2C%22branchId%22%3A%22c3be78fc-757c-424a-bce3-a454c1754262%22%2C%22renderingFlow%22%3A%22NONE%22%2C%22language%22%3A%22fr%22%2C%22locale%22%3A%22fr-ma%22%2C%22BSI%22%3A%22b2734a14-57d7-4a0c-9212-54d41f09b247%7C1%22%7D&amp;currentRoute=.%2Fformations%2Fsupply-chain&amp;vsi=f03122ae-9a0b-429a-8e36-059df29386fc" allowfullscreen="" allowtransparency="true" allowvr="true" frameborder="0" allow="clipboard-write;autoplay;camera;microphone;geolocation;vr"></iframe></div><!--/$--></div><!--/$--></div>
+</script>
   
   
   
