@@ -29,6 +29,9 @@ Route::get('/home-test', function() {
     }
 });
 
+// Test route that bypasses the view to check if controller logic works
+Route::get('/home-simple', [\App\Http\Controllers\HomeController::class, 'simple']);
+
 
 Route::get('/services/{id}', [\App\Http\Controllers\ServicesController::class, 'show'])->name('service');
 

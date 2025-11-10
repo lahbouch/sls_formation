@@ -14,6 +14,10 @@ class HomeController extends Controller
 {
     public function index()
     {
+        // Increase PHP limits for this request
+        @ini_set('memory_limit', '512M');
+        @ini_set('max_execution_time', '60');
+        
         try {
             // Use cache to speed up repeated requests (5 minutes cache)
             $cacheKey = 'home_data_' . md5('home');
@@ -34,7 +38,20 @@ class HomeController extends Controller
                     if (!isset($cachedData['events'])) {
                         $cachedData['events'] = collect([]);
                     }
-                    return view('welcome', $cachedData);
+                    
+                    // Try to render view with error suppression for memory issues
+                    try {
+                        return view('welcome', $cachedData);
+                    } catch (\Error $memoryError) {
+                        // If it's a memory or fatal error, log and try minimal response
+                        if (strpos($memoryError->getMessage(), 'memory') !== false || 
+                            strpos($memoryError->getMessage(), 'Allowed memory') !== false) {
+                            Log::error('HomeController@index - Memory error rendering cached view: ' . $memoryError->getMessage());
+                            // Return minimal HTML response
+                            return $this->getMinimalResponse($cachedData);
+                        }
+                        throw $memoryError;
+                    }
                 } catch (\Exception $e) {
                     Log::error('HomeController@index - Error rendering cached view: ' . $e->getMessage(), [
                         'trace' => $e->getTraceAsString()
@@ -140,15 +157,27 @@ class HomeController extends Controller
             }
             
             try {
-                return view('welcome', $viewData);
+                // Try to render view with error handling for memory issues
+                try {
+                    return view('welcome', $viewData);
+                } catch (\Error $memoryError) {
+                    // If it's a memory or fatal error, log and return minimal response
+                    if (strpos($memoryError->getMessage(), 'memory') !== false || 
+                        strpos($memoryError->getMessage(), 'Allowed memory') !== false ||
+                        strpos($memoryError->getMessage(), 'Maximum execution time') !== false) {
+                        Log::error('HomeController@index - Memory/timeout error: ' . $memoryError->getMessage());
+                        return $this->getMinimalResponse($viewData);
+                    }
+                    throw $memoryError;
+                }
             } catch (\Exception $e) {
                 Log::error('HomeController@index - Error rendering view: ' . $e->getMessage(), [
                     'trace' => $e->getTraceAsString(),
                     'file' => $e->getFile(),
                     'line' => $e->getLine()
                 ]);
-                // Return minimal view with empty data and SEO
-                return view('welcome', [
+                // Return minimal response instead of trying view again
+                return $this->getMinimalResponse([
                     'services' => collect([]),
                     'articles' => collect([]),
                     'offres' => collect([]),
@@ -165,26 +194,16 @@ class HomeController extends Controller
                 'line' => $e->getLine()
             ]);
             
-            // Return empty collections on error with SEO data
-            try {
-                return view('welcome', [
-                    'services' => collect([]),
-                    'articles' => collect([]),
-                    'offres' => collect([]),
-                    'events' => collect([]),
-                    'pageTitle' => 'Accueil - Services, Actualités et Offres d\'emploi',
-                    'pageDescription' => 'Découvrez nos services, actualités, événements et offres d\'emploi. Votre partenaire de confiance pour tous vos besoins.',
-                    'pageKeywords' => 'services, actualités, événements, offres d\'emploi, recrutement',
-                ]);
-            } catch (\Exception $viewError) {
-                Log::error('HomeController@index - Cannot render view: ' . $viewError->getMessage(), [
-                    'trace' => $viewError->getTraceAsString(),
-                    'file' => $viewError->getFile(),
-                    'line' => $viewError->getLine()
-                ]);
-                // Try to return a simple HTML response instead of 503
-                return response('<!DOCTYPE html><html><head><title>Service Temporairement Indisponible</title></head><body><h1>Service temporairement indisponible</h1><p>Veuillez réessayer dans quelques instants.</p></body></html>', 503);
-            }
+            // Return minimal response on fatal error
+            return $this->getMinimalResponse([
+                'services' => collect([]),
+                'articles' => collect([]),
+                'offres' => collect([]),
+                'events' => collect([]),
+                'pageTitle' => 'Accueil - Services, Actualités et Offres d\'emploi',
+                'pageDescription' => 'Découvrez nos services, actualités, événements et offres d\'emploi. Votre partenaire de confiance pour tous vos besoins.',
+                'pageKeywords' => 'services, actualités, événements, offres d\'emploi, recrutement',
+            ]);
         }
     }
     
@@ -427,5 +446,52 @@ class HomeController extends Controller
             Log::error('HomeController - Error processing events: ' . $e->getMessage());
             return collect([]);
         }
+    }
+    
+    /**
+     * Simple test method that bypasses the large view
+     */
+    public function simple()
+    {
+        try {
+            // Just return a simple response to test if controller is accessible
+            return response('<!DOCTYPE html><html><head><title>Test</title></head><body><h1>Controller is working!</h1><p>If you see this, the controller is accessible. The issue is likely with the welcome.blade.php view compilation.</p></body></html>', 200);
+        } catch (\Exception $e) {
+            return response('Error: ' . $e->getMessage(), 500);
+        }
+    }
+    
+    /**
+     * Get minimal HTML response when view compilation fails
+     */
+    private function getMinimalResponse($data)
+    {
+        $services = $data['services'] ?? collect([]);
+        $articles = $data['articles'] ?? collect([]);
+        $offres = $data['offres'] ?? collect([]);
+        $events = $data['events'] ?? collect([]);
+        $pageTitle = $data['pageTitle'] ?? 'Accueil';
+        $pageDescription = $data['pageDescription'] ?? '';
+        
+        $html = '<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>' . htmlspecialchars($pageTitle) . '</title>
+    <meta name="description" content="' . htmlspecialchars($pageDescription) . '">
+</head>
+<body>
+    <h1>Bienvenue</h1>
+    <p>Le site est en cours de chargement. Veuillez patienter...</p>
+    <script>
+        setTimeout(function() {
+            window.location.reload();
+        }, 3000);
+    </script>
+</body>
+</html>';
+        
+        return response($html, 200)->header('Content-Type', 'text/html; charset=utf-8');
     }
 }
