@@ -80,6 +80,9 @@ Route::get('/jobs_ma', [\App\Http\Controllers\RecrutementController::class, 'ind
 Route::get('/jobs_ma/{id}', [\App\Http\Controllers\RecrutementController::class, 'show'])->name('offre-emploi.show');
 Route::post('/jobs_ma/cv', [\App\Http\Controllers\RecrutementController::class, 'uploadCv'])->name('recrutement.cv.upload');
 
+// Test route for recrutement page
+Route::get('/recrutement-test', [\App\Http\Controllers\RecrutementController::class, 'test'])->name('recrutement.test');
+
 Route::get('/contact', function () {
     return view('contact');
 })->name('contact');

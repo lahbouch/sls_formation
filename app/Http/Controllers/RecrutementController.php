@@ -36,6 +36,31 @@ class RecrutementController extends Controller
         }
     }
 
+    public function test()
+    {
+        try {
+            // Get all offers, then sort in memory to avoid database issues
+            $offres = OffreEmploi::orderBy('created_at', 'desc')
+                ->get()
+                ->sortByDesc(function ($offre) {
+                    // Sort by active status first (true = 1, false = 0)
+                    return $offre->active ? 1 : 0;
+                })
+                ->values(); // Re-index the collection
+            
+            return view('recrutement-test', compact('offres'));
+        } catch (\Exception $e) {
+            // Log the error for debugging
+            Log::error('Recrutement test page error: ' . $e->getMessage(), [
+                'trace' => $e->getTraceAsString()
+            ]);
+            
+            // Return empty collection if there's an error
+            $offres = collect([]);
+            return view('recrutement-test', compact('offres'));
+        }
+    }
+
     public function show($id)
     {
         $offre = OffreEmploi::where('active', true)->findOrFail($id);

@@ -1090,13 +1090,14 @@
                                           box-sizing: border-box;
                                           overflow: visible;
                                           visibility: inherit;
+                                          pointer-events: auto;
                                         ">
                                                         <a data-testid="linkElement" href="{{ route('contact') }}"
-                                                            target="_self" class="UiHgGh" style="pointer-events: auto;" {{ request()->routeIs('contact') ? 'aria-current="page"' : '' }}>
-                                                            <div class="yRj2ms">
-                                                                <div class="">
+                                                            target="_self" class="UiHgGh" style="pointer-events: auto !important; cursor: pointer !important;" {{ request()->routeIs('contact') ? 'aria-current="page"' : '' }}>
+                                                            <div class="yRj2ms" style="pointer-events: auto;">
+                                                                <div class="" style="pointer-events: auto;">
                                                                     <p class="JS76Uv" id="comp-ils2cgqy7label"
-                                                                        style="line-height: 40px; pointer-events: auto;">
+                                                                        style="line-height: 40px; pointer-events: auto; cursor: pointer;">
                                                                         Contact
                                                                     </p>
                                                                 </div>
