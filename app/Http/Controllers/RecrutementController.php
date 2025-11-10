@@ -14,20 +14,31 @@ class RecrutementController extends Controller
     public function index()
     {
         try {
-            // Get all offers, then sort in memory to avoid database issues
-            $offres = OffreEmploi::orderBy('created_at', 'desc')
-                ->get()
-                ->sortByDesc(function ($offre) {
-                    // Sort by active status first (true = 1, false = 0)
-                    return $offre->active ? 1 : 0;
-                })
-                ->values(); // Re-index the collection
+            // Get all offers with error handling
+            $offres = OffreEmploi::orderBy('created_at', 'desc')->get();
+            
+            // Ensure we have a collection
+            if (!$offres) {
+                $offres = collect([]);
+            }
+            
+            // Sort in memory: active offers first, then by creation date
+            $offres = $offres->sort(function ($a, $b) {
+                // First sort by active status (active = true comes first)
+                if ($a->active != $b->active) {
+                    return $b->active ? 1 : -1;
+                }
+                // Then by creation date (newest first)
+                return $b->created_at <=> $a->created_at;
+            })->values();
             
             return view('recrutement', compact('offres'));
         } catch (\Exception $e) {
             // Log the error for debugging
             Log::error('Recrutement page error: ' . $e->getMessage(), [
-                'trace' => $e->getTraceAsString()
+                'trace' => $e->getTraceAsString(),
+                'file' => $e->getFile(),
+                'line' => $e->getLine()
             ]);
             
             // Return empty collection if there's an error
@@ -39,20 +50,31 @@ class RecrutementController extends Controller
     public function test()
     {
         try {
-            // Get all offers, then sort in memory to avoid database issues
-            $offres = OffreEmploi::orderBy('created_at', 'desc')
-                ->get()
-                ->sortByDesc(function ($offre) {
-                    // Sort by active status first (true = 1, false = 0)
-                    return $offre->active ? 1 : 0;
-                })
-                ->values(); // Re-index the collection
+            // Get all offers with error handling
+            $offres = OffreEmploi::orderBy('created_at', 'desc')->get();
+            
+            // Ensure we have a collection
+            if (!$offres) {
+                $offres = collect([]);
+            }
+            
+            // Sort in memory: active offers first, then by creation date
+            $offres = $offres->sort(function ($a, $b) {
+                // First sort by active status (active = true comes first)
+                if ($a->active != $b->active) {
+                    return $b->active ? 1 : -1;
+                }
+                // Then by creation date (newest first)
+                return $b->created_at <=> $a->created_at;
+            })->values();
             
             return view('recrutement-test', compact('offres'));
         } catch (\Exception $e) {
             // Log the error for debugging
             Log::error('Recrutement test page error: ' . $e->getMessage(), [
-                'trace' => $e->getTraceAsString()
+                'trace' => $e->getTraceAsString(),
+                'file' => $e->getFile(),
+                'line' => $e->getLine()
             ]);
             
             // Return empty collection if there's an error

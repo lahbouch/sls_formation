@@ -1949,12 +1949,12 @@
       </div>
       
       <!-- Offres Grid -->
-      @if($offres->count() > 0)
+      @if(isset($offres) && $offres && $offres->count() > 0)
         <div class="offres-grid">
           @foreach($offres as $offre)
             @php
-              $offreImageUrl = $offre->image ? \Illuminate\Support\Facades\Storage::disk('public')->url($offre->image) : null;
-              $isInactive = !$offre->active;
+              $offreImageUrl = isset($offre->image) && $offre->image ? \Illuminate\Support\Facades\Storage::disk('public')->url($offre->image) : null;
+              $isInactive = !isset($offre->active) || !$offre->active;
             @endphp
             @if($isInactive)
               <div class="offre-card inactive">
@@ -1962,20 +1962,20 @@
               <a href="{{ route('offre-emploi.show', $offre->id) }}" class="offre-card">
             @endif
               @if($offreImageUrl)
-                <img src="{{ $offreImageUrl }}" alt="{{ $offre->titre }}" class="offre-image">
+                <img src="{{ $offreImageUrl }}" alt="{{ isset($offre->titre) ? $offre->titre : 'Offre d\'emploi' }}" class="offre-image">
               @else
                 <div class="offre-image-placeholder"></div>
               @endif
               <div class="offre-content">
-                <span class="offre-badge">{{ $offre->contrat ? strtoupper($offre->contrat) : 'EMPLOI' }}</span>
-                <h3 class="offre-title">{{ $offre->titre }}</h3>
-                @if($offre->ville)
+                <span class="offre-badge">{{ isset($offre->contrat) && $offre->contrat ? strtoupper($offre->contrat) : 'EMPLOI' }}</span>
+                <h3 class="offre-title">{{ isset($offre->titre) ? $offre->titre : 'Offre d\'emploi' }}</h3>
+                @if(isset($offre->ville) && $offre->ville)
                   <div class="offre-info"><strong>Lieu:</strong> {{ $offre->ville }}</div>
                 @endif
-                @if($offre->entreprise)
+                @if(isset($offre->entreprise) && $offre->entreprise)
                   <div class="offre-info"><strong>Entreprise:</strong> {{ $offre->entreprise }}</div>
                 @endif
-                @if($offre->description)
+                @if(isset($offre->description) && $offre->description)
                   <div class="offre-description">{{ \Illuminate\Support\Str::limit(strip_tags($offre->description), 100) }}</div>
                 @endif
               </div>
