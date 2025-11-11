@@ -4,24 +4,24 @@
     <!-- SEO Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ $pageTitle ?? 'Accueil - Services, Actualités et Offres d\'emploi' }}</title>
-    <meta name="description" content="{{ $pageDescription ?? 'Découvrez nos services, actualités, événements et offres d\'emploi. Votre partenaire de confiance pour tous vos besoins.' }}">
-    <meta name="keywords" content="{{ $pageKeywords ?? 'services, actualités, événements, offres d\'emploi, recrutement' }}">
+    <title>{{ $pageTitle ?? 'Accueil - Services, Offres d\'emploi et Événements' }}</title>
+    <meta name="description" content="{{ $pageDescription ?? 'Découvrez nos services, événements et offres d\'emploi. Votre partenaire de confiance pour tous vos besoins.' }}">
+    <meta name="keywords" content="{{ $pageKeywords ?? 'services, événements, offres d\'emploi, recrutement' }}">
     <meta name="robots" content="index, follow">
     <link rel="canonical" href="{{ url('/') }}">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ url('/') }}">
-    <meta property="og:title" content="{{ $pageTitle ?? 'Accueil - Services, Actualités et Offres d\'emploi' }}">
-    <meta property="og:description" content="{{ $pageDescription ?? 'Découvrez nos services, actualités, événements et offres d\'emploi. Votre partenaire de confiance pour tous vos besoins.' }}">
+    <meta property="og:title" content="{{ $pageTitle ?? 'Accueil - Services, Offres d\'emploi et Événements' }}">
+    <meta property="og:description" content="{{ $pageDescription ?? 'Découvrez nos services, événements et offres d\'emploi. Votre partenaire de confiance pour tous vos besoins.' }}">
     <meta property="og:locale" content="fr_FR">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="{{ url('/') }}">
-    <meta property="twitter:title" content="{{ $pageTitle ?? 'Accueil - Services, Actualités et Offres d\'emploi' }}">
-    <meta property="twitter:description" content="{{ $pageDescription ?? 'Découvrez nos services, actualités, événements et offres d\'emploi. Votre partenaire de confiance pour tous vos besoins.' }}">
+    <meta property="twitter:title" content="{{ $pageTitle ?? 'Accueil - Services, Offres d\'emploi et Événements' }}">
+    <meta property="twitter:description" content="{{ $pageDescription ?? 'Découvrez nos services, événements et offres d\'emploi. Votre partenaire de confiance pour tous vos besoins.' }}">
     
     <!-- Safari Pinned Tab Icon -->
     <!-- <link rel="mask-icon" href="https://www.wix.com/favicon.ico"> -->
@@ -13096,6 +13096,37 @@
         justify-self: start;
         align-self: start;
       }
+      #comp-events-section {
+        left: 0;
+        margin-left: 0;
+        width: 100%;
+        min-width: 0;
+      }
+      [data-mesh-id="comp-events-sectioninlineContent"] {
+        height: auto;
+        width: 100%;
+      }
+      [data-mesh-id="comp-events-sectioninlineContent-gridContainer"] {
+        position: static;
+        display: grid;
+        height: auto;
+        width: 100%;
+        min-height: auto;
+        grid-template-rows: 1fr;
+        grid-template-columns: 100%;
+      }
+      [data-mesh-id="comp-events-sectioninlineContent-gridContainer"]
+        > [id="comp-events-column"],
+      [data-mesh-id="comp-events-sectioninlineContent-gridContainer"]
+        > wix-interact-element
+        > [id="comp-events-column"] {
+        position: relative;
+        margin: 0px 0px 0px calc((100% - 980px) * 0.5);
+        left: 0px;
+        grid-area: 1 / 1 / 2 / 2;
+        justify-self: start;
+        align-self: start;
+      }
       #comp-lamrzcyo {
         left: 0;
         margin-left: 0;
@@ -13121,10 +13152,10 @@
         > wix-interact-element
         > [id="comp-lamrzn47"] {
         position: relative;
-        margin: 0px 0px 33px calc((100% - 980px) * 0.5);
+        margin: 0px auto 33px;
         left: 0px;
         grid-area: 1 / 1 / 2 / 2;
-        justify-self: start;
+        justify-self: center;
         align-self: start;
       }
       [data-mesh-id="comp-lamrzczpinlineContent-gridContainer"]
@@ -13145,13 +13176,71 @@
         > wix-interact-element
         > [id="comp-lams11d4"] {
         position: relative;
-        margin: 0px 0px 60px calc((100% - 980px) * 0.5);
-        left: 379px;
+        margin: 0px auto 60px;
+        left: 0px;
         grid-area: 3 / 1 / 4 / 2;
-        justify-self: start;
+        justify-self: center;
         align-self: start;
       }
       #comp-lamrzczp {
+        width: 980px;
+      }
+      #comp-events-column {
+        left: 0;
+        margin-left: 0;
+        width: 100%;
+        min-width: 980px;
+      }
+      [data-mesh-id="comp-events-column-innerinlineContent"] {
+        height: auto;
+        width: 100%;
+      }
+      [data-mesh-id="comp-events-column-innerinlineContent-gridContainer"] {
+        position: static;
+        display: grid;
+        height: auto;
+        width: 100%;
+        min-height: auto;
+        grid-template-rows: repeat(2, min-content) 1fr;
+        grid-template-columns: 100%;
+      }
+      [data-mesh-id="comp-events-column-innerinlineContent-gridContainer"]
+        > [id="comp-events-title"],
+      [data-mesh-id="comp-events-column-innerinlineContent-gridContainer"]
+        > wix-interact-element
+        > [id="comp-events-title"] {
+        position: relative;
+        margin: 0px auto 33px;
+        left: 0px;
+        grid-area: 1 / 1 / 2 / 2;
+        justify-self: center;
+        align-self: start;
+      }
+      [data-mesh-id="comp-events-column-innerinlineContent-gridContainer"]
+        > [id="comp-events-grid"],
+      [data-mesh-id="comp-events-column-innerinlineContent-gridContainer"]
+        > wix-interact-element
+        > [id="comp-events-grid"] {
+        position: relative;
+        margin: 0px 0px 40px calc((100% - 980px) * 0.5);
+        left: 0px;
+        grid-area: 2 / 1 / 3 / 2;
+        justify-self: start;
+        align-self: start;
+      }
+      [data-mesh-id="comp-events-column-innerinlineContent-gridContainer"]
+        > [id="comp-events-button"],
+      [data-mesh-id="comp-events-column-innerinlineContent-gridContainer"]
+        > wix-interact-element
+        > [id="comp-events-button"] {
+        position: relative;
+        margin: 0px auto 60px;
+        left: 0px;
+        grid-area: 3 / 1 / 4 / 2;
+        justify-self: center;
+        align-self: start;
+      }
+      #comp-events-column-inner {
         width: 980px;
       }
       #comp-lamrzn47 {
@@ -13203,6 +13292,43 @@
         }
       }
       #comp-lams11d4 {
+        width: 222px;
+        height: 46px;
+      }
+      #comp-events-button {
+        --rd: 0px;
+        --trans1: border-color 0.4s ease 0s, background-color 0.4s ease 0s;
+        --shd: none;
+        --fnt: normal normal normal 14px/1.4em avenir-lt-w01_35-light1475496,
+          sans-serif;
+        --trans2: color 0.4s ease 0s;
+        --txt: var(--color_32);
+        --brw: 1px;
+        --bg: 17, 60, 102;
+        --brd: 29, 29, 54;
+        --bgh: 92, 90, 219;
+        --brdh: 255, 255, 255;
+        --txth: 255, 255, 255;
+        --bgd: 204, 204, 204;
+        --alpha-bgd: 1;
+        --brdd: 204, 204, 204;
+        --alpha-brdd: 1;
+        --txtd: 255, 255, 255;
+        --alpha-txtd: 1;
+        --alpha-bg: 1;
+        --alpha-bgh: 0;
+        --alpha-brd: 1;
+        --alpha-brdh: 1;
+        --alpha-txt: 1;
+        --alpha-txth: 1;
+        --boxShadowToggleOn-shd: none;
+      }
+      @media (prefers-reduced-motion: no-preference) {
+        #comp-events-button:not([data-motion-enter="done"]) {
+          opacity: var(--comp-opacity, 1);
+        }
+      }
+      #comp-events-button {
         width: 222px;
         height: 46px;
       }
@@ -15708,7 +15834,7 @@
                                                         font-family: 'Inter', Arial, sans-serif;
                                                     ">
                                                         <!-- Contract Type -->
-                                                        @if($offre->contrat)
+                                                        @if(isset($offre->contrat) && !empty($offre->contrat))
                                                         <div class="wixui-rich-text__text" style="
                                                             font-size: 13px;
                                                             font-weight: 400;
@@ -15806,29 +15932,13 @@
                               </div>
                             </section>
                             <!--/$--><!--$-->
-                            <!-- Events Section -->
                             <section
                               id="comp-events-section"
                               tabindex="-1"
                               class="Oqnisf comp-events-section wixui-section"
                               data-block-level-container="ClassicSection"
                             >
-                              <div
-                                id="bgLayers_comp-events-section"
-                                data-hook="bgLayers"
-                                data-motion-part="BG_LAYER comp-events-section"
-                                class="MW5IWV"
-                              >
-                                <div
-                                  data-testid="colorUnderlay"
-                                  class="LWbAav Kv1aVt"
-                                ></div>
-                                <div
-                                  id="bgMedia_comp-events-section"
-                                  data-motion-part="BG_MEDIA comp-events-section"
-                                  class="VgO9Yg"
-                                ></div>
-                              </div>
+                           
                               <div
                                 data-mesh-id="comp-events-sectioninlineContent"
                                 data-testid="inline-content"
@@ -15931,314 +16041,12 @@
                                             </div>
                                             <!--/$--><!--$-->
                                             <div
-                                              id="comp-events-repeater"
-                                              class="comp-events-repeater wixui-repeater"
-                                            >
-                                              <div role="list" class="hRdzm4">
-                                                @if(!empty($events))
-                                                  @foreach($events as $event)
-                                                  <div
-                                                    role="listitem"
-                                                    class="T7n0L6"
-                                                      style="cursor: {{ $event->is_inactive ? 'not-allowed' : 'pointer' }}; pointer-events: {{ $event->is_inactive ? 'none' : 'auto' }}; opacity: {{ $event->is_inactive ? '0.6' : '1' }}; filter: {{ $event->is_inactive ? 'grayscale(100%)' : 'none' }};"
-                                                      @if(!$event->is_inactive) onclick="window.location.href='{{ route('event.show', $event->id) }}'" @endif
-                                                  >
-                                                    <!--$-->
-                                                    <div
-                                                            id="{{ $event->item_id }}"
-                                                      class="comp-events-item YzqVVZ wixui-repeater__item"
-                                                    >
-                                                      <div
-                                                              id="bgLayers_{{ $event->item_id }}"
-                                                        data-hook="bgLayers"
-                                                              data-motion-part="BG_LAYER {{ $event->item_id }}"
-                                                        class="MW5IWV"
-                                                      >
-                                                        <div
-                                                          data-testid="colorUnderlay"
-                                                          class="LWbAav Kv1aVt"
-                                                        ></div>
-                                                        <div
-                                                                id="bgMedia_{{ $event->item_id }}"
-                                                                data-motion-part="BG_MEDIA {{ $event->item_id }}"
-                                                          class="VgO9Yg"
-                                                        >
-                                                                @if($event->image_url)
-                                                          <wow-image
-                                                                    id="img_{{ $event->item_id }}"
-                                                            class="jhxvbR Kv1aVt dLPlxY mNGsUM bgImage"
-                                                                    data-image-info='{"containerId":"{{ $event->item_id }}","alignType":"center","displayMode":"fill","targetWidth":277,"targetHeight":246,"encoding":"AVIF","imageData":{"width":277,"height":246,"uri":"{{ $event->image }}","name":"","displayMode":"fill"}}'
-                                                                    data-motion-part="BG_IMG {{ $event->item_id }}"
-                                                            data-bg-effect-name=""
-                                                            data-has-ssr-src=""
-                                                            style="
-                                                              --wix-img-max-width: max(
-                                                                        277px,
-                                                                100%
-                                                              );
-                                                            "
-                                                            ><img
-                                                                      alt="{{ $event->title }}"
-                                                              style="
-                                                                width: 277px;
-                                                                height: 246px;
-                                                                object-fit: cover;
-                                                              "
-                                                              width="277"
-                                                              height="246"
-                                                              data-ssr-src-done="true"
-                                                              fetchpriority="high"
-                                                                      src="{{ $event->image_url }}"
-                                                          /></wow-image>
-                                                                @else
-                                                                  <div style="width: 277px; height: 246px; background-color: #e9ecef; display: flex; align-items: center; justify-content: center;">
-                                                                    <div style="width: 50px; height: 50px; background-image: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'24\' height=\'24\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'%23999\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'%3E%3Cpath d=\'M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z\'%3E%3C/path%3E%3Ccircle cx=\'12\' cy=\'13\' r=\'4\'%3E%3C/circle%3E%3Cline x1=\'1\' y1=\'1\' x2=\'23\' y2=\'23\' stroke=\'%23999\' stroke-width=\'2\'%3E%3C/line%3E%3C/svg%3E'); background-size: contain; background-repeat: no-repeat; background-position: center; opacity: 0.5;"></div>
-                                                                  </div>
-                                                                @endif
-                                                      </div>
-                                                  </div>
-                                                  <div
-                                                              data-mesh-id="{{ $event->item_id }}inlineContent"
-                                                        data-testid="inline-content"
-                                                        class=""
-                                                      >
-                                                        <div
-                                                                data-mesh-id="{{ $event->item_id }}inlineContent-gridContainer"
-                                                          data-testid="mesh-container-content"
-                                                        >
-                                                          <!--$-->
-                                                          <div
-                                                                  id="{{ $event->text_id }}"
-                                                            class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-events-text wixui-rich-text"
-                                                            data-testid="richTextElement"
-                                                          >
-                                                            <p
-                                                              class="font_7 wixui-rich-text__text"
-                                                              style="
-                                                                font-size: 22px;
-                                                                line-height: normal;
-                                                                text-align: center;
-                                                              "
-                                                            >
-                                                              <span
-                                                                style="
-                                                                  font-size: 22px;
-                                                                "
-                                                                class="wixui-rich-text__text"
-                                                                ><span
-                                                                  style="
-                                                                    color: #ffffff;
-                                                                  "
-                                                                  class="wixui-rich-text__text"
-                                                                  ><span
-                                                                    style="
-                                                                      font-weight: bold;
-                                                                    "
-                                                                    class="wixui-rich-text__text"
-                                                                    ><span
-                                                                      style="
-                                                                        font-family: avenir-lt-w01_35-light1475496,
-                                                                          avenir-lt-w05_35-light,
-                                                                          sans-serif;
-                                                                      "
-                                                                      class="wixui-rich-text__text"
-                                                                      ><span
-                                                                        style="
-                                                                          letter-spacing: normal;
-                                                                        "
-                                                                        class="wixui-rich-text__text"
-                                                                        ><span
-                                                                          style="
-                                                                            background-color: #113c66;
-                                                                          "
-                                                                          class="wixui-rich-text__text"
-                                                                          >&nbsp;
-                                                                                {{ $event->title_formatted ?? $event->title }}
-                                                                          &nbsp;</span
-                                                                        ></span
-                                                                      ></span
-                                                                    ></span
-                                                                  ></span
-                                                                ></span
-                                                              >
-                                                            </p>
-                                                          </div>
-                                                          <!--/$-->
-                                                        </div>
-                                                      </div>
-                                                    </div>
-                                                    <!--/$-->
-                                                  </div>
-                                                  @endforeach
-                                                @else
-                                                  <div style="text-align: center; padding: 40px; color: #666;">
-                                                    <p>Aucun événement disponible pour le moment.</p>
-                                                        </div>
-                                                @endif
-                                              </div>
-                                            </div>
-                                            <!--/$--><!--$-->
-                                            <div
-                                              class="comp-events-button FubTgk"
-                                              id="comp-events-button"
-                                              aria-disabled="false"
-                                            >
-                                              <a
-                                                data-testid="linkElement"
-                                                href="{{ route('events') }}"
-                                                target="_self"
-                                                class="uDW_Qe wixui-button PlZyDq"
-                                                aria-disabled="false"
-                                                aria-label="Découvrir tous les événements"
-                                                ><span
-                                                  class="l7_2fn wixui-button__label"
-                                                  >Découvrir nos
-                                                  événements</span
-                                                ></a
-                                              >
-                                            </div>
-                                            <!--/$-->
-                                          </div>
-                                        </div>
-                                      </div>
-                                      <!--/$-->
-                                    </div>
-                                  </section>
-                                  <!--/$-->
-                                </div>
-                              </div>
-                            </section>
-                            <!--/$--><!--$-->
-                            <section
-                              id="comp-lc96qudc"
-                              tabindex="-1"
-                              class="Oqnisf comp-lc96qudc wixui-section"
-                              data-block-level-container="ClassicSection"
-                            >
-                              <div
-                                id="bgLayers_comp-lc96qudc"
-                                data-hook="bgLayers"
-                                data-motion-part="BG_LAYER comp-lc96qudc"
-                                class="MW5IWV"
-                              >
-                                <div
-                                  data-testid="colorUnderlay"
-                                  class="LWbAav Kv1aVt"
-                                ></div>
-                                <div
-                                  id="bgMedia_comp-lc96qudc"
-                                  data-motion-part="BG_MEDIA comp-lc96qudc"
-                                  class="VgO9Yg"
-                                ></div>
-                              </div>
-                              <div
-                                data-mesh-id="comp-lc96qudcinlineContent"
-                                data-testid="inline-content"
-                                class=""
-                              >
-                                <div
-                                  data-mesh-id="comp-lc96qudcinlineContent-gridContainer"
-                                  data-testid="mesh-container-content"
-                                >
-                                  <!--$-->
-                                  <section
-                                    id="comp-lamrzcyn"
-                                    class="comp-lamrzcyn CohWsy wixui-column-strip"
-                                  >
-                                    <div
-                                      id="bgLayers_comp-lamrzcyn"
-                                      data-hook="bgLayers"
-                                      data-motion-part="BG_LAYER comp-lamrzcyn"
-                                      class="if7Vw2"
-                                    >
-                                      <div
-                                        data-testid="colorUnderlay"
-                                        class="tcElKx i1tH8h"
-                                      ></div>
-                                      <div
-                                        id="bgMedia_comp-lamrzcyn"
-                                        data-motion-part="BG_MEDIA comp-lamrzcyn"
-                                        class="wG8dni"
-                                      ></div>
-                                    </div>
-                                    <div data-testid="columns" class="V5AUxf">
-                                      <!--$-->
-                                      <div
-                                        id="comp-lamrzczo"
-                                        class="comp-lamrzczo YzqVVZ wixui-column-strip__column"
-                                      >
-                                        <div
-                                          id="bgLayers_comp-lamrzczo"
-                                          data-hook="bgLayers"
-                                          data-motion-part="BG_LAYER comp-lamrzczo"
-                                          class="MW5IWV"
-                                        >
-                                          <div
-                                            data-testid="colorUnderlay"
-                                            class="LWbAav Kv1aVt"
-                                          ></div>
-                                          <div
-                                            id="bgMedia_comp-lamrzczo"
-                                            data-motion-part="BG_MEDIA comp-lamrzczo"
-                                            class="VgO9Yg"
-                                          ></div>
-                                        </div>
-                                        <div
-                                          data-mesh-id="comp-lamrzczoinlineContent"
-                                          data-testid="inline-content"
-                                          class=""
-                                        >
-                                          <div
-                                            data-mesh-id="comp-lamrzczoinlineContent-gridContainer"
-                                            data-testid="mesh-container-content"
-                                          >
-                                            <!--$-->
-                                            <div
-                                              id="comp-lamrzn37"
-                                              class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-lamrzn37 wixui-rich-text"
-                                              data-testid="richTextElement"
-                                            >
-                                              <h2
-                                                class="font_2 wixui-rich-text__text"
-                                                style="
-                                                  line-height: normal;
-                                                  text-align: center;
-                                                  font-size: 26px;
-                                                "
-                                              >
-                                                <span
-                                                  style="color: #113c66"
-                                                  class="wixui-rich-text__text"
-                                                  ><span
-                                                    style="
-                                                      font-family: avenir-lt-w01_85-heavy1475544,
-                                                        avenir-lt-w05_85-heavy,
-                                                        sans-serif;
-                                                    "
-                                                    class="wixui-rich-text__text"
-                                                    ><span
-                                                      style="font-weight: bold"
-                                                      class="wixui-rich-text__text"
-                                                      ><span
-                                                        style="
-                                                          letter-spacing: normal;
-                                                        "
-                                                        class="wixui-rich-text__text"
-                                                        >Actualités</span
-                                                      ></span
-                                                    ></span
-                                                  ></span
-                                                >
-                                              </h2>
-                                            </div>
-                                            <!--/$--><!--$-->
-                                            <div
-                                              id="comp-lamrzn46"
+                                              id="comp-events-grid"
                                               class="TWFxr5"
                                               style="min-width: 0px; display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; max-width: 980px; margin: 0 auto; padding-bottom: 40px;"
                                             >
-                                              @if(!empty($articles))
-                                                @foreach($articles as $article)
+                                              @if(!empty($events))
+                                                @foreach($events as $event)
                                                   <div style="
                                                     position: relative;
                                                     width: 292px !important;
@@ -16246,9 +16054,8 @@
                                                     overflow: hidden;
                                                     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
                                                     cursor: pointer;
-                                                    pointer-events: auto;
-                                                  " onclick="window.location.href='{{ route('article.details', $article->id) }}'">
-                                                    @if($article->image_url)
+                                                  " onclick="window.location.href='{{ route('event.show', $event->id) }}'">
+                                                    @if($event->image_url)
                                                     <!-- Background Image -->
                                                     <div style="
                                                         position: absolute;
@@ -16256,7 +16063,7 @@
                                                         left: 0;
                                                         width: 292px;
                                                         height: 292px;
-                                                        background-image: url({{ $article->image_url }});
+                                                        background-image: url({{ $event->image_url }});
                                                         background-size: cover;
                                                         background-position: center;
                                                     "></div>
@@ -16276,110 +16083,98 @@
                                                         <div style="width: 60px; height: 60px; background-image: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' width=\'24\' height=\'24\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'%23999\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'%3E%3Cpath d=\'M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z\'%3E%3C/path%3E%3Ccircle cx=\'12\' cy=\'13\' r=\'4\'%3E%3C/circle%3E%3Cline x1=\'1\' y1=\'1\' x2=\'23\' y2=\'23\' stroke=\'%23999\' stroke-width=\'2\'%3E%3C/line%3E%3C/svg%3E'); background-size: contain; background-repeat: no-repeat; background-position: center; opacity: 0.5;"></div>
                                                     </div>
                                                     @endif
-    
-    <!-- Overlay -->
-    <div style="
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 292px;
-        height: 292px;
-        background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
-    "></div>
-    
-    <!-- Content -->
-    <div style="
-        position: absolute;
-        bottom: 30px;
-        left: 30px;
-        color: white;
-        font-family: 'Inter', Arial, sans-serif;
-    ">
-        <!-- Category -->
-                                                        @if($article->articleType)
-        <div class="wixui-rich-text__text" style="
-            font-size: 13px;
-            font-weight: 400;
-            margin-bottom: 8px;
-            opacity: 0.95;
-            letter-spacing: 0.3px;
-                                                          ">{{ $article->articleType->nom_formatted ?? $article->articleType->nom ?? '' }}</div>
-                                                        @endif
-        
-        <!-- Title -->
-        <p
-                                                              class="font_7 wixui-rich-text__text"
-                                                              style="
-                                                                font-size: 22px;
-                                                                line-height: normal;
+            
+                                                    <!-- Overlay -->
+                                                    <div style="
+                                                        position: absolute;
+                                                        top: 0;
+                                                        left: 0;
+                                                        width: 292px;
+                                                        height: 292px;
+                                                        background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+                                                    "></div>
+                                                    
+                                                    <!-- Content -->
+                                                    <div style="
+                                                        position: absolute;
+                                                        bottom: 30px;
+                                                        left: 30px;
+                                                        color: white;
+                                                        font-family: 'Inter', Arial, sans-serif;
+                                                    ">
+                                                        <!-- Title -->
+                                                        <p
+                                                          class="font_7 wixui-rich-text__text"
+                                                          style="
+                                                            font-size: 22px;
+                                                            line-height: normal;
                                                             text-align: left;
+                                                          "
+                                                        >
+                                                          <span
+                                                            style="
+                                                              font-size: 22px;
+                                                            "
+                                                            class="wixui-rich-text__text"
+                                                            ><span
+                                                              style="
+                                                                color: #ffffff;
                                                               "
-                                                            >
-                                                              <span
+                                                              class="wixui-rich-text__text"
+                                                              ><span
                                                                 style="
-                                                                  font-size: 22px;
+                                                                  font-weight: bold;
                                                                 "
                                                                 class="wixui-rich-text__text"
                                                                 ><span
                                                                   style="
-                                                                    color: #ffffff;
+                                                                    font-family: avenir-lt-w01_35-light1475496,
+                                                                      avenir-lt-w05_35-light,
+                                                                      sans-serif;
                                                                   "
                                                                   class="wixui-rich-text__text"
                                                                   ><span
                                                                     style="
-                                                                      font-weight: bold;
+                                                                      letter-spacing: normal;
                                                                     "
                                                                     class="wixui-rich-text__text"
                                                                     ><span
-                                                                      style="
-                                                                        font-family: avenir-lt-w01_35-light1475496,
-                                                                          avenir-lt-w05_35-light,
-                                                                          sans-serif;
-                                                                      "
                                                                       class="wixui-rich-text__text"
-                                                                      ><span
-                                                                        style="
-                                                                          letter-spacing: normal;
-                                                                        "
-                                                                        class="wixui-rich-text__text"
-                                                                        ><span
-                                                                          class="wixui-rich-text__text"
-                                                                          >
-                                                                      {{ $article->titre_formatted ?? $article->titre }}
-                                                                          &nbsp;</span
-                                                                        ></span
-                                                                      ></span
+                                                                      >
+                                                                  {{ $event->title_formatted ?? $event->title }}
+                                                                      &nbsp;</span
                                                                     ></span
                                                                   ></span
                                                                 ></span
-                                                              >
-                                                            </p>
-    </div>
-</div>
+                                                              ></span
+                                                            ></span
+                                                          >
+                                                        </p>
+                                                    </div>
+                                                  </div>
                                                 @endforeach
                                               @else
                                                 <div style="text-align: center; padding: 40px; color: #666; width: 100%;">
-                                                  <p>Aucun article disponible pour le moment.</p>
+                                                  <p>Aucun événement disponible pour le moment.</p>
                                                 </div>
                                               @endif
                                             </div>
                                             <!--/$--><!--$-->
                                             <div
-                                              class="comp-lams11d3 FubTgk"
-                                              id="comp-lams11d3"
+                                              class="comp-events-button FubTgk"
+                                              id="comp-events-button"
                                               aria-disabled="false"
                                             >
                                               <a
                                                 data-testid="linkElement"
-                                                href="{{ route('actualites') }}"
+                                                href="{{ route('events') }}"
                                                 target="_self"
                                                 class="uDW_Qe wixui-button PlZyDq"
                                                 aria-disabled="false"
-                                                aria-label="Découvrir nos actualités"
+                                                aria-label="Découvrir tous les événements"
                                                 ><span
                                                   class="l7_2fn wixui-button__label"
-                                                  >Découvrir nos
-                                                  actualités</span
+                                                  >Découvrir tout</span
                                                 ></a
                                               >
                                             </div>

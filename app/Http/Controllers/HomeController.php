@@ -371,6 +371,8 @@ class HomeController extends Controller
                         'image_url' => $imageUrl,
                         'created_at' => $offre->created_at ?? null,
                         'date_formatted' => $dateFormatted,
+                        'contrat' => $offre->contrat ?? null,
+                        'ville' => $offre->ville ?? null,
                     ]);
                 } catch (\Exception $e) {
                     Log::error('HomeController - Error processing single offre: ' . $e->getMessage());
@@ -388,7 +390,7 @@ class HomeController extends Controller
     private function processEvents()
     {
         try {
-            $allEvents = Event::orderBy('start_date', 'desc')->limit(3)->get();
+            $allEvents = Event::where('active', true)->latest('start_date')->limit(3)->get();
             
             if ($allEvents->isEmpty()) {
                 return collect([]);
