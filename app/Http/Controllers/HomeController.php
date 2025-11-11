@@ -363,6 +363,10 @@ class HomeController extends Controller
                         }
                     }
                     
+                    // Check if offre is active - get raw value to avoid cast issues
+                    $activeValue = $offre->getRawOriginal('active') ?? $offre->active ?? true;
+                    $isActive = (bool)$activeValue;
+                    
                     $processed->push((object)[
                         'id' => $offre->id ?? null,
                         'titre' => $offre->titre ?? '',
@@ -373,8 +377,8 @@ class HomeController extends Controller
                         'date_formatted' => $dateFormatted,
                         'contrat' => $offre->contrat ?? null,
                         'ville' => $offre->ville ?? null,
-                        'active' => $offre->active ?? true,
-                        'is_inactive' => !($offre->active ?? true),
+                        'active' => $isActive,
+                        'is_inactive' => !$isActive,
                     ]);
                 } catch (\Exception $e) {
                     Log::error('HomeController - Error processing single offre: ' . $e->getMessage());
@@ -426,8 +430,9 @@ class HomeController extends Controller
                         }
                     }
                     
-                    // Check if event is inactive (same logic as events page)
-                    $isInactive = !($event->active ?? true);
+                    // Check if event is active - get raw value to avoid cast issues
+                    $activeValue = $event->getRawOriginal('active') ?? $event->active ?? true;
+                    $isActive = (bool)$activeValue;
                     
                     $processed->push((object)[
                         'id' => $event->id ?? null,
@@ -439,8 +444,8 @@ class HomeController extends Controller
                         'end_date' => $event->end_date ?? null,
                         'date_formatted' => $dateFormatted,
                         'location' => $event->location ?? '',
-                        'active' => $event->active ?? true,
-                        'is_inactive' => $isInactive,
+                        'active' => $isActive,
+                        'is_inactive' => !$isActive,
                         'item_id' => 'comp-events-item-' . ($event->id ?? ''),
                         'text_id' => 'comp-events-text-' . ($event->id ?? ''),
                     ]);
