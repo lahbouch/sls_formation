@@ -13269,8 +13269,8 @@
         --brw: 1px;
         --bg: 17, 60, 102;
         --brd: 29, 29, 54;
-        --bgh: 92, 90, 219;
-        --brdh: 255, 255, 255;
+        --bgh: 17, 60, 102;
+        --brdh: 29, 29, 54;
         --txth: 255, 255, 255;
         --bgd: 204, 204, 204;
         --alpha-bgd: 1;
@@ -13279,7 +13279,7 @@
         --txtd: 255, 255, 255;
         --alpha-txtd: 1;
         --alpha-bg: 1;
-        --alpha-bgh: 0;
+        --alpha-bgh: 1;
         --alpha-brd: 1;
         --alpha-brdh: 1;
         --alpha-txt: 1;
@@ -13306,8 +13306,8 @@
         --brw: 1px;
         --bg: 17, 60, 102;
         --brd: 29, 29, 54;
-        --bgh: 92, 90, 219;
-        --brdh: 255, 255, 255;
+        --bgh: 17, 60, 102;
+        --brdh: 29, 29, 54;
         --txth: 255, 255, 255;
         --bgd: 204, 204, 204;
         --alpha-bgd: 1;
@@ -13316,7 +13316,7 @@
         --txtd: 255, 255, 255;
         --alpha-txtd: 1;
         --alpha-bg: 1;
-        --alpha-bgh: 0;
+        --alpha-bgh: 1;
         --alpha-brd: 1;
         --alpha-brdh: 1;
         --alpha-txt: 1;
