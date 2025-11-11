@@ -329,7 +329,7 @@ class HomeController extends Controller
     private function processOffres()
     {
         try {
-            $allOffres = OffreEmploi::where('active', true)->latest('created_at')->limit(3)->get();
+            $allOffres = OffreEmploi::latest('created_at')->limit(3)->get();
             
             if ($allOffres->isEmpty()) {
                 return collect([]);
@@ -373,6 +373,8 @@ class HomeController extends Controller
                         'date_formatted' => $dateFormatted,
                         'contrat' => $offre->contrat ?? null,
                         'ville' => $offre->ville ?? null,
+                        'active' => $offre->active ?? true,
+                        'is_inactive' => !($offre->active ?? true),
                     ]);
                 } catch (\Exception $e) {
                     Log::error('HomeController - Error processing single offre: ' . $e->getMessage());
@@ -390,7 +392,7 @@ class HomeController extends Controller
     private function processEvents()
     {
         try {
-            $allEvents = Event::where('active', true)->latest('start_date')->limit(3)->get();
+            $allEvents = Event::latest('start_date')->limit(3)->get();
             
             if ($allEvents->isEmpty()) {
                 return collect([]);

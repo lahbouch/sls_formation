@@ -15784,8 +15784,10 @@
                                                     height: 292px !important;
                                                     overflow: hidden;
                                                     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-                                                    cursor: pointer;
-                                                  " onclick="window.location.href='{{ route('offre-emploi.show', $offre->id) }}'">
+                                                    cursor: {{ isset($offre->is_inactive) && $offre->is_inactive ? 'not-allowed' : 'pointer' }};
+                                                    opacity: {{ isset($offre->is_inactive) && $offre->is_inactive ? '0.6' : '1' }};
+                                                    filter: {{ isset($offre->is_inactive) && $offre->is_inactive ? 'grayscale(100%)' : 'none' }};
+                                                  " @if(!isset($offre->is_inactive) || !$offre->is_inactive) onclick="window.location.href='{{ route('offre-emploi.show', $offre->id) }}'" @endif>
                                                     @if($offre->image_url)
                                                     <!-- Background Image -->
                                                     <div style="
@@ -16036,8 +16038,10 @@
                                                     height: 292px !important;
                                                     overflow: hidden;
                                                     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-                                                    cursor: pointer;
-                                                  " onclick="window.location.href='{{ route('event.show', $event->id) }}'">
+                                                    cursor: {{ isset($event->is_inactive) && $event->is_inactive ? 'not-allowed' : 'pointer' }};
+                                                    opacity: {{ isset($event->is_inactive) && $event->is_inactive ? '0.6' : '1' }};
+                                                    filter: {{ isset($event->is_inactive) && $event->is_inactive ? 'grayscale(100%)' : 'none' }};
+                                                  " @if(!isset($event->is_inactive) || !$event->is_inactive) onclick="window.location.href='{{ route('event.show', $event->id) }}'" @endif>
                                                     @if($event->image_url)
                                                     <!-- Background Image -->
                                                     <div style="
