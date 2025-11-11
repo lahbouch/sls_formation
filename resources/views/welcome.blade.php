@@ -15828,70 +15828,53 @@
                                                     <!-- Content -->
                                                     <div style="
                                                         position: absolute;
-                                                        bottom: 30px;
-                                                        left: 30px;
+                                                        bottom: 20px;
+                                                        left: 20px;
+                                                        right: 20px;
                                                         color: white;
                                                         font-family: 'Inter', Arial, sans-serif;
                                                     ">
-                                                        <!-- Contract Type -->
-                                                        @if(isset($offre->contrat) && !empty($offre->contrat))
-                                                        <div class="wixui-rich-text__text" style="
-                                                            font-size: 13px;
-                                                            font-weight: 400;
-                                                            margin-bottom: 8px;
-                                                            opacity: 0.95;
-                                                            letter-spacing: 0.3px;
-                                                        ">{{ strtoupper($offre->contrat) }}</div>
-                                                        @endif
-                                                        
                                                         <!-- Title -->
-                                                        <p
-                                                          class="font_7 wixui-rich-text__text"
-                                                          style="
-                                                            font-size: 22px;
-                                                            line-height: normal;
-                                                            text-align: left;
-                                                          "
-                                                        >
-                                                          <span
-                                                            style="
-                                                              font-size: 22px;
-                                                            "
-                                                            class="wixui-rich-text__text"
-                                                            ><span
-                                                              style="
-                                                                color: #ffffff;
-                                                              "
-                                                              class="wixui-rich-text__text"
-                                                              ><span
-                                                                style="
-                                                                  font-weight: bold;
-                                                                "
-                                                                class="wixui-rich-text__text"
-                                                                ><span
-                                                                  style="
-                                                                    font-family: avenir-lt-w01_35-light1475496,
-                                                                      avenir-lt-w05_35-light,
-                                                                      sans-serif;
-                                                                  "
-                                                                  class="wixui-rich-text__text"
-                                                                  ><span
-                                                                    style="
-                                                                      letter-spacing: normal;
-                                                                    "
-                                                                    class="wixui-rich-text__text"
-                                                                    ><span
-                                                                      class="wixui-rich-text__text"
-                                                                      >
-                                                                  {{ $offre->titre }}
-                                                                      &nbsp;</span
-                                                                    ></span
-                                                                  ></span
-                                                                ></span
-                                                              ></span
-                                                            ></span
-                                                          >
-                                                        </p>
+                                                        <h3 style="
+                                                            font-size: 20px;
+                                                            font-weight: bold;
+                                                            margin: 0 0 12px 0;
+                                                            line-height: 1.3;
+                                                            text-transform: uppercase;
+                                                        ">{{ $offre->titre }}</h3>
+                                                        
+                                                        <!-- Info Items -->
+                                                        <div style="display: flex; flex-direction: column; gap: 6px;">
+                                                            @if(isset($offre->contrat) && !empty($offre->contrat))
+                                                            <div style="display: flex; align-items: center; gap: 8px;">
+                                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0;">
+                                                                    <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                                                                    <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                                                                </svg>
+                                                                <span style="font-size: 14px; opacity: 0.95;">{{ strtoupper($offre->contrat) }}</span>
+                                                            </div>
+                                                            @endif
+                                                            
+                                                            @if(isset($offre->ville) && !empty($offre->ville))
+                                                            <div style="display: flex; align-items: center; gap: 8px;">
+                                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0;">
+                                                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                                                    <circle cx="12" cy="10" r="3"></circle>
+                                                                </svg>
+                                                                <span style="font-size: 14px; opacity: 0.95;">{{ $offre->ville }}</span>
+                                                            </div>
+                                                            @endif
+                                                            
+                                                            @if(isset($offre->date_formatted) && !empty($offre->date_formatted))
+                                                            <div style="display: flex; align-items: center; gap: 8px;">
+                                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0;">
+                                                                    <circle cx="12" cy="12" r="10"></circle>
+                                                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                                                </svg>
+                                                                <span style="font-size: 14px; opacity: 0.95;">{{ $offre->date_formatted }}</span>
+                                                            </div>
+                                                            @endif
+                                                        </div>
                                                     </div>
                                                   </div>
                                                 @endforeach
@@ -16097,59 +16080,44 @@
                                                     <!-- Content -->
                                                     <div style="
                                                         position: absolute;
-                                                        bottom: 30px;
-                                                        left: 30px;
+                                                        bottom: 20px;
+                                                        left: 20px;
+                                                        right: 20px;
                                                         color: white;
                                                         font-family: 'Inter', Arial, sans-serif;
                                                     ">
                                                         <!-- Title -->
-                                                        <p
-                                                          class="font_7 wixui-rich-text__text"
-                                                          style="
-                                                            font-size: 22px;
-                                                            line-height: normal;
-                                                            text-align: left;
-                                                          "
-                                                        >
-                                                          <span
-                                                            style="
-                                                              font-size: 22px;
-                                                            "
-                                                            class="wixui-rich-text__text"
-                                                            ><span
-                                                              style="
-                                                                color: #ffffff;
-                                                              "
-                                                              class="wixui-rich-text__text"
-                                                              ><span
-                                                                style="
-                                                                  font-weight: bold;
-                                                                "
-                                                                class="wixui-rich-text__text"
-                                                                ><span
-                                                                  style="
-                                                                    font-family: avenir-lt-w01_35-light1475496,
-                                                                      avenir-lt-w05_35-light,
-                                                                      sans-serif;
-                                                                  "
-                                                                  class="wixui-rich-text__text"
-                                                                  ><span
-                                                                    style="
-                                                                      letter-spacing: normal;
-                                                                    "
-                                                                    class="wixui-rich-text__text"
-                                                                    ><span
-                                                                      class="wixui-rich-text__text"
-                                                                      >
-                                                                  {{ $event->title_formatted ?? $event->title }}
-                                                                      &nbsp;</span
-                                                                    ></span
-                                                                  ></span
-                                                                ></span
-                                                              ></span
-                                                            ></span
-                                                          >
-                                                        </p>
+                                                        <h3 style="
+                                                            font-size: 20px;
+                                                            font-weight: bold;
+                                                            margin: 0 0 12px 0;
+                                                            line-height: 1.3;
+                                                        ">{{ $event->title_formatted ?? $event->title }}</h3>
+                                                        
+                                                        <!-- Info Items -->
+                                                        <div style="display: flex; flex-direction: column; gap: 6px;">
+                                                            @if(isset($event->location) && !empty($event->location))
+                                                            <div style="display: flex; align-items: center; gap: 8px;">
+                                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0;">
+                                                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                                                                    <circle cx="12" cy="10" r="3"></circle>
+                                                                </svg>
+                                                                <span style="font-size: 14px; opacity: 0.95;">{{ $event->location }}</span>
+                                                            </div>
+                                                            @endif
+                                                            
+                                                            @if(isset($event->start_date) && $event->start_date)
+                                                            <div style="display: flex; align-items: center; gap: 8px;">
+                                                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="flex-shrink: 0;">
+                                                                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                                                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                                                                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                                                                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                                                                </svg>
+                                                                <span style="font-size: 14px; opacity: 0.95;">{{ $event->date_formatted ?? \Carbon\Carbon::parse($event->start_date)->format('d M Y') }}</span>
+                                                            </div>
+                                                            @endif
+                                                        </div>
                                                     </div>
                                                   </div>
                                                 @endforeach

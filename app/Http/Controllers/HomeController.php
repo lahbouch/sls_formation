@@ -423,6 +423,15 @@ class HomeController extends Controller
                         Log::error('HomeController - Error checking event active status: ' . $e->getMessage());
                     }
                     
+                    $dateFormatted = '';
+                    if ($event->start_date) {
+                        try {
+                            $dateFormatted = \Carbon\Carbon::parse($event->start_date)->format('d M Y');
+                        } catch (\Exception $e) {
+                            $dateFormatted = '';
+                        }
+                    }
+                    
                     $processed->push((object)[
                         'id' => $event->id ?? null,
                         'title' => $event->title ?? '',
@@ -431,6 +440,7 @@ class HomeController extends Controller
                         'image_url' => $imageUrl,
                         'start_date' => $event->start_date ?? null,
                         'end_date' => $event->end_date ?? null,
+                        'date_formatted' => $dateFormatted,
                         'location' => $event->location ?? '',
                         'active' => $isActive,
                         'is_inactive' => !$isActive,
