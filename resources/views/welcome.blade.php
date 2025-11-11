@@ -15053,6 +15053,16 @@
       #SITE_FOOTER {
         flex-shrink: 0;
       }
+      /* Inactive card styles for home page */
+      .home-card-inactive {
+        opacity: 0.6 !important;
+        filter: grayscale(100%) !important;
+        cursor: not-allowed !important;
+        pointer-events: none !important;
+      }
+      .home-card-inactive:hover {
+        transform: none !important;
+      }
     </style>
     <!--pageHtmlEmbeds.bodyStart start-->
 
@@ -15778,16 +15788,17 @@
                                             >
                                               @if(!empty($offres))
                                                 @foreach($offres as $offre)
-                                                  <div style="
+                                                  @php
+                                                    $isInactive = isset($offre->is_inactive) && $offre->is_inactive;
+                                                  @endphp
+                                                  <div class="{{ $isInactive ? 'home-card-inactive' : '' }}" style="
                                                     position: relative;
                                                     width: 292px !important;
                                                     height: 292px !important;
                                                     overflow: hidden;
                                                     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-                                                    cursor: {{ isset($offre->is_inactive) && $offre->is_inactive ? 'not-allowed' : 'pointer' }};
-                                                    opacity: {{ isset($offre->is_inactive) && $offre->is_inactive ? '0.6' : '1' }};
-                                                    filter: {{ isset($offre->is_inactive) && $offre->is_inactive ? 'grayscale(100%)' : 'none' }};
-                                                  " @if(!isset($offre->is_inactive) || !$offre->is_inactive) onclick="window.location.href='{{ route('offre-emploi.show', $offre->id) }}'" @endif>
+                                                    cursor: pointer;
+                                                  " @if(!$isInactive) onclick="window.location.href='{{ route('offre-emploi.show', $offre->id) }}'" @endif>
                                                     @if($offre->image_url)
                                                     <!-- Background Image -->
                                                     <div style="
@@ -16032,16 +16043,17 @@
                                             >
                                               @if(!empty($events))
                                                 @foreach($events as $event)
-                                                  <div style="
+                                                  @php
+                                                    $isInactive = isset($event->is_inactive) && $event->is_inactive;
+                                                  @endphp
+                                                  <div class="{{ $isInactive ? 'home-card-inactive' : '' }}" style="
                                                     position: relative;
                                                     width: 292px !important;
                                                     height: 292px !important;
                                                     overflow: hidden;
                                                     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-                                                    cursor: {{ isset($event->is_inactive) && $event->is_inactive ? 'not-allowed' : 'pointer' }};
-                                                    opacity: {{ isset($event->is_inactive) && $event->is_inactive ? '0.6' : '1' }};
-                                                    filter: {{ isset($event->is_inactive) && $event->is_inactive ? 'grayscale(100%)' : 'none' }};
-                                                  " @if(!isset($event->is_inactive) || !$event->is_inactive) onclick="window.location.href='{{ route('event.show', $event->id) }}'" @endif>
+                                                    cursor: pointer;
+                                                  " @if(!$isInactive) onclick="window.location.href='{{ route('event.show', $event->id) }}'" @endif>
                                                     @if($event->image_url)
                                                     <!-- Background Image -->
                                                     <div style="

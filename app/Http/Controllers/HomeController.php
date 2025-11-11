@@ -417,14 +417,6 @@ class HomeController extends Controller
                         }
                     }
                     
-                    $isActive = false;
-                    try {
-                        $isActive = $event->isCurrentlyActive();
-                    } catch (\Exception $e) {
-                        // If isCurrentlyActive fails, default to false
-                        Log::error('HomeController - Error checking event active status: ' . $e->getMessage());
-                    }
-                    
                     $dateFormatted = '';
                     if ($event->start_date) {
                         try {
@@ -433,6 +425,9 @@ class HomeController extends Controller
                             $dateFormatted = '';
                         }
                     }
+                    
+                    // Check if event is inactive (same logic as events page)
+                    $isInactive = !($event->active ?? true);
                     
                     $processed->push((object)[
                         'id' => $event->id ?? null,
@@ -444,8 +439,8 @@ class HomeController extends Controller
                         'end_date' => $event->end_date ?? null,
                         'date_formatted' => $dateFormatted,
                         'location' => $event->location ?? '',
-                        'active' => $isActive,
-                        'is_inactive' => !$isActive,
+                        'active' => $event->active ?? true,
+                        'is_inactive' => $isInactive,
                         'item_id' => 'comp-events-item-' . ($event->id ?? ''),
                         'text_id' => 'comp-events-text-' . ($event->id ?? ''),
                     ]);
