@@ -86,23 +86,38 @@ class ServicesController extends Controller
                         }
                     }
                     
+                    // Pre-generate route URL to avoid calling route() in view loops
+                    $detailsUrl = route('offre.details', $offre->id);
+                    
                     return (object)[
                         'id' => $offre->id,
                         'titre' => $offre->titre,
+                        'title' => $offre->title,
+                        'intitule' => $offre->intitule,
+                        'num' => $offre->num,
                         'description' => $offre->description,
                         'image' => $offre->image,
                         'image_url' => $offreImageUrl,
                         'contrat' => $offre->contrat,
                         'created_at' => $offre->created_at,
+                        'details_url' => $detailsUrl, // Pre-generated route URL
                     ];
                 });
                 
                 return (object)[
                     'id' => $type->id,
                     'nom' => $type->nom,
+                    'code' => $type->code,
                     'offres' => $offres,
                 ];
             });
+            
+            // Pre-compute collection checks to avoid doing it in the view
+            $hasTypes = $types->isNotEmpty();
+            $hasOffres = $types->contains(function($type) {
+                return $type->offres->isNotEmpty();
+            });
+            $hasNoOffres = !$hasTypes || !$hasOffres;
             
             $serviceData = (object)[
                 'id' => $service->id,
@@ -113,6 +128,7 @@ class ServicesController extends Controller
                 'minimized_image' => $service->minimized_image,
                 'minimized_image_url' => $minimizedImageUrl,
                 'types' => $types,
+                'has_no_offres' => $hasNoOffres, // Pre-computed check
             ];
             
             $descriptionShort = mb_strlen($serviceData->description) > 160 ? mb_substr(strip_tags($serviceData->description), 0, 160) . '...' : strip_tags($serviceData->description);

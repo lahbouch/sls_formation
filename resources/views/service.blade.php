@@ -312,7 +312,7 @@
                         <div class="offres-grid" id="offresGrid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 980px;">
                             @foreach($serviceData->types as $type)
                                 @foreach($type->offres as $offre)
-                                    <div class="offre-card" data-type-id="{{ $type->id }}" data-offre-id="{{ $offre->id }}" onclick="window.location.href='{{ route('offre.details', $offre->id) }}'" style="background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;">
+                                    <div class="offre-card" data-type-id="{{ $type->id }}" data-offre-id="{{ $offre->id }}" onclick="window.location.href='{{ $offre->details_url }}'" style="background-color: #ffffff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;">
                                         @if($offre->image_url)
                                             <img src="{{ $offre->image_url }}" alt="{{ $offre->intitule }}" class="offre-card-image" style="width: 100%; height: 223px; object-fit: cover;">
                                         @else
@@ -342,7 +342,7 @@
                         </div>
                     </div>
 
-                    @if($serviceData->types->isEmpty() || $serviceData->types->every(fn($type) => $type->offres->isEmpty()))
+                    @if($serviceData->has_no_offres)
                         <div style="text-align: center; padding: 40px; color: #666;">
                             <p>Aucune offre disponible pour ce service pour le moment.</p>
                         </div>
