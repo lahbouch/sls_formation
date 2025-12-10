@@ -83,9 +83,7 @@ Route::get('/jobs_ma_simple', function() {
 // Test route with controller but no view
 Route::get('/jobs_ma_minimal', [\App\Http\Controllers\RecrutementController::class, 'minimal']);
 
-Route::get('/contact', function () {
-    return view('contact');
-})->name('contact');
+Route::get('/contact', [\App\Http\Controllers\ContactController::class, 'index'])->name('contact');
 
 Route::post('/contact', [\App\Http\Controllers\ContactController::class, 'store'])->name('contact.store');
 

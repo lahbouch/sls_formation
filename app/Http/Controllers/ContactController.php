@@ -3,11 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Models\Contact;
+use App\Models\Info;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
 class ContactController extends Controller
 {
+    public function index()
+    {
+        $info = Info::first();
+        return view('contact', compact('info'));
+    }
+
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
