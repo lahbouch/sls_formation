@@ -129,6 +129,12 @@ class OffreResource extends Resource
                     ->label('Intitulé')
                     ->searchable()
                     ->limit(50),
+                Tables\Columns\TextColumn::make('subscriptions_count')
+                    ->label('Inscriptions')
+                    ->counts('subscriptions')
+                    ->sortable()
+                    ->badge()
+                    ->color(fn ($state) => $state > 0 ? 'success' : 'gray'),
                 Tables\Columns\ImageColumn::make('image')
                     ->label('Image')
                     ->disk('public')
@@ -160,7 +166,7 @@ class OffreResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            RelationManagers\SubscriptionsRelationManager::class,
         ];
     }
 

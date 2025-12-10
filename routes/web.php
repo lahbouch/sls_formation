@@ -98,6 +98,8 @@ Route::get('/offres/{id}', function ($id) {
     return view('offre-details', compact('offre'));
 })->name('offre.details');
 
+Route::post('/offres/subscribe', [\App\Http\Controllers\OffreSubscriptionController::class, 'store'])->name('offre.subscribe');
+
 Route::get('/articles/{id}', [\App\Http\Controllers\ArticleController::class, 'show'])->name('article.details');
 
 // Events routes

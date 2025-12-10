@@ -102,7 +102,7 @@
   <style>.OQ8Tzd,.nKphmK{overflow:hidden}.nKphmK{height:100%;position:relative;width:100%}.nKphmK:-ms-fullscreen{min-height:auto!important}.nKphmK:fullscreen{min-height:auto!important}.pvlz2w{visibility:hidden}</style>
   <style>.TWFxr5{height:auto!important}.May50y{overflow:hidden!important}</style>
   <title>{{ $offre->type->nom }}</title>
-    
+  <meta name="csrf-token" content="{{ csrf_token() }}">
     
     
     
@@ -210,7 +210,148 @@
 
 
 </span></span></span></div></div><!--/$--><!--$--><div id="comp-lgjn0c1h" class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-lgjn0c1h wixui-rich-text" data-testid="richTextElement"><p class="font_8 wixui-rich-text__text" style="font-size:16px; line-height:normal;"><span style="font-family:avenir-lt-w01_85-heavy1475544,avenir-lt-w05_85-heavy,sans-serif;" class="wixui-rich-text__text"><span style="font-size:16px;" class="wixui-rich-text__text"><span class="color_19 wixui-rich-text__text"><span style="text-decoration:underline;" class="wixui-rich-text__text"><span style="letter-spacing:normal;" class="wixui-rich-text__text"><span class="backcolor_32 wixui-rich-text__text">PREREQUIS</span></span></span></span></span></span></p></div>
-<!--/$--><!--$--><div id="comp-laokpave" class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-laokpave wixui-rich-text" data-testid="richTextElement"><div class="font_8 wixui-rich-text__text" style="font-size:16px; line-height:normal;"><span class="color_19 wixui-rich-text__text"><span style="font-size:16px;" class="wixui-rich-text__text"><span style="letter-spacing:normal;" class="wixui-rich-text__text">{!! $offre->prerequis !!}</span></span></span></div></div><!--/$--><!--$--><div id="comp-lgjn24w4" class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-lgjn24w4 wixui-rich-text" data-testid="richTextElement"><p class="font_8 wixui-rich-text__text" style="font-size:16px; line-height:normal;"><span style="font-family:avenir-lt-w01_85-heavy1475544,avenir-lt-w05_85-heavy,sans-serif;" class="wixui-rich-text__text"><span style="font-size:16px;" class="wixui-rich-text__text"><span class="color_19 wixui-rich-text__text"><span style="text-decoration:underline;" class="wixui-rich-text__text"><span style="letter-spacing:normal;" class="wixui-rich-text__text"><span class="backcolor_32 wixui-rich-text__text">PROGRAMME</span></span></span></span></span></span></p></div><!--/$--><!--$--><div id="comp-laojzu5x" class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-laojzu5x wixui-rich-text" data-testid="richTextElement"><div class="font_8 wixui-rich-text__text" style="font-size:16px; line-height:normal;"><span class="color_19 wixui-rich-text__text"><span style="font-size:16px;" class="wixui-rich-text__text"><span style="letter-spacing:normal;" class="wixui-rich-text__text">{!! $offre->programme !!}</span></span></span></div></div><!--/$--><!--$--><div id="comp-lgkrps5i" class="KaEeLN comp-lgkrps5i"><div class="uYj0Sg wixui-box" data-testid="container-bg"></div><div data-mesh-id="comp-lgkrps5iinlineContent" data-testid="inline-content" class=""><div data-mesh-id="comp-lgkrps5iinlineContent-gridContainer" data-testid="mesh-container-content"><!--$--><div id="comp-lgkrps6g" class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-lgkrps6g wixui-rich-text" data-testid="richTextElement"><h1 class="font_0 wixui-rich-text__text" style="font-size:16px; line-height:normal;"><a href="{{ route('services') }}" target="_self" class="wixui-rich-text__text"><span style="font-size:16px;" class="wixui-rich-text__text"><span style="font-family:avenir-lt-w01_35-light1475496,avenir-lt-w05_35-light,sans-serif;" class="wixui-rich-text__text"><span class="color_11 wixui-rich-text__text"><span style="letter-spacing:normal;" class="wixui-rich-text__text">Retour vers catalogue</span></span></span></span></a></h1></div><!--/$--></div></div></div><!--/$--></div></div></div><!--/$--></div></section><!--/$--><!--$--><div id="comp-lapt07re" style="display:none"></div><!--/$--></div></div></section><!--/$--></div></div></div><!--/$--></div></div></div></div></main><!--$--><div id="soapAfterPagesContainer" class="page-without-sosp soapAfterPagesContainer page-without-sosp"><div data-mesh-id="soapAfterPagesContainerinlineContent" data-testid="inline-content" class=""><div data-mesh-id="soapAfterPagesContainerinlineContent-gridContainer" data-testid="mesh-container-content"><!--$--><div id="comp-jn4hmzm6" style="display:none"></div><!--/$--><!--$--><div id="CONTROLLER_COMP_CUSTOM_ID" style="display:none"></div><!--/$--></div></div></div><!--/$--><div id="pinnedBottomRight" class="pinnedBottomRight"><!--$--><div id="comp-kemk5dij-pinned-layer" class="comp-kemk5dij-pinned-layer big2ZD"><!--$--><div id="comp-kemk5dij" class="OQ8Tzd comp-kemk5dij" style="width: 94px; height: 94px; content: attr(x);"><iframe class="nKphmK" title="Wix Chat" aria-label="Wix Chat" scrolling="no" src="https://engage.wixapps.net/chat-widget-server/renderChatWidget/index?pageId=masterPage&amp;compId=comp-kemk5dij&amp;viewerCompId=comp-kemk5dij&amp;siteRevision=4&amp;viewMode=site&amp;deviceType=desktop&amp;locale=fr&amp;tz=Africa%2FCasablanca&amp;regionalLanguage=fr&amp;width=94&amp;height=94&amp;instance=_bTEnbR1ut_2w-2HqHrV7qNnYtxnRLQVnoraMgmgp1Q.eyJpbnN0YW5jZUlkIjoiZjA2OTk4MWItMmU3Zi00ODhiLTgyN2EtNjFiZWZjMTk2ZDU1IiwiYXBwRGVmSWQiOiIxNDUxN2UxYS0zZmYwLWFmOTgtNDA4ZS0yYmQ2OTUzYzM2YTIiLCJtZXRhU2l0ZUlkIjoiMjJjZDRiNTAtOTEwNy00ZTU2LTliODctMmJlZjVjNzE2MjhmIiwic2lnbkRhdGUiOiIyMDI1LTExLTAyVDAzOjAzOjQyLjcxOVoiLCJkZW1vTW9kZSI6ZmFsc2UsIm9yaWdpbkluc3RhbmNlSWQiOiIyYTA4NDZjMC1lYjBjLTQ5NDctODljYy0zMjc3NWY4NGIwNTQiLCJhaWQiOiI4MGJkZWUyNC0zYjNkLTRiZWEtYjJhNS1kZDEzNWI0ZTJlMDkiLCJiaVRva2VuIjoiZDJhNGQzNGItYmY3OC0wNmRkLTE5ZmQtNGE1MWEwNjgwZmRhIiwic2l0ZU93bmVySWQiOiI4YWQ4ODA1ZC1hM2VhLTQwMDgtODUyZi00NjgwNTA5MDg2ZjgiLCJicyI6ImpsTkk1TUtLTDQxZHZoY2dnWHJfWG1lU2x6TUQtUXRyQjhVMkZJak96ZU0iLCJzY2QiOiIyMDIxLTAzLTAyVDE0OjUzOjI2LjQ3MloifQ&amp;currency=MAD&amp;currentCurrency=MAD&amp;commonConfig=%7B%22brand%22%3A%22wix%22%2C%22host%22%3A%22VIEWER%22%2C%22bsi%22%3A%22b2734a14-57d7-4a0c-9212-54d41f09b247%7C1%22%2C%22siteRevision%22%3A%224%22%2C%22branchId%22%3A%22c3be78fc-757c-424a-bce3-a454c1754262%22%2C%22renderingFlow%22%3A%22NONE%22%2C%22language%22%3A%22fr%22%2C%22locale%22%3A%22fr-ma%22%2C%22BSI%22%3A%22b2734a14-57d7-4a0c-9212-54d41f09b247%7C1%22%7D&amp;currentRoute=.%2Fformations%2Fsupply-chain&amp;vsi=f03122ae-9a0b-429a-8e36-059df29386fc" allowfullscreen="" allowtransparency="true" allowvr="true" frameborder="0" allow="clipboard-write;autoplay;camera;microphone;geolocation;vr"></iframe></div><!--/$--></div><!--/$--></div>
+<!--/$--><!--$--><div id="comp-laokpave" class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-laokpave wixui-rich-text" data-testid="richTextElement"><div class="font_8 wixui-rich-text__text" style="font-size:16px; line-height:normal;"><span class="color_19 wixui-rich-text__text"><span style="font-size:16px;" class="wixui-rich-text__text"><span style="letter-spacing:normal;" class="wixui-rich-text__text">{!! $offre->prerequis !!}</span></span></span></div></div><!--/$--><!--$--><div id="comp-lgjn24w4" class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-lgjn24w4 wixui-rich-text" data-testid="richTextElement"><p class="font_8 wixui-rich-text__text" style="font-size:16px; line-height:normal;"><span style="font-family:avenir-lt-w01_85-heavy1475544,avenir-lt-w05_85-heavy,sans-serif;" class="wixui-rich-text__text"><span style="font-size:16px;" class="wixui-rich-text__text"><span class="color_19 wixui-rich-text__text"><span style="text-decoration:underline;" class="wixui-rich-text__text"><span style="letter-spacing:normal;" class="wixui-rich-text__text"><span class="backcolor_32 wixui-rich-text__text">PROGRAMME</span></span></span></span></span></span></p></div><!--/$--><!--$--><div id="comp-laojzu5x" class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-laojzu5x wixui-rich-text" data-testid="richTextElement"><div class="font_8 wixui-rich-text__text" style="font-size:16px; line-height:normal;"><span class="color_19 wixui-rich-text__text"><span style="font-size:16px;" class="wixui-rich-text__text"><span style="letter-spacing:normal;" class="wixui-rich-text__text">{!! $offre->programme !!}</span></span></span></div></div><!--/$--><!-- Subscribe Button Section -->
+<div style="width: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 15px; padding: 30px 0; margin: 30px 0;">
+    <button id="subscribeBtn" style="background-color: #113C66; color: white; border: none; padding: 15px 40px; font-size: 18px; font-weight: bold; border-radius: 5px; cursor: pointer; font-family: avenir-lt-w01_35-light1475496, sans-serif; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#0E2F52'" onmouseout="this.style.backgroundColor='#113C66'">Intéressé par cette offre ? Inscrivez-vous maintenant</button>
+    <a href="https://wa.me/212661223796?text={{ urlencode('Bonjour, je suis intéressé(e) par l\'offre : ' . ($offre->title ? $offre->title . ' - ' : '') . $offre->intitule) }}" target="_blank" style="background-color: rgb(105, 113, 139); color: white; border: none; padding: 15px 40px; font-size: 18px; font-weight: bold; border-radius: 5px; cursor: pointer; font-family: avenir-lt-w01_35-light1475496, sans-serif; transition: background-color 0.3s; text-decoration: none; display: inline-block;" onmouseover="this.style.backgroundColor='rgb(85, 93, 119)'" onmouseout="this.style.backgroundColor='rgb(105, 113, 139)'">Vous avez besoin de plus de détails ? Contactez-nous sur WhatsApp</a>
+</div>
+<!--/$--></div></div></div><!--/$--></div></section><!--/$--><!--$--><div id="comp-lapt07re" style="display:none"></div><!--/$--></div></div></section><!--/$--></div></div></div><!--/$--></div></div></div></div></main>
+
+<!-- Subscribe Modal -->
+<div id="subscribeModal" style="display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgba(0,0,0,0.5);">
+    <div style="background-color: #fefefe; margin: 5% auto; padding: 30px; border: 1px solid #888; width: 90%; max-width: 500px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+            <h2 style="margin: 0; color: rgb(52, 63, 100); font-family: avenir-lt-w01_35-light1475496, sans-serif; font-size: 24px;">Inscription à l'offre</h2>
+            <span id="closeModal" style="color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer;" onmouseover="this.style.color='#000'" onmouseout="this.style.color='#aaa'">&times;</span>
+        </div>
+        <form id="subscribeForm">
+            <input type="hidden" name="offre_id" value="{{ $offre->id }}">
+            <div style="margin-bottom: 20px;">
+                <label for="subscriber_name" style="display: block; margin-bottom: 8px; color: rgb(52, 63, 100); font-weight: bold; font-family: avenir-lt-w01_35-light1475496, sans-serif;">Nom complet *</label>
+                <input type="text" id="subscriber_name" name="name" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; font-family: avenir-lt-w01_35-light1475496, sans-serif; box-sizing: border-box;">
+                <span id="name_error" style="color: red; font-size: 14px; display: none;"></span>
+            </div>
+            <div style="margin-bottom: 20px;">
+                <label for="subscriber_phone" style="display: block; margin-bottom: 8px; color: rgb(52, 63, 100); font-weight: bold; font-family: avenir-lt-w01_35-light1475496, sans-serif;">Numéro de téléphone *</label>
+                <input type="tel" id="subscriber_phone" name="phone" required style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; font-family: avenir-lt-w01_35-light1475496, sans-serif; box-sizing: border-box;">
+                <span id="phone_error" style="color: red; font-size: 14px; display: none;"></span>
+            </div>
+            <div style="margin-bottom: 20px;">
+                <label for="subscriber_note" style="display: block; margin-bottom: 8px; color: rgb(52, 63, 100); font-weight: bold; font-family: avenir-lt-w01_35-light1475496, sans-serif;">Note (optionnel)</label>
+                <textarea id="subscriber_note" name="note" rows="4" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; font-family: avenir-lt-w01_35-light1475496, sans-serif; box-sizing: border-box; resize: vertical;"></textarea>
+            </div>
+            <div style="background-color: #e7f3ff; padding: 15px; border-radius: 5px; margin-bottom: 20px; border-left: 4px solid rgb(105, 113, 139);">
+                <p style="margin: 0; color: rgb(52, 63, 100); font-size: 14px; font-family: avenir-lt-w01_35-light1475496, sans-serif; line-height: 1.5;">
+                    <strong>Note:</strong>  Nous vous contacterons bientôt avec des informations supplémentaires.
+                </p>
+            </div>
+            <div style="display: flex; gap: 10px; justify-content: flex-end;">
+                <button type="button" id="cancelBtn" style="background-color: #ccc; color: #000; border: none; padding: 12px 30px; font-size: 16px; border-radius: 5px; cursor: pointer; font-family: avenir-lt-w01_35-light1475496, sans-serif;" onmouseover="this.style.backgroundColor='#bbb'" onmouseout="this.style.backgroundColor='#ccc'">Annuler</button>
+                <button type="submit" id="submitBtn" style="background-color: rgb(105, 113, 139); color: white; border: none; padding: 12px 30px; font-size: 16px; font-weight: bold; border-radius: 5px; cursor: pointer; font-family: avenir-lt-w01_35-light1475496, sans-serif;" onmouseover="this.style.backgroundColor='rgb(85, 93, 119)'" onmouseout="this.style.backgroundColor='rgb(105, 113, 139)'">S'inscrire</button>
+            </div>
+        </form>
+        <div id="successMessage" style="display: none; text-align: center; padding: 20px; background-color: #d4edda; border-radius: 5px; margin-top: 20px; border: 1px solid #c3e6cb;">
+            <p style="margin: 0; color: #155724; font-size: 16px; font-weight: bold; font-family: avenir-lt-w01_35-light1475496, sans-serif;">✓ Inscription réussie !</p>
+            <p style="margin: 10px 0 0 0; color: #155724; font-size: 14px; font-family: avenir-lt-w01_35-light1475496, sans-serif;">Nous vous contacterons bientôt.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.getElementById('subscribeModal');
+    const btn = document.getElementById('subscribeBtn');
+    const closeBtn = document.getElementById('closeModal');
+    const cancelBtn = document.getElementById('cancelBtn');
+    const form = document.getElementById('subscribeForm');
+    const successMessage = document.getElementById('successMessage');
+
+    // Open modal
+    btn.onclick = function() {
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
+
+    // Close modal
+    function closeModal() {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+        form.reset();
+        successMessage.style.display = 'none';
+        form.style.display = 'block';
+        // Clear errors
+        document.getElementById('name_error').style.display = 'none';
+        document.getElementById('phone_error').style.display = 'none';
+    }
+
+    closeBtn.onclick = closeModal;
+    cancelBtn.onclick = closeModal;
+
+    // Close when clicking outside modal
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            closeModal();
+        }
+    }
+
+    // Handle form submission
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const submitBtn = document.getElementById('submitBtn');
+        const originalText = submitBtn.textContent;
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Envoi en cours...';
+
+        // Clear previous errors
+        document.getElementById('name_error').style.display = 'none';
+        document.getElementById('phone_error').style.display = 'none';
+
+        const formData = new FormData(form);
+
+        fetch('{{ route("offre.subscribe") }}', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'X-CSRF-TOKEN': '{{ csrf_token() }}',
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                form.style.display = 'none';
+                successMessage.style.display = 'block';
+                setTimeout(() => {
+                    closeModal();
+                }, 3000);
+            } else {
+                // Display validation errors
+                if (data.errors) {
+                    if (data.errors.name) {
+                        const nameError = document.getElementById('name_error');
+                        nameError.textContent = data.errors.name[0];
+                        nameError.style.display = 'block';
+                    }
+                    if (data.errors.phone) {
+                        const phoneError = document.getElementById('phone_error');
+                        phoneError.textContent = data.errors.phone[0];
+                        phoneError.style.display = 'block';
+                    }
+                }
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalText;
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Une erreur est survenue. Veuillez réessayer.');
+            submitBtn.disabled = false;
+            submitBtn.textContent = originalText;
+        });
+    });
+});
+</script><!--$--><div id="soapAfterPagesContainer" class="page-without-sosp soapAfterPagesContainer page-without-sosp"><div data-mesh-id="soapAfterPagesContainerinlineContent" data-testid="inline-content" class=""><div data-mesh-id="soapAfterPagesContainerinlineContent-gridContainer" data-testid="mesh-container-content"><!--$--><div id="comp-jn4hmzm6" style="display:none"></div><!--/$--><!--$--><div id="CONTROLLER_COMP_CUSTOM_ID" style="display:none"></div><!--/$--></div></div></div><!--/$--><div id="pinnedBottomRight" class="pinnedBottomRight"><!--$--><div id="comp-kemk5dij-pinned-layer" class="comp-kemk5dij-pinned-layer big2ZD"><!--$--><div id="comp-kemk5dij" class="OQ8Tzd comp-kemk5dij" style="width: 94px; height: 94px; content: attr(x);"><iframe class="nKphmK" title="Wix Chat" aria-label="Wix Chat" scrolling="no" src="https://engage.wixapps.net/chat-widget-server/renderChatWidget/index?pageId=masterPage&amp;compId=comp-kemk5dij&amp;viewerCompId=comp-kemk5dij&amp;siteRevision=4&amp;viewMode=site&amp;deviceType=desktop&amp;locale=fr&amp;tz=Africa%2FCasablanca&amp;regionalLanguage=fr&amp;width=94&amp;height=94&amp;instance=_bTEnbR1ut_2w-2HqHrV7qNnYtxnRLQVnoraMgmgp1Q.eyJpbnN0YW5jZUlkIjoiZjA2OTk4MWItMmU3Zi00ODhiLTgyN2EtNjFiZWZjMTk2ZDU1IiwiYXBwRGVmSWQiOiIxNDUxN2UxYS0zZmYwLWFmOTgtNDA4ZS0yYmQ2OTUzYzM2YTIiLCJtZXRhU2l0ZUlkIjoiMjJjZDRiNTAtOTEwNy00ZTU2LTliODctMmJlZjVjNzE2MjhmIiwic2lnbkRhdGUiOiIyMDI1LTExLTAyVDAzOjAzOjQyLjcxOVoiLCJkZW1vTW9kZSI6ZmFsc2UsIm9yaWdpbkluc3RhbmNlSWQiOiIyYTA4NDZjMC1lYjBjLTQ5NDctODljYy0zMjc3NWY4NGIwNTQiLCJhaWQiOiI4MGJkZWUyNC0zYjNkLTRiZWEtYjJhNS1kZDEzNWI0ZTJlMDkiLCJiaVRva2VuIjoiZDJhNGQzNGItYmY3OC0wNmRkLTE5ZmQtNGE1MWEwNjgwZmRhIiwic2l0ZU93bmVySWQiOiI4YWQ4ODA1ZC1hM2VhLTQwMDgtODUyZi00NjgwNTA5MDg2ZjgiLCJicyI6ImpsTkk1TUtLTDQxZHZoY2dnWHJfWG1lU2x6TUQtUXRyQjhVMkZJak96ZU0iLCJzY2QiOiIyMDIxLTAzLTAyVDE0OjUzOjI2LjQ3MloifQ&amp;currency=MAD&amp;currentCurrency=MAD&amp;commonConfig=%7B%22brand%22%3A%22wix%22%2C%22host%22%3A%22VIEWER%22%2C%22bsi%22%3A%22b2734a14-57d7-4a0c-9212-54d41f09b247%7C1%22%2C%22siteRevision%22%3A%224%22%2C%22branchId%22%3A%22c3be78fc-757c-424a-bce3-a454c1754262%22%2C%22renderingFlow%22%3A%22NONE%22%2C%22language%22%3A%22fr%22%2C%22locale%22%3A%22fr-ma%22%2C%22BSI%22%3A%22b2734a14-57d7-4a0c-9212-54d41f09b247%7C1%22%7D&amp;currentRoute=.%2Fformations%2Fsupply-chain&amp;vsi=f03122ae-9a0b-429a-8e36-059df29386fc" allowfullscreen="" allowtransparency="true" allowvr="true" frameborder="0" allow="clipboard-write;autoplay;camera;microphone;geolocation;vr"></iframe></div><!--/$--></div><!--/$--></div>
   
   
   
