@@ -104,5 +104,8 @@ Route::get('/articles/{id}', [\App\Http\Controllers\ArticleController::class, 's
 Route::get('/events', [\App\Http\Controllers\EventController::class, 'index'])->name('events');
 Route::get('/events/{id}', [\App\Http\Controllers\EventController::class, 'show'])->name('event.show');
 
+// Search Offers route
+Route::get('/offres', [\App\Http\Controllers\OffresController::class, 'search'])->name('offres.search');
+
 
 

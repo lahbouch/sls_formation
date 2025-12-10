@@ -617,3 +617,6 @@
         </div>
     </div>
 </footer>
+
+<!-- Floating Action Button -->
+<x-floating-action-button></x-floating-action-button>
