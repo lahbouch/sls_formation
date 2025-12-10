@@ -25,7 +25,9 @@ class OffreSubscriptionResource extends Resource
     
     protected static ?string $pluralModelLabel = 'Inscriptions';
     
-    protected static ?int $navigationSort = 10;
+    protected static ?string $navigationGroup = 'Services & Formations';
+    
+    protected static ?int $navigationSort = 4;
 
     public static function form(Form $form): Form
     {

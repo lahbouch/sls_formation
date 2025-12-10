@@ -27,6 +27,8 @@ class OffreResource extends Resource
     
     protected static ?string $pluralModelLabel = 'Offres';
     
+    protected static ?string $navigationGroup = 'Services & Formations';
+    
     protected static ?int $navigationSort = 3;
 
     public static function form(Form $form): Form

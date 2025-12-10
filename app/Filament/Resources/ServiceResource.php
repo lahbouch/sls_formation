@@ -26,6 +26,8 @@ class ServiceResource extends Resource
     
     protected static ?string $pluralModelLabel = 'Services';
     
+    protected static ?string $navigationGroup = 'Services & Formations';
+    
     protected static ?int $navigationSort = 1;
 
     public static function form(Form $form): Form

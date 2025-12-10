@@ -26,7 +26,9 @@ class OffreEmploiCvResource extends Resource
     
     protected static ?string $pluralModelLabel = 'CVs des Candidats';
     
-    protected static ?int $navigationSort = 11;
+    protected static ?string $navigationGroup = 'Recrutement';
+    
+    protected static ?int $navigationSort = 2;
 
     public static function form(Form $form): Form
     {

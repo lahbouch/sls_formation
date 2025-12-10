@@ -26,7 +26,9 @@ class OffreEmploiResource extends Resource
     
     protected static ?string $pluralModelLabel = 'Offres d\'Emploi';
     
-    protected static ?int $navigationSort = 10;
+    protected static ?string $navigationGroup = 'Recrutement';
+    
+    protected static ?int $navigationSort = 1;
 
     public static function form(Form $form): Form
     {

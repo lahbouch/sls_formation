@@ -25,7 +25,9 @@ class ContactResource extends Resource
     
     protected static ?string $pluralModelLabel = 'Messages de Contact';
     
-    protected static ?int $navigationSort = 9;
+    protected static ?string $navigationGroup = 'Communication';
+    
+    protected static ?int $navigationSort = 1;
 
     public static function form(Form $form): Form
     {

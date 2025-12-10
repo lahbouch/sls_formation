@@ -27,6 +27,8 @@ class TypeResource extends Resource
     
     protected static ?string $pluralModelLabel = 'Types de Service';
     
+    protected static ?string $navigationGroup = 'Services & Formations';
+    
     protected static ?int $navigationSort = 2;
 
     public static function form(Form $form): Form

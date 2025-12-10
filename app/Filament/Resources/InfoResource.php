@@ -25,7 +25,9 @@ class InfoResource extends Resource
     
     protected static ?string $pluralModelLabel = 'Informations de Contact';
     
-    protected static ?int $navigationSort = 7;
+    protected static ?string $navigationGroup = 'Communication';
+    
+    protected static ?int $navigationSort = 2;
 
     public static function form(Form $form): Form
     {
