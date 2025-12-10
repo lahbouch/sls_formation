@@ -290,22 +290,40 @@
 </div>
 
 <!-- CV Upload Section -->
-<div style="margin-top: 50px; padding: 30px; background-color: #f8f9fa; border-radius: 8px; border: 2px solid #113c66;">
-  <h2 style="font-size: 24px; color: #113c66; margin: 0 0 20px 0; font-family: avenir-lt-w01_85-heavy1475544, avenir-lt-w05_85-heavy, sans-serif;">
-    Postuler à cette offre
-  </h2>
-  <p style="color: #666; margin-bottom: 20px; font-size: 16px;">
-    Téléchargez votre CV pour postuler à cette offre d'emploi. Formats acceptés: PDF, DOC, DOCX (max 5MB)
-  </p>
-  <form id="cv-upload-form" enctype="multipart/form-data" style="display: flex; flex-direction: column; gap: 15px;">
-    @csrf
-    <input type="hidden" name="offre_emploi_id" value="{{ $offre->id }}">
-    <input type="file" name="cv" accept=".pdf,.doc,.docx" required style="padding: 10px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px;">
-    <button type="submit" style="padding: 12px 24px; background-color: #113c66; color: #fff; border: none; border-radius: 4px; font-size: 16px; font-weight: 600; cursor: pointer; transition: background-color 0.3s; font-family: avenir-lt-w01_35-light1475496, avenir-lt-w05_35-light, sans-serif;">
-      Envoyer mon CV
-    </button>
-    <div id="cv-upload-message" style="display: none; padding: 12px; border-radius: 4px; margin-top: 10px;"></div>
-  </form>
+<div id="cv-upload-section" style="margin-top: 50px; padding: 30px; background-color: #f8f9fa; border-radius: 8px; border: 2px solid #113c66;">
+  <!-- Already Applied Message (hidden by default) -->
+  <div id="already-applied-message" style="display: none;">
+    <h2 style="font-size: 24px; color: #113c66; margin: 0 0 20px 0; font-family: avenir-lt-w01_85-heavy1475544, avenir-lt-w05_85-heavy, sans-serif;">
+      Vous avez déjà postulé
+    </h2>
+    <div style="padding: 20px; background-color: #fff3cd; border: 2px solid #ffc107; border-radius: 8px; color: #856404;">
+      <p style="margin: 0; font-size: 16px; font-weight: 600;">
+        ✓ Vous avez déjà soumis votre CV pour cette offre d'emploi.
+      </p>
+      <p style="margin: 10px 0 0 0; font-size: 14px; color: #856404;">
+        Nous avons bien reçu votre candidature et nous vous contacterons si votre profil correspond à nos critères.
+      </p>
+    </div>
+  </div>
+
+  <!-- CV Upload Form (shown by default) -->
+  <div id="cv-upload-form-container">
+    <h2 style="font-size: 24px; color: #113c66; margin: 0 0 20px 0; font-family: avenir-lt-w01_85-heavy1475544, avenir-lt-w05_85-heavy, sans-serif;">
+      Postuler à cette offre
+    </h2>
+    <p style="color: #666; margin-bottom: 20px; font-size: 16px;">
+      Téléchargez votre CV pour postuler à cette offre d'emploi. Formats acceptés: PDF, DOC, DOCX (max 5MB)
+    </p>
+    <form id="cv-upload-form" enctype="multipart/form-data" style="display: flex; flex-direction: column; gap: 15px;">
+      @csrf
+      <input type="hidden" name="offre_emploi_id" value="{{ $offre->id }}">
+      <input type="file" name="cv" accept=".pdf,.doc,.docx" required style="padding: 10px; border: 1px solid #ddd; border-radius: 4px; font-size: 16px;">
+      <button type="submit" style="padding: 12px 24px; background-color: #113c66; color: #fff; border: none; border-radius: 4px; font-size: 16px; font-weight: 600; cursor: pointer; transition: background-color 0.3s; font-family: avenir-lt-w01_35-light1475496, avenir-lt-w05_35-light, sans-serif;">
+        Envoyer mon CV
+      </button>
+      <div id="cv-upload-message" style="display: none; padding: 12px; border-radius: 4px; margin-top: 10px;"></div>
+    </form>
+  </div>
 </div>
 
 <!-- Back Button -->
@@ -318,80 +336,125 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+  const offreId = {{ $offre->id }};
+  const storageKey = 'cv_applied_' + offreId;
   const cvUploadForm = document.getElementById('cv-upload-form');
+  const cvUploadFormContainer = document.getElementById('cv-upload-form-container');
+  const alreadyAppliedMessage = document.getElementById('already-applied-message');
+  
+  // Check if user has already applied for this job
+  function checkIfAlreadyApplied() {
+    const hasApplied = localStorage.getItem(storageKey) === 'true';
+    if (hasApplied) {
+      // Show "already applied" message and hide form
+      if (cvUploadFormContainer) {
+        cvUploadFormContainer.style.display = 'none';
+      }
+      if (alreadyAppliedMessage) {
+        alreadyAppliedMessage.style.display = 'block';
+      }
+    } else {
+      // Show form and hide "already applied" message
+      if (cvUploadFormContainer) {
+        cvUploadFormContainer.style.display = 'block';
+      }
+      if (alreadyAppliedMessage) {
+        alreadyAppliedMessage.style.display = 'none';
+      }
+    }
+  }
+  
+  // Check on page load
+  checkIfAlreadyApplied();
+  
   if (!cvUploadForm) {
     console.error('CV upload form not found');
     return;
   }
   
   cvUploadForm.addEventListener('submit', function(e) {
-  e.preventDefault();
-  const form = this;
-  const formData = new FormData(form);
-  const messageDiv = document.getElementById('cv-upload-message');
-  const submitButton = form.querySelector('button[type="submit"]');
-  
-  submitButton.disabled = true;
-  submitButton.textContent = 'Envoi en cours...';
-  messageDiv.style.display = 'none';
-  
-  fetch('{{ route("recrutement.cv.upload") }}', {
-    method: 'POST',
-    body: formData,
-    headers: {
-      'X-CSRF-TOKEN': document.querySelector('input[name="_token"]').value,
-      'Accept': 'application/json'
+    e.preventDefault();
+    
+    // Double check localStorage before submitting
+    if (localStorage.getItem(storageKey) === 'true') {
+      checkIfAlreadyApplied();
+      return;
     }
-  })
-  .then(response => {
-    if (!response.ok) {
-      return response.json().then(data => {
-        throw new Error(data.message || 'Une erreur est survenue');
-      }).catch(() => {
-        throw new Error('Erreur ' + response.status + ': ' + response.statusText);
-      });
-    }
-    return response.json();
-  })
-  .then(data => {
-    messageDiv.style.display = 'block';
-    if (data.success) {
-      messageDiv.className = 'success';
-      messageDiv.style.backgroundColor = '#d4edda';
-      messageDiv.style.color = '#155724';
-      messageDiv.style.border = '1px solid #c3e6cb';
-      messageDiv.textContent = data.message || 'Votre CV a été envoyé avec succès.';
-      form.reset();
-    } else {
+    
+    const form = this;
+    const formData = new FormData(form);
+    const messageDiv = document.getElementById('cv-upload-message');
+    const submitButton = form.querySelector('button[type="submit"]');
+    
+    submitButton.disabled = true;
+    submitButton.textContent = 'Envoi en cours...';
+    messageDiv.style.display = 'none';
+    
+    fetch('{{ route("recrutement.cv.upload") }}', {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'X-CSRF-TOKEN': document.querySelector('input[name="_token"]').value,
+        'Accept': 'application/json'
+      }
+    })
+    .then(response => {
+      if (!response.ok) {
+        return response.json().then(data => {
+          throw new Error(data.message || 'Une erreur est survenue');
+        }).catch(() => {
+          throw new Error('Erreur ' + response.status + ': ' + response.statusText);
+        });
+      }
+      return response.json();
+    })
+    .then(data => {
+      messageDiv.style.display = 'block';
+      if (data.success) {
+        // Save to localStorage that user has applied
+        localStorage.setItem(storageKey, 'true');
+        
+        messageDiv.className = 'success';
+        messageDiv.style.backgroundColor = '#d4edda';
+        messageDiv.style.color = '#155724';
+        messageDiv.style.border = '1px solid #c3e6cb';
+        messageDiv.textContent = data.message || 'Votre CV a été envoyé avec succès.';
+        form.reset();
+        
+        // Auto-refresh page after 1.5 seconds to show "already applied" message
+        setTimeout(function() {
+          window.location.reload();
+        }, 1500);
+      } else {
+        messageDiv.className = 'error';
+        messageDiv.style.backgroundColor = '#f8d7da';
+        messageDiv.style.color = '#721c24';
+        messageDiv.style.border = '1px solid #f5c6cb';
+        let errorMessage = 'Une erreur est survenue. Veuillez réessayer.';
+        if (data.errors) {
+          const errorKeys = Object.keys(data.errors);
+          if (errorKeys.length > 0) {
+            errorMessage = data.errors[errorKeys[0]][0] || errorMessage;
+          }
+        } else if (data.message) {
+          errorMessage = data.message;
+        }
+        messageDiv.textContent = errorMessage;
+      }
+    })
+    .catch(error => {
+      console.error('CV Upload Error:', error);
+      messageDiv.style.display = 'block';
       messageDiv.className = 'error';
       messageDiv.style.backgroundColor = '#f8d7da';
       messageDiv.style.color = '#721c24';
       messageDiv.style.border = '1px solid #f5c6cb';
-      let errorMessage = 'Une erreur est survenue. Veuillez réessayer.';
-      if (data.errors) {
-        const errorKeys = Object.keys(data.errors);
-        if (errorKeys.length > 0) {
-          errorMessage = data.errors[errorKeys[0]][0] || errorMessage;
-        }
-      } else if (data.message) {
-        errorMessage = data.message;
-      }
-      messageDiv.textContent = errorMessage;
-    }
-  })
-  .catch(error => {
-    console.error('CV Upload Error:', error);
-    messageDiv.style.display = 'block';
-    messageDiv.className = 'error';
-    messageDiv.style.backgroundColor = '#f8d7da';
-    messageDiv.style.color = '#721c24';
-    messageDiv.style.border = '1px solid #f5c6cb';
-    messageDiv.textContent = error.message || 'Une erreur est survenue. Veuillez réessayer.';
-  })
-  .finally(() => {
-    submitButton.disabled = false;
-    submitButton.textContent = 'Envoyer mon CV';
-  });
+      messageDiv.textContent = error.message || 'Une erreur est survenue. Veuillez réessayer.';
+    })
+    .finally(() => {
+      submitButton.disabled = false;
+      submitButton.textContent = 'Envoyer mon CV';
+    });
   });
 });
 </script><!--$--><section id="comp-laohuylu" class="comp-laohuylu CohWsy wixui-column-strip" style="display:none;"><div id="bgLayers_comp-laohuylu" data-hook="bgLayers" data-motion-part="BG_LAYER comp-laohuylu" class="if7Vw2"><div data-testid="colorUnderlay" class="tcElKx i1tH8h"></div><div id="bgMedia_comp-laohuylu" data-motion-part="BG_MEDIA comp-laohuylu" class="wG8dni"></div></div><div data-testid="columns" class="V5AUxf"><!--$--><div id="comp-laohuym1" class="comp-laohuym1 YzqVVZ wixui-column-strip__column"><div id="bgLayers_comp-laohuym1" data-hook="bgLayers" data-motion-part="BG_LAYER comp-laohuym1" class="MW5IWV"><div data-testid="colorUnderlay" class="LWbAav Kv1aVt"></div><div id="bgMedia_comp-laohuym1" data-motion-part="BG_MEDIA comp-laohuym1" class="VgO9Yg"></div></div><div data-mesh-id="comp-laohuym1inlineContent" data-testid="inline-content" class=""><div data-mesh-id="comp-laohuym1inlineContent-gridContainer" data-testid="mesh-container-content"><!--$--><div id="comp-laoljmrt" class="KaEeLN comp-laoljmrt"><div class="uYj0Sg wixui-box" data-testid="container-bg"></div><div data-mesh-id="comp-laoljmrtinlineContent" data-testid="inline-content" class=""><div data-mesh-id="comp-laoljmrtinlineContent-gridContainer" data-testid="mesh-container-content"><!--$--><div id="comp-lgjlzf23" class="Z_l5lU ku3DBC zQ9jDz qvSjx3 Vq6kJx comp-lgjlzf23 wixui-rich-text" data-testid="richTextElement"><h1 class="font_0 wixui-rich-text__text" style="font-size:25px; line-height:normal;"><span style="font-size:25px;" class="wixui-rich-text__text"><span style="font-family:avenir-lt-w01_35-light1475496,avenir-lt-w05_35-light,sans-serif;" class="wixui-rich-text__text"><span style="font-weight:bold;" class="wixui-rich-text__text"><span class="color_11 wixui-rich-text__text"><span style="letter-spacing:normal;" class="wixui-rich-text__text">@if($offre->contrat)
