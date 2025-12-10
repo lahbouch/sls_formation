@@ -106,7 +106,6 @@
 <style>.JVi7i2,.hrbzfT{background-color:var(--corvid-background-color,rgba(var(--bg,0,0,0),var(--alpha-bg,0)));border:solid var(--corvid-border-color,rgba(var(--brd,227,227,227),var(--alpha-brd,1))) var(--corvid-border-width,var(--brw,0));border-radius:var(--corvid-border-radius,var(--rd,0));box-shadow:var(--shd,0 0 0 transparent)}.d3n4V3{height:100%;left:-var(--corvid-border-width,var(--brw,0));position:absolute;top:-var(--corvid-border-width,var(--brw,0));width:100%}</style>
 <style>.OQ8Tzd,.nKphmK{overflow:hidden}.nKphmK{height:100%;position:relative;width:100%}.nKphmK:-ms-fullscreen{min-height:auto!important}.nKphmK:fullscreen{min-height:auto!important}.pvlz2w{visibility:hidden}</style>
 <style>.TWFxr5{height:auto!important}.May50y{overflow:hidden!important}</style>
-<title>Contact | SLS Formation</title>
   
   <!-- SweetAlert2 -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -123,7 +122,29 @@
 <style id="stylableCss_uckg7"></style>
 <style id="compCssMappers_uckg7">#uckg7{width:auto;min-height:1237px;}#pageBackground_uckg7{--bg-position:absolute;--bg-overlay-color:rgb(255, 255, 255);--bg-gradient:none;}#comp-lc96quej{--bg-overlay-color:transparent;--bg-gradient:none;min-width:980px;}#comp-imon3xm8{--bg-overlay-color:transparent;--bg-gradient:none;--padding:0px;--margin:0px;min-width:980px;--firstChildMarginTop:-1px;--lastChildMarginBottom:-1px;--direction:ltr;}#mediaiu40sho71{--bg-overlay-color:rgb(var(--color_11));--bg-gradient:none;width:100%;--column-width:980px;--column-flex:980;}#comp-imon55qt{--text-direction:var(--wix-opt-in-direction);}#comp-imos0gwr{--text-direction:var(--wix-opt-in-direction);}#comp-imonehra{--text-direction:var(--wix-opt-in-direction);}#comp-jn4hn02h{--fnt:normal normal normal 14px/1.4em avenir-lt-w01_35-light1475496,sans-serif;--fntlbl:normal normal normal 14px/1.4em avenir-lt-w01_35-light1475496,sans-serif;--direction:var(--wix-opt-in-direction, ltr);--align:start;--labelDirection:inherit;--inputDirection:inherit;--errorDirection:inherit;--requiredIndicationDisplay:none;--labelMarginBottom:14px;--textPadding:3px;--textPadding_start:12px;--textPadding_end:3px;--labelPadding_start:0px;--labelPadding_end:20px;height:auto;--inputHeight:30px;}#comp-jn4hom1q{--fnt:normal normal normal 14px/1.4em avenir-lt-w01_35-light1475496,sans-serif;--fntlbl:normal normal normal 14px/1.4em avenir-lt-w01_35-light1475496,sans-serif;--direction:var(--wix-opt-in-direction, ltr);--align:start;--labelDirection:inherit;--inputDirection:inherit;--errorDirection:inherit;--requiredIndicationDisplay:none;--labelMarginBottom:14px;--textPadding:3px;--textPadding_start:12px;--textPadding_end:3px;--labelPadding_start:0px;--labelPadding_end:20px;height:auto;--inputHeight:30px;}#comp-jn4hop4r{--fnt:normal normal normal 14px/1.4em avenir-lt-w01_35-light1475496,sans-serif;--fntlbl:normal normal normal 14px/1.4em avenir-lt-w01_35-light1475496,sans-serif;--direction:var(--wix-opt-in-direction, ltr);--align:start;--labelDirection:inherit;--inputDirection:inherit;--errorDirection:inherit;--requiredIndicationDisplay:none;--labelMarginBottom:14px;--textPadding:3px;--textPadding_start:12px;--textPadding_end:3px;--labelPadding_start:0px;--labelPadding_end:20px;height:auto;--inputHeight:30px;}#comp-laqu474t{--fnt:normal normal normal 14px/1.4em avenir-lt-w01_35-light1475496,sans-serif;--fntlbl:normal normal normal 14px/1.4em avenir-lt-w01_35-light1475496,sans-serif;--direction:var(--wix-opt-in-direction, ltr);--align:start;--labelDirection:inherit;--inputDirection:inherit;--errorDirection:inherit;--requiredIndicationDisplay:inline;--labelMarginBottom:14px;--textPadding:3px;--textPadding_start:12px;--textPadding_end:3px;--labelPadding_start:0px;--labelPadding_end:20px;height:auto;--inputHeight:30px;}#comp-jn4hoptm{--direction:var(--wix-opt-in-direction, ltr);--labelDirection:inherit;--inputDirection:inherit;--errorDirection:inherit;--align:start;--textPaddingTop:3px;--textPaddingStart:16px;--textPaddingEnd:10px;--labelMarginBottom:14px;--requiredIndicationDisplay:none;--labelPadding_start:0px;--labelPadding_end:20px;height:auto;--inputHeight:128px;}#comp-jn4hmzvs{--shc-mutated-brightness:116,102,84;--margin-start:0px;--margin-end:0px;--fnt:normal normal normal 14px/1.4em helvetica-w01-light,sans-serif;direction:var(--wix-opt-in-direction, ltr);--label-align:center;--label-text-align:center;}#comp-jn4hmzvn{--text-direction:var(--wix-opt-in-direction);}#comp-imot2ny2{transform-origin:center 1.5px;}#comp-imos3hzv{--text-direction:var(--wix-opt-in-direction);}#comp-lc96quek{--bg-overlay-color:transparent;--bg-gradient:none;min-width:980px;}</style>
 
-<meta name="title" content="Recherche d'Offres"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="robots" content="index, follow"><meta name="googlebot" content="index, follow"><meta property="og:title" content="Recherche d'Offres"><meta property="og:type" content="website"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Recherche d'Offres"><title>Recherche d'Offres - SLS</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" sizes="16x16" href="/favicon-16x16.png"><link rel="manifest" href="/site.webmanifest"></head>
+@php
+    $pageTitle = 'Recherche d\'Offres de Formation';
+    $pageDescription = 'Recherchez et découvrez toutes nos offres de formation professionnelle chez SLS Formation et Conseils. Trouvez la formation qui correspond à vos besoins.';
+    $pageKeywords = 'recherche formation, offres de formation, formation professionnelle, SLS Formation et Conseils, catalogue formations, Maroc';
+@endphp
+<meta name="title" content="{{ $pageTitle }} | SLS Formation et Conseils">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="{{ $pageDescription }}">
+<meta name="keywords" content="{{ $pageKeywords }}">
+<meta name="author" content="SLS Formation et Conseils">
+<meta name="robots" content="index, follow">
+<meta name="language" content="French">
+<link rel="canonical" href="{{ url('/offres/search') }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ url('/offres/search') }}">
+<meta property="og:title" content="{{ $pageTitle }} | SLS Formation et Conseils">
+<meta property="og:description" content="{{ $pageDescription }}">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="SLS Formation et Conseils">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ $pageTitle }} | SLS Formation et Conseils">
+<meta name="twitter:description" content="{{ $pageDescription }}">
+<title>{{ $pageTitle }} | SLS Formation et Conseils</title><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="icon" sizes="32x32" href="/favicon-32x32.png"><link rel="icon" sizes="16x16" href="/favicon-16x16.png"><link rel="manifest" href="/site.webmanifest"></head>
 <body class="">
 <style>
   /* Sticky Footer */

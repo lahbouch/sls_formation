@@ -4,24 +4,34 @@
     <!-- SEO Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ $pageTitle ?? 'Accueil - Services, Offres d\'emploi et Événements' }}</title>
-    <meta name="description" content="{{ $pageDescription ?? 'Découvrez nos services, événements et offres d\'emploi. Votre partenaire de confiance pour tous vos besoins.' }}">
-    <meta name="keywords" content="{{ $pageKeywords ?? 'services, événements, offres d\'emploi, recrutement' }}">
+    @php
+        $pageTitle = $pageTitle ?? 'Accueil';
+        $pageDescription = $pageDescription ?? 'SLS Formation et Conseils - Votre partenaire de confiance pour la formation professionnelle, le conseil et le développement des compétences. Découvrez nos services, formations, événements et offres d\'emploi.';
+        $pageKeywords = $pageKeywords ?? 'SLS Formation et Conseils, formation professionnelle, conseil, formation continue, développement professionnel, services, événements, offres d\'emploi, recrutement, Maroc';
+    @endphp
+    <title>{{ $pageTitle }} | SLS Formation et Conseils</title>
+    <meta name="title" content="{{ $pageTitle }} | SLS Formation et Conseils">
+    <meta name="description" content="{{ $pageDescription }}">
+    <meta name="keywords" content="{{ $pageKeywords }}">
+    <meta name="author" content="SLS Formation et Conseils">
     <meta name="robots" content="index, follow">
+    <meta name="language" content="French">
+    <meta name="revisit-after" content="7 days">
     <link rel="canonical" href="{{ url('/') }}">
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ url('/') }}">
-    <meta property="og:title" content="{{ $pageTitle ?? 'Accueil - Services, Offres d\'emploi et Événements' }}">
-    <meta property="og:description" content="{{ $pageDescription ?? 'Découvrez nos services, événements et offres d\'emploi. Votre partenaire de confiance pour tous vos besoins.' }}">
+    <meta property="og:title" content="{{ $pageTitle }} | SLS Formation et Conseils">
+    <meta property="og:description" content="{{ $pageDescription }}">
     <meta property="og:locale" content="fr_FR">
+    <meta property="og:site_name" content="SLS Formation et Conseils">
     
     <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="{{ url('/') }}">
-    <meta property="twitter:title" content="{{ $pageTitle ?? 'Accueil - Services, Offres d\'emploi et Événements' }}">
-    <meta property="twitter:description" content="{{ $pageDescription ?? 'Découvrez nos services, événements et offres d\'emploi. Votre partenaire de confiance pour tous vos besoins.' }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{ url('/') }}">
+    <meta name="twitter:title" content="{{ $pageTitle }} | SLS Formation et Conseils">
+    <meta name="twitter:description" content="{{ $pageDescription }}">
     
     <!-- Safari Pinned Tab Icon -->
     <!-- <link rel="mask-icon" href="https://www.wix.com/favicon.ico"> -->
@@ -5049,7 +5059,29 @@
         overflow: hidden !important;
       }
     </style>
-    <title>Acceuil | SLS Formation</title>
+    @php
+        $pageTitle = 'Accueil';
+        $pageDescription = 'Bienvenue sur le site de SLS Formation et Conseils. Découvrez nos services de formation professionnelle, événements et offres d\'emploi.';
+        $pageKeywords = 'accueil, SLS Formation et Conseils, formation professionnelle, conseil, services, événements, offres d\'emploi, Maroc';
+    @endphp
+    <title>{{ $pageTitle }} | SLS Formation et Conseils</title>
+    <meta name="title" content="{{ $pageTitle }} | SLS Formation et Conseils">
+    <meta name="description" content="{{ $pageDescription }}">
+    <meta name="keywords" content="{{ $pageKeywords }}">
+    <meta name="author" content="SLS Formation et Conseils">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="French">
+    <link rel="canonical" href="{{ url('/') }}">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url('/') }}">
+    <meta property="og:title" content="{{ $pageTitle }} | SLS Formation et Conseils">
+    <meta property="og:description" content="{{ $pageDescription }}">
+    <meta property="og:site_name" content="SLS Formation et Conseils">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ $pageTitle }} | SLS Formation et Conseils">
+    <meta name="twitter:description" content="{{ $pageDescription }}">
 
     <style rel="stylesheet">
       .sY_6mf6.oiayxcI--madefor {

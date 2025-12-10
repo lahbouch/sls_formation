@@ -106,7 +106,30 @@
 <style>.JVi7i2,.hrbzfT{background-color:var(--corvid-background-color,rgba(var(--bg,0,0,0),var(--alpha-bg,0)));border:solid var(--corvid-border-color,rgba(var(--brd,227,227,227),var(--alpha-brd,1))) var(--corvid-border-width,var(--brw,0));border-radius:var(--corvid-border-radius,var(--rd,0));box-shadow:var(--shd,0 0 0 transparent)}.d3n4V3{height:100%;left:-var(--corvid-border-width,var(--brw,0));position:absolute;top:-var(--corvid-border-width,var(--brw,0));width:100%}</style>
 <style>.OQ8Tzd,.nKphmK{overflow:hidden}.nKphmK{height:100%;position:relative;width:100%}.nKphmK:-ms-fullscreen{min-height:auto!important}.nKphmK:fullscreen{min-height:auto!important}.pvlz2w{visibility:hidden}</style>
 <style>.TWFxr5{height:auto!important}.May50y{overflow:hidden!important}</style>
-<title>Merci | SLS Formation</title>
+@php
+    $pageTitle = 'Merci';
+    $pageDescription = 'Merci d\'avoir contacté SLS Formation et Conseils. Nous vous répondrons dans les plus brefs délais.';
+    $pageKeywords = 'merci, contact, SLS Formation et Conseils, formation professionnelle, Maroc';
+@endphp
+<title>{{ $pageTitle }} | SLS Formation et Conseils</title>
+<meta name="title" content="{{ $pageTitle }} | SLS Formation et Conseils">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="{{ $pageDescription }}">
+<meta name="keywords" content="{{ $pageKeywords }}">
+<meta name="author" content="SLS Formation et Conseils">
+<meta name="robots" content="index, follow">
+<meta name="language" content="French">
+<link rel="canonical" href="{{ url('/contact/thank-you') }}">
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ url('/contact/thank-you') }}">
+<meta property="og:title" content="{{ $pageTitle }} | SLS Formation et Conseils">
+<meta property="og:description" content="{{ $pageDescription }}">
+<meta property="og:site_name" content="SLS Formation et Conseils">
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ $pageTitle }} | SLS Formation et Conseils">
+<meta name="twitter:description" content="{{ $pageDescription }}">
   
   
   
