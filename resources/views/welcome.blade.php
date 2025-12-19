@@ -15422,6 +15422,86 @@
 
 
 
+                            <!-- Partners Slider Section -->
+                            <section
+                              id="partners-slider-section"
+                              class="Oqnisf wixui-section"
+                              style="padding: 40px 0; background-color: #f8f9fa; overflow: hidden;"
+                            >
+                              <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+                                <h2 style="text-align: center; margin-bottom: 30px; font-size: 28px; color: #333; font-weight: 600;">
+                                  Nos Partenaires
+                                </h2>
+                                @if(isset($partners) && $partners->count() > 0)
+                                <div class="partners-slider-container" style="position: relative; width: 100%; overflow: hidden;">
+                                  <div class="partners-slider-track" style="display: flex; animation: scroll-partners 30s linear infinite;">
+                                    <!-- First set of partners -->
+                                    @foreach($partners as $partner)
+                                      <div class="partner-item" style="flex-shrink: 0; width: 200px; height: 120px; margin: 0 30px; display: flex; align-items: center; justify-content: center; background: white; border-radius: 8px; padding: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                                        @if($partner->siteweb)
+                                          <a href="{{ $partner->siteweb }}" target="_blank" rel="noopener noreferrer" style="display: block; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+                                            <img src="{{ $partner->image_url }}" alt="Partner Logo" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(0.3); transition: filter 0.3s;">
+                                          </a>
+                                        @else
+                                          <img src="{{ $partner->image_url }}" alt="Partner Logo" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(0.3);">
+                                        @endif
+                                      </div>
+                                    @endforeach
+                                    <!-- Duplicate set for seamless loop -->
+                                    @foreach($partners as $partner)
+                                      <div class="partner-item" style="flex-shrink: 0; width: 200px; height: 120px; margin: 0 30px; display: flex; align-items: center; justify-content: center; background: white; border-radius: 8px; padding: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                                        @if($partner->siteweb)
+                                          <a href="{{ $partner->siteweb }}" target="_blank" rel="noopener noreferrer" style="display: block; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center;">
+                                            <img src="{{ $partner->image_url }}" alt="Partner Logo" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(0.3); transition: filter 0.3s;">
+                                          </a>
+                                        @else
+                                          <img src="{{ $partner->image_url }}" alt="Partner Logo" style="max-width: 100%; max-height: 100%; object-fit: contain; filter: grayscale(0.3);">
+                                        @endif
+                                      </div>
+                                    @endforeach
+                                  </div>
+                                </div>
+                                @else
+                                <div style="text-align: center; padding: 40px 20px; color: #666;">
+                                  <p>Aucun partenaire disponible pour le moment.</p>
+                                </div>
+                                @endif
+                              </div>
+                            </section>
+                            <style>
+                              @keyframes scroll-partners {
+                                0% {
+                                  transform: translateX(0);
+                                }
+                                100% {
+                                  transform: translateX(-50%);
+                                }
+                              }
+                              
+                              .partners-slider-container:hover .partners-slider-track {
+                                animation-play-state: paused;
+                              }
+                              
+                              .partner-item a:hover img,
+                              .partner-item:hover img {
+                                filter: grayscale(0) !important;
+                                transform: scale(1.05);
+                                transition: filter 0.3s, transform 0.3s;
+                              }
+                              
+                              @media (max-width: 768px) {
+                                .partner-item {
+                                  width: 150px !important;
+                                  height: 90px !important;
+                                  margin: 0 20px !important;
+                                }
+                                
+                                #partners-slider-section h2 {
+                                  font-size: 24px !important;
+                                }
+                              }
+                            </style>
+
                             <!--/$--><!--$-->
                             <section
                               id="comp-lc96qudb"

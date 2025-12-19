@@ -6,6 +6,7 @@ use App\Models\Service;
 use App\Models\Article;
 use App\Models\OffreEmploi;
 use App\Models\Event;
+use App\Models\Partner;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Cache;
@@ -37,6 +38,9 @@ class HomeController extends Controller
                     }
                     if (!isset($cachedData['events'])) {
                         $cachedData['events'] = collect([]);
+                    }
+                    if (!isset($cachedData['partners'])) {
+                        $cachedData['partners'] = collect([]);
                     }
                     
                     // Try to render view with error suppression for memory issues
@@ -70,6 +74,7 @@ class HomeController extends Controller
             $articles = collect([]);
             $offres = collect([]);
             $events = collect([]);
+            $partners = collect([]);
             
             // Process each section independently with early returns
             try {
@@ -124,12 +129,26 @@ class HomeController extends Controller
                 $events = collect([]);
             }
             
+            try {
+                $partners = $this->processPartners();
+                if (!($partners instanceof \Illuminate\Support\Collection)) {
+                    $partners = collect([]);
+                }
+            } catch (\Exception $e) {
+                Log::error('HomeController@index - Error processing partners: ' . $e->getMessage());
+                $partners = collect([]);
+            } catch (\Throwable $e) {
+                Log::error('HomeController@index - Fatal error processing partners: ' . $e->getMessage());
+                $partners = collect([]);
+            }
+            
             // Prepare data for view - ensure all required variables are present
             $viewData = [
                 'services' => $services ?? collect([]),
                 'articles' => $articles ?? collect([]),
                 'offres' => $offres ?? collect([]),
                 'events' => $events ?? collect([]),
+                'partners' => $partners ?? collect([]),
                 'pageTitle' => 'Accueil - Services, Actualités et Offres d\'emploi',
                 'pageDescription' => 'Découvrez nos services, actualités, événements et offres d\'emploi. Votre partenaire de confiance pour tous vos besoins.',
                 'pageKeywords' => 'services, actualités, événements, offres d\'emploi, recrutement',
@@ -147,6 +166,9 @@ class HomeController extends Controller
             }
             if (!($viewData['events'] instanceof \Illuminate\Support\Collection)) {
                 $viewData['events'] = collect([]);
+            }
+            if (!($viewData['partners'] instanceof \Illuminate\Support\Collection)) {
+                $viewData['partners'] = collect([]);
             }
             
             // Cache the processed data for 5 minutes
@@ -182,6 +204,7 @@ class HomeController extends Controller
                     'articles' => collect([]),
                     'offres' => collect([]),
                     'events' => collect([]),
+                    'partners' => collect([]),
                     'pageTitle' => 'Accueil - Services, Actualités et Offres d\'emploi',
                     'pageDescription' => 'Découvrez nos services, actualités, événements et offres d\'emploi. Votre partenaire de confiance pour tous vos besoins.',
                     'pageKeywords' => 'services, actualités, événements, offres d\'emploi, recrutement',
@@ -200,6 +223,7 @@ class HomeController extends Controller
                 'articles' => collect([]),
                 'offres' => collect([]),
                 'events' => collect([]),
+                'partners' => collect([]),
                 'pageTitle' => 'Accueil - Services, Actualités et Offres d\'emploi',
                 'pageDescription' => 'Découvrez nos services, actualités, événements et offres d\'emploi. Votre partenaire de confiance pour tous vos besoins.',
                 'pageKeywords' => 'services, actualités, événements, offres d\'emploi, recrutement',
@@ -472,6 +496,47 @@ class HomeController extends Controller
         }
     }
     
+    private function processPartners()
+    {
+        try {
+            $allPartners = Partner::all();
+            
+            if ($allPartners->isEmpty()) {
+                return collect([]);
+            }
+            
+            $processed = collect([]);
+            $baseUrl = asset('storage') . '/';
+            
+            foreach ($allPartners as $partner) {
+                try {
+                    $imageUrl = null;
+                    if (!empty($partner->image)) {
+                        $imageUrl = $baseUrl . ltrim($partner->image, '/');
+                    }
+                    
+                    // Only include partners with images
+                    if ($imageUrl) {
+                        $processed->push((object)[
+                            'id' => $partner->id ?? null,
+                            'image' => $partner->image ?? null,
+                            'image_url' => $imageUrl,
+                            'siteweb' => $partner->siteweb ?? null,
+                        ]);
+                    }
+                } catch (\Exception $e) {
+                    Log::error('HomeController - Error processing single partner: ' . $e->getMessage());
+                    // Continue with next partner
+                }
+            }
+            
+            return $processed;
+        } catch (\Exception $e) {
+            Log::error('HomeController - Error processing partners: ' . $e->getMessage());
+            return collect([]);
+        }
+    }
+    
     /**
      * Simple test method that bypasses the large view
      */
@@ -494,6 +559,7 @@ class HomeController extends Controller
         $articles = $data['articles'] ?? collect([]);
         $offres = $data['offres'] ?? collect([]);
         $events = $data['events'] ?? collect([]);
+        $partners = $data['partners'] ?? collect([]);
         $pageTitle = $data['pageTitle'] ?? 'Accueil';
         $pageDescription = $data['pageDescription'] ?? '';
         

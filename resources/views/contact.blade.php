@@ -220,7 +220,7 @@
 @endif
 
 @if($info && $info->phone)
-<p class="font_8 wixui-rich-text__text" style="line-height:1.6em; font-size:14px; margin-top: 15px;"><span style="letter-spacing:normal;" class="wixui-rich-text__text"><span class="color_19 wixui-rich-text__text">WhatsApp:&nbsp; &nbsp; <a href="https://wa.me/212661223796" target="_blank" style="color: #25D366; text-decoration: none;">{{ $info->phone }}</a></span></span></p>
+
 @endif</div><!--/$--></div></div></div><!--/$--></div></section><!--/$--></div></div></section><!--/$--><!--$--><section id="comp-lc96quek" tabindex="-1" class="Oqnisf comp-lc96quek wixui-section" data-block-level-container="ClassicSection"><div id="bgLayers_comp-lc96quek" data-hook="bgLayers" data-motion-part="BG_LAYER comp-lc96quek" class="MW5IWV"><div data-testid="colorUnderlay" class="LWbAav Kv1aVt"></div><div id="bgMedia_comp-lc96quek" data-motion-part="BG_MEDIA comp-lc96quek" class="VgO9Yg"></div></div><div data-mesh-id="comp-lc96quekinlineContent" data-testid="inline-content" class=""><div data-mesh-id="comp-lc96quekinlineContent-gridContainer" data-testid="mesh-container-content"><!--$--><div id="comp-imon34f0" class="GRu5Ra comp-imon34f0 wixui-google-map"><wix-iframe data-src=""><div id="mapContainer_comp-imon34f0" class="TD54YK">
     
     
