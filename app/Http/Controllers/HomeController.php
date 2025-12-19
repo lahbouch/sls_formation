@@ -364,8 +364,18 @@ class HomeController extends Controller
                     }
                     
                     // Check if offre is active - get raw value to avoid cast issues
-                    $activeValue = $offre->getRawOriginal('active') ?? $offre->active ?? true;
-                    $isActive = (bool)$activeValue;
+                    $activeValue = $offre->getRawOriginal('active');
+                    if ($activeValue === null) {
+                        $activeValue = $offre->active ?? true;
+                    }
+                    // Convert to boolean explicitly - check for truthy values
+                    $isActive = false;
+                    if ($activeValue === true || $activeValue === 1 || $activeValue === '1' || $activeValue === 'true') {
+                        $isActive = true;
+                    }
+                    // Ensure boolean type
+                    $isActive = (bool)$isActive;
+                    $isInactive = !$isActive;
                     
                     $processed->push((object)[
                         'id' => $offre->id ?? null,
@@ -378,7 +388,7 @@ class HomeController extends Controller
                         'contrat' => $offre->contrat ?? null,
                         'ville' => $offre->ville ?? null,
                         'active' => $isActive,
-                        'is_inactive' => !$isActive,
+                        'is_inactive' => $isInactive,
                     ]);
                 } catch (\Exception $e) {
                     Log::error('HomeController - Error processing single offre: ' . $e->getMessage());

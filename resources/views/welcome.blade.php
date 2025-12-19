@@ -15821,8 +15821,15 @@
                                               @if(!empty($offres))
                                                 @foreach($offres as $offre)
                                                   @php
-                                                    // Check if inactive - same logic as recrutement page
-                                                    $isInactive = isset($offre->is_inactive) ? (bool)$offre->is_inactive : false;
+                                                    // Check if job offer is not active
+                                                    // The controller sets is_inactive property as boolean
+                                                    $isInactive = false;
+                                                    if (isset($offre->is_inactive)) {
+                                                        $isInactive = (bool)$offre->is_inactive;
+                                                    } elseif (isset($offre->active)) {
+                                                        // Fallback: if is_inactive not set, check active field
+                                                        $isInactive = !((bool)$offre->active);
+                                                    }
                                                   @endphp
                                                   <div class="{{ $isInactive ? 'home-card-inactive' : '' }}" style="
                                                     position: relative;

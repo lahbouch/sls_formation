@@ -840,8 +840,8 @@
 
 .gallery-modal-content {
     position: relative;
-    max-width: 90%;
-    max-height: 90vh;
+    max-width: 95%;
+    max-height: 95vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -849,8 +849,10 @@
 }
 
 .gallery-modal-image {
-    max-width: 100%;
-    max-height: 70vh;
+    max-width: 95%;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
     object-fit: contain;
     border-radius: 8px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
@@ -886,6 +888,45 @@
     line-height: 1;
 }
 
+.gallery-modal-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10001;
+    background: rgba(0, 0, 0, 0.5);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease, opacity 0.3s ease;
+    line-height: 1;
+    user-select: none;
+}
+
+.gallery-modal-nav:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.gallery-modal-nav.prev {
+    left: 20px;
+}
+
+.gallery-modal-nav.next {
+    right: 20px;
+}
+
+.gallery-modal-nav.disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
 .gallery-modal-close:hover {
     background: rgba(0, 0, 0, 0.8);
 }
@@ -913,6 +954,20 @@
         width: 40px;
         height: 40px;
         font-size: 30px;
+    }
+    
+    .gallery-modal-nav {
+        width: 40px;
+        height: 40px;
+        font-size: 30px;
+    }
+    
+    .gallery-modal-nav.prev {
+        left: 10px;
+    }
+    
+    .gallery-modal-nav.next {
+        right: 10px;
     }
 }
 
@@ -962,6 +1017,8 @@
 <!-- Gallery Modal -->
 <div id="galleryModal" class="gallery-modal">
     <span class="gallery-modal-close" id="galleryModalClose">&times;</span>
+    <span class="gallery-modal-nav prev" id="galleryModalPrev">&#8249;</span>
+    <span class="gallery-modal-nav next" id="galleryModalNext">&#8250;</span>
     <div class="gallery-modal-content">
         <img id="galleryModalImage" class="gallery-modal-image" src="" alt="Gallery Image">
         <div id="galleryModalDescription" class="gallery-modal-description"></div>
@@ -969,16 +1026,35 @@
 </div>
 
 <script>
+let currentImageIndex = 0;
+let galleryImages = [];
+
 document.addEventListener('DOMContentLoaded', function() {
-    // Add click event listeners to all gallery items
+    // Collect all gallery items with their data
     const galleryItems = document.querySelectorAll('.gallery-item');
     
-    galleryItems.forEach(function(item) {
+    galleryImages = Array.from(galleryItems).map(function(item) {
+        return {
+            url: item.getAttribute('data-image-url'),
+            description: item.getAttribute('data-description')
+        };
+    }).filter(function(item) {
+        return item.url && item.url !== '#';
+    });
+    
+    // Add click event listeners to all gallery items
+    galleryItems.forEach(function(item, index) {
         item.addEventListener('click', function() {
             const imageUrl = this.getAttribute('data-image-url');
-            const description = this.getAttribute('data-description');
-            
-            openGalleryModal(imageUrl, description);
+            if (imageUrl && imageUrl !== '#') {
+                // Find the index in the filtered array
+                currentImageIndex = galleryImages.findIndex(function(img) {
+                    return img.url === imageUrl;
+                });
+                if (currentImageIndex === -1) currentImageIndex = 0;
+                
+                openGalleryModal(currentImageIndex);
+            }
         });
     });
     
@@ -992,10 +1068,21 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Close modal with Escape key
+    // Keyboard navigation
     document.addEventListener('keydown', function(e) {
+        const modal = document.getElementById('galleryModal');
+        if (!modal || !modal.classList.contains('active')) {
+            return;
+        }
+        
         if (e.key === 'Escape') {
             closeGalleryModal();
+        } else if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            navigateGallery(-1);
+        } else if (e.key === 'ArrowRight') {
+            e.preventDefault();
+            navigateGallery(1);
         }
     });
     
@@ -1006,19 +1093,75 @@ document.addEventListener('DOMContentLoaded', function() {
             closeGalleryModal();
         });
     }
+    
+    // Navigation buttons
+    const prevButton = document.getElementById('galleryModalPrev');
+    const nextButton = document.getElementById('galleryModalNext');
+    
+    if (prevButton) {
+        prevButton.addEventListener('click', function(e) {
+            e.stopPropagation();
+            navigateGallery(-1);
+        });
+    }
+    
+    if (nextButton) {
+        nextButton.addEventListener('click', function(e) {
+            e.stopPropagation();
+            navigateGallery(1);
+        });
+    }
 });
 
-function openGalleryModal(imageUrl, description) {
+function openGalleryModal(index) {
+    if (index < 0 || index >= galleryImages.length) {
+        return;
+    }
+    
     const modal = document.getElementById('galleryModal');
     const modalImage = document.getElementById('galleryModalImage');
     const modalDescription = document.getElementById('galleryModalDescription');
     
     if (modal && modalImage && modalDescription) {
-        modalImage.src = imageUrl;
-        modalDescription.innerHTML = description || '';
+        currentImageIndex = index;
+        const currentImage = galleryImages[index];
+        
+        modalImage.src = currentImage.url;
+        modalDescription.innerHTML = currentImage.description || '';
         
         modal.classList.add('active');
         document.body.style.overflow = 'hidden';
+        
+        updateNavigationButtons();
+    }
+}
+
+function navigateGallery(direction) {
+    const newIndex = currentImageIndex + direction;
+    
+    if (newIndex >= 0 && newIndex < galleryImages.length) {
+        openGalleryModal(newIndex);
+    }
+}
+
+function updateNavigationButtons() {
+    const prevButton = document.getElementById('galleryModalPrev');
+    const nextButton = document.getElementById('galleryModalNext');
+    
+    if (prevButton) {
+        if (currentImageIndex === 0) {
+            prevButton.classList.add('disabled');
+        } else {
+            prevButton.classList.remove('disabled');
+        }
+    }
+    
+    if (nextButton) {
+        if (currentImageIndex === galleryImages.length - 1) {
+            nextButton.classList.add('disabled');
+        } else {
+            nextButton.classList.remove('disabled');
+        }
     }
 }
 
