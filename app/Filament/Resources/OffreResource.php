@@ -43,9 +43,36 @@ class OffreResource extends Resource
                     })
                     ->searchable()
                     ->preload()
-                    ->required(),
+                    ->required()
+                    ->reactive()
+                    ->afterStateUpdated(function ($state, callable $set, $get) {
+                        if ($state) {
+                            // Only auto-calculate if num is empty (create mode)
+                            $currentNum = $get('num');
+                            if (empty($currentNum)) {
+                                // Get the last numéro for this type_id
+                                $lastOffre = Offre::where('type_id', $state)
+                                    ->orderBy('num', 'desc')
+                                    ->first();
+                                
+                                // Calculate next numéro
+                                $nextNum = 1;
+                                if ($lastOffre && $lastOffre->num) {
+                                    // Try to extract numeric part if num is a string
+                                    $lastNum = is_numeric($lastOffre->num) ? (int)$lastOffre->num : (int)preg_replace('/[^0-9]/', '', $lastOffre->num);
+                                    $nextNum = $lastNum + 1;
+                                }
+                                
+                                $set('num', $nextNum);
+                            }
+                        } else {
+                            $set('num', null);
+                        }
+                    }),
                 Forms\Components\TextInput::make('num')
-                    ->label('Numéro'),
+                    ->label('Numéro')
+                    ->disabled()
+                    ->dehydrated(),
                 Forms\Components\Textarea::make('title')
                     ->label('Titre')
                     ->rows(2)
