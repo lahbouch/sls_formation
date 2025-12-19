@@ -1976,8 +1976,12 @@
         <div class="events-grid">
           @foreach($events as $event)
             @php
-              // Event is inactive if active=false OR end_date has passed
-              $isInactive = !$event->active;
+              // Event is inactive based on is_inactive property (set by controller based on active field)
+              $isInactive = isset($event->is_inactive) ? (bool)$event->is_inactive : false;
+              // Fallback: check active property if is_inactive not set
+              if (!isset($event->is_inactive) && isset($event->active)) {
+                  $isInactive = !((bool)$event->active);
+              }
             @endphp
             @if($isInactive)
               <div class="event-card inactive">

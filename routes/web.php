@@ -43,9 +43,7 @@ Route::get('/services', [\App\Http\Controllers\ServicesController::class, 'index
 
 
 
-Route::get('/evenements', function () {
-    return view('evenements');
-})->name('evenements');
+Route::get('/evenements', [\App\Http\Controllers\EventController::class, 'index'])->name('evenements');
 
 
 

@@ -41,6 +41,21 @@ class EventController extends Controller
                         // Determine if event is currently active (active field AND end_date not passed)
                         $isActive = $event->isCurrentlyActive();
                         
+                        // Check active field directly (for grayed out state)
+                        $activeValue = $event->getRawOriginal('active');
+                        if ($activeValue === null) {
+                            $activeValue = $event->active ?? true;
+                        }
+                        // Convert to boolean explicitly - check for truthy values
+                        $isActiveField = false;
+                        if ($activeValue === true || $activeValue === 1 || $activeValue === '1' || $activeValue === 'true') {
+                            $isActiveField = true;
+                        } elseif ($activeValue === false || $activeValue === 0 || $activeValue === '0' || $activeValue === 'false') {
+                            $isActiveField = false;
+                        }
+                        $isActiveField = (bool)$isActiveField;
+                        $isInactive = !$isActiveField;
+                        
                         return (object)[
                             'id' => $event->id,
                             'title' => $event->title ?? 'Événement',
@@ -50,20 +65,15 @@ class EventController extends Controller
                             'location' => $event->location ?? '',
                             'description' => $description,
                             'active' => $isActive,
+                            'is_inactive' => $isInactive,
                         ];
                     });
                     
-                    // Separate active and inactive
-                    $activeEvents = $events->filter(function($event) {
-                        return $event->active === true;
-                    });
-                    
-                    $inactiveEvents = $events->filter(function($event) {
-                        return $event->active === false;
-                    });
-                    
-                    // Merge: active first, then inactive
-                    $events = $activeEvents->merge($inactiveEvents);
+                    // Show all events, don't filter them out
+                    // Just sort by start_date (newest first)
+                    $events = $events->sortByDesc(function($event) {
+                        return $event->start_date ? $event->start_date->timestamp : 0;
+                    })->values();
                 }
             } catch (\Exception $dbError) {
                 Log::error('Events page DB error: ' . $dbError->getMessage());
@@ -73,6 +83,7 @@ class EventController extends Controller
             $pageDescription = 'Découvrez tous nos événements à venir et passés. Rejoignez-nous pour des moments inoubliables.';
             $pageKeywords = 'événements, events, manifestations, activités';
             
+            // Always use events view which has the proper event display code
             return view('events', compact('events', 'pageTitle', 'pageDescription', 'pageKeywords'));
         } catch (\Throwable $e) {
             Log::error('Events fatal error: ' . $e->getMessage(), [
