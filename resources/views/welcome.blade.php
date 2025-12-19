@@ -15902,14 +15902,23 @@
                                                 @foreach($offres as $offre)
                                                   @php
                                                     // Check if job offer is not active
-                                                    // The controller sets is_inactive property as boolean
+                                                    // The controller sets is_inactive property based on the active field
                                                     $isInactive = false;
-                                                    if (isset($offre->is_inactive)) {
+                                                    
+                                                    // First check if is_inactive property is set (from controller)
+                                                    if (isset($offre->is_inactive) && $offre->is_inactive !== null) {
                                                         $isInactive = (bool)$offre->is_inactive;
-                                                    } elseif (isset($offre->active)) {
-                                                        // Fallback: if is_inactive not set, check active field
-                                                        $isInactive = !((bool)$offre->active);
+                                                    } 
+                                                    // Fallback: check the active property directly
+                                                    elseif (isset($offre->active) && $offre->active !== null) {
+                                                        // Handle explicit false/0 values
+                                                        if ($offre->active === false || $offre->active === 0 || $offre->active === '0' || $offre->active === 'false') {
+                                                            $isInactive = true;
+                                                        } else {
+                                                            $isInactive = !((bool)$offre->active);
+                                                        }
                                                     }
+                                                    // If neither property exists, assume active (not inactive)
                                                   @endphp
                                                   <div class="{{ $isInactive ? 'home-card-inactive' : '' }}" style="
                                                     position: relative;
@@ -15917,7 +15926,7 @@
                                                     height: 292px !important;
                                                     overflow: hidden;
                                                     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-                                                    cursor: pointer;
+                                                    {{ $isInactive ? 'cursor: not-allowed !important; opacity: 0.6 !important; filter: grayscale(100%) !important; pointer-events: none !important;' : 'cursor: pointer;' }}
                                                   " @if(!$isInactive) onclick="window.location.href='{{ route('offre-emploi.show', $offre->id) }}'" @endif>
                                                     @if($offre->image_url)
                                                     <!-- Background Image -->

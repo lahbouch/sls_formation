@@ -393,9 +393,12 @@ class HomeController extends Controller
                         $activeValue = $offre->active ?? true;
                     }
                     // Convert to boolean explicitly - check for truthy values
+                    // Handle 0, false, '0', 'false' as inactive
                     $isActive = false;
                     if ($activeValue === true || $activeValue === 1 || $activeValue === '1' || $activeValue === 'true') {
                         $isActive = true;
+                    } elseif ($activeValue === false || $activeValue === 0 || $activeValue === '0' || $activeValue === 'false') {
+                        $isActive = false;
                     }
                     // Ensure boolean type
                     $isActive = (bool)$isActive;
