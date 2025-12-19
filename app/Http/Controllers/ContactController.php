@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Contact;
 use App\Models\Info;
+use App\Mail\ContactNotification;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Mail;
 
 class ContactController extends Controller
 {
@@ -38,13 +40,21 @@ class ContactController extends Controller
             ], 422);
         }
 
-        Contact::create([
+        $contact = Contact::create([
             'full_name' => $request->full_name,
             'email' => $request->email,
             'sujet' => $request->sujet,
             'telephone' => $request->telephone,
             'message' => $request->message,
         ]);
+
+        // Send email notification
+        try {
+            Mail::to('lahbouch.dev@gmail.com')->send(new ContactNotification($contact));
+        } catch (\Exception $e) {
+            // Log the error but don't fail the request
+            \Log::error('Failed to send contact notification email: ' . $e->getMessage());
+        }
 
         // If AJAX request, return JSON for validation errors only
         if ($request->ajax() || $request->wantsJson()) {
