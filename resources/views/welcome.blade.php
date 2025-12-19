@@ -15426,7 +15426,7 @@
                             <section
                               id="partners-slider-section"
                               class="Oqnisf wixui-section"
-                              style="padding: 40px 0; background-color: #f8f9fa; overflow: hidden;"
+                              style="padding: 40px 0; background-color: #ffffff; overflow: hidden;"
                             >
                               <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
                                 <h2 style="text-align: center; margin-bottom: 30px; font-size: 28px; color: #333; font-weight: 600;">
