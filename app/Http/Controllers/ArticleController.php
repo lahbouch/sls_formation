@@ -51,7 +51,7 @@ class ArticleController extends Controller
             $pageDescription = $descriptionShort;
             $pageKeywords = 'actualités, ' . ($categoryName ? strtolower($categoryName) . ', ' : '') . 'article';
             
-            return view('article-details', compact('articleData', 'pageTitle', 'pageDescription', 'pageKeywords'));
+            return view('article-details', compact('article', 'articleData', 'pageTitle', 'pageDescription', 'pageKeywords'));
         } catch (\Exception $e) {
             Log::error('ArticleController@show - Error: ' . $e->getMessage());
             abort(404);
