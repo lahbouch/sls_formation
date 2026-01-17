@@ -226,7 +226,7 @@
     
     
     
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3983.5867790064954!2d-5.7976708!3d35.76420429999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd0b81ad014b55a7%3A0xc515de51cb705f41!2sSLS%20Formation%20et%20Conseils!5e1!3m2!1sen!2sma!4v1765370029610!5m2!1sen!2sma" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3983.0566943452454!2d-5.822945724208081!3d35.77478807255718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzXCsDQ2JzI5LjIiTiA1wrA0OScxMy4zIlc!5e1!3m2!1sfr!2sma!4v1768631315021!5m2!1sfr!2sma" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 
 
 
