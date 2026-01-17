@@ -518,15 +518,13 @@ class HomeController extends Controller
                         $imageUrl = $baseUrl . ltrim($partner->image, '/');
                     }
                     
-                    // Only include partners with images
-                    if ($imageUrl) {
-                        $processed->push((object)[
-                            'id' => $partner->id ?? null,
-                            'image' => $partner->image ?? null,
-                            'image_url' => $imageUrl,
-                            'siteweb' => $partner->siteweb ?? null,
-                        ]);
-                    }
+                    // Include all partners (with or without images)
+                    $processed->push((object)[
+                        'id' => $partner->id ?? null,
+                        'image' => $partner->image ?? null,
+                        'image_url' => $imageUrl,
+                        'siteweb' => $partner->siteweb ?? null,
+                    ]);
                 } catch (\Exception $e) {
                     Log::error('HomeController - Error processing single partner: ' . $e->getMessage());
                     // Continue with next partner
